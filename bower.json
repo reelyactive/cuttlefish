@@ -1,5 +1,6 @@
 {
   "name": "cuttlefish",
+  "version": "0.0.0",
   "description": "Human-friendly HTML rendering of machine-friendly JSON-LD. We believe in an open Internet of Things.",
   "keywords": [
     "JSON-LD",
@@ -12,5 +13,13 @@
     "type": "git",
     "url": "git://github.com/reelyactive/cuttlefish.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "main": "js/main.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
