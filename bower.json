@@ -1,0 +1,24 @@
+{
+  "name": "cormorant",
+  "version": "0.0.0",
+  "homepage": "https://github.com/adrienthiery/cormorant",
+  "authors": [
+    "Adrien Thiery <adrien.thiery@gmail.com>"
+  ],
+  "description": "A set of react components for visualising IoT related elements",
+  "main": "js/main.js",
+  "keywords": [
+    "IoT",
+    "reelyActive",
+    "ReactJS",
+    "schema.org"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
