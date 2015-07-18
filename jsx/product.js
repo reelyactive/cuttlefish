@@ -1,4 +1,5 @@
-var Product = React.createClass({
+define(['../bower_components/react/react'], function(React){
+  return React.createClass({
     getDefaultProps: function() {
         return {
             "data" : {
@@ -18,5 +19,6 @@ var Product = React.createClass({
             { manufacturer }
         </div>);
     }
+  });
 });
 

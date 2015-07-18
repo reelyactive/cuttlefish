@@ -23,6 +23,7 @@
   ],
   "dependencies": {
     "react": "~0.13.3",
-    "requirejs": "~2.1.19"
+    "requirejs": "~2.1.19",
+    "jsonld": "~0.3.22"
   }
 }
