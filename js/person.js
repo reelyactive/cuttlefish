@@ -4,24 +4,7 @@ define(['../bower_components/react/react', './product'], function(React, Product
           return {
               "@id": "http://person",
               "@type": "Person",
-              "name": "John Doe",
-              "owns": [
-                  {
-                    "@id": "productdb:iphone5.html",
-                    "@type": "schema:Product",
-                    "model": "iphone5",
-                    "schema:productID": "mac:01:23:45:67:89:ab"
-                  },
-                  {
-                    "@id": "productdb:DasKapital.html",
-                    "@type": "schema:Product",
-                    "model": "Das Kapital v1",
-                    "schema:productID": "mac:01:23:45:67:89:ab"
-                  }
-              ],
-              "email": "john@reelyactive.com",
-              "image": "http://something.com/JohnDoe.jpg",
-              "alumniOf": "XXXXXXXXXXX"
+              "name": "John Doe"
           }
       },
       render: function() {
@@ -29,18 +12,25 @@ define(['../bower_components/react/react', './product'], function(React, Product
           if ( this.props.alumniOf ){
               alumni = (React.createElement("p", null, "Alumni of ",  this.props.alumniOf));
           }
-          var productsNodes = this.props.owns.map( function(product) {
+          var image;
+          if ( this.props.image ){
+             image = ( React.createElement("img", {className: "icon", src: this.props.image}) );
+          }
+          var productsNodes;
+          if( this.props.owns ){
+            productsNodes = [(React.createElement("p", null, "Owns :"))]
+            productsNodes = productsNodes.concat( this.props.owns.map( function(product) {
               return (React.createElement("p", null, React.createElement(Product, {data:  product })));
-          });
+            }) );
+          }
           return (React.createElement("div", {title: "Person", className: "person entity"}, 
+               image, 
               React.createElement("h1", null, 
                    this.props.name
               ), 
               React.createElement("div", null, 
-                  React.createElement("img", {className: "icon", src: this.props.image}), 
-                  React.createElement("p", null, "Contact at ",  this.props.email), 
+                  React.createElement("p", null, "Contact at ", React.createElement("a", {href: "{ this.props.email }"},  this.props.email)), 
                    alumni, 
-                  React.createElement("p", null, "Owns:"), 
                    productsNodes 
               )
           ));
