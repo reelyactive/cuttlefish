@@ -11,7 +11,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( React.createElement(Action, {props:  this.props.potentialAction}) ) );          }
+            potentialAction.push( ( React.createElement(Action, React.__spread({},  this.props.potentialAction )) ) );          }
         } else {
           potentialAction = ( React.createElement(Action, {props:  this.props.potentialAction}) );        }
       }
@@ -20,18 +20,18 @@
         if( this.props.valueReference instanceof Array ){
           valueReference = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.valueReference ){
-            valueReference.push( ( React.createElement("div", {"data-advice": "Put your HTML here. valueReference is a QualitativeValue or" + ' ' +
-"QuantitativeValue or" + ' ' +
-"Enumeration or" + ' ' +
+            valueReference.push( ( React.createElement("div", {"data-advice": "Put your HTML here. valueReference is a Enumeration or" + ' ' +
 "StructuredValue or" + ' ' +
-"PropertyValue."}) ) );
+"PropertyValue or" + ' ' +
+"QuantitativeValue or" + ' ' +
+"QualitativeValue."}) ) );
           }
         } else {
-            valueReference.push( ( React.createElement("div", {"data-advice": "Put your HTML here. valueReference is a QualitativeValue or" + ' ' +
-"QuantitativeValue or" + ' ' +
-"Enumeration or" + ' ' +
+            valueReference = ( React.createElement("div", {"data-advice": "Put your HTML here. valueReference is a Enumeration or" + ' ' +
 "StructuredValue or" + ' ' +
-"PropertyValue."}) ) );
+"PropertyValue or" + ' ' +
+"QuantitativeValue or" + ' ' +
+"QualitativeValue."}) );
         }
       }
       var greater;
@@ -39,7 +39,7 @@
         if( this.props.greater instanceof Array ){
           greater = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.greater ){
-            greater.push( ( React.createElement(QualitativeValue, {props:  this.props.greater}) ) );          }
+            greater.push( ( React.createElement(QualitativeValue, React.__spread({},  this.props.greater )) ) );          }
         } else {
           greater = ( React.createElement(QualitativeValue, {props:  this.props.greater}) );        }
       }
@@ -51,7 +51,7 @@
             sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
           }
         } else {
-            sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
+            sameAs = ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) );
         }
       }
       var lesserOrEqual;
@@ -59,7 +59,7 @@
         if( this.props.lesserOrEqual instanceof Array ){
           lesserOrEqual = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.lesserOrEqual ){
-            lesserOrEqual.push( ( React.createElement(QualitativeValue, {props:  this.props.lesserOrEqual}) ) );          }
+            lesserOrEqual.push( ( React.createElement(QualitativeValue, React.__spread({},  this.props.lesserOrEqual )) ) );          }
         } else {
           lesserOrEqual = ( React.createElement(QualitativeValue, {props:  this.props.lesserOrEqual}) );        }
       }
@@ -68,7 +68,7 @@
         if( this.props.equal instanceof Array ){
           equal = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.equal ){
-            equal.push( ( React.createElement(QualitativeValue, {props:  this.props.equal}) ) );          }
+            equal.push( ( React.createElement(QualitativeValue, React.__spread({},  this.props.equal )) ) );          }
         } else {
           equal = ( React.createElement(QualitativeValue, {props:  this.props.equal}) );        }
       }
@@ -80,7 +80,7 @@
             name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
           }
         } else {
-            name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
+            name = ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) );
         }
       }
       var lesser;
@@ -88,7 +88,7 @@
         if( this.props.lesser instanceof Array ){
           lesser = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.lesser ){
-            lesser.push( ( React.createElement(QualitativeValue, {props:  this.props.lesser}) ) );          }
+            lesser.push( ( React.createElement(QualitativeValue, React.__spread({},  this.props.lesser )) ) );          }
         } else {
           lesser = ( React.createElement(QualitativeValue, {props:  this.props.lesser}) );        }
       }
@@ -100,7 +100,7 @@
             url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
           }
         } else {
-            url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
+            url = ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) );
         }
       }
       var additionalProperty;
@@ -108,7 +108,7 @@
         if( this.props.additionalProperty instanceof Array ){
           additionalProperty = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.additionalProperty ){
-            additionalProperty.push( ( React.createElement(PropertyValue, {props:  this.props.additionalProperty}) ) );          }
+            additionalProperty.push( ( React.createElement(PropertyValue, React.__spread({},  this.props.additionalProperty )) ) );          }
         } else {
           additionalProperty = ( React.createElement(PropertyValue, {props:  this.props.additionalProperty}) );        }
       }
@@ -117,14 +117,14 @@
         if( this.props.supersededBy instanceof Array ){
           supersededBy = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.supersededBy ){
-            supersededBy.push( ( React.createElement("div", {"data-advice": "Put your HTML here. supersededBy is a Enumeration or" + ' ' +
-"Class or" + ' ' +
-"Property."}) ) );
+            supersededBy.push( ( React.createElement("div", {"data-advice": "Put your HTML here. supersededBy is a Class or" + ' ' +
+"Property or" + ' ' +
+"Enumeration."}) ) );
           }
         } else {
-            supersededBy.push( ( React.createElement("div", {"data-advice": "Put your HTML here. supersededBy is a Enumeration or" + ' ' +
-"Class or" + ' ' +
-"Property."}) ) );
+            supersededBy = ( React.createElement("div", {"data-advice": "Put your HTML here. supersededBy is a Class or" + ' ' +
+"Property or" + ' ' +
+"Enumeration."}) );
         }
       }
       var greaterOrEqual;
@@ -132,7 +132,7 @@
         if( this.props.greaterOrEqual instanceof Array ){
           greaterOrEqual = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.greaterOrEqual ){
-            greaterOrEqual.push( ( React.createElement(QualitativeValue, {props:  this.props.greaterOrEqual}) ) );          }
+            greaterOrEqual.push( ( React.createElement(QualitativeValue, React.__spread({},  this.props.greaterOrEqual )) ) );          }
         } else {
           greaterOrEqual = ( React.createElement(QualitativeValue, {props:  this.props.greaterOrEqual}) );        }
       }
@@ -145,8 +145,8 @@
 "URL."}) ) );
           }
         } else {
-            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
-"URL."}) ) );
+            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
+"URL."}) );
         }
       }
       var additionalType;
@@ -157,7 +157,7 @@
             additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
           }
         } else {
-            additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
+            additionalType = ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) );
         }
       }
       var alternateName;
@@ -168,7 +168,7 @@
             alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
           }
         } else {
-            alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
+            alternateName = ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) );
         }
       }
       var nonEqual;
@@ -176,7 +176,7 @@
         if( this.props.nonEqual instanceof Array ){
           nonEqual = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.nonEqual ){
-            nonEqual.push( ( React.createElement(QualitativeValue, {props:  this.props.nonEqual}) ) );          }
+            nonEqual.push( ( React.createElement(QualitativeValue, React.__spread({},  this.props.nonEqual )) ) );          }
         } else {
           nonEqual = ( React.createElement(QualitativeValue, {props:  this.props.nonEqual}) );        }
       }
@@ -189,8 +189,8 @@
 "ImageObject."}) ) );
           }
         } else {
-            image.push( ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
-"ImageObject."}) ) );
+            image = ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
+"ImageObject."}) );
         }
       }
       var description;
@@ -201,7 +201,7 @@
             description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
           }
         } else {
-            description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
+            description = ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) );
         }
       }
       return (React.createElement("div", {title: "QualitativeValue", className: "QualitativeValue entity"}, 

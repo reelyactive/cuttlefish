@@ -11,7 +11,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( React.createElement(Action, {props:  this.props.potentialAction}) ) );          }
+            potentialAction.push( ( React.createElement(Action, React.__spread({},  this.props.potentialAction )) ) );          }
         } else {
           potentialAction = ( React.createElement(Action, {props:  this.props.potentialAction}) );        }
       }
@@ -23,7 +23,7 @@
             description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
           }
         } else {
-            description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
+            description = ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) );
         }
       }
       var sameAs;
@@ -34,7 +34,7 @@
             sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
           }
         } else {
-            sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
+            sameAs = ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) );
         }
       }
       var ownedFrom;
@@ -42,7 +42,7 @@
         if( this.props.ownedFrom instanceof Array ){
           ownedFrom = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.ownedFrom ){
-            ownedFrom.push( ( React.createElement(DateTime, {props:  this.props.ownedFrom}) ) );          }
+            ownedFrom.push( ( React.createElement(DateTime, React.__spread({},  this.props.ownedFrom )) ) );          }
         } else {
           ownedFrom = ( React.createElement(DateTime, {props:  this.props.ownedFrom}) );        }
       }
@@ -55,8 +55,8 @@
 "Organization."}) ) );
           }
         } else {
-            acquiredFrom.push( ( React.createElement("div", {"data-advice": "Put your HTML here. acquiredFrom is a Person or" + ' ' +
-"Organization."}) ) );
+            acquiredFrom = ( React.createElement("div", {"data-advice": "Put your HTML here. acquiredFrom is a Person or" + ' ' +
+"Organization."}) );
         }
       }
       var url;
@@ -67,7 +67,7 @@
             url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
           }
         } else {
-            url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
+            url = ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) );
         }
       }
       var ownedThrough;
@@ -75,7 +75,7 @@
         if( this.props.ownedThrough instanceof Array ){
           ownedThrough = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.ownedThrough ){
-            ownedThrough.push( ( React.createElement(DateTime, {props:  this.props.ownedThrough}) ) );          }
+            ownedThrough.push( ( React.createElement(DateTime, React.__spread({},  this.props.ownedThrough )) ) );          }
         } else {
           ownedThrough = ( React.createElement(DateTime, {props:  this.props.ownedThrough}) );        }
       }
@@ -84,12 +84,12 @@
         if( this.props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.mainEntityOfPage ){
-            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
-"CreativeWork."}) ) );
+            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
+"URL."}) ) );
           }
         } else {
-            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
-"CreativeWork."}) ) );
+            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
+"URL."}) );
         }
       }
       var additionalType;
@@ -100,7 +100,7 @@
             additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
           }
         } else {
-            additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
+            additionalType = ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) );
         }
       }
       var alternateName;
@@ -111,7 +111,7 @@
             alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
           }
         } else {
-            alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
+            alternateName = ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) );
         }
       }
       var image;
@@ -123,8 +123,8 @@
 "ImageObject."}) ) );
           }
         } else {
-            image.push( ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
-"ImageObject."}) ) );
+            image = ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
+"ImageObject."}) );
         }
       }
       var typeOfGood;
@@ -132,7 +132,7 @@
         if( this.props.typeOfGood instanceof Array ){
           typeOfGood = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.typeOfGood ){
-            typeOfGood.push( ( React.createElement(Product, {props:  this.props.typeOfGood}) ) );          }
+            typeOfGood.push( ( React.createElement(Product, React.__spread({},  this.props.typeOfGood )) ) );          }
         } else {
           typeOfGood = ( React.createElement(Product, {props:  this.props.typeOfGood}) );        }
       }
@@ -144,7 +144,7 @@
             name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
           }
         } else {
-            name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
+            name = ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) );
         }
       }
       return (React.createElement("div", {title: "OwnershipInfo", className: "OwnershipInfo entity"}, 

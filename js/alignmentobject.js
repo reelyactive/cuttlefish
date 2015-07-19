@@ -14,7 +14,7 @@
             alignmentType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alignmentType is a Text."}) ) );
           }
         } else {
-            alignmentType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alignmentType is a Text."}) ) );
+            alignmentType = ( React.createElement("div", {"data-advice": "Put your HTML here. alignmentType is a Text."}) );
         }
       }
       var potentialAction;
@@ -22,7 +22,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( React.createElement(Action, {props:  this.props.potentialAction}) ) );          }
+            potentialAction.push( ( React.createElement(Action, React.__spread({},  this.props.potentialAction )) ) );          }
         } else {
           potentialAction = ( React.createElement(Action, {props:  this.props.potentialAction}) );        }
       }
@@ -34,7 +34,7 @@
             description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
           }
         } else {
-            description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
+            description = ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) );
         }
       }
       var sameAs;
@@ -45,7 +45,7 @@
             sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
           }
         } else {
-            sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
+            sameAs = ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) );
         }
       }
       var image;
@@ -57,8 +57,8 @@
 "ImageObject."}) ) );
           }
         } else {
-            image.push( ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
-"ImageObject."}) ) );
+            image = ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
+"ImageObject."}) );
         }
       }
       var educationalFramework;
@@ -69,7 +69,7 @@
             educationalFramework.push( ( React.createElement("div", {"data-advice": "Put your HTML here. educationalFramework is a Text."}) ) );
           }
         } else {
-            educationalFramework.push( ( React.createElement("div", {"data-advice": "Put your HTML here. educationalFramework is a Text."}) ) );
+            educationalFramework = ( React.createElement("div", {"data-advice": "Put your HTML here. educationalFramework is a Text."}) );
         }
       }
       var url;
@@ -80,7 +80,7 @@
             url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
           }
         } else {
-            url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
+            url = ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) );
         }
       }
       var targetUrl;
@@ -91,7 +91,7 @@
             targetUrl.push( ( React.createElement("div", {"data-advice": "Put your HTML here. targetUrl is a URL."}) ) );
           }
         } else {
-            targetUrl.push( ( React.createElement("div", {"data-advice": "Put your HTML here. targetUrl is a URL."}) ) );
+            targetUrl = ( React.createElement("div", {"data-advice": "Put your HTML here. targetUrl is a URL."}) );
         }
       }
       var mainEntityOfPage;
@@ -103,8 +103,8 @@
 "URL."}) ) );
           }
         } else {
-            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
-"URL."}) ) );
+            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
+"URL."}) );
         }
       }
       var additionalType;
@@ -115,7 +115,7 @@
             additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
           }
         } else {
-            additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
+            additionalType = ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) );
         }
       }
       var alternateName;
@@ -126,7 +126,7 @@
             alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
           }
         } else {
-            alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
+            alternateName = ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) );
         }
       }
       var targetName;
@@ -137,7 +137,7 @@
             targetName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. targetName is a Text."}) ) );
           }
         } else {
-            targetName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. targetName is a Text."}) ) );
+            targetName = ( React.createElement("div", {"data-advice": "Put your HTML here. targetName is a Text."}) );
         }
       }
       var targetDescription;
@@ -148,7 +148,7 @@
             targetDescription.push( ( React.createElement("div", {"data-advice": "Put your HTML here. targetDescription is a Text."}) ) );
           }
         } else {
-            targetDescription.push( ( React.createElement("div", {"data-advice": "Put your HTML here. targetDescription is a Text."}) ) );
+            targetDescription = ( React.createElement("div", {"data-advice": "Put your HTML here. targetDescription is a Text."}) );
         }
       }
       var name;
@@ -159,7 +159,7 @@
             name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
           }
         } else {
-            name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
+            name = ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) );
         }
       }
       return (React.createElement("div", {title: "AlignmentObject", className: "AlignmentObject entity"}, 

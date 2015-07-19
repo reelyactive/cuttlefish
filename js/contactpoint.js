@@ -11,7 +11,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( React.createElement(Action, {props:  this.props.potentialAction}) ) );          }
+            potentialAction.push( ( React.createElement(Action, React.__spread({},  this.props.potentialAction )) ) );          }
         } else {
           potentialAction = ( React.createElement(Action, {props:  this.props.potentialAction}) );        }
       }
@@ -23,7 +23,7 @@
             description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
           }
         } else {
-            description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
+            description = ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) );
         }
       }
       var sameAs;
@@ -34,7 +34,7 @@
             sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
           }
         } else {
-            sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
+            sameAs = ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) );
         }
       }
       var productSupported;
@@ -46,8 +46,8 @@
 "Product."}) ) );
           }
         } else {
-            productSupported.push( ( React.createElement("div", {"data-advice": "Put your HTML here. productSupported is a Text or" + ' ' +
-"Product."}) ) );
+            productSupported = ( React.createElement("div", {"data-advice": "Put your HTML here. productSupported is a Text or" + ' ' +
+"Product."}) );
         }
       }
       var contactOption;
@@ -55,7 +55,7 @@
         if( this.props.contactOption instanceof Array ){
           contactOption = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.contactOption ){
-            contactOption.push( ( React.createElement(ContactPointOption, {props:  this.props.contactOption}) ) );          }
+            contactOption.push( ( React.createElement(ContactPointOption, React.__spread({},  this.props.contactOption )) ) );          }
         } else {
           contactOption = ( React.createElement(ContactPointOption, {props:  this.props.contactOption}) );        }
       }
@@ -67,7 +67,7 @@
             telephone.push( ( React.createElement("div", {"data-advice": "Put your HTML here. telephone is a Text."}) ) );
           }
         } else {
-            telephone.push( ( React.createElement("div", {"data-advice": "Put your HTML here. telephone is a Text."}) ) );
+            telephone = ( React.createElement("div", {"data-advice": "Put your HTML here. telephone is a Text."}) );
         }
       }
       var faxNumber;
@@ -78,7 +78,7 @@
             faxNumber.push( ( React.createElement("div", {"data-advice": "Put your HTML here. faxNumber is a Text."}) ) );
           }
         } else {
-            faxNumber.push( ( React.createElement("div", {"data-advice": "Put your HTML here. faxNumber is a Text."}) ) );
+            faxNumber = ( React.createElement("div", {"data-advice": "Put your HTML here. faxNumber is a Text."}) );
         }
       }
       var url;
@@ -89,7 +89,7 @@
             url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
           }
         } else {
-            url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
+            url = ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) );
         }
       }
       var hoursAvailable;
@@ -97,7 +97,7 @@
         if( this.props.hoursAvailable instanceof Array ){
           hoursAvailable = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.hoursAvailable ){
-            hoursAvailable.push( ( React.createElement(OpeningHoursSpecification, {props:  this.props.hoursAvailable}) ) );          }
+            hoursAvailable.push( ( React.createElement(OpeningHoursSpecification, React.__spread({},  this.props.hoursAvailable )) ) );          }
         } else {
           hoursAvailable = ( React.createElement(OpeningHoursSpecification, {props:  this.props.hoursAvailable}) );        }
       }
@@ -106,7 +106,7 @@
         if( this.props.areaServed instanceof Array ){
           areaServed = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.areaServed ){
-            areaServed.push( ( React.createElement(AdministrativeArea, {props:  this.props.areaServed}) ) );          }
+            areaServed.push( ( React.createElement(AdministrativeArea, React.__spread({},  this.props.areaServed )) ) );          }
         } else {
           areaServed = ( React.createElement(AdministrativeArea, {props:  this.props.areaServed}) );        }
       }
@@ -118,7 +118,7 @@
             contactType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. contactType is a Text."}) ) );
           }
         } else {
-            contactType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. contactType is a Text."}) ) );
+            contactType = ( React.createElement("div", {"data-advice": "Put your HTML here. contactType is a Text."}) );
         }
       }
       var mainEntityOfPage;
@@ -126,12 +126,12 @@
         if( this.props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.mainEntityOfPage ){
-            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
-"URL."}) ) );
+            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
+"CreativeWork."}) ) );
           }
         } else {
-            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
-"URL."}) ) );
+            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
+"CreativeWork."}) );
         }
       }
       var additionalType;
@@ -142,7 +142,7 @@
             additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
           }
         } else {
-            additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
+            additionalType = ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) );
         }
       }
       var alternateName;
@@ -153,7 +153,7 @@
             alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
           }
         } else {
-            alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
+            alternateName = ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) );
         }
       }
       var image;
@@ -165,8 +165,8 @@
 "ImageObject."}) ) );
           }
         } else {
-            image.push( ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
-"ImageObject."}) ) );
+            image = ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
+"ImageObject."}) );
         }
       }
       var email;
@@ -177,7 +177,7 @@
             email.push( ( React.createElement("div", {"data-advice": "Put your HTML here. email is a Text."}) ) );
           }
         } else {
-            email.push( ( React.createElement("div", {"data-advice": "Put your HTML here. email is a Text."}) ) );
+            email = ( React.createElement("div", {"data-advice": "Put your HTML here. email is a Text."}) );
         }
       }
       var availableLanguage;
@@ -185,7 +185,7 @@
         if( this.props.availableLanguage instanceof Array ){
           availableLanguage = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.availableLanguage ){
-            availableLanguage.push( ( React.createElement(Language, {props:  this.props.availableLanguage}) ) );          }
+            availableLanguage.push( ( React.createElement(Language, React.__spread({},  this.props.availableLanguage )) ) );          }
         } else {
           availableLanguage = ( React.createElement(Language, {props:  this.props.availableLanguage}) );        }
       }
@@ -197,7 +197,7 @@
             name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
           }
         } else {
-            name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
+            name = ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) );
         }
       }
       return (React.createElement("div", {title: "ContactPoint", className: "ContactPoint entity"}, 

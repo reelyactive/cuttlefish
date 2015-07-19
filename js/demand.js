@@ -11,7 +11,7 @@
         if( this.props.warranty instanceof Array ){
           warranty = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.warranty ){
-            warranty.push( ( React.createElement(WarrantyPromise, {props:  this.props.warranty}) ) );          }
+            warranty.push( ( React.createElement(WarrantyPromise, React.__spread({},  this.props.warranty )) ) );          }
         } else {
           warranty = ( React.createElement(WarrantyPromise, {props:  this.props.warranty}) );        }
       }
@@ -21,13 +21,13 @@
           ineligibleRegion = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.ineligibleRegion ){
             ineligibleRegion.push( ( React.createElement("div", {"data-advice": "Put your HTML here. ineligibleRegion is a Text or" + ' ' +
-"Place or" + ' ' +
-"GeoShape."}) ) );
+"GeoShape or" + ' ' +
+"Place."}) ) );
           }
         } else {
-            ineligibleRegion.push( ( React.createElement("div", {"data-advice": "Put your HTML here. ineligibleRegion is a Text or" + ' ' +
-"Place or" + ' ' +
-"GeoShape."}) ) );
+            ineligibleRegion = ( React.createElement("div", {"data-advice": "Put your HTML here. ineligibleRegion is a Text or" + ' ' +
+"GeoShape or" + ' ' +
+"Place."}) );
         }
       }
       var sameAs;
@@ -38,7 +38,7 @@
             sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
           }
         } else {
-            sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
+            sameAs = ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) );
         }
       }
       var eligibleRegion;
@@ -47,13 +47,13 @@
           eligibleRegion = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.eligibleRegion ){
             eligibleRegion.push( ( React.createElement("div", {"data-advice": "Put your HTML here. eligibleRegion is a Text or" + ' ' +
-"Place or" + ' ' +
-"GeoShape."}) ) );
+"GeoShape or" + ' ' +
+"Place."}) ) );
           }
         } else {
-            eligibleRegion.push( ( React.createElement("div", {"data-advice": "Put your HTML here. eligibleRegion is a Text or" + ' ' +
-"Place or" + ' ' +
-"GeoShape."}) ) );
+            eligibleRegion = ( React.createElement("div", {"data-advice": "Put your HTML here. eligibleRegion is a Text or" + ' ' +
+"GeoShape or" + ' ' +
+"Place."}) );
         }
       }
       var businessFunction;
@@ -61,7 +61,7 @@
         if( this.props.businessFunction instanceof Array ){
           businessFunction = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.businessFunction ){
-            businessFunction.push( ( React.createElement(BusinessFunction, {props:  this.props.businessFunction}) ) );          }
+            businessFunction.push( ( React.createElement(BusinessFunction, React.__spread({},  this.props.businessFunction )) ) );          }
         } else {
           businessFunction = ( React.createElement(BusinessFunction, {props:  this.props.businessFunction}) );        }
       }
@@ -70,7 +70,7 @@
         if( this.props.deliveryLeadTime instanceof Array ){
           deliveryLeadTime = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.deliveryLeadTime ){
-            deliveryLeadTime.push( ( React.createElement(QuantitativeValue, {props:  this.props.deliveryLeadTime}) ) );          }
+            deliveryLeadTime.push( ( React.createElement(QuantitativeValue, React.__spread({},  this.props.deliveryLeadTime )) ) );          }
         } else {
           deliveryLeadTime = ( React.createElement(QuantitativeValue, {props:  this.props.deliveryLeadTime}) );        }
       }
@@ -82,7 +82,7 @@
             additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
           }
         } else {
-            additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
+            additionalType = ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) );
         }
       }
       var availability;
@@ -90,7 +90,7 @@
         if( this.props.availability instanceof Array ){
           availability = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.availability ){
-            availability.push( ( React.createElement(ItemAvailability, {props:  this.props.availability}) ) );          }
+            availability.push( ( React.createElement(ItemAvailability, React.__spread({},  this.props.availability )) ) );          }
         } else {
           availability = ( React.createElement(ItemAvailability, {props:  this.props.availability}) );        }
       }
@@ -99,7 +99,7 @@
         if( this.props.inventoryLevel instanceof Array ){
           inventoryLevel = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.inventoryLevel ){
-            inventoryLevel.push( ( React.createElement(QuantitativeValue, {props:  this.props.inventoryLevel}) ) );          }
+            inventoryLevel.push( ( React.createElement(QuantitativeValue, React.__spread({},  this.props.inventoryLevel )) ) );          }
         } else {
           inventoryLevel = ( React.createElement(QuantitativeValue, {props:  this.props.inventoryLevel}) );        }
       }
@@ -108,7 +108,7 @@
         if( this.props.includesObject instanceof Array ){
           includesObject = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.includesObject ){
-            includesObject.push( ( React.createElement(TypeAndQuantityNode, {props:  this.props.includesObject}) ) );          }
+            includesObject.push( ( React.createElement(TypeAndQuantityNode, React.__spread({},  this.props.includesObject )) ) );          }
         } else {
           includesObject = ( React.createElement(TypeAndQuantityNode, {props:  this.props.includesObject}) );        }
       }
@@ -120,7 +120,7 @@
             gtin14.push( ( React.createElement("div", {"data-advice": "Put your HTML here. gtin14 is a Text."}) ) );
           }
         } else {
-            gtin14.push( ( React.createElement("div", {"data-advice": "Put your HTML here. gtin14 is a Text."}) ) );
+            gtin14 = ( React.createElement("div", {"data-advice": "Put your HTML here. gtin14 is a Text."}) );
         }
       }
       var seller;
@@ -132,8 +132,8 @@
 "Organization."}) ) );
           }
         } else {
-            seller.push( ( React.createElement("div", {"data-advice": "Put your HTML here. seller is a Person or" + ' ' +
-"Organization."}) ) );
+            seller = ( React.createElement("div", {"data-advice": "Put your HTML here. seller is a Person or" + ' ' +
+"Organization."}) );
         }
       }
       var availabilityStarts;
@@ -141,7 +141,7 @@
         if( this.props.availabilityStarts instanceof Array ){
           availabilityStarts = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.availabilityStarts ){
-            availabilityStarts.push( ( React.createElement(DateTime, {props:  this.props.availabilityStarts}) ) );          }
+            availabilityStarts.push( ( React.createElement(DateTime, React.__spread({},  this.props.availabilityStarts )) ) );          }
         } else {
           availabilityStarts = ( React.createElement(DateTime, {props:  this.props.availabilityStarts}) );        }
       }
@@ -150,7 +150,7 @@
         if( this.props.eligibleDuration instanceof Array ){
           eligibleDuration = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.eligibleDuration ){
-            eligibleDuration.push( ( React.createElement(QuantitativeValue, {props:  this.props.eligibleDuration}) ) );          }
+            eligibleDuration.push( ( React.createElement(QuantitativeValue, React.__spread({},  this.props.eligibleDuration )) ) );          }
         } else {
           eligibleDuration = ( React.createElement(QuantitativeValue, {props:  this.props.eligibleDuration}) );        }
       }
@@ -163,8 +163,8 @@
 "CreativeWork."}) ) );
           }
         } else {
-            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
-"CreativeWork."}) ) );
+            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
+"CreativeWork."}) );
         }
       }
       var image;
@@ -176,8 +176,8 @@
 "ImageObject."}) ) );
           }
         } else {
-            image.push( ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
-"ImageObject."}) ) );
+            image = ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
+"ImageObject."}) );
         }
       }
       var itemOffered;
@@ -185,7 +185,7 @@
         if( this.props.itemOffered instanceof Array ){
           itemOffered = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.itemOffered ){
-            itemOffered.push( ( React.createElement(Product, {props:  this.props.itemOffered}) ) );          }
+            itemOffered.push( ( React.createElement(Product, React.__spread({},  this.props.itemOffered )) ) );          }
         } else {
           itemOffered = ( React.createElement(Product, {props:  this.props.itemOffered}) );        }
       }
@@ -197,7 +197,7 @@
             sku.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sku is a Text."}) ) );
           }
         } else {
-            sku.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sku is a Text."}) ) );
+            sku = ( React.createElement("div", {"data-advice": "Put your HTML here. sku is a Text."}) );
         }
       }
       var availableAtOrFrom;
@@ -205,7 +205,7 @@
         if( this.props.availableAtOrFrom instanceof Array ){
           availableAtOrFrom = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.availableAtOrFrom ){
-            availableAtOrFrom.push( ( React.createElement(Place, {props:  this.props.availableAtOrFrom}) ) );          }
+            availableAtOrFrom.push( ( React.createElement(Place, React.__spread({},  this.props.availableAtOrFrom )) ) );          }
         } else {
           availableAtOrFrom = ( React.createElement(Place, {props:  this.props.availableAtOrFrom}) );        }
       }
@@ -217,7 +217,7 @@
             description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
           }
         } else {
-            description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
+            description = ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) );
         }
       }
       var mpn;
@@ -228,7 +228,7 @@
             mpn.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mpn is a Text."}) ) );
           }
         } else {
-            mpn.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mpn is a Text."}) ) );
+            mpn = ( React.createElement("div", {"data-advice": "Put your HTML here. mpn is a Text."}) );
         }
       }
       var eligibleCustomerType;
@@ -236,7 +236,7 @@
         if( this.props.eligibleCustomerType instanceof Array ){
           eligibleCustomerType = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.eligibleCustomerType ){
-            eligibleCustomerType.push( ( React.createElement(BusinessEntityType, {props:  this.props.eligibleCustomerType}) ) );          }
+            eligibleCustomerType.push( ( React.createElement(BusinessEntityType, React.__spread({},  this.props.eligibleCustomerType )) ) );          }
         } else {
           eligibleCustomerType = ( React.createElement(BusinessEntityType, {props:  this.props.eligibleCustomerType}) );        }
       }
@@ -245,7 +245,7 @@
         if( this.props.priceSpecification instanceof Array ){
           priceSpecification = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.priceSpecification ){
-            priceSpecification.push( ( React.createElement(PriceSpecification, {props:  this.props.priceSpecification}) ) );          }
+            priceSpecification.push( ( React.createElement(PriceSpecification, React.__spread({},  this.props.priceSpecification )) ) );          }
         } else {
           priceSpecification = ( React.createElement(PriceSpecification, {props:  this.props.priceSpecification}) );        }
       }
@@ -254,7 +254,7 @@
         if( this.props.acceptedPaymentMethod instanceof Array ){
           acceptedPaymentMethod = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.acceptedPaymentMethod ){
-            acceptedPaymentMethod.push( ( React.createElement(PaymentMethod, {props:  this.props.acceptedPaymentMethod}) ) );          }
+            acceptedPaymentMethod.push( ( React.createElement(PaymentMethod, React.__spread({},  this.props.acceptedPaymentMethod )) ) );          }
         } else {
           acceptedPaymentMethod = ( React.createElement(PaymentMethod, {props:  this.props.acceptedPaymentMethod}) );        }
       }
@@ -263,7 +263,7 @@
         if( this.props.eligibleTransactionVolume instanceof Array ){
           eligibleTransactionVolume = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.eligibleTransactionVolume ){
-            eligibleTransactionVolume.push( ( React.createElement(PriceSpecification, {props:  this.props.eligibleTransactionVolume}) ) );          }
+            eligibleTransactionVolume.push( ( React.createElement(PriceSpecification, React.__spread({},  this.props.eligibleTransactionVolume )) ) );          }
         } else {
           eligibleTransactionVolume = ( React.createElement(PriceSpecification, {props:  this.props.eligibleTransactionVolume}) );        }
       }
@@ -275,7 +275,7 @@
             gtin8.push( ( React.createElement("div", {"data-advice": "Put your HTML here. gtin8 is a Text."}) ) );
           }
         } else {
-            gtin8.push( ( React.createElement("div", {"data-advice": "Put your HTML here. gtin8 is a Text."}) ) );
+            gtin8 = ( React.createElement("div", {"data-advice": "Put your HTML here. gtin8 is a Text."}) );
         }
       }
       var eligibleQuantity;
@@ -283,7 +283,7 @@
         if( this.props.eligibleQuantity instanceof Array ){
           eligibleQuantity = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.eligibleQuantity ){
-            eligibleQuantity.push( ( React.createElement(QuantitativeValue, {props:  this.props.eligibleQuantity}) ) );          }
+            eligibleQuantity.push( ( React.createElement(QuantitativeValue, React.__spread({},  this.props.eligibleQuantity )) ) );          }
         } else {
           eligibleQuantity = ( React.createElement(QuantitativeValue, {props:  this.props.eligibleQuantity}) );        }
       }
@@ -292,7 +292,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( React.createElement(Action, {props:  this.props.potentialAction}) ) );          }
+            potentialAction.push( ( React.createElement(Action, React.__spread({},  this.props.potentialAction )) ) );          }
         } else {
           potentialAction = ( React.createElement(Action, {props:  this.props.potentialAction}) );        }
       }
@@ -301,7 +301,7 @@
         if( this.props.itemCondition instanceof Array ){
           itemCondition = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.itemCondition ){
-            itemCondition.push( ( React.createElement(OfferItemCondition, {props:  this.props.itemCondition}) ) );          }
+            itemCondition.push( ( React.createElement(OfferItemCondition, React.__spread({},  this.props.itemCondition )) ) );          }
         } else {
           itemCondition = ( React.createElement(OfferItemCondition, {props:  this.props.itemCondition}) );        }
       }
@@ -313,7 +313,7 @@
             alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
           }
         } else {
-            alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
+            alternateName = ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) );
         }
       }
       var availabilityEnds;
@@ -321,7 +321,7 @@
         if( this.props.availabilityEnds instanceof Array ){
           availabilityEnds = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.availabilityEnds ){
-            availabilityEnds.push( ( React.createElement(DateTime, {props:  this.props.availabilityEnds}) ) );          }
+            availabilityEnds.push( ( React.createElement(DateTime, React.__spread({},  this.props.availabilityEnds )) ) );          }
         } else {
           availabilityEnds = ( React.createElement(DateTime, {props:  this.props.availabilityEnds}) );        }
       }
@@ -333,7 +333,7 @@
             name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
           }
         } else {
-            name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
+            name = ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) );
         }
       }
       var url;
@@ -344,7 +344,7 @@
             url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
           }
         } else {
-            url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
+            url = ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) );
         }
       }
       var serialNumber;
@@ -355,7 +355,7 @@
             serialNumber.push( ( React.createElement("div", {"data-advice": "Put your HTML here. serialNumber is a Text."}) ) );
           }
         } else {
-            serialNumber.push( ( React.createElement("div", {"data-advice": "Put your HTML here. serialNumber is a Text."}) ) );
+            serialNumber = ( React.createElement("div", {"data-advice": "Put your HTML here. serialNumber is a Text."}) );
         }
       }
       var availableDeliveryMethod;
@@ -363,7 +363,7 @@
         if( this.props.availableDeliveryMethod instanceof Array ){
           availableDeliveryMethod = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.availableDeliveryMethod ){
-            availableDeliveryMethod.push( ( React.createElement(DeliveryMethod, {props:  this.props.availableDeliveryMethod}) ) );          }
+            availableDeliveryMethod.push( ( React.createElement(DeliveryMethod, React.__spread({},  this.props.availableDeliveryMethod )) ) );          }
         } else {
           availableDeliveryMethod = ( React.createElement(DeliveryMethod, {props:  this.props.availableDeliveryMethod}) );        }
       }
@@ -372,7 +372,7 @@
         if( this.props.advanceBookingRequirement instanceof Array ){
           advanceBookingRequirement = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.advanceBookingRequirement ){
-            advanceBookingRequirement.push( ( React.createElement(QuantitativeValue, {props:  this.props.advanceBookingRequirement}) ) );          }
+            advanceBookingRequirement.push( ( React.createElement(QuantitativeValue, React.__spread({},  this.props.advanceBookingRequirement )) ) );          }
         } else {
           advanceBookingRequirement = ( React.createElement(QuantitativeValue, {props:  this.props.advanceBookingRequirement}) );        }
       }
@@ -384,7 +384,7 @@
             gtin13.push( ( React.createElement("div", {"data-advice": "Put your HTML here. gtin13 is a Text."}) ) );
           }
         } else {
-            gtin13.push( ( React.createElement("div", {"data-advice": "Put your HTML here. gtin13 is a Text."}) ) );
+            gtin13 = ( React.createElement("div", {"data-advice": "Put your HTML here. gtin13 is a Text."}) );
         }
       }
       var gtin12;
@@ -395,7 +395,7 @@
             gtin12.push( ( React.createElement("div", {"data-advice": "Put your HTML here. gtin12 is a Text."}) ) );
           }
         } else {
-            gtin12.push( ( React.createElement("div", {"data-advice": "Put your HTML here. gtin12 is a Text."}) ) );
+            gtin12 = ( React.createElement("div", {"data-advice": "Put your HTML here. gtin12 is a Text."}) );
         }
       }
       var validFrom;
@@ -403,7 +403,7 @@
         if( this.props.validFrom instanceof Array ){
           validFrom = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.validFrom ){
-            validFrom.push( ( React.createElement(DateTime, {props:  this.props.validFrom}) ) );          }
+            validFrom.push( ( React.createElement(DateTime, React.__spread({},  this.props.validFrom )) ) );          }
         } else {
           validFrom = ( React.createElement(DateTime, {props:  this.props.validFrom}) );        }
       }
@@ -412,7 +412,7 @@
         if( this.props.validThrough instanceof Array ){
           validThrough = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.validThrough ){
-            validThrough.push( ( React.createElement(DateTime, {props:  this.props.validThrough}) ) );          }
+            validThrough.push( ( React.createElement(DateTime, React.__spread({},  this.props.validThrough )) ) );          }
         } else {
           validThrough = ( React.createElement(DateTime, {props:  this.props.validThrough}) );        }
       }

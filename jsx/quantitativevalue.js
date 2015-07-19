@@ -11,7 +11,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action props={ this.props.potentialAction } /> ) );          }
+            potentialAction.push( ( <Action {...this.props.potentialAction } /> ) );          }
         } else {
           potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
       }
@@ -27,11 +27,11 @@ QuantitativeValue or
 QualitativeValue.'></div> ) );
           }
         } else {
-            valueReference.push( ( <div data-advice='Put your HTML here. valueReference is a Enumeration or
+            valueReference = ( <div data-advice='Put your HTML here. valueReference is a Enumeration or
 StructuredValue or
 PropertyValue or
 QuantitativeValue or
-QualitativeValue.'></div> ) );
+QualitativeValue.'></div> );
         }
       }
       var description;
@@ -42,7 +42,7 @@ QualitativeValue.'></div> ) );
             description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {
-            description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
+            description = ( <div data-advice='Put your HTML here. description is a Text.'></div> );
         }
       }
       var sameAs;
@@ -53,7 +53,7 @@ QualitativeValue.'></div> ) );
             sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
-            sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
+            sameAs = ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> );
         }
       }
       var image;
@@ -65,8 +65,8 @@ QualitativeValue.'></div> ) );
 ImageObject.'></div> ) );
           }
         } else {
-            image.push( ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> ) );
+            image = ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> );
         }
       }
       var maxValue;
@@ -77,7 +77,7 @@ ImageObject.'></div> ) );
             maxValue.push( ( <div data-advice='Put your HTML here. maxValue is a Number.'></div> ) );
           }
         } else {
-            maxValue.push( ( <div data-advice='Put your HTML here. maxValue is a Number.'></div> ) );
+            maxValue = ( <div data-advice='Put your HTML here. maxValue is a Number.'></div> );
         }
       }
       var value;
@@ -85,16 +85,16 @@ ImageObject.'></div> ) );
         if( this.props.value instanceof Array ){
           value = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.value ){
-            value.push( ( <div data-advice='Put your HTML here. value is a Number or
-StructuredValue or
-Boolean or
-Text.'></div> ) );
+            value.push( ( <div data-advice='Put your HTML here. value is a Boolean or
+Number or
+Text or
+StructuredValue.'></div> ) );
           }
         } else {
-            value.push( ( <div data-advice='Put your HTML here. value is a Number or
-StructuredValue or
-Boolean or
-Text.'></div> ) );
+            value = ( <div data-advice='Put your HTML here. value is a Boolean or
+Number or
+Text or
+StructuredValue.'></div> );
         }
       }
       var minValue;
@@ -105,7 +105,7 @@ Text.'></div> ) );
             minValue.push( ( <div data-advice='Put your HTML here. minValue is a Number.'></div> ) );
           }
         } else {
-            minValue.push( ( <div data-advice='Put your HTML here. minValue is a Number.'></div> ) );
+            minValue = ( <div data-advice='Put your HTML here. minValue is a Number.'></div> );
         }
       }
       var additionalType;
@@ -116,7 +116,7 @@ Text.'></div> ) );
             additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
-            additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
+            additionalType = ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> );
         }
       }
       var url;
@@ -127,7 +127,7 @@ Text.'></div> ) );
             url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
-            url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
+            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
         }
       }
       var additionalProperty;
@@ -135,7 +135,7 @@ Text.'></div> ) );
         if( this.props.additionalProperty instanceof Array ){
           additionalProperty = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.additionalProperty ){
-            additionalProperty.push( ( <PropertyValue props={ this.props.additionalProperty } /> ) );          }
+            additionalProperty.push( ( <PropertyValue {...this.props.additionalProperty } /> ) );          }
         } else {
           additionalProperty = ( <PropertyValue props={ this.props.additionalProperty } /> );        }
       }
@@ -147,7 +147,7 @@ Text.'></div> ) );
             unitText.push( ( <div data-advice='Put your HTML here. unitText is a Text.'></div> ) );
           }
         } else {
-            unitText.push( ( <div data-advice='Put your HTML here. unitText is a Text.'></div> ) );
+            unitText = ( <div data-advice='Put your HTML here. unitText is a Text.'></div> );
         }
       }
       var mainEntityOfPage;
@@ -159,8 +159,8 @@ Text.'></div> ) );
 URL.'></div> ) );
           }
         } else {
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> ) );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
+URL.'></div> );
         }
       }
       var unitCode;
@@ -172,8 +172,8 @@ URL.'></div> ) );
 Text.'></div> ) );
           }
         } else {
-            unitCode.push( ( <div data-advice='Put your HTML here. unitCode is a URL or
-Text.'></div> ) );
+            unitCode = ( <div data-advice='Put your HTML here. unitCode is a URL or
+Text.'></div> );
         }
       }
       var alternateName;
@@ -184,7 +184,7 @@ Text.'></div> ) );
             alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
-            alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
+            alternateName = ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> );
         }
       }
       var name;
@@ -195,7 +195,7 @@ Text.'></div> ) );
             name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {
-            name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
+            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
       }
       return (<div title='QuantitativeValue' className='QuantitativeValue entity'>

@@ -14,7 +14,7 @@
             sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
-            sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
+            sameAs = ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> );
         }
       }
       var image;
@@ -26,8 +26,8 @@
 ImageObject.'></div> ) );
           }
         } else {
-            image.push( ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> ) );
+            image = ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> );
         }
       }
       var telephone;
@@ -38,7 +38,7 @@ ImageObject.'></div> ) );
             telephone.push( ( <div data-advice='Put your HTML here. telephone is a Text.'></div> ) );
           }
         } else {
-            telephone.push( ( <div data-advice='Put your HTML here. telephone is a Text.'></div> ) );
+            telephone = ( <div data-advice='Put your HTML here. telephone is a Text.'></div> );
         }
       }
       var faxNumber;
@@ -49,7 +49,7 @@ ImageObject.'></div> ) );
             faxNumber.push( ( <div data-advice='Put your HTML here. faxNumber is a Text.'></div> ) );
           }
         } else {
-            faxNumber.push( ( <div data-advice='Put your HTML here. faxNumber is a Text.'></div> ) );
+            faxNumber = ( <div data-advice='Put your HTML here. faxNumber is a Text.'></div> );
         }
       }
       var addressLocality;
@@ -60,7 +60,7 @@ ImageObject.'></div> ) );
             addressLocality.push( ( <div data-advice='Put your HTML here. addressLocality is a Text.'></div> ) );
           }
         } else {
-            addressLocality.push( ( <div data-advice='Put your HTML here. addressLocality is a Text.'></div> ) );
+            addressLocality = ( <div data-advice='Put your HTML here. addressLocality is a Text.'></div> );
         }
       }
       var contactType;
@@ -71,7 +71,7 @@ ImageObject.'></div> ) );
             contactType.push( ( <div data-advice='Put your HTML here. contactType is a Text.'></div> ) );
           }
         } else {
-            contactType.push( ( <div data-advice='Put your HTML here. contactType is a Text.'></div> ) );
+            contactType = ( <div data-advice='Put your HTML here. contactType is a Text.'></div> );
         }
       }
       var additionalType;
@@ -82,7 +82,7 @@ ImageObject.'></div> ) );
             additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
-            additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
+            additionalType = ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> );
         }
       }
       var availableLanguage;
@@ -90,7 +90,7 @@ ImageObject.'></div> ) );
         if( this.props.availableLanguage instanceof Array ){
           availableLanguage = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.availableLanguage ){
-            availableLanguage.push( ( <Language props={ this.props.availableLanguage } /> ) );          }
+            availableLanguage.push( ( <Language {...this.props.availableLanguage } /> ) );          }
         } else {
           availableLanguage = ( <Language props={ this.props.availableLanguage } /> );        }
       }
@@ -102,7 +102,7 @@ ImageObject.'></div> ) );
             postOfficeBoxNumber.push( ( <div data-advice='Put your HTML here. postOfficeBoxNumber is a Text.'></div> ) );
           }
         } else {
-            postOfficeBoxNumber.push( ( <div data-advice='Put your HTML here. postOfficeBoxNumber is a Text.'></div> ) );
+            postOfficeBoxNumber = ( <div data-advice='Put your HTML here. postOfficeBoxNumber is a Text.'></div> );
         }
       }
       var productSupported;
@@ -114,8 +114,8 @@ ImageObject.'></div> ) );
 Product.'></div> ) );
           }
         } else {
-            productSupported.push( ( <div data-advice='Put your HTML here. productSupported is a Text or
-Product.'></div> ) );
+            productSupported = ( <div data-advice='Put your HTML here. productSupported is a Text or
+Product.'></div> );
         }
       }
       var contactOption;
@@ -123,7 +123,7 @@ Product.'></div> ) );
         if( this.props.contactOption instanceof Array ){
           contactOption = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.contactOption ){
-            contactOption.push( ( <ContactPointOption props={ this.props.contactOption } /> ) );          }
+            contactOption.push( ( <ContactPointOption {...this.props.contactOption } /> ) );          }
         } else {
           contactOption = ( <ContactPointOption props={ this.props.contactOption } /> );        }
       }
@@ -132,7 +132,7 @@ Product.'></div> ) );
         if( this.props.addressCountry instanceof Array ){
           addressCountry = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.addressCountry ){
-            addressCountry.push( ( <Country props={ this.props.addressCountry } /> ) );          }
+            addressCountry.push( ( <Country {...this.props.addressCountry } /> ) );          }
         } else {
           addressCountry = ( <Country props={ this.props.addressCountry } /> );        }
       }
@@ -144,7 +144,7 @@ Product.'></div> ) );
             streetAddress.push( ( <div data-advice='Put your HTML here. streetAddress is a Text.'></div> ) );
           }
         } else {
-            streetAddress.push( ( <div data-advice='Put your HTML here. streetAddress is a Text.'></div> ) );
+            streetAddress = ( <div data-advice='Put your HTML here. streetAddress is a Text.'></div> );
         }
       }
       var mainEntityOfPage;
@@ -156,8 +156,8 @@ Product.'></div> ) );
 CreativeWork.'></div> ) );
           }
         } else {
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
-CreativeWork.'></div> ) );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> );
         }
       }
       var email;
@@ -168,7 +168,7 @@ CreativeWork.'></div> ) );
             email.push( ( <div data-advice='Put your HTML here. email is a Text.'></div> ) );
           }
         } else {
-            email.push( ( <div data-advice='Put your HTML here. email is a Text.'></div> ) );
+            email = ( <div data-advice='Put your HTML here. email is a Text.'></div> );
         }
       }
       var description;
@@ -179,7 +179,7 @@ CreativeWork.'></div> ) );
             description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {
-            description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
+            description = ( <div data-advice='Put your HTML here. description is a Text.'></div> );
         }
       }
       var postalCode;
@@ -190,7 +190,7 @@ CreativeWork.'></div> ) );
             postalCode.push( ( <div data-advice='Put your HTML here. postalCode is a Text.'></div> ) );
           }
         } else {
-            postalCode.push( ( <div data-advice='Put your HTML here. postalCode is a Text.'></div> ) );
+            postalCode = ( <div data-advice='Put your HTML here. postalCode is a Text.'></div> );
         }
       }
       var hoursAvailable;
@@ -198,7 +198,7 @@ CreativeWork.'></div> ) );
         if( this.props.hoursAvailable instanceof Array ){
           hoursAvailable = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.hoursAvailable ){
-            hoursAvailable.push( ( <OpeningHoursSpecification props={ this.props.hoursAvailable } /> ) );          }
+            hoursAvailable.push( ( <OpeningHoursSpecification {...this.props.hoursAvailable } /> ) );          }
         } else {
           hoursAvailable = ( <OpeningHoursSpecification props={ this.props.hoursAvailable } /> );        }
       }
@@ -210,7 +210,7 @@ CreativeWork.'></div> ) );
             alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
-            alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
+            alternateName = ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> );
         }
       }
       var potentialAction;
@@ -218,7 +218,7 @@ CreativeWork.'></div> ) );
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action props={ this.props.potentialAction } /> ) );          }
+            potentialAction.push( ( <Action {...this.props.potentialAction } /> ) );          }
         } else {
           potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
       }
@@ -230,7 +230,7 @@ CreativeWork.'></div> ) );
             name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {
-            name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
+            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
       }
       var url;
@@ -241,7 +241,7 @@ CreativeWork.'></div> ) );
             url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
-            url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
+            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
         }
       }
       var addressRegion;
@@ -252,7 +252,7 @@ CreativeWork.'></div> ) );
             addressRegion.push( ( <div data-advice='Put your HTML here. addressRegion is a Text.'></div> ) );
           }
         } else {
-            addressRegion.push( ( <div data-advice='Put your HTML here. addressRegion is a Text.'></div> ) );
+            addressRegion = ( <div data-advice='Put your HTML here. addressRegion is a Text.'></div> );
         }
       }
       var areaServed;
@@ -260,7 +260,7 @@ CreativeWork.'></div> ) );
         if( this.props.areaServed instanceof Array ){
           areaServed = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.areaServed ){
-            areaServed.push( ( <AdministrativeArea props={ this.props.areaServed } /> ) );          }
+            areaServed.push( ( <AdministrativeArea {...this.props.areaServed } /> ) );          }
         } else {
           areaServed = ( <AdministrativeArea props={ this.props.areaServed } /> );        }
       }

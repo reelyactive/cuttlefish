@@ -11,7 +11,7 @@
         if( this.props.reviewCount instanceof Array ){
           reviewCount = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.reviewCount ){
-            reviewCount.push( ( <Integer props={ this.props.reviewCount } /> ) );          }
+            reviewCount.push( ( <Integer {...this.props.reviewCount } /> ) );          }
         } else {
           reviewCount = ( <Integer props={ this.props.reviewCount } /> );        }
       }
@@ -20,7 +20,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action props={ this.props.potentialAction } /> ) );          }
+            potentialAction.push( ( <Action {...this.props.potentialAction } /> ) );          }
         } else {
           potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
       }
@@ -32,7 +32,7 @@
             description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {
-            description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
+            description = ( <div data-advice='Put your HTML here. description is a Text.'></div> );
         }
       }
       var name;
@@ -43,7 +43,7 @@
             name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {
-            name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
+            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
       }
       var sameAs;
@@ -54,7 +54,7 @@
             sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
-            sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
+            sameAs = ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> );
         }
       }
       var image;
@@ -66,8 +66,8 @@
 ImageObject.'></div> ) );
           }
         } else {
-            image.push( ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> ) );
+            image = ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> );
         }
       }
       var bestRating;
@@ -79,8 +79,8 @@ ImageObject.'></div> ) );
 Number.'></div> ) );
           }
         } else {
-            bestRating.push( ( <div data-advice='Put your HTML here. bestRating is a Text or
-Number.'></div> ) );
+            bestRating = ( <div data-advice='Put your HTML here. bestRating is a Text or
+Number.'></div> );
         }
       }
       var url;
@@ -91,7 +91,7 @@ Number.'></div> ) );
             url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
-            url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
+            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
         }
       }
       var worstRating;
@@ -103,8 +103,8 @@ Number.'></div> ) );
 Number.'></div> ) );
           }
         } else {
-            worstRating.push( ( <div data-advice='Put your HTML here. worstRating is a Text or
-Number.'></div> ) );
+            worstRating = ( <div data-advice='Put your HTML here. worstRating is a Text or
+Number.'></div> );
         }
       }
       var ratingCount;
@@ -112,7 +112,7 @@ Number.'></div> ) );
         if( this.props.ratingCount instanceof Array ){
           ratingCount = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.ratingCount ){
-            ratingCount.push( ( <Integer props={ this.props.ratingCount } /> ) );          }
+            ratingCount.push( ( <Integer {...this.props.ratingCount } /> ) );          }
         } else {
           ratingCount = ( <Integer props={ this.props.ratingCount } /> );        }
       }
@@ -125,8 +125,8 @@ Number.'></div> ) );
 CreativeWork.'></div> ) );
           }
         } else {
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
-CreativeWork.'></div> ) );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> );
         }
       }
       var additionalType;
@@ -137,7 +137,7 @@ CreativeWork.'></div> ) );
             additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
-            additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
+            additionalType = ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> );
         }
       }
       var alternateName;
@@ -148,7 +148,7 @@ CreativeWork.'></div> ) );
             alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
-            alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
+            alternateName = ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> );
         }
       }
       var itemReviewed;
@@ -156,7 +156,7 @@ CreativeWork.'></div> ) );
         if( this.props.itemReviewed instanceof Array ){
           itemReviewed = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.itemReviewed ){
-            itemReviewed.push( ( <Thing props={ this.props.itemReviewed } /> ) );          }
+            itemReviewed.push( ( <Thing {...this.props.itemReviewed } /> ) );          }
         } else {
           itemReviewed = ( <Thing props={ this.props.itemReviewed } /> );        }
       }
@@ -168,7 +168,7 @@ CreativeWork.'></div> ) );
             ratingValue.push( ( <div data-advice='Put your HTML here. ratingValue is a Text.'></div> ) );
           }
         } else {
-            ratingValue.push( ( <div data-advice='Put your HTML here. ratingValue is a Text.'></div> ) );
+            ratingValue = ( <div data-advice='Put your HTML here. ratingValue is a Text.'></div> );
         }
       }
       return (<div title='AggregateRating' className='AggregateRating entity'>

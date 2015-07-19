@@ -14,7 +14,7 @@
             alignmentType.push( ( <div data-advice='Put your HTML here. alignmentType is a Text.'></div> ) );
           }
         } else {
-            alignmentType.push( ( <div data-advice='Put your HTML here. alignmentType is a Text.'></div> ) );
+            alignmentType = ( <div data-advice='Put your HTML here. alignmentType is a Text.'></div> );
         }
       }
       var potentialAction;
@@ -22,7 +22,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action props={ this.props.potentialAction } /> ) );          }
+            potentialAction.push( ( <Action {...this.props.potentialAction } /> ) );          }
         } else {
           potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
       }
@@ -34,7 +34,7 @@
             description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {
-            description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
+            description = ( <div data-advice='Put your HTML here. description is a Text.'></div> );
         }
       }
       var sameAs;
@@ -45,7 +45,7 @@
             sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
-            sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
+            sameAs = ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> );
         }
       }
       var image;
@@ -57,8 +57,8 @@
 ImageObject.'></div> ) );
           }
         } else {
-            image.push( ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> ) );
+            image = ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> );
         }
       }
       var educationalFramework;
@@ -69,7 +69,7 @@ ImageObject.'></div> ) );
             educationalFramework.push( ( <div data-advice='Put your HTML here. educationalFramework is a Text.'></div> ) );
           }
         } else {
-            educationalFramework.push( ( <div data-advice='Put your HTML here. educationalFramework is a Text.'></div> ) );
+            educationalFramework = ( <div data-advice='Put your HTML here. educationalFramework is a Text.'></div> );
         }
       }
       var url;
@@ -80,7 +80,7 @@ ImageObject.'></div> ) );
             url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
-            url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
+            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
         }
       }
       var targetUrl;
@@ -91,7 +91,7 @@ ImageObject.'></div> ) );
             targetUrl.push( ( <div data-advice='Put your HTML here. targetUrl is a URL.'></div> ) );
           }
         } else {
-            targetUrl.push( ( <div data-advice='Put your HTML here. targetUrl is a URL.'></div> ) );
+            targetUrl = ( <div data-advice='Put your HTML here. targetUrl is a URL.'></div> );
         }
       }
       var mainEntityOfPage;
@@ -103,8 +103,8 @@ ImageObject.'></div> ) );
 URL.'></div> ) );
           }
         } else {
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> ) );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
+URL.'></div> );
         }
       }
       var additionalType;
@@ -115,7 +115,7 @@ URL.'></div> ) );
             additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
-            additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
+            additionalType = ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> );
         }
       }
       var alternateName;
@@ -126,7 +126,7 @@ URL.'></div> ) );
             alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
-            alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
+            alternateName = ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> );
         }
       }
       var targetName;
@@ -137,7 +137,7 @@ URL.'></div> ) );
             targetName.push( ( <div data-advice='Put your HTML here. targetName is a Text.'></div> ) );
           }
         } else {
-            targetName.push( ( <div data-advice='Put your HTML here. targetName is a Text.'></div> ) );
+            targetName = ( <div data-advice='Put your HTML here. targetName is a Text.'></div> );
         }
       }
       var targetDescription;
@@ -148,7 +148,7 @@ URL.'></div> ) );
             targetDescription.push( ( <div data-advice='Put your HTML here. targetDescription is a Text.'></div> ) );
           }
         } else {
-            targetDescription.push( ( <div data-advice='Put your HTML here. targetDescription is a Text.'></div> ) );
+            targetDescription = ( <div data-advice='Put your HTML here. targetDescription is a Text.'></div> );
         }
       }
       var name;
@@ -159,7 +159,7 @@ URL.'></div> ) );
             name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {
-            name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
+            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
       }
       return (<div title='AlignmentObject' className='AlignmentObject entity'>

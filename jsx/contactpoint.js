@@ -11,7 +11,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action props={ this.props.potentialAction } /> ) );          }
+            potentialAction.push( ( <Action {...this.props.potentialAction } /> ) );          }
         } else {
           potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
       }
@@ -23,7 +23,7 @@
             description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {
-            description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
+            description = ( <div data-advice='Put your HTML here. description is a Text.'></div> );
         }
       }
       var sameAs;
@@ -34,7 +34,7 @@
             sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
-            sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
+            sameAs = ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> );
         }
       }
       var productSupported;
@@ -46,8 +46,8 @@
 Product.'></div> ) );
           }
         } else {
-            productSupported.push( ( <div data-advice='Put your HTML here. productSupported is a Text or
-Product.'></div> ) );
+            productSupported = ( <div data-advice='Put your HTML here. productSupported is a Text or
+Product.'></div> );
         }
       }
       var contactOption;
@@ -55,7 +55,7 @@ Product.'></div> ) );
         if( this.props.contactOption instanceof Array ){
           contactOption = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.contactOption ){
-            contactOption.push( ( <ContactPointOption props={ this.props.contactOption } /> ) );          }
+            contactOption.push( ( <ContactPointOption {...this.props.contactOption } /> ) );          }
         } else {
           contactOption = ( <ContactPointOption props={ this.props.contactOption } /> );        }
       }
@@ -67,7 +67,7 @@ Product.'></div> ) );
             telephone.push( ( <div data-advice='Put your HTML here. telephone is a Text.'></div> ) );
           }
         } else {
-            telephone.push( ( <div data-advice='Put your HTML here. telephone is a Text.'></div> ) );
+            telephone = ( <div data-advice='Put your HTML here. telephone is a Text.'></div> );
         }
       }
       var faxNumber;
@@ -78,7 +78,7 @@ Product.'></div> ) );
             faxNumber.push( ( <div data-advice='Put your HTML here. faxNumber is a Text.'></div> ) );
           }
         } else {
-            faxNumber.push( ( <div data-advice='Put your HTML here. faxNumber is a Text.'></div> ) );
+            faxNumber = ( <div data-advice='Put your HTML here. faxNumber is a Text.'></div> );
         }
       }
       var url;
@@ -89,7 +89,7 @@ Product.'></div> ) );
             url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
-            url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
+            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
         }
       }
       var hoursAvailable;
@@ -97,7 +97,7 @@ Product.'></div> ) );
         if( this.props.hoursAvailable instanceof Array ){
           hoursAvailable = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.hoursAvailable ){
-            hoursAvailable.push( ( <OpeningHoursSpecification props={ this.props.hoursAvailable } /> ) );          }
+            hoursAvailable.push( ( <OpeningHoursSpecification {...this.props.hoursAvailable } /> ) );          }
         } else {
           hoursAvailable = ( <OpeningHoursSpecification props={ this.props.hoursAvailable } /> );        }
       }
@@ -106,7 +106,7 @@ Product.'></div> ) );
         if( this.props.areaServed instanceof Array ){
           areaServed = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.areaServed ){
-            areaServed.push( ( <AdministrativeArea props={ this.props.areaServed } /> ) );          }
+            areaServed.push( ( <AdministrativeArea {...this.props.areaServed } /> ) );          }
         } else {
           areaServed = ( <AdministrativeArea props={ this.props.areaServed } /> );        }
       }
@@ -118,7 +118,7 @@ Product.'></div> ) );
             contactType.push( ( <div data-advice='Put your HTML here. contactType is a Text.'></div> ) );
           }
         } else {
-            contactType.push( ( <div data-advice='Put your HTML here. contactType is a Text.'></div> ) );
+            contactType = ( <div data-advice='Put your HTML here. contactType is a Text.'></div> );
         }
       }
       var mainEntityOfPage;
@@ -126,12 +126,12 @@ Product.'></div> ) );
         if( this.props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.mainEntityOfPage ){
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> ) );
+            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> ) );
           }
         } else {
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> ) );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> );
         }
       }
       var additionalType;
@@ -142,7 +142,7 @@ URL.'></div> ) );
             additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
-            additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
+            additionalType = ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> );
         }
       }
       var alternateName;
@@ -153,7 +153,7 @@ URL.'></div> ) );
             alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
-            alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
+            alternateName = ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> );
         }
       }
       var image;
@@ -165,8 +165,8 @@ URL.'></div> ) );
 ImageObject.'></div> ) );
           }
         } else {
-            image.push( ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> ) );
+            image = ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> );
         }
       }
       var email;
@@ -177,7 +177,7 @@ ImageObject.'></div> ) );
             email.push( ( <div data-advice='Put your HTML here. email is a Text.'></div> ) );
           }
         } else {
-            email.push( ( <div data-advice='Put your HTML here. email is a Text.'></div> ) );
+            email = ( <div data-advice='Put your HTML here. email is a Text.'></div> );
         }
       }
       var availableLanguage;
@@ -185,7 +185,7 @@ ImageObject.'></div> ) );
         if( this.props.availableLanguage instanceof Array ){
           availableLanguage = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.availableLanguage ){
-            availableLanguage.push( ( <Language props={ this.props.availableLanguage } /> ) );          }
+            availableLanguage.push( ( <Language {...this.props.availableLanguage } /> ) );          }
         } else {
           availableLanguage = ( <Language props={ this.props.availableLanguage } /> );        }
       }
@@ -197,7 +197,7 @@ ImageObject.'></div> ) );
             name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {
-            name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
+            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
       }
       return (<div title='ContactPoint' className='ContactPoint entity'>
