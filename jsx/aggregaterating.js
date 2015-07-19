@@ -10,28 +10,33 @@
       var reviewCount;
       if( props.reviewCount ){
         if( props.reviewCount instanceof Array ){
-          reviewCount = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in props.reviewCount ){
-            reviewCount.push( ( <Integer {...props.reviewCount } /> ) );          }
+          reviewCount = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          reviewCount = reviewCount.concat( props.reviewCount.map( function(result, index){
+              return ( <Integer {...result} key={index} /> )
+           }) );
+         reviewCount.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
           reviewCount = ( <Integer props={ props.reviewCount } /> );        }
       }
       var potentialAction;
       if( props.potentialAction ){
         if( props.potentialAction instanceof Array ){
-          potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in props.potentialAction ){
-            potentialAction.push( ( <Action {...props.potentialAction } /> ) );          }
+          potentialAction = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          potentialAction = potentialAction.concat( props.potentialAction.map( function(result, index){
+              return ( <Action {...result} key={index} /> )
+           }) );
+         potentialAction.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
           potentialAction = ( <Action props={ props.potentialAction } /> );        }
       }
       var description;
       if( props.description ){
         if( props.description instanceof Array ){
-          description = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in props.description ){
-            description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
-          }
+          description = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          description = description.concat( props.description.map( function(result, index){
+              return ( <div key={index} data-advice='Put your HTML here. description is a Text.'></div> )
+           }) );
+         description.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
             description = ( <div data-advice='Put your HTML here. description is a Text.'></div> );
         }
@@ -39,10 +44,11 @@
       var name;
       if( props.name ){
         if( props.name instanceof Array ){
-          name = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in props.name ){
-            name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
-          }
+          name = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          name = name.concat( props.name.map( function(result, index){
+              return ( <div key={index} data-advice='Put your HTML here. name is a Text.'></div> )
+           }) );
+         name.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
             name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
@@ -50,10 +56,11 @@
       var sameAs;
       if( props.sameAs ){
         if( props.sameAs instanceof Array ){
-          sameAs = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in props.sameAs ){
-            sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
-          }
+          sameAs = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          sameAs = sameAs.concat( props.sameAs.map( function(result, index){
+              return ( <div key={index} data-advice='Put your HTML here. sameAs is a URL.'></div> )
+           }) );
+         sameAs.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
             sameAs = ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> );
         }
@@ -61,11 +68,12 @@
       var image;
       if( props.image ){
         if( props.image instanceof Array ){
-          image = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in props.image ){
-            image.push( ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> ) );
-          }
+          image = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          image = image.concat( props.image.map( function(result, index){
+              return ( <div key={index} data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> )
+           }) );
+         image.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
             image = ( <div data-advice='Put your HTML here. image is a URL or
 ImageObject.'></div> );
@@ -74,11 +82,12 @@ ImageObject.'></div> );
       var bestRating;
       if( props.bestRating ){
         if( props.bestRating instanceof Array ){
-          bestRating = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in props.bestRating ){
-            bestRating.push( ( <div data-advice='Put your HTML here. bestRating is a Text or
-Number.'></div> ) );
-          }
+          bestRating = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          bestRating = bestRating.concat( props.bestRating.map( function(result, index){
+              return ( <div key={index} data-advice='Put your HTML here. bestRating is a Text or
+Number.'></div> )
+           }) );
+         bestRating.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
             bestRating = ( <div data-advice='Put your HTML here. bestRating is a Text or
 Number.'></div> );
@@ -87,10 +96,11 @@ Number.'></div> );
       var url;
       if( props.url ){
         if( props.url instanceof Array ){
-          url = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in props.url ){
-            url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
-          }
+          url = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          url = url.concat( props.url.map( function(result, index){
+              return ( <div key={index} data-advice='Put your HTML here. url is a URL.'></div> )
+           }) );
+         url.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
             url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
         }
@@ -98,11 +108,12 @@ Number.'></div> );
       var worstRating;
       if( props.worstRating ){
         if( props.worstRating instanceof Array ){
-          worstRating = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in props.worstRating ){
-            worstRating.push( ( <div data-advice='Put your HTML here. worstRating is a Text or
-Number.'></div> ) );
-          }
+          worstRating = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          worstRating = worstRating.concat( props.worstRating.map( function(result, index){
+              return ( <div key={index} data-advice='Put your HTML here. worstRating is a Text or
+Number.'></div> )
+           }) );
+         worstRating.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
             worstRating = ( <div data-advice='Put your HTML here. worstRating is a Text or
 Number.'></div> );
@@ -111,20 +122,23 @@ Number.'></div> );
       var ratingCount;
       if( props.ratingCount ){
         if( props.ratingCount instanceof Array ){
-          ratingCount = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in props.ratingCount ){
-            ratingCount.push( ( <Integer {...props.ratingCount } /> ) );          }
+          ratingCount = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          ratingCount = ratingCount.concat( props.ratingCount.map( function(result, index){
+              return ( <Integer {...result} key={index} /> )
+           }) );
+         ratingCount.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
           ratingCount = ( <Integer props={ props.ratingCount } /> );        }
       }
       var mainEntityOfPage;
       if( props.mainEntityOfPage ){
         if( props.mainEntityOfPage instanceof Array ){
-          mainEntityOfPage = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in props.mainEntityOfPage ){
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
-CreativeWork.'></div> ) );
-          }
+          mainEntityOfPage = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          mainEntityOfPage = mainEntityOfPage.concat( props.mainEntityOfPage.map( function(result, index){
+              return ( <div key={index} data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> )
+           }) );
+         mainEntityOfPage.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
             mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
 CreativeWork.'></div> );
@@ -133,10 +147,11 @@ CreativeWork.'></div> );
       var additionalType;
       if( props.additionalType ){
         if( props.additionalType instanceof Array ){
-          additionalType = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in props.additionalType ){
-            additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
-          }
+          additionalType = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          additionalType = additionalType.concat( props.additionalType.map( function(result, index){
+              return ( <div key={index} data-advice='Put your HTML here. additionalType is a URL.'></div> )
+           }) );
+         additionalType.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
             additionalType = ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> );
         }
@@ -144,10 +159,11 @@ CreativeWork.'></div> );
       var alternateName;
       if( props.alternateName ){
         if( props.alternateName instanceof Array ){
-          alternateName = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in props.alternateName ){
-            alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
-          }
+          alternateName = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          alternateName = alternateName.concat( props.alternateName.map( function(result, index){
+              return ( <div key={index} data-advice='Put your HTML here. alternateName is a Text.'></div> )
+           }) );
+         alternateName.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
             alternateName = ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> );
         }
@@ -155,19 +171,22 @@ CreativeWork.'></div> );
       var itemReviewed;
       if( props.itemReviewed ){
         if( props.itemReviewed instanceof Array ){
-          itemReviewed = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in props.itemReviewed ){
-            itemReviewed.push( ( <Thing {...props.itemReviewed } /> ) );          }
+          itemReviewed = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          itemReviewed = itemReviewed.concat( props.itemReviewed.map( function(result, index){
+              return ( <Thing {...result} key={index} /> )
+           }) );
+         itemReviewed.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
           itemReviewed = ( <Thing props={ props.itemReviewed } /> );        }
       }
       var ratingValue;
       if( props.ratingValue ){
         if( props.ratingValue instanceof Array ){
-          ratingValue = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in props.ratingValue ){
-            ratingValue.push( ( <div data-advice='Put your HTML here. ratingValue is a Text.'></div> ) );
-          }
+          ratingValue = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          ratingValue = ratingValue.concat( props.ratingValue.map( function(result, index){
+              return ( <div key={index} data-advice='Put your HTML here. ratingValue is a Text.'></div> )
+           }) );
+         ratingValue.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
             ratingValue = ( <div data-advice='Put your HTML here. ratingValue is a Text.'></div> );
         }
