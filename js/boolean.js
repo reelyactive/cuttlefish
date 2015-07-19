@@ -1,4 +1,4 @@
-/* Boolean - Boolean: True or False.. Generated automatically by the reactGenerator. */ 
+/* Boolean - Boolean: True or False.. Generated automatically by the reactGenerator. */
  define(['../bower_components/react/react'], function(React){
   return React.createClass({
     getDefaultProps: function(){

@@ -1,4 +1,4 @@
-/* Thing > Intangible > Rating > AggregateRating - The average rating based on multiple ratings or reviews.. Generated automatically by the reactGenerator. */ 
+/* Thing > Intangible > Rating > AggregateRating - The average rating based on multiple ratings or reviews.. Generated automatically by the reactGenerator. */
  define(['../bower_components/react/react', './action', './thing', './creativework', './imageobject', './integer'], function(React, Action, Thing, CreativeWork, ImageObject, Integer){
   return React.createClass({
     getDefaultProps: function(){
@@ -9,7 +9,7 @@
       var reviewCount;
       if( this.props.reviewCount ){
         if( this.props.reviewCount instanceof Array ){
-          reviewCount = [(<p>reviewCount:</p> )];
+          reviewCount = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.reviewCount ){
             reviewCount.push( ( <Integer props={ this.props.reviewCount } /> ) );          }
         } else {
@@ -18,7 +18,7 @@
       var potentialAction;
       if( this.props.potentialAction ){
         if( this.props.potentialAction instanceof Array ){
-          potentialAction = [(<p>potentialAction:</p> )];
+          potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.potentialAction ){
             potentialAction.push( ( <Action props={ this.props.potentialAction } /> ) );          }
         } else {
@@ -27,84 +27,90 @@
       var description;
       if( this.props.description ){
         if( this.props.description instanceof Array ){
-          description = [(<p>description:</p> )];
+          description = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.description ){
-            description.push( ( <div class='description'></div> ) );
+            description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {
-          description = ( <div class='description'>{this.props.description}</div> );
+            description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
         }
       }
       var name;
       if( this.props.name ){
         if( this.props.name instanceof Array ){
-          name = [(<p>name:</p> )];
+          name = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.name ){
-            name.push( ( <div class='name'></div> ) );
+            name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {
-          name = ( <div class='name'>{this.props.name}</div> );
+            name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
         }
       }
       var sameAs;
       if( this.props.sameAs ){
         if( this.props.sameAs instanceof Array ){
-          sameAs = [(<p>sameAs:</p> )];
+          sameAs = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.sameAs ){
-            sameAs.push( ( <div class='sameAs'></div> ) );
+            sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
-          sameAs = ( <div class='sameAs'>{this.props.sameAs}</div> );
+            sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
         }
       }
       var image;
       if( this.props.image ){
         if( this.props.image instanceof Array ){
-          image = [(<p>image:</p> )];
+          image = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.image ){
-            image.push( ( <div class='image'></div> ) );
+            image.push( ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> ) );
           }
         } else {
-          image = ( <div class='image'>{this.props.image}</div> );
+            image.push( ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> ) );
         }
       }
       var bestRating;
       if( this.props.bestRating ){
         if( this.props.bestRating instanceof Array ){
-          bestRating = [(<p>bestRating:</p> )];
+          bestRating = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.bestRating ){
-            bestRating.push( ( <div class='bestRating'></div> ) );
+            bestRating.push( ( <div data-advice='Put your HTML here. bestRating is a Text or
+Number.'></div> ) );
           }
         } else {
-          bestRating = ( <div class='bestRating'>{this.props.bestRating}</div> );
+            bestRating.push( ( <div data-advice='Put your HTML here. bestRating is a Text or
+Number.'></div> ) );
         }
       }
       var url;
       if( this.props.url ){
         if( this.props.url instanceof Array ){
-          url = [(<p>url:</p> )];
+          url = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.url ){
-            url.push( ( <div class='url'></div> ) );
+            url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
-          url = ( <div class='url'>{this.props.url}</div> );
+            url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
         }
       }
       var worstRating;
       if( this.props.worstRating ){
         if( this.props.worstRating instanceof Array ){
-          worstRating = [(<p>worstRating:</p> )];
+          worstRating = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.worstRating ){
-            worstRating.push( ( <div class='worstRating'></div> ) );
+            worstRating.push( ( <div data-advice='Put your HTML here. worstRating is a Text or
+Number.'></div> ) );
           }
         } else {
-          worstRating = ( <div class='worstRating'>{this.props.worstRating}</div> );
+            worstRating.push( ( <div data-advice='Put your HTML here. worstRating is a Text or
+Number.'></div> ) );
         }
       }
       var ratingCount;
       if( this.props.ratingCount ){
         if( this.props.ratingCount instanceof Array ){
-          ratingCount = [(<p>ratingCount:</p> )];
+          ratingCount = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.ratingCount ){
             ratingCount.push( ( <Integer props={ this.props.ratingCount } /> ) );          }
         } else {
@@ -113,40 +119,42 @@
       var mainEntityOfPage;
       if( this.props.mainEntityOfPage ){
         if( this.props.mainEntityOfPage instanceof Array ){
-          mainEntityOfPage = [(<p>mainEntityOfPage:</p> )];
+          mainEntityOfPage = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.mainEntityOfPage ){
-            mainEntityOfPage.push( ( <div class='mainEntityOfPage'></div> ) );
+            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> ) );
           }
         } else {
-          mainEntityOfPage = ( <div class='mainEntityOfPage'>{this.props.mainEntityOfPage}</div> );
+            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> ) );
         }
       }
       var additionalType;
       if( this.props.additionalType ){
         if( this.props.additionalType instanceof Array ){
-          additionalType = [(<p>additionalType:</p> )];
+          additionalType = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.additionalType ){
-            additionalType.push( ( <div class='additionalType'></div> ) );
+            additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
-          additionalType = ( <div class='additionalType'>{this.props.additionalType}</div> );
+            additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
         }
       }
       var alternateName;
       if( this.props.alternateName ){
         if( this.props.alternateName instanceof Array ){
-          alternateName = [(<p>alternateName:</p> )];
+          alternateName = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.alternateName ){
-            alternateName.push( ( <div class='alternateName'></div> ) );
+            alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
-          alternateName = ( <div class='alternateName'>{this.props.alternateName}</div> );
+            alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
         }
       }
       var itemReviewed;
       if( this.props.itemReviewed ){
         if( this.props.itemReviewed instanceof Array ){
-          itemReviewed = [(<p>itemReviewed:</p> )];
+          itemReviewed = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.itemReviewed ){
             itemReviewed.push( ( <Thing props={ this.props.itemReviewed } /> ) );          }
         } else {
@@ -155,12 +163,12 @@
       var ratingValue;
       if( this.props.ratingValue ){
         if( this.props.ratingValue instanceof Array ){
-          ratingValue = [(<p>ratingValue:</p> )];
+          ratingValue = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.ratingValue ){
-            ratingValue.push( ( <div class='ratingValue'></div> ) );
+            ratingValue.push( ( <div data-advice='Put your HTML here. ratingValue is a Text.'></div> ) );
           }
         } else {
-          ratingValue = ( <div class='ratingValue'>{this.props.ratingValue}</div> );
+            ratingValue.push( ( <div data-advice='Put your HTML here. ratingValue is a Text.'></div> ) );
         }
       }
       return (<div title='AggregateRating' className='AggregateRating entity'>
