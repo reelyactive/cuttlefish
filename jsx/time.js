@@ -6,6 +6,7 @@
       }
     },
     render: function(){
+      var props = this.props.props;
       return (<div title='Time' className='Time entity'>
      </div>);
     }

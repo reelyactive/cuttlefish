@@ -1,53 +1,54 @@
 /* Thing > Intangible > Enumeration > QualitativeValue - A predefined value for a product characteristic, e.g. the power cord plug type "US" or the garment sizes "S", "M", "L", and "XL".. Generated automatically by the reactGenerator. */
- define(['../bower_components/react/react', './property', './quantitativevalue', './enumeration', './structuredvalue', './qualitativevalue', './imageobject', './action', './propertyvalue', './creativework', './class'], function(React, Property, QuantitativeValue, Enumeration, StructuredValue, QualitativeValue, ImageObject, Action, PropertyValue, CreativeWork, Class){
+ define(['../bower_components/react/react', './propertyvalue', './quantitativevalue', './enumeration', './structuredvalue', './qualitativevalue', './imageobject', './action', './property', './creativework', './class'], function(React, PropertyValue, QuantitativeValue, Enumeration, StructuredValue, QualitativeValue, ImageObject, Action, Property, CreativeWork, Class){
   return React.createClass({
     getDefaultProps: function(){
       return {
       }
     },
     render: function(){
+      var props = this.props.props;
       var potentialAction;
-      if( this.props.potentialAction ){
-        if( this.props.potentialAction instanceof Array ){
+      if( props.potentialAction ){
+        if( props.potentialAction instanceof Array ){
           potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action {...this.props.potentialAction } /> ) );          }
+          for( i in props.potentialAction ){
+            potentialAction.push( ( <Action {...props.potentialAction } /> ) );          }
         } else {
-          potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
+          potentialAction = ( <Action props={ props.potentialAction } /> );        }
       }
       var valueReference;
-      if( this.props.valueReference ){
-        if( this.props.valueReference instanceof Array ){
+      if( props.valueReference ){
+        if( props.valueReference instanceof Array ){
           valueReference = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.valueReference ){
-            valueReference.push( ( <div data-advice='Put your HTML here. valueReference is a Enumeration or
-StructuredValue or
-PropertyValue or
+          for( i in props.valueReference ){
+            valueReference.push( ( <div data-advice='Put your HTML here. valueReference is a PropertyValue or
 QuantitativeValue or
-QualitativeValue.'></div> ) );
+QualitativeValue or
+Enumeration or
+StructuredValue.'></div> ) );
           }
         } else {
-            valueReference = ( <div data-advice='Put your HTML here. valueReference is a Enumeration or
-StructuredValue or
-PropertyValue or
+            valueReference = ( <div data-advice='Put your HTML here. valueReference is a PropertyValue or
 QuantitativeValue or
-QualitativeValue.'></div> );
+QualitativeValue or
+Enumeration or
+StructuredValue.'></div> );
         }
       }
       var greater;
-      if( this.props.greater ){
-        if( this.props.greater instanceof Array ){
+      if( props.greater ){
+        if( props.greater instanceof Array ){
           greater = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.greater ){
-            greater.push( ( <QualitativeValue {...this.props.greater } /> ) );          }
+          for( i in props.greater ){
+            greater.push( ( <QualitativeValue {...props.greater } /> ) );          }
         } else {
-          greater = ( <QualitativeValue props={ this.props.greater } /> );        }
+          greater = ( <QualitativeValue props={ props.greater } /> );        }
       }
       var sameAs;
-      if( this.props.sameAs ){
-        if( this.props.sameAs instanceof Array ){
+      if( props.sameAs ){
+        if( props.sameAs instanceof Array ){
           sameAs = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.sameAs ){
+          for( i in props.sameAs ){
             sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
@@ -55,28 +56,28 @@ QualitativeValue.'></div> );
         }
       }
       var lesserOrEqual;
-      if( this.props.lesserOrEqual ){
-        if( this.props.lesserOrEqual instanceof Array ){
+      if( props.lesserOrEqual ){
+        if( props.lesserOrEqual instanceof Array ){
           lesserOrEqual = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.lesserOrEqual ){
-            lesserOrEqual.push( ( <QualitativeValue {...this.props.lesserOrEqual } /> ) );          }
+          for( i in props.lesserOrEqual ){
+            lesserOrEqual.push( ( <QualitativeValue {...props.lesserOrEqual } /> ) );          }
         } else {
-          lesserOrEqual = ( <QualitativeValue props={ this.props.lesserOrEqual } /> );        }
+          lesserOrEqual = ( <QualitativeValue props={ props.lesserOrEqual } /> );        }
       }
       var equal;
-      if( this.props.equal ){
-        if( this.props.equal instanceof Array ){
+      if( props.equal ){
+        if( props.equal instanceof Array ){
           equal = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.equal ){
-            equal.push( ( <QualitativeValue {...this.props.equal } /> ) );          }
+          for( i in props.equal ){
+            equal.push( ( <QualitativeValue {...props.equal } /> ) );          }
         } else {
-          equal = ( <QualitativeValue props={ this.props.equal } /> );        }
+          equal = ( <QualitativeValue props={ props.equal } /> );        }
       }
       var name;
-      if( this.props.name ){
-        if( this.props.name instanceof Array ){
+      if( props.name ){
+        if( props.name instanceof Array ){
           name = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.name ){
+          for( i in props.name ){
             name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {
@@ -84,19 +85,19 @@ QualitativeValue.'></div> );
         }
       }
       var lesser;
-      if( this.props.lesser ){
-        if( this.props.lesser instanceof Array ){
+      if( props.lesser ){
+        if( props.lesser instanceof Array ){
           lesser = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.lesser ){
-            lesser.push( ( <QualitativeValue {...this.props.lesser } /> ) );          }
+          for( i in props.lesser ){
+            lesser.push( ( <QualitativeValue {...props.lesser } /> ) );          }
         } else {
-          lesser = ( <QualitativeValue props={ this.props.lesser } /> );        }
+          lesser = ( <QualitativeValue props={ props.lesser } /> );        }
       }
       var url;
-      if( this.props.url ){
-        if( this.props.url instanceof Array ){
+      if( props.url ){
+        if( props.url instanceof Array ){
           url = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.url ){
+          for( i in props.url ){
             url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
@@ -104,56 +105,56 @@ QualitativeValue.'></div> );
         }
       }
       var additionalProperty;
-      if( this.props.additionalProperty ){
-        if( this.props.additionalProperty instanceof Array ){
+      if( props.additionalProperty ){
+        if( props.additionalProperty instanceof Array ){
           additionalProperty = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.additionalProperty ){
-            additionalProperty.push( ( <PropertyValue {...this.props.additionalProperty } /> ) );          }
+          for( i in props.additionalProperty ){
+            additionalProperty.push( ( <PropertyValue {...props.additionalProperty } /> ) );          }
         } else {
-          additionalProperty = ( <PropertyValue props={ this.props.additionalProperty } /> );        }
+          additionalProperty = ( <PropertyValue props={ props.additionalProperty } /> );        }
       }
       var supersededBy;
-      if( this.props.supersededBy ){
-        if( this.props.supersededBy instanceof Array ){
+      if( props.supersededBy ){
+        if( props.supersededBy instanceof Array ){
           supersededBy = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.supersededBy ){
-            supersededBy.push( ( <div data-advice='Put your HTML here. supersededBy is a Class or
-Property or
-Enumeration.'></div> ) );
+          for( i in props.supersededBy ){
+            supersededBy.push( ( <div data-advice='Put your HTML here. supersededBy is a Property or
+Enumeration or
+Class.'></div> ) );
           }
         } else {
-            supersededBy = ( <div data-advice='Put your HTML here. supersededBy is a Class or
-Property or
-Enumeration.'></div> );
+            supersededBy = ( <div data-advice='Put your HTML here. supersededBy is a Property or
+Enumeration or
+Class.'></div> );
         }
       }
       var greaterOrEqual;
-      if( this.props.greaterOrEqual ){
-        if( this.props.greaterOrEqual instanceof Array ){
+      if( props.greaterOrEqual ){
+        if( props.greaterOrEqual instanceof Array ){
           greaterOrEqual = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.greaterOrEqual ){
-            greaterOrEqual.push( ( <QualitativeValue {...this.props.greaterOrEqual } /> ) );          }
+          for( i in props.greaterOrEqual ){
+            greaterOrEqual.push( ( <QualitativeValue {...props.greaterOrEqual } /> ) );          }
         } else {
-          greaterOrEqual = ( <QualitativeValue props={ this.props.greaterOrEqual } /> );        }
+          greaterOrEqual = ( <QualitativeValue props={ props.greaterOrEqual } /> );        }
       }
       var mainEntityOfPage;
-      if( this.props.mainEntityOfPage ){
-        if( this.props.mainEntityOfPage instanceof Array ){
+      if( props.mainEntityOfPage ){
+        if( props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.mainEntityOfPage ){
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> ) );
+          for( i in props.mainEntityOfPage ){
+            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> ) );
           }
         } else {
-            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> );
         }
       }
       var additionalType;
-      if( this.props.additionalType ){
-        if( this.props.additionalType instanceof Array ){
+      if( props.additionalType ){
+        if( props.additionalType instanceof Array ){
           additionalType = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.additionalType ){
+          for( i in props.additionalType ){
             additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
@@ -161,10 +162,10 @@ URL.'></div> );
         }
       }
       var alternateName;
-      if( this.props.alternateName ){
-        if( this.props.alternateName instanceof Array ){
+      if( props.alternateName ){
+        if( props.alternateName instanceof Array ){
           alternateName = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.alternateName ){
+          for( i in props.alternateName ){
             alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
@@ -172,19 +173,19 @@ URL.'></div> );
         }
       }
       var nonEqual;
-      if( this.props.nonEqual ){
-        if( this.props.nonEqual instanceof Array ){
+      if( props.nonEqual ){
+        if( props.nonEqual instanceof Array ){
           nonEqual = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.nonEqual ){
-            nonEqual.push( ( <QualitativeValue {...this.props.nonEqual } /> ) );          }
+          for( i in props.nonEqual ){
+            nonEqual.push( ( <QualitativeValue {...props.nonEqual } /> ) );          }
         } else {
-          nonEqual = ( <QualitativeValue props={ this.props.nonEqual } /> );        }
+          nonEqual = ( <QualitativeValue props={ props.nonEqual } /> );        }
       }
       var image;
-      if( this.props.image ){
-        if( this.props.image instanceof Array ){
+      if( props.image ){
+        if( props.image instanceof Array ){
           image = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.image ){
+          for( i in props.image ){
             image.push( ( <div data-advice='Put your HTML here. image is a URL or
 ImageObject.'></div> ) );
           }
@@ -194,10 +195,10 @@ ImageObject.'></div> );
         }
       }
       var description;
-      if( this.props.description ){
-        if( this.props.description instanceof Array ){
+      if( props.description ){
+        if( props.description instanceof Array ){
           description = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.description ){
+          for( i in props.description ){
             description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {

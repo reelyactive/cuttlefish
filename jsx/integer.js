@@ -6,6 +6,7 @@
       }
     },
     render: function(){
+      var props = this.props.props;
       return (<div title='Integer' className='Integer entity'>
      </div>);
     }
