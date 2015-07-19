@@ -93,22 +93,22 @@ def outputInFile( componentName, topComments, otherDependencies, properties, def
     lines.append( "      var " + propertyName + ";\n" )
     lines.append( "      if( this.props." + propertyName + " ){\n" )
     lines.append( "        if( this.props." + propertyName + " instanceof Array ){\n" )
-    lines.append( "          " + propertyName +" = [( /* HTML for the 'head' of the section */ )];\n" )
+    lines.append( "          " + propertyName +" = [( <div data-advice='HTML for the *head* of the section'></div> )];\n" )
     lines.append( "          for( i in this.props." + propertyName + " ){\n" )
     if isEntity( typeName ) and ' ' not in typeName:
       lines.append( "            " + propertyName + ".push( ( <" + typeName +" props=" 
       + "{ this.props." + propertyName + " } /> ) );" )
     else:
-      lines.append( "            " + propertyName + ".push( ( /* Put your HTML here ("
-      + propertyName + " is a " + typeName + ")*/ ) );\n" )
+      lines.append( "            " + propertyName + ".push( ( <div data-advice='Put your HTML here. "
+      + propertyName + " is a " + typeName + ".'></div> ) );\n" )
     lines.append( "          }\n" )
     lines.append( "        } else {\n" )
     if isEntity( typeName ) and ' ' not in typeName:
       lines.append( "          " + propertyName + " = ( <" + typeName +" props=" 
       + "{ this.props." + propertyName + " } /> );" )
     else:
-      lines.append( "          " + propertyName + " = ( /* Put your HTML here ("
-      + propertyName + " is a " + typeName + ")*/ );\n" )
+      lines.append( "            " + propertyName + ".push( ( <div data-advice='Put your HTML here. "
+      + propertyName + " is a " + typeName + ".'></div> ) );\n" )
     lines.append( "        }\n" )
     lines.append( "      }\n" )
   lines.append( "      return (<div title='" + componentName + "' className='"
