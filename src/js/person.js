@@ -207,13 +207,15 @@
       var worksFor;
       if( props.worksFor ){
         if( props.worksFor instanceof Array ){
-          worksFor = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
-          worksFor = worksFor.concat( props.worksFor.map( function(result, index){
-              return ( React.createElement(Organization, React.__spread({},  result, {key: index})) )
-           }) );
-         worksFor.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
+          worksFor = [(React.createElement("p", {key: "header"}, "Works for:"))]
+          worksFor.push( (React.createElement("ul", null, 
+            props.worksFor.map( function(result, index){
+              return React.createElement("li", {key: index}, result)
+           })
+           )) );
         } else {
-          worksFor = ( React.createElement(Organization, {props:  props.worksFor}) );        }
+          worksFor = ( React.createElement("p", null, "Works for: ",  props.worksFor, " ") );
+        }
       }
       var taxID;
       if( props.taxID ){
@@ -379,7 +381,7 @@
            }) );
          jobTitle.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            jobTitle = ( React.createElement("div", {"data-advice": "Put your HTML here. jobTitle is a Text."}) );
+            jobTitle = ( React.createElement("p", null, "Job Title: ", props.jobTitle) );
         }
       }
       var brand;
@@ -475,7 +477,7 @@
            }) );
          nationality.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-          nationality = ( React.createElement(Country, {props:  props.nationality}) );        }
+          nationality = ( React.createElement("p", null, "Nationality: ",  props.nationality) );        }
       }
       var contactPoint;
       if( props.contactPoint ){
@@ -664,62 +666,62 @@
         }
       }
       return (React.createElement("div", {title: "Person", className: "Person entity"}, 
-         sibling, 
-         honorificPrefix, 
-         weight, 
-         sameAs, 
          image, 
-         relatedTo, 
-         telephone, 
-         birthDate, 
-         faxNumber, 
-         affiliation, 
-         additionalName, 
-         workLocation, 
-         additionalType, 
-         children, 
-         description, 
-         isicV4, 
-         spouse, 
-         worksFor, 
-         taxID, 
-         honorificSuffix, 
-         netWorth, 
-         mainEntityOfPage, 
-         homeLocation, 
-         email, 
-         seeks, 
-         colleague, 
-         performerIn, 
-         birthPlace, 
-         knows, 
-         parent, 
-         memberOf, 
-         jobTitle, 
-         brand, 
+         name, 
+         honorificPrefix, 
          givenName, 
-         familyName, 
-         award, 
          alternateName, 
-         potentialAction, 
-         address, 
-         duns, 
+         additionalName, 
+         familyName, 
+         honorificSuffix, 
          nationality, 
          contactPoint, 
-         deathDate, 
-         makesOffer, 
-         hasPOS, 
-         owns, 
-         name, 
-         naics, 
+         address, 
+         email, 
+         telephone, 
+         faxNumber, 
          url, 
          gender, 
-         vatID, 
          height, 
+         weight, 
+         birthDate, 
+         birthPlace, 
+         deathDate, 
          deathPlace, 
+         homeLocation, 
+         globalLocationNumber, 
+         description, 
+         taxID, 
+         netWorth, 
+         sameAs, 
+         parent, 
+         sibling, 
+         spouse, 
+         children, 
+         relatedTo, 
+         affiliation, 
+         additionalType, 
+         worksFor, 
+         workLocation, 
+         jobTitle, 
+         isicV4, 
+         performerIn, 
+         colleague, 
+         mainEntityOfPage, 
          follows, 
+         knows, 
+         makesOffer, 
+         seeks, 
+         memberOf, 
          alumniOf, 
-         globalLocationNumber 
+         brand, 
+         award, 
+         potentialAction, 
+         duns, 
+         hasPOS, 
+         owns, 
+         naics, 
+         vatID 
      ));
     }
   });
