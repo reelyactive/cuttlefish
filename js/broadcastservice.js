@@ -11,7 +11,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( React.createElement(Action, {props:  this.props.potentialAction}) ) );          }
+            potentialAction.push( ( React.createElement(Action, React.__spread({},  this.props.potentialAction )) ) );          }
         } else {
           potentialAction = ( React.createElement(Action, {props:  this.props.potentialAction}) );        }
       }
@@ -23,7 +23,7 @@
             broadcastDisplayName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. broadcastDisplayName is a Text."}) ) );
           }
         } else {
-            broadcastDisplayName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. broadcastDisplayName is a Text."}) ) );
+            broadcastDisplayName = ( React.createElement("div", {"data-advice": "Put your HTML here. broadcastDisplayName is a Text."}) );
         }
       }
       var broadcastTimezone;
@@ -34,7 +34,7 @@
             broadcastTimezone.push( ( React.createElement("div", {"data-advice": "Put your HTML here. broadcastTimezone is a Text."}) ) );
           }
         } else {
-            broadcastTimezone.push( ( React.createElement("div", {"data-advice": "Put your HTML here. broadcastTimezone is a Text."}) ) );
+            broadcastTimezone = ( React.createElement("div", {"data-advice": "Put your HTML here. broadcastTimezone is a Text."}) );
         }
       }
       var sameAs;
@@ -45,7 +45,7 @@
             sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
           }
         } else {
-            sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
+            sameAs = ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) );
         }
       }
       var broadcastAffiliateOf;
@@ -53,7 +53,7 @@
         if( this.props.broadcastAffiliateOf instanceof Array ){
           broadcastAffiliateOf = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.broadcastAffiliateOf ){
-            broadcastAffiliateOf.push( ( React.createElement(Organization, {props:  this.props.broadcastAffiliateOf}) ) );          }
+            broadcastAffiliateOf.push( ( React.createElement(Organization, React.__spread({},  this.props.broadcastAffiliateOf )) ) );          }
         } else {
           broadcastAffiliateOf = ( React.createElement(Organization, {props:  this.props.broadcastAffiliateOf}) );        }
       }
@@ -66,8 +66,8 @@
 "ImageObject."}) ) );
           }
         } else {
-            image.push( ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
-"ImageObject."}) ) );
+            image = ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
+"ImageObject."}) );
         }
       }
       var parentService;
@@ -75,7 +75,7 @@
         if( this.props.parentService instanceof Array ){
           parentService = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.parentService ){
-            parentService.push( ( React.createElement(BroadcastService, {props:  this.props.parentService}) ) );          }
+            parentService.push( ( React.createElement(BroadcastService, React.__spread({},  this.props.parentService )) ) );          }
         } else {
           parentService = ( React.createElement(BroadcastService, {props:  this.props.parentService}) );        }
       }
@@ -87,7 +87,7 @@
             name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
           }
         } else {
-            name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
+            name = ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) );
         }
       }
       var url;
@@ -98,7 +98,7 @@
             url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
           }
         } else {
-            url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
+            url = ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) );
         }
       }
       var broadcaster;
@@ -106,7 +106,7 @@
         if( this.props.broadcaster instanceof Array ){
           broadcaster = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.broadcaster ){
-            broadcaster.push( ( React.createElement(Organization, {props:  this.props.broadcaster}) ) );          }
+            broadcaster.push( ( React.createElement(Organization, React.__spread({},  this.props.broadcaster )) ) );          }
         } else {
           broadcaster = ( React.createElement(Organization, {props:  this.props.broadcaster}) );        }
       }
@@ -119,8 +119,8 @@
 "URL."}) ) );
           }
         } else {
-            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
-"URL."}) ) );
+            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
+"URL."}) );
         }
       }
       var additionalType;
@@ -131,7 +131,7 @@
             additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
           }
         } else {
-            additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
+            additionalType = ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) );
         }
       }
       var alternateName;
@@ -142,7 +142,7 @@
             alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
           }
         } else {
-            alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
+            alternateName = ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) );
         }
       }
       var description;
@@ -153,7 +153,7 @@
             description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
           }
         } else {
-            description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
+            description = ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) );
         }
       }
       return (React.createElement("div", {title: "BroadcastService", className: "BroadcastService entity"}, 

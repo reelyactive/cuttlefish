@@ -11,7 +11,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action props={ this.props.potentialAction } /> ) );          }
+            potentialAction.push( ( <Action {...this.props.potentialAction } /> ) );          }
         } else {
           potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
       }
@@ -20,12 +20,12 @@
         if( this.props.elevation instanceof Array ){
           elevation = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.elevation ){
-            elevation.push( ( <div data-advice='Put your HTML here. elevation is a Text or
-Number.'></div> ) );
+            elevation.push( ( <div data-advice='Put your HTML here. elevation is a Number or
+Text.'></div> ) );
           }
         } else {
-            elevation.push( ( <div data-advice='Put your HTML here. elevation is a Text or
-Number.'></div> ) );
+            elevation = ( <div data-advice='Put your HTML here. elevation is a Number or
+Text.'></div> );
         }
       }
       var description;
@@ -36,7 +36,7 @@ Number.'></div> ) );
             description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {
-            description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
+            description = ( <div data-advice='Put your HTML here. description is a Text.'></div> );
         }
       }
       var sameAs;
@@ -47,7 +47,7 @@ Number.'></div> ) );
             sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
-            sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
+            sameAs = ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> );
         }
       }
       var image;
@@ -59,8 +59,8 @@ Number.'></div> ) );
 ImageObject.'></div> ) );
           }
         } else {
-            image.push( ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> ) );
+            image = ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> );
         }
       }
       var longitude;
@@ -68,12 +68,12 @@ ImageObject.'></div> ) );
         if( this.props.longitude instanceof Array ){
           longitude = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.longitude ){
-            longitude.push( ( <div data-advice='Put your HTML here. longitude is a Text or
-Number.'></div> ) );
+            longitude.push( ( <div data-advice='Put your HTML here. longitude is a Number or
+Text.'></div> ) );
           }
         } else {
-            longitude.push( ( <div data-advice='Put your HTML here. longitude is a Text or
-Number.'></div> ) );
+            longitude = ( <div data-advice='Put your HTML here. longitude is a Number or
+Text.'></div> );
         }
       }
       var mainEntityOfPage;
@@ -85,8 +85,8 @@ Number.'></div> ) );
 URL.'></div> ) );
           }
         } else {
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> ) );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
+URL.'></div> );
         }
       }
       var url;
@@ -97,7 +97,7 @@ URL.'></div> ) );
             url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
-            url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
+            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
         }
       }
       var latitude;
@@ -105,12 +105,12 @@ URL.'></div> ) );
         if( this.props.latitude instanceof Array ){
           latitude = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.latitude ){
-            latitude.push( ( <div data-advice='Put your HTML here. latitude is a Text or
-Number.'></div> ) );
+            latitude.push( ( <div data-advice='Put your HTML here. latitude is a Number or
+Text.'></div> ) );
           }
         } else {
-            latitude.push( ( <div data-advice='Put your HTML here. latitude is a Text or
-Number.'></div> ) );
+            latitude = ( <div data-advice='Put your HTML here. latitude is a Number or
+Text.'></div> );
         }
       }
       var additionalType;
@@ -121,7 +121,7 @@ Number.'></div> ) );
             additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
-            additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
+            additionalType = ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> );
         }
       }
       var alternateName;
@@ -132,7 +132,7 @@ Number.'></div> ) );
             alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
-            alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
+            alternateName = ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> );
         }
       }
       var name;
@@ -143,7 +143,7 @@ Number.'></div> ) );
             name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {
-            name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
+            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
       }
       return (<div title='GeoCoordinates' className='GeoCoordinates entity'>

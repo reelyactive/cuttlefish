@@ -11,7 +11,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action props={ this.props.potentialAction } /> ) );          }
+            potentialAction.push( ( <Action {...this.props.potentialAction } /> ) );          }
         } else {
           potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
       }
@@ -23,7 +23,7 @@
             contentType.push( ( <div data-advice='Put your HTML here. contentType is a Text.'></div> ) );
           }
         } else {
-            contentType.push( ( <div data-advice='Put your HTML here. contentType is a Text.'></div> ) );
+            contentType = ( <div data-advice='Put your HTML here. contentType is a Text.'></div> );
         }
       }
       var description;
@@ -34,7 +34,7 @@
             description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {
-            description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
+            description = ( <div data-advice='Put your HTML here. description is a Text.'></div> );
         }
       }
       var sameAs;
@@ -45,7 +45,7 @@
             sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
-            sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
+            sameAs = ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> );
         }
       }
       var actionApplication;
@@ -53,7 +53,7 @@
         if( this.props.actionApplication instanceof Array ){
           actionApplication = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.actionApplication ){
-            actionApplication.push( ( <SoftwareApplication props={ this.props.actionApplication } /> ) );          }
+            actionApplication.push( ( <SoftwareApplication {...this.props.actionApplication } /> ) );          }
         } else {
           actionApplication = ( <SoftwareApplication props={ this.props.actionApplication } /> );        }
       }
@@ -66,8 +66,8 @@
 ImageObject.'></div> ) );
           }
         } else {
-            image.push( ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> ) );
+            image = ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> );
         }
       }
       var httpMethod;
@@ -78,7 +78,7 @@ ImageObject.'></div> ) );
             httpMethod.push( ( <div data-advice='Put your HTML here. httpMethod is a Text.'></div> ) );
           }
         } else {
-            httpMethod.push( ( <div data-advice='Put your HTML here. httpMethod is a Text.'></div> ) );
+            httpMethod = ( <div data-advice='Put your HTML here. httpMethod is a Text.'></div> );
         }
       }
       var url;
@@ -89,7 +89,7 @@ ImageObject.'></div> ) );
             url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
-            url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
+            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
         }
       }
       var urlTemplate;
@@ -100,7 +100,7 @@ ImageObject.'></div> ) );
             urlTemplate.push( ( <div data-advice='Put your HTML here. urlTemplate is a Text.'></div> ) );
           }
         } else {
-            urlTemplate.push( ( <div data-advice='Put your HTML here. urlTemplate is a Text.'></div> ) );
+            urlTemplate = ( <div data-advice='Put your HTML here. urlTemplate is a Text.'></div> );
         }
       }
       var mainEntityOfPage;
@@ -112,8 +112,8 @@ ImageObject.'></div> ) );
 CreativeWork.'></div> ) );
           }
         } else {
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
-CreativeWork.'></div> ) );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> );
         }
       }
       var additionalType;
@@ -124,7 +124,7 @@ CreativeWork.'></div> ) );
             additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
-            additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
+            additionalType = ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> );
         }
       }
       var alternateName;
@@ -135,7 +135,7 @@ CreativeWork.'></div> ) );
             alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
-            alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
+            alternateName = ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> );
         }
       }
       var encodingType;
@@ -146,7 +146,7 @@ CreativeWork.'></div> ) );
             encodingType.push( ( <div data-advice='Put your HTML here. encodingType is a Text.'></div> ) );
           }
         } else {
-            encodingType.push( ( <div data-advice='Put your HTML here. encodingType is a Text.'></div> ) );
+            encodingType = ( <div data-advice='Put your HTML here. encodingType is a Text.'></div> );
         }
       }
       var name;
@@ -157,7 +157,7 @@ CreativeWork.'></div> ) );
             name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {
-            name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
+            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
       }
       return (<div title='EntryPoint' className='EntryPoint entity'>

@@ -14,7 +14,7 @@
             educationalUse.push( ( <div data-advice='Put your HTML here. educationalUse is a Text.'></div> ) );
           }
         } else {
-            educationalUse.push( ( <div data-advice='Put your HTML here. educationalUse is a Text.'></div> ) );
+            educationalUse = ( <div data-advice='Put your HTML here. educationalUse is a Text.'></div> );
         }
       }
       var producer;
@@ -26,8 +26,8 @@
 Organization.'></div> ) );
           }
         } else {
-            producer.push( ( <div data-advice='Put your HTML here. producer is a Person or
-Organization.'></div> ) );
+            producer = ( <div data-advice='Put your HTML here. producer is a Person or
+Organization.'></div> );
         }
       }
       var text;
@@ -38,7 +38,7 @@ Organization.'></div> ) );
             text.push( ( <div data-advice='Put your HTML here. text is a Text.'></div> ) );
           }
         } else {
-            text.push( ( <div data-advice='Put your HTML here. text is a Text.'></div> ) );
+            text = ( <div data-advice='Put your HTML here. text is a Text.'></div> );
         }
       }
       var datePublished;
@@ -49,7 +49,7 @@ Organization.'></div> ) );
             datePublished.push( ( <div data-advice='Put your HTML here. datePublished is a Date.'></div> ) );
           }
         } else {
-            datePublished.push( ( <div data-advice='Put your HTML here. datePublished is a Date.'></div> ) );
+            datePublished = ( <div data-advice='Put your HTML here. datePublished is a Date.'></div> );
         }
       }
       var alternativeHeadline;
@@ -60,7 +60,7 @@ Organization.'></div> ) );
             alternativeHeadline.push( ( <div data-advice='Put your HTML here. alternativeHeadline is a Text.'></div> ) );
           }
         } else {
-            alternativeHeadline.push( ( <div data-advice='Put your HTML here. alternativeHeadline is a Text.'></div> ) );
+            alternativeHeadline = ( <div data-advice='Put your HTML here. alternativeHeadline is a Text.'></div> );
         }
       }
       var accountablePerson;
@@ -68,7 +68,7 @@ Organization.'></div> ) );
         if( this.props.accountablePerson instanceof Array ){
           accountablePerson = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.accountablePerson ){
-            accountablePerson.push( ( <Person props={ this.props.accountablePerson } /> ) );          }
+            accountablePerson.push( ( <Person {...this.props.accountablePerson } /> ) );          }
         } else {
           accountablePerson = ( <Person props={ this.props.accountablePerson } /> );        }
       }
@@ -80,7 +80,7 @@ Organization.'></div> ) );
             keywords.push( ( <div data-advice='Put your HTML here. keywords is a Text.'></div> ) );
           }
         } else {
-            keywords.push( ( <div data-advice='Put your HTML here. keywords is a Text.'></div> ) );
+            keywords = ( <div data-advice='Put your HTML here. keywords is a Text.'></div> );
         }
       }
       var headline;
@@ -91,7 +91,7 @@ Organization.'></div> ) );
             headline.push( ( <div data-advice='Put your HTML here. headline is a Text.'></div> ) );
           }
         } else {
-            headline.push( ( <div data-advice='Put your HTML here. headline is a Text.'></div> ) );
+            headline = ( <div data-advice='Put your HTML here. headline is a Text.'></div> );
         }
       }
       var character;
@@ -99,7 +99,7 @@ Organization.'></div> ) );
         if( this.props.character instanceof Array ){
           character = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.character ){
-            character.push( ( <Person props={ this.props.character } /> ) );          }
+            character.push( ( <Person {...this.props.character } /> ) );          }
         } else {
           character = ( <Person props={ this.props.character } /> );        }
       }
@@ -111,7 +111,7 @@ Organization.'></div> ) );
             contentRating.push( ( <div data-advice='Put your HTML here. contentRating is a Text.'></div> ) );
           }
         } else {
-            contentRating.push( ( <div data-advice='Put your HTML here. contentRating is a Text.'></div> ) );
+            contentRating = ( <div data-advice='Put your HTML here. contentRating is a Text.'></div> );
         }
       }
       var associatedArticle;
@@ -119,7 +119,7 @@ Organization.'></div> ) );
         if( this.props.associatedArticle instanceof Array ){
           associatedArticle = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.associatedArticle ){
-            associatedArticle.push( ( <NewsArticle props={ this.props.associatedArticle } /> ) );          }
+            associatedArticle.push( ( <NewsArticle {...this.props.associatedArticle } /> ) );          }
         } else {
           associatedArticle = ( <NewsArticle props={ this.props.associatedArticle } /> );        }
       }
@@ -128,7 +128,7 @@ Organization.'></div> ) );
         if( this.props.offers instanceof Array ){
           offers = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.offers ){
-            offers.push( ( <Offer props={ this.props.offers } /> ) );          }
+            offers.push( ( <Offer {...this.props.offers } /> ) );          }
         } else {
           offers = ( <Offer props={ this.props.offers } /> );        }
       }
@@ -140,7 +140,7 @@ Organization.'></div> ) );
             publishingPrinciples.push( ( <div data-advice='Put your HTML here. publishingPrinciples is a URL.'></div> ) );
           }
         } else {
-            publishingPrinciples.push( ( <div data-advice='Put your HTML here. publishingPrinciples is a URL.'></div> ) );
+            publishingPrinciples = ( <div data-advice='Put your HTML here. publishingPrinciples is a URL.'></div> );
         }
       }
       var embedUrl;
@@ -151,7 +151,7 @@ Organization.'></div> ) );
             embedUrl.push( ( <div data-advice='Put your HTML here. embedUrl is a URL.'></div> ) );
           }
         } else {
-            embedUrl.push( ( <div data-advice='Put your HTML here. embedUrl is a URL.'></div> ) );
+            embedUrl = ( <div data-advice='Put your HTML here. embedUrl is a URL.'></div> );
         }
       }
       var dateCreated;
@@ -162,7 +162,7 @@ Organization.'></div> ) );
             dateCreated.push( ( <div data-advice='Put your HTML here. dateCreated is a Date.'></div> ) );
           }
         } else {
-            dateCreated.push( ( <div data-advice='Put your HTML here. dateCreated is a Date.'></div> ) );
+            dateCreated = ( <div data-advice='Put your HTML here. dateCreated is a Date.'></div> );
         }
       }
       var potentialAction;
@@ -170,7 +170,7 @@ Organization.'></div> ) );
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action props={ this.props.potentialAction } /> ) );          }
+            potentialAction.push( ( <Action {...this.props.potentialAction } /> ) );          }
         } else {
           potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
       }
@@ -182,7 +182,7 @@ Organization.'></div> ) );
             name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {
-            name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
+            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
       }
       var associatedMedia;
@@ -190,7 +190,7 @@ Organization.'></div> ) );
         if( this.props.associatedMedia instanceof Array ){
           associatedMedia = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.associatedMedia ){
-            associatedMedia.push( ( <MediaObject props={ this.props.associatedMedia } /> ) );          }
+            associatedMedia.push( ( <MediaObject {...this.props.associatedMedia } /> ) );          }
         } else {
           associatedMedia = ( <MediaObject props={ this.props.associatedMedia } /> );        }
       }
@@ -199,7 +199,7 @@ Organization.'></div> ) );
         if( this.props.audience instanceof Array ){
           audience = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.audience ){
-            audience.push( ( <Audience props={ this.props.audience } /> ) );          }
+            audience.push( ( <Audience {...this.props.audience } /> ) );          }
         } else {
           audience = ( <Audience props={ this.props.audience } /> );        }
       }
@@ -211,7 +211,7 @@ Organization.'></div> ) );
             accessibilityControl.push( ( <div data-advice='Put your HTML here. accessibilityControl is a Text.'></div> ) );
           }
         } else {
-            accessibilityControl.push( ( <div data-advice='Put your HTML here. accessibilityControl is a Text.'></div> ) );
+            accessibilityControl = ( <div data-advice='Put your HTML here. accessibilityControl is a Text.'></div> );
         }
       }
       var copyrightYear;
@@ -222,7 +222,7 @@ Organization.'></div> ) );
             copyrightYear.push( ( <div data-advice='Put your HTML here. copyrightYear is a Number.'></div> ) );
           }
         } else {
-            copyrightYear.push( ( <div data-advice='Put your HTML here. copyrightYear is a Number.'></div> ) );
+            copyrightYear = ( <div data-advice='Put your HTML here. copyrightYear is a Number.'></div> );
         }
       }
       var videoQuality;
@@ -233,7 +233,7 @@ Organization.'></div> ) );
             videoQuality.push( ( <div data-advice='Put your HTML here. videoQuality is a Text.'></div> ) );
           }
         } else {
-            videoQuality.push( ( <div data-advice='Put your HTML here. videoQuality is a Text.'></div> ) );
+            videoQuality = ( <div data-advice='Put your HTML here. videoQuality is a Text.'></div> );
         }
       }
       var encodesCreativeWork;
@@ -241,7 +241,7 @@ Organization.'></div> ) );
         if( this.props.encodesCreativeWork instanceof Array ){
           encodesCreativeWork = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.encodesCreativeWork ){
-            encodesCreativeWork.push( ( <CreativeWork props={ this.props.encodesCreativeWork } /> ) );          }
+            encodesCreativeWork.push( ( <CreativeWork {...this.props.encodesCreativeWork } /> ) );          }
         } else {
           encodesCreativeWork = ( <CreativeWork props={ this.props.encodesCreativeWork } /> );        }
       }
@@ -254,8 +254,8 @@ Organization.'></div> ) );
 Organization.'></div> ) );
           }
         } else {
-            creator.push( ( <div data-advice='Put your HTML here. creator is a Person or
-Organization.'></div> ) );
+            creator = ( <div data-advice='Put your HTML here. creator is a Person or
+Organization.'></div> );
         }
       }
       var musicBy;
@@ -267,8 +267,8 @@ Organization.'></div> ) );
 Person.'></div> ) );
           }
         } else {
-            musicBy.push( ( <div data-advice='Put your HTML here. musicBy is a MusicGroup or
-Person.'></div> ) );
+            musicBy = ( <div data-advice='Put your HTML here. musicBy is a MusicGroup or
+Person.'></div> );
         }
       }
       var commentCount;
@@ -276,7 +276,7 @@ Person.'></div> ) );
         if( this.props.commentCount instanceof Array ){
           commentCount = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.commentCount ){
-            commentCount.push( ( <Integer props={ this.props.commentCount } /> ) );          }
+            commentCount.push( ( <Integer {...this.props.commentCount } /> ) );          }
         } else {
           commentCount = ( <Integer props={ this.props.commentCount } /> );        }
       }
@@ -285,7 +285,7 @@ Person.'></div> ) );
         if( this.props.video instanceof Array ){
           video = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.video ){
-            video.push( ( <VideoObject props={ this.props.video } /> ) );          }
+            video.push( ( <VideoObject {...this.props.video } /> ) );          }
         } else {
           video = ( <VideoObject props={ this.props.video } /> );        }
       }
@@ -297,7 +297,7 @@ Person.'></div> ) );
             typicalAgeRange.push( ( <div data-advice='Put your HTML here. typicalAgeRange is a Text.'></div> ) );
           }
         } else {
-            typicalAgeRange.push( ( <div data-advice='Put your HTML here. typicalAgeRange is a Text.'></div> ) );
+            typicalAgeRange = ( <div data-advice='Put your HTML here. typicalAgeRange is a Text.'></div> );
         }
       }
       var duration;
@@ -305,7 +305,7 @@ Person.'></div> ) );
         if( this.props.duration instanceof Array ){
           duration = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.duration ){
-            duration.push( ( <Duration props={ this.props.duration } /> ) );          }
+            duration.push( ( <Duration {...this.props.duration } /> ) );          }
         } else {
           duration = ( <Duration props={ this.props.duration } /> );        }
       }
@@ -317,7 +317,7 @@ Person.'></div> ) );
             discussionUrl.push( ( <div data-advice='Put your HTML here. discussionUrl is a URL.'></div> ) );
           }
         } else {
-            discussionUrl.push( ( <div data-advice='Put your HTML here. discussionUrl is a URL.'></div> ) );
+            discussionUrl = ( <div data-advice='Put your HTML here. discussionUrl is a URL.'></div> );
         }
       }
       var productionCompany;
@@ -325,7 +325,7 @@ Person.'></div> ) );
         if( this.props.productionCompany instanceof Array ){
           productionCompany = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.productionCompany ){
-            productionCompany.push( ( <Organization props={ this.props.productionCompany } /> ) );          }
+            productionCompany.push( ( <Organization {...this.props.productionCompany } /> ) );          }
         } else {
           productionCompany = ( <Organization props={ this.props.productionCompany } /> );        }
       }
@@ -334,7 +334,7 @@ Person.'></div> ) );
         if( this.props.review instanceof Array ){
           review = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.review ){
-            review.push( ( <Review props={ this.props.review } /> ) );          }
+            review.push( ( <Review {...this.props.review } /> ) );          }
         } else {
           review = ( <Review props={ this.props.review } /> );        }
       }
@@ -343,7 +343,7 @@ Person.'></div> ) );
         if( this.props.isFamilyFriendly instanceof Array ){
           isFamilyFriendly = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.isFamilyFriendly ){
-            isFamilyFriendly.push( ( <Boolean props={ this.props.isFamilyFriendly } /> ) );          }
+            isFamilyFriendly.push( ( <Boolean {...this.props.isFamilyFriendly } /> ) );          }
         } else {
           isFamilyFriendly = ( <Boolean props={ this.props.isFamilyFriendly } /> );        }
       }
@@ -355,7 +355,7 @@ Person.'></div> ) );
             version.push( ( <div data-advice='Put your HTML here. version is a Number.'></div> ) );
           }
         } else {
-            version.push( ( <div data-advice='Put your HTML here. version is a Number.'></div> ) );
+            version = ( <div data-advice='Put your HTML here. version is a Number.'></div> );
         }
       }
       var provider;
@@ -367,8 +367,8 @@ Person.'></div> ) );
 Organization.'></div> ) );
           }
         } else {
-            provider.push( ( <div data-advice='Put your HTML here. provider is a Person or
-Organization.'></div> ) );
+            provider = ( <div data-advice='Put your HTML here. provider is a Person or
+Organization.'></div> );
         }
       }
       var isPartOf;
@@ -376,7 +376,7 @@ Organization.'></div> ) );
         if( this.props.isPartOf instanceof Array ){
           isPartOf = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.isPartOf ){
-            isPartOf.push( ( <CreativeWork props={ this.props.isPartOf } /> ) );          }
+            isPartOf.push( ( <CreativeWork {...this.props.isPartOf } /> ) );          }
         } else {
           isPartOf = ( <CreativeWork props={ this.props.isPartOf } /> );        }
       }
@@ -388,7 +388,7 @@ Organization.'></div> ) );
             accessibilityHazard.push( ( <div data-advice='Put your HTML here. accessibilityHazard is a Text.'></div> ) );
           }
         } else {
-            accessibilityHazard.push( ( <div data-advice='Put your HTML here. accessibilityHazard is a Text.'></div> ) );
+            accessibilityHazard = ( <div data-advice='Put your HTML here. accessibilityHazard is a Text.'></div> );
         }
       }
       var thumbnail;
@@ -396,7 +396,7 @@ Organization.'></div> ) );
         if( this.props.thumbnail instanceof Array ){
           thumbnail = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.thumbnail ){
-            thumbnail.push( ( <ImageObject props={ this.props.thumbnail } /> ) );          }
+            thumbnail.push( ( <ImageObject {...this.props.thumbnail } /> ) );          }
         } else {
           thumbnail = ( <ImageObject props={ this.props.thumbnail } /> );        }
       }
@@ -408,7 +408,7 @@ Organization.'></div> ) );
             contentSize.push( ( <div data-advice='Put your HTML here. contentSize is a Text.'></div> ) );
           }
         } else {
-            contentSize.push( ( <div data-advice='Put your HTML here. contentSize is a Text.'></div> ) );
+            contentSize = ( <div data-advice='Put your HTML here. contentSize is a Text.'></div> );
         }
       }
       var contentUrl;
@@ -419,7 +419,7 @@ Organization.'></div> ) );
             contentUrl.push( ( <div data-advice='Put your HTML here. contentUrl is a URL.'></div> ) );
           }
         } else {
-            contentUrl.push( ( <div data-advice='Put your HTML here. contentUrl is a URL.'></div> ) );
+            contentUrl = ( <div data-advice='Put your HTML here. contentUrl is a URL.'></div> );
         }
       }
       var educationalAlignment;
@@ -427,7 +427,7 @@ Organization.'></div> ) );
         if( this.props.educationalAlignment instanceof Array ){
           educationalAlignment = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.educationalAlignment ){
-            educationalAlignment.push( ( <AlignmentObject props={ this.props.educationalAlignment } /> ) );          }
+            educationalAlignment.push( ( <AlignmentObject {...this.props.educationalAlignment } /> ) );          }
         } else {
           educationalAlignment = ( <AlignmentObject props={ this.props.educationalAlignment } /> );        }
       }
@@ -439,7 +439,7 @@ Organization.'></div> ) );
             genre.push( ( <div data-advice='Put your HTML here. genre is a Text.'></div> ) );
           }
         } else {
-            genre.push( ( <div data-advice='Put your HTML here. genre is a Text.'></div> ) );
+            genre = ( <div data-advice='Put your HTML here. genre is a Text.'></div> );
         }
       }
       var bitrate;
@@ -450,7 +450,7 @@ Organization.'></div> ) );
             bitrate.push( ( <div data-advice='Put your HTML here. bitrate is a Text.'></div> ) );
           }
         } else {
-            bitrate.push( ( <div data-advice='Put your HTML here. bitrate is a Text.'></div> ) );
+            bitrate = ( <div data-advice='Put your HTML here. bitrate is a Text.'></div> );
         }
       }
       var director;
@@ -458,7 +458,7 @@ Organization.'></div> ) );
         if( this.props.director instanceof Array ){
           director = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.director ){
-            director.push( ( <Person props={ this.props.director } /> ) );          }
+            director.push( ( <Person {...this.props.director } /> ) );          }
         } else {
           director = ( <Person props={ this.props.director } /> );        }
       }
@@ -467,7 +467,7 @@ Organization.'></div> ) );
         if( this.props.about instanceof Array ){
           about = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.about ){
-            about.push( ( <Thing props={ this.props.about } /> ) );          }
+            about.push( ( <Thing {...this.props.about } /> ) );          }
         } else {
           about = ( <Thing props={ this.props.about } /> );        }
       }
@@ -476,12 +476,12 @@ Organization.'></div> ) );
         if( this.props.license instanceof Array ){
           license = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.license ){
-            license.push( ( <div data-advice='Put your HTML here. license is a CreativeWork or
-URL.'></div> ) );
+            license.push( ( <div data-advice='Put your HTML here. license is a URL or
+CreativeWork.'></div> ) );
           }
         } else {
-            license.push( ( <div data-advice='Put your HTML here. license is a CreativeWork or
-URL.'></div> ) );
+            license = ( <div data-advice='Put your HTML here. license is a URL or
+CreativeWork.'></div> );
         }
       }
       var workExample;
@@ -489,7 +489,7 @@ URL.'></div> ) );
         if( this.props.workExample instanceof Array ){
           workExample = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.workExample ){
-            workExample.push( ( <CreativeWork props={ this.props.workExample } /> ) );          }
+            workExample.push( ( <CreativeWork {...this.props.workExample } /> ) );          }
         } else {
           workExample = ( <CreativeWork props={ this.props.workExample } /> );        }
       }
@@ -501,7 +501,7 @@ URL.'></div> ) );
             encodingFormat.push( ( <div data-advice='Put your HTML here. encodingFormat is a Text.'></div> ) );
           }
         } else {
-            encodingFormat.push( ( <div data-advice='Put your HTML here. encodingFormat is a Text.'></div> ) );
+            encodingFormat = ( <div data-advice='Put your HTML here. encodingFormat is a Text.'></div> );
         }
       }
       var caption;
@@ -512,7 +512,7 @@ URL.'></div> ) );
             caption.push( ( <div data-advice='Put your HTML here. caption is a Text.'></div> ) );
           }
         } else {
-            caption.push( ( <div data-advice='Put your HTML here. caption is a Text.'></div> ) );
+            caption = ( <div data-advice='Put your HTML here. caption is a Text.'></div> );
         }
       }
       var mentions;
@@ -520,7 +520,7 @@ URL.'></div> ) );
         if( this.props.mentions instanceof Array ){
           mentions = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.mentions ){
-            mentions.push( ( <Thing props={ this.props.mentions } /> ) );          }
+            mentions.push( ( <Thing {...this.props.mentions } /> ) );          }
         } else {
           mentions = ( <Thing props={ this.props.mentions } /> );        }
       }
@@ -529,7 +529,7 @@ URL.'></div> ) );
         if( this.props.comment instanceof Array ){
           comment = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.comment ){
-            comment.push( ( <Comment props={ this.props.comment } /> ) );          }
+            comment.push( ( <Comment {...this.props.comment } /> ) );          }
         } else {
           comment = ( <Comment props={ this.props.comment } /> );        }
       }
@@ -541,7 +541,7 @@ URL.'></div> ) );
             isBasedOnUrl.push( ( <div data-advice='Put your HTML here. isBasedOnUrl is a URL.'></div> ) );
           }
         } else {
-            isBasedOnUrl.push( ( <div data-advice='Put your HTML here. isBasedOnUrl is a URL.'></div> ) );
+            isBasedOnUrl = ( <div data-advice='Put your HTML here. isBasedOnUrl is a URL.'></div> );
         }
       }
       var encoding;
@@ -549,7 +549,7 @@ URL.'></div> ) );
         if( this.props.encoding instanceof Array ){
           encoding = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.encoding ){
-            encoding.push( ( <MediaObject props={ this.props.encoding } /> ) );          }
+            encoding.push( ( <MediaObject {...this.props.encoding } /> ) );          }
         } else {
           encoding = ( <MediaObject props={ this.props.encoding } /> );        }
       }
@@ -561,7 +561,7 @@ URL.'></div> ) );
             sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
-            sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
+            sameAs = ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> );
         }
       }
       var image;
@@ -573,8 +573,8 @@ URL.'></div> ) );
 ImageObject.'></div> ) );
           }
         } else {
-            image.push( ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> ) );
+            image = ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> );
         }
       }
       var height;
@@ -582,12 +582,12 @@ ImageObject.'></div> ) );
         if( this.props.height instanceof Array ){
           height = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.height ){
-            height.push( ( <div data-advice='Put your HTML here. height is a Distance or
-QuantitativeValue.'></div> ) );
+            height.push( ( <div data-advice='Put your HTML here. height is a QuantitativeValue or
+Distance.'></div> ) );
           }
         } else {
-            height.push( ( <div data-advice='Put your HTML here. height is a Distance or
-QuantitativeValue.'></div> ) );
+            height = ( <div data-advice='Put your HTML here. height is a QuantitativeValue or
+Distance.'></div> );
         }
       }
       var aggregateRating;
@@ -595,7 +595,7 @@ QuantitativeValue.'></div> ) );
         if( this.props.aggregateRating instanceof Array ){
           aggregateRating = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.aggregateRating ){
-            aggregateRating.push( ( <AggregateRating props={ this.props.aggregateRating } /> ) );          }
+            aggregateRating.push( ( <AggregateRating {...this.props.aggregateRating } /> ) );          }
         } else {
           aggregateRating = ( <AggregateRating props={ this.props.aggregateRating } /> );        }
       }
@@ -608,8 +608,8 @@ QuantitativeValue.'></div> ) );
 Organization.'></div> ) );
           }
         } else {
-            contributor.push( ( <div data-advice='Put your HTML here. contributor is a Person or
-Organization.'></div> ) );
+            contributor = ( <div data-advice='Put your HTML here. contributor is a Person or
+Organization.'></div> );
         }
       }
       var thumbnailUrl;
@@ -620,7 +620,7 @@ Organization.'></div> ) );
             thumbnailUrl.push( ( <div data-advice='Put your HTML here. thumbnailUrl is a URL.'></div> ) );
           }
         } else {
-            thumbnailUrl.push( ( <div data-advice='Put your HTML here. thumbnailUrl is a URL.'></div> ) );
+            thumbnailUrl = ( <div data-advice='Put your HTML here. thumbnailUrl is a URL.'></div> );
         }
       }
       var mainEntity;
@@ -628,7 +628,7 @@ Organization.'></div> ) );
         if( this.props.mainEntity instanceof Array ){
           mainEntity = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.mainEntity ){
-            mainEntity.push( ( <Thing props={ this.props.mainEntity } /> ) );          }
+            mainEntity.push( ( <Thing {...this.props.mainEntity } /> ) );          }
         } else {
           mainEntity = ( <Thing props={ this.props.mainEntity } /> );        }
       }
@@ -640,7 +640,7 @@ Organization.'></div> ) );
             alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
-            alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
+            alternateName = ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> );
         }
       }
       var accessibilityFeature;
@@ -651,7 +651,7 @@ Organization.'></div> ) );
             accessibilityFeature.push( ( <div data-advice='Put your HTML here. accessibilityFeature is a Text.'></div> ) );
           }
         } else {
-            accessibilityFeature.push( ( <div data-advice='Put your HTML here. accessibilityFeature is a Text.'></div> ) );
+            accessibilityFeature = ( <div data-advice='Put your HTML here. accessibilityFeature is a Text.'></div> );
         }
       }
       var interactivityType;
@@ -662,7 +662,7 @@ Organization.'></div> ) );
             interactivityType.push( ( <div data-advice='Put your HTML here. interactivityType is a Text.'></div> ) );
           }
         } else {
-            interactivityType.push( ( <div data-advice='Put your HTML here. interactivityType is a Text.'></div> ) );
+            interactivityType = ( <div data-advice='Put your HTML here. interactivityType is a Text.'></div> );
         }
       }
       var publication;
@@ -670,7 +670,7 @@ Organization.'></div> ) );
         if( this.props.publication instanceof Array ){
           publication = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.publication ){
-            publication.push( ( <PublicationEvent props={ this.props.publication } /> ) );          }
+            publication.push( ( <PublicationEvent {...this.props.publication } /> ) );          }
         } else {
           publication = ( <PublicationEvent props={ this.props.publication } /> );        }
       }
@@ -679,12 +679,12 @@ Organization.'></div> ) );
         if( this.props.width instanceof Array ){
           width = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.width ){
-            width.push( ( <div data-advice='Put your HTML here. width is a Distance or
-QuantitativeValue.'></div> ) );
+            width.push( ( <div data-advice='Put your HTML here. width is a QuantitativeValue or
+Distance.'></div> ) );
           }
         } else {
-            width.push( ( <div data-advice='Put your HTML here. width is a Distance or
-QuantitativeValue.'></div> ) );
+            width = ( <div data-advice='Put your HTML here. width is a QuantitativeValue or
+Distance.'></div> );
         }
       }
       var requiresSubscription;
@@ -692,7 +692,7 @@ QuantitativeValue.'></div> ) );
         if( this.props.requiresSubscription instanceof Array ){
           requiresSubscription = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.requiresSubscription ){
-            requiresSubscription.push( ( <Boolean props={ this.props.requiresSubscription } /> ) );          }
+            requiresSubscription.push( ( <Boolean {...this.props.requiresSubscription } /> ) );          }
         } else {
           requiresSubscription = ( <Boolean props={ this.props.requiresSubscription } /> );        }
       }
@@ -701,7 +701,7 @@ QuantitativeValue.'></div> ) );
         if( this.props.editor instanceof Array ){
           editor = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.editor ){
-            editor.push( ( <Person props={ this.props.editor } /> ) );          }
+            editor.push( ( <Person {...this.props.editor } /> ) );          }
         } else {
           editor = ( <Person props={ this.props.editor } /> );        }
       }
@@ -710,12 +710,12 @@ QuantitativeValue.'></div> ) );
         if( this.props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.mainEntityOfPage ){
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> ) );
+            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> ) );
           }
         } else {
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> ) );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> );
         }
       }
       var recordedAt;
@@ -723,7 +723,7 @@ URL.'></div> ) );
         if( this.props.recordedAt instanceof Array ){
           recordedAt = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.recordedAt ){
-            recordedAt.push( ( <Event props={ this.props.recordedAt } /> ) );          }
+            recordedAt.push( ( <Event {...this.props.recordedAt } /> ) );          }
         } else {
           recordedAt = ( <Event props={ this.props.recordedAt } /> );        }
       }
@@ -732,7 +732,7 @@ URL.'></div> ) );
         if( this.props.publisher instanceof Array ){
           publisher = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.publisher ){
-            publisher.push( ( <Organization props={ this.props.publisher } /> ) );          }
+            publisher.push( ( <Organization {...this.props.publisher } /> ) );          }
         } else {
           publisher = ( <Organization props={ this.props.publisher } /> );        }
       }
@@ -741,7 +741,7 @@ URL.'></div> ) );
         if( this.props.hasPart instanceof Array ){
           hasPart = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.hasPart ){
-            hasPart.push( ( <CreativeWork props={ this.props.hasPart } /> ) );          }
+            hasPart.push( ( <CreativeWork {...this.props.hasPart } /> ) );          }
         } else {
           hasPart = ( <CreativeWork props={ this.props.hasPart } /> );        }
       }
@@ -753,7 +753,7 @@ URL.'></div> ) );
             award.push( ( <div data-advice='Put your HTML here. award is a Text.'></div> ) );
           }
         } else {
-            award.push( ( <div data-advice='Put your HTML here. award is a Text.'></div> ) );
+            award = ( <div data-advice='Put your HTML here. award is a Text.'></div> );
         }
       }
       var exampleOfWork;
@@ -761,7 +761,7 @@ URL.'></div> ) );
         if( this.props.exampleOfWork instanceof Array ){
           exampleOfWork = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.exampleOfWork ){
-            exampleOfWork.push( ( <CreativeWork props={ this.props.exampleOfWork } /> ) );          }
+            exampleOfWork.push( ( <CreativeWork {...this.props.exampleOfWork } /> ) );          }
         } else {
           exampleOfWork = ( <CreativeWork props={ this.props.exampleOfWork } /> );        }
       }
@@ -774,8 +774,8 @@ URL.'></div> ) );
 Organization.'></div> ) );
           }
         } else {
-            copyrightHolder.push( ( <div data-advice='Put your HTML here. copyrightHolder is a Person or
-Organization.'></div> ) );
+            copyrightHolder = ( <div data-advice='Put your HTML here. copyrightHolder is a Person or
+Organization.'></div> );
         }
       }
       var accessibilityAPI;
@@ -786,7 +786,7 @@ Organization.'></div> ) );
             accessibilityAPI.push( ( <div data-advice='Put your HTML here. accessibilityAPI is a Text.'></div> ) );
           }
         } else {
-            accessibilityAPI.push( ( <div data-advice='Put your HTML here. accessibilityAPI is a Text.'></div> ) );
+            accessibilityAPI = ( <div data-advice='Put your HTML here. accessibilityAPI is a Text.'></div> );
         }
       }
       var learningResourceType;
@@ -797,7 +797,7 @@ Organization.'></div> ) );
             learningResourceType.push( ( <div data-advice='Put your HTML here. learningResourceType is a Text.'></div> ) );
           }
         } else {
-            learningResourceType.push( ( <div data-advice='Put your HTML here. learningResourceType is a Text.'></div> ) );
+            learningResourceType = ( <div data-advice='Put your HTML here. learningResourceType is a Text.'></div> );
         }
       }
       var sourceOrganization;
@@ -805,7 +805,7 @@ Organization.'></div> ) );
         if( this.props.sourceOrganization instanceof Array ){
           sourceOrganization = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.sourceOrganization ){
-            sourceOrganization.push( ( <Organization props={ this.props.sourceOrganization } /> ) );          }
+            sourceOrganization.push( ( <Organization {...this.props.sourceOrganization } /> ) );          }
         } else {
           sourceOrganization = ( <Organization props={ this.props.sourceOrganization } /> );        }
       }
@@ -817,7 +817,7 @@ Organization.'></div> ) );
             videoFrameSize.push( ( <div data-advice='Put your HTML here. videoFrameSize is a Text.'></div> ) );
           }
         } else {
-            videoFrameSize.push( ( <div data-advice='Put your HTML here. videoFrameSize is a Text.'></div> ) );
+            videoFrameSize = ( <div data-advice='Put your HTML here. videoFrameSize is a Text.'></div> );
         }
       }
       var regionsAllowed;
@@ -825,7 +825,7 @@ Organization.'></div> ) );
         if( this.props.regionsAllowed instanceof Array ){
           regionsAllowed = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.regionsAllowed ){
-            regionsAllowed.push( ( <Place props={ this.props.regionsAllowed } /> ) );          }
+            regionsAllowed.push( ( <Place {...this.props.regionsAllowed } /> ) );          }
         } else {
           regionsAllowed = ( <Place props={ this.props.regionsAllowed } /> );        }
       }
@@ -838,8 +838,8 @@ Organization.'></div> ) );
 Text.'></div> ) );
           }
         } else {
-            inLanguage.push( ( <div data-advice='Put your HTML here. inLanguage is a Language or
-Text.'></div> ) );
+            inLanguage = ( <div data-advice='Put your HTML here. inLanguage is a Language or
+Text.'></div> );
         }
       }
       var citation;
@@ -847,12 +847,12 @@ Text.'></div> ) );
         if( this.props.citation instanceof Array ){
           citation = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.citation ){
-            citation.push( ( <div data-advice='Put your HTML here. citation is a CreativeWork or
-Text.'></div> ) );
+            citation.push( ( <div data-advice='Put your HTML here. citation is a Text or
+CreativeWork.'></div> ) );
           }
         } else {
-            citation.push( ( <div data-advice='Put your HTML here. citation is a CreativeWork or
-Text.'></div> ) );
+            citation = ( <div data-advice='Put your HTML here. citation is a Text or
+CreativeWork.'></div> );
         }
       }
       var additionalType;
@@ -863,7 +863,7 @@ Text.'></div> ) );
             additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
-            additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
+            additionalType = ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> );
         }
       }
       var author;
@@ -875,8 +875,8 @@ Text.'></div> ) );
 Organization.'></div> ) );
           }
         } else {
-            author.push( ( <div data-advice='Put your HTML here. author is a Person or
-Organization.'></div> ) );
+            author = ( <div data-advice='Put your HTML here. author is a Person or
+Organization.'></div> );
         }
       }
       var actor;
@@ -884,7 +884,7 @@ Organization.'></div> ) );
         if( this.props.actor instanceof Array ){
           actor = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.actor ){
-            actor.push( ( <Person props={ this.props.actor } /> ) );          }
+            actor.push( ( <Person {...this.props.actor } /> ) );          }
         } else {
           actor = ( <Person props={ this.props.actor } /> );        }
       }
@@ -896,7 +896,7 @@ Organization.'></div> ) );
             dateModified.push( ( <div data-advice='Put your HTML here. dateModified is a Date.'></div> ) );
           }
         } else {
-            dateModified.push( ( <div data-advice='Put your HTML here. dateModified is a Date.'></div> ) );
+            dateModified = ( <div data-advice='Put your HTML here. dateModified is a Date.'></div> );
         }
       }
       var description;
@@ -907,7 +907,7 @@ Organization.'></div> ) );
             description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {
-            description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
+            description = ( <div data-advice='Put your HTML here. description is a Text.'></div> );
         }
       }
       var expires;
@@ -918,7 +918,7 @@ Organization.'></div> ) );
             expires.push( ( <div data-advice='Put your HTML here. expires is a Date.'></div> ) );
           }
         } else {
-            expires.push( ( <div data-advice='Put your HTML here. expires is a Date.'></div> ) );
+            expires = ( <div data-advice='Put your HTML here. expires is a Date.'></div> );
         }
       }
       var releasedEvent;
@@ -926,7 +926,7 @@ Organization.'></div> ) );
         if( this.props.releasedEvent instanceof Array ){
           releasedEvent = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.releasedEvent ){
-            releasedEvent.push( ( <PublicationEvent props={ this.props.releasedEvent } /> ) );          }
+            releasedEvent.push( ( <PublicationEvent {...this.props.releasedEvent } /> ) );          }
         } else {
           releasedEvent = ( <PublicationEvent props={ this.props.releasedEvent } /> );        }
       }
@@ -939,8 +939,8 @@ Organization.'></div> ) );
 Organization.'></div> ) );
           }
         } else {
-            translator.push( ( <div data-advice='Put your HTML here. translator is a Person or
-Organization.'></div> ) );
+            translator = ( <div data-advice='Put your HTML here. translator is a Person or
+Organization.'></div> );
         }
       }
       var uploadDate;
@@ -951,7 +951,7 @@ Organization.'></div> ) );
             uploadDate.push( ( <div data-advice='Put your HTML here. uploadDate is a Date.'></div> ) );
           }
         } else {
-            uploadDate.push( ( <div data-advice='Put your HTML here. uploadDate is a Date.'></div> ) );
+            uploadDate = ( <div data-advice='Put your HTML here. uploadDate is a Date.'></div> );
         }
       }
       var schemaVersion;
@@ -963,8 +963,8 @@ Organization.'></div> ) );
 Text.'></div> ) );
           }
         } else {
-            schemaVersion.push( ( <div data-advice='Put your HTML here. schemaVersion is a URL or
-Text.'></div> ) );
+            schemaVersion = ( <div data-advice='Put your HTML here. schemaVersion is a URL or
+Text.'></div> );
         }
       }
       var transcript;
@@ -975,7 +975,7 @@ Text.'></div> ) );
             transcript.push( ( <div data-advice='Put your HTML here. transcript is a Text.'></div> ) );
           }
         } else {
-            transcript.push( ( <div data-advice='Put your HTML here. transcript is a Text.'></div> ) );
+            transcript = ( <div data-advice='Put your HTML here. transcript is a Text.'></div> );
         }
       }
       var contentLocation;
@@ -983,7 +983,7 @@ Text.'></div> ) );
         if( this.props.contentLocation instanceof Array ){
           contentLocation = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.contentLocation ){
-            contentLocation.push( ( <Place props={ this.props.contentLocation } /> ) );          }
+            contentLocation.push( ( <Place {...this.props.contentLocation } /> ) );          }
         } else {
           contentLocation = ( <Place props={ this.props.contentLocation } /> );        }
       }
@@ -992,7 +992,7 @@ Text.'></div> ) );
         if( this.props.timeRequired instanceof Array ){
           timeRequired = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.timeRequired ){
-            timeRequired.push( ( <Duration props={ this.props.timeRequired } /> ) );          }
+            timeRequired.push( ( <Duration {...this.props.timeRequired } /> ) );          }
         } else {
           timeRequired = ( <Duration props={ this.props.timeRequired } /> );        }
       }
@@ -1004,7 +1004,7 @@ Text.'></div> ) );
             playerType.push( ( <div data-advice='Put your HTML here. playerType is a Text.'></div> ) );
           }
         } else {
-            playerType.push( ( <div data-advice='Put your HTML here. playerType is a Text.'></div> ) );
+            playerType = ( <div data-advice='Put your HTML here. playerType is a Text.'></div> );
         }
       }
       var url;
@@ -1015,7 +1015,7 @@ Text.'></div> ) );
             url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
-            url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
+            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
         }
       }
       var position;
@@ -1023,12 +1023,12 @@ Text.'></div> ) );
         if( this.props.position instanceof Array ){
           position = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.position ){
-            position.push( ( <div data-advice='Put your HTML here. position is a Integer or
-Text.'></div> ) );
+            position.push( ( <div data-advice='Put your HTML here. position is a Text or
+Integer.'></div> ) );
           }
         } else {
-            position.push( ( <div data-advice='Put your HTML here. position is a Integer or
-Text.'></div> ) );
+            position = ( <div data-advice='Put your HTML here. position is a Text or
+Integer.'></div> );
         }
       }
       var audio;
@@ -1036,7 +1036,7 @@ Text.'></div> ) );
         if( this.props.audio instanceof Array ){
           audio = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.audio ){
-            audio.push( ( <AudioObject props={ this.props.audio } /> ) );          }
+            audio.push( ( <AudioObject {...this.props.audio } /> ) );          }
         } else {
           audio = ( <AudioObject props={ this.props.audio } /> );        }
       }

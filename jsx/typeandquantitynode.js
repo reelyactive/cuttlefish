@@ -11,7 +11,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action props={ this.props.potentialAction } /> ) );          }
+            potentialAction.push( ( <Action {...this.props.potentialAction } /> ) );          }
         } else {
           potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
       }
@@ -23,7 +23,7 @@
             description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {
-            description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
+            description = ( <div data-advice='Put your HTML here. description is a Text.'></div> );
         }
       }
       var sameAs;
@@ -34,7 +34,7 @@
             sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
-            sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
+            sameAs = ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> );
         }
       }
       var businessFunction;
@@ -42,7 +42,7 @@
         if( this.props.businessFunction instanceof Array ){
           businessFunction = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.businessFunction ){
-            businessFunction.push( ( <BusinessFunction props={ this.props.businessFunction } /> ) );          }
+            businessFunction.push( ( <BusinessFunction {...this.props.businessFunction } /> ) );          }
         } else {
           businessFunction = ( <BusinessFunction props={ this.props.businessFunction } /> );        }
       }
@@ -54,7 +54,7 @@
             unitText.push( ( <div data-advice='Put your HTML here. unitText is a Text.'></div> ) );
           }
         } else {
-            unitText.push( ( <div data-advice='Put your HTML here. unitText is a Text.'></div> ) );
+            unitText = ( <div data-advice='Put your HTML here. unitText is a Text.'></div> );
         }
       }
       var url;
@@ -65,7 +65,7 @@
             url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
-            url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
+            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
         }
       }
       var amountOfThisGood;
@@ -76,7 +76,7 @@
             amountOfThisGood.push( ( <div data-advice='Put your HTML here. amountOfThisGood is a Number.'></div> ) );
           }
         } else {
-            amountOfThisGood.push( ( <div data-advice='Put your HTML here. amountOfThisGood is a Number.'></div> ) );
+            amountOfThisGood = ( <div data-advice='Put your HTML here. amountOfThisGood is a Number.'></div> );
         }
       }
       var unitCode;
@@ -84,12 +84,12 @@
         if( this.props.unitCode instanceof Array ){
           unitCode = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.unitCode ){
-            unitCode.push( ( <div data-advice='Put your HTML here. unitCode is a Text or
-URL.'></div> ) );
+            unitCode.push( ( <div data-advice='Put your HTML here. unitCode is a URL or
+Text.'></div> ) );
           }
         } else {
-            unitCode.push( ( <div data-advice='Put your HTML here. unitCode is a Text or
-URL.'></div> ) );
+            unitCode = ( <div data-advice='Put your HTML here. unitCode is a URL or
+Text.'></div> );
         }
       }
       var mainEntityOfPage;
@@ -97,12 +97,12 @@ URL.'></div> ) );
         if( this.props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.mainEntityOfPage ){
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> ) );
+            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> ) );
           }
         } else {
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> ) );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> );
         }
       }
       var additionalType;
@@ -113,7 +113,7 @@ URL.'></div> ) );
             additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
-            additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
+            additionalType = ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> );
         }
       }
       var alternateName;
@@ -124,7 +124,7 @@ URL.'></div> ) );
             alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
-            alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
+            alternateName = ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> );
         }
       }
       var image;
@@ -136,8 +136,8 @@ URL.'></div> ) );
 ImageObject.'></div> ) );
           }
         } else {
-            image.push( ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> ) );
+            image = ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> );
         }
       }
       var typeOfGood;
@@ -145,7 +145,7 @@ ImageObject.'></div> ) );
         if( this.props.typeOfGood instanceof Array ){
           typeOfGood = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.typeOfGood ){
-            typeOfGood.push( ( <Product props={ this.props.typeOfGood } /> ) );          }
+            typeOfGood.push( ( <Product {...this.props.typeOfGood } /> ) );          }
         } else {
           typeOfGood = ( <Product props={ this.props.typeOfGood } /> );        }
       }
@@ -157,7 +157,7 @@ ImageObject.'></div> ) );
             name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {
-            name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
+            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
       }
       return (<div title='TypeAndQuantityNode' className='TypeAndQuantityNode entity'>

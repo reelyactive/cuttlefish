@@ -13,7 +13,7 @@ Always use specific schema.org properties when a) they exist and b) you can popu
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( React.createElement(Action, {props:  this.props.potentialAction}) ) );          }
+            potentialAction.push( ( React.createElement(Action, React.__spread({},  this.props.potentialAction )) ) );          }
         } else {
           potentialAction = ( React.createElement(Action, {props:  this.props.potentialAction}) );        }
       }
@@ -22,18 +22,18 @@ Always use specific schema.org properties when a) they exist and b) you can popu
         if( this.props.valueReference instanceof Array ){
           valueReference = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.valueReference ){
-            valueReference.push( ( React.createElement("div", {"data-advice": "Put your HTML here. valueReference is a Enumeration or" + ' ' +
-"StructuredValue or" + ' ' +
-"PropertyValue or" + ' ' +
+            valueReference.push( ( React.createElement("div", {"data-advice": "Put your HTML here. valueReference is a PropertyValue or" + ' ' +
 "QuantitativeValue or" + ' ' +
-"QualitativeValue."}) ) );
+"QualitativeValue or" + ' ' +
+"Enumeration or" + ' ' +
+"StructuredValue."}) ) );
           }
         } else {
-            valueReference.push( ( React.createElement("div", {"data-advice": "Put your HTML here. valueReference is a Enumeration or" + ' ' +
-"StructuredValue or" + ' ' +
-"PropertyValue or" + ' ' +
+            valueReference = ( React.createElement("div", {"data-advice": "Put your HTML here. valueReference is a PropertyValue or" + ' ' +
 "QuantitativeValue or" + ' ' +
-"QualitativeValue."}) ) );
+"QualitativeValue or" + ' ' +
+"Enumeration or" + ' ' +
+"StructuredValue."}) );
         }
       }
       var description;
@@ -44,7 +44,7 @@ Always use specific schema.org properties when a) they exist and b) you can popu
             description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
           }
         } else {
-            description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
+            description = ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) );
         }
       }
       var sameAs;
@@ -55,7 +55,7 @@ Always use specific schema.org properties when a) they exist and b) you can popu
             sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
           }
         } else {
-            sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
+            sameAs = ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) );
         }
       }
       var image;
@@ -67,8 +67,8 @@ Always use specific schema.org properties when a) they exist and b) you can popu
 "ImageObject."}) ) );
           }
         } else {
-            image.push( ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
-"ImageObject."}) ) );
+            image = ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
+"ImageObject."}) );
         }
       }
       var maxValue;
@@ -79,7 +79,7 @@ Always use specific schema.org properties when a) they exist and b) you can popu
             maxValue.push( ( React.createElement("div", {"data-advice": "Put your HTML here. maxValue is a Number."}) ) );
           }
         } else {
-            maxValue.push( ( React.createElement("div", {"data-advice": "Put your HTML here. maxValue is a Number."}) ) );
+            maxValue = ( React.createElement("div", {"data-advice": "Put your HTML here. maxValue is a Number."}) );
         }
       }
       var value;
@@ -87,16 +87,16 @@ Always use specific schema.org properties when a) they exist and b) you can popu
         if( this.props.value instanceof Array ){
           value = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.value ){
-            value.push( ( React.createElement("div", {"data-advice": "Put your HTML here. value is a Number or" + ' ' +
-"StructuredValue or" + ' ' +
-"Boolean or" + ' ' +
-"Text."}) ) );
+            value.push( ( React.createElement("div", {"data-advice": "Put your HTML here. value is a Boolean or" + ' ' +
+"Text or" + ' ' +
+"Number or" + ' ' +
+"StructuredValue."}) ) );
           }
         } else {
-            value.push( ( React.createElement("div", {"data-advice": "Put your HTML here. value is a Number or" + ' ' +
-"StructuredValue or" + ' ' +
-"Boolean or" + ' ' +
-"Text."}) ) );
+            value = ( React.createElement("div", {"data-advice": "Put your HTML here. value is a Boolean or" + ' ' +
+"Text or" + ' ' +
+"Number or" + ' ' +
+"StructuredValue."}) );
         }
       }
       var minValue;
@@ -107,7 +107,7 @@ Always use specific schema.org properties when a) they exist and b) you can popu
             minValue.push( ( React.createElement("div", {"data-advice": "Put your HTML here. minValue is a Number."}) ) );
           }
         } else {
-            minValue.push( ( React.createElement("div", {"data-advice": "Put your HTML here. minValue is a Number."}) ) );
+            minValue = ( React.createElement("div", {"data-advice": "Put your HTML here. minValue is a Number."}) );
         }
       }
       var additionalType;
@@ -118,7 +118,7 @@ Always use specific schema.org properties when a) they exist and b) you can popu
             additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
           }
         } else {
-            additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
+            additionalType = ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) );
         }
       }
       var url;
@@ -129,7 +129,7 @@ Always use specific schema.org properties when a) they exist and b) you can popu
             url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
           }
         } else {
-            url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
+            url = ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) );
         }
       }
       var unitText;
@@ -140,7 +140,7 @@ Always use specific schema.org properties when a) they exist and b) you can popu
             unitText.push( ( React.createElement("div", {"data-advice": "Put your HTML here. unitText is a Text."}) ) );
           }
         } else {
-            unitText.push( ( React.createElement("div", {"data-advice": "Put your HTML here. unitText is a Text."}) ) );
+            unitText = ( React.createElement("div", {"data-advice": "Put your HTML here. unitText is a Text."}) );
         }
       }
       var mainEntityOfPage;
@@ -148,12 +148,12 @@ Always use specific schema.org properties when a) they exist and b) you can popu
         if( this.props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.mainEntityOfPage ){
-            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
-"URL."}) ) );
+            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
+"CreativeWork."}) ) );
           }
         } else {
-            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
-"URL."}) ) );
+            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
+"CreativeWork."}) );
         }
       }
       var unitCode;
@@ -165,8 +165,8 @@ Always use specific schema.org properties when a) they exist and b) you can popu
 "Text."}) ) );
           }
         } else {
-            unitCode.push( ( React.createElement("div", {"data-advice": "Put your HTML here. unitCode is a URL or" + ' ' +
-"Text."}) ) );
+            unitCode = ( React.createElement("div", {"data-advice": "Put your HTML here. unitCode is a URL or" + ' ' +
+"Text."}) );
         }
       }
       var alternateName;
@@ -177,7 +177,7 @@ Always use specific schema.org properties when a) they exist and b) you can popu
             alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
           }
         } else {
-            alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
+            alternateName = ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) );
         }
       }
       var propertyID;
@@ -189,8 +189,8 @@ Always use specific schema.org properties when a) they exist and b) you can popu
 "Text."}) ) );
           }
         } else {
-            propertyID.push( ( React.createElement("div", {"data-advice": "Put your HTML here. propertyID is a URL or" + ' ' +
-"Text."}) ) );
+            propertyID = ( React.createElement("div", {"data-advice": "Put your HTML here. propertyID is a URL or" + ' ' +
+"Text."}) );
         }
       }
       var name;
@@ -201,7 +201,7 @@ Always use specific schema.org properties when a) they exist and b) you can popu
             name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
           }
         } else {
-            name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
+            name = ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) );
         }
       }
       return (React.createElement("div", {title: "PropertyValue", className: "PropertyValue entity"}, 

@@ -22,7 +22,7 @@ http://purl.org/goodrelations/v1#PaySwarm. Generated automatically by the reactG
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( React.createElement(Action, {props:  this.props.potentialAction}) ) );          }
+            potentialAction.push( ( React.createElement(Action, React.__spread({},  this.props.potentialAction )) ) );          }
         } else {
           potentialAction = ( React.createElement(Action, {props:  this.props.potentialAction}) );        }
       }
@@ -34,7 +34,7 @@ http://purl.org/goodrelations/v1#PaySwarm. Generated automatically by the reactG
             description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
           }
         } else {
-            description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
+            description = ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) );
         }
       }
       var sameAs;
@@ -45,7 +45,7 @@ http://purl.org/goodrelations/v1#PaySwarm. Generated automatically by the reactG
             sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
           }
         } else {
-            sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
+            sameAs = ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) );
         }
       }
       var image;
@@ -57,8 +57,8 @@ http://purl.org/goodrelations/v1#PaySwarm. Generated automatically by the reactG
 "ImageObject."}) ) );
           }
         } else {
-            image.push( ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
-"ImageObject."}) ) );
+            image = ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
+"ImageObject."}) );
         }
       }
       var url;
@@ -69,7 +69,7 @@ http://purl.org/goodrelations/v1#PaySwarm. Generated automatically by the reactG
             url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
           }
         } else {
-            url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
+            url = ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) );
         }
       }
       var supersededBy;
@@ -77,14 +77,14 @@ http://purl.org/goodrelations/v1#PaySwarm. Generated automatically by the reactG
         if( this.props.supersededBy instanceof Array ){
           supersededBy = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.supersededBy ){
-            supersededBy.push( ( React.createElement("div", {"data-advice": "Put your HTML here. supersededBy is a Enumeration or" + ' ' +
-"Class or" + ' ' +
-"Property."}) ) );
+            supersededBy.push( ( React.createElement("div", {"data-advice": "Put your HTML here. supersededBy is a Property or" + ' ' +
+"Enumeration or" + ' ' +
+"Class."}) ) );
           }
         } else {
-            supersededBy.push( ( React.createElement("div", {"data-advice": "Put your HTML here. supersededBy is a Enumeration or" + ' ' +
-"Class or" + ' ' +
-"Property."}) ) );
+            supersededBy = ( React.createElement("div", {"data-advice": "Put your HTML here. supersededBy is a Property or" + ' ' +
+"Enumeration or" + ' ' +
+"Class."}) );
         }
       }
       var mainEntityOfPage;
@@ -96,8 +96,8 @@ http://purl.org/goodrelations/v1#PaySwarm. Generated automatically by the reactG
 "CreativeWork."}) ) );
           }
         } else {
-            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
-"CreativeWork."}) ) );
+            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
+"CreativeWork."}) );
         }
       }
       var additionalType;
@@ -108,7 +108,7 @@ http://purl.org/goodrelations/v1#PaySwarm. Generated automatically by the reactG
             additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
           }
         } else {
-            additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
+            additionalType = ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) );
         }
       }
       var alternateName;
@@ -119,7 +119,7 @@ http://purl.org/goodrelations/v1#PaySwarm. Generated automatically by the reactG
             alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
           }
         } else {
-            alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
+            alternateName = ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) );
         }
       }
       var name;
@@ -130,7 +130,7 @@ http://purl.org/goodrelations/v1#PaySwarm. Generated automatically by the reactG
             name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
           }
         } else {
-            name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
+            name = ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) );
         }
       }
       return (React.createElement("div", {title: "PaymentMethod", className: "PaymentMethod entity"}, 

@@ -11,7 +11,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action props={ this.props.potentialAction } /> ) );          }
+            potentialAction.push( ( <Action {...this.props.potentialAction } /> ) );          }
         } else {
           potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
       }
@@ -20,18 +20,18 @@
         if( this.props.valueReference instanceof Array ){
           valueReference = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.valueReference ){
-            valueReference.push( ( <div data-advice='Put your HTML here. valueReference is a QualitativeValue or
-QuantitativeValue or
-Enumeration or
+            valueReference.push( ( <div data-advice='Put your HTML here. valueReference is a Enumeration or
 StructuredValue or
-PropertyValue.'></div> ) );
+PropertyValue or
+QuantitativeValue or
+QualitativeValue.'></div> ) );
           }
         } else {
-            valueReference.push( ( <div data-advice='Put your HTML here. valueReference is a QualitativeValue or
-QuantitativeValue or
-Enumeration or
+            valueReference = ( <div data-advice='Put your HTML here. valueReference is a Enumeration or
 StructuredValue or
-PropertyValue.'></div> ) );
+PropertyValue or
+QuantitativeValue or
+QualitativeValue.'></div> );
         }
       }
       var greater;
@@ -39,7 +39,7 @@ PropertyValue.'></div> ) );
         if( this.props.greater instanceof Array ){
           greater = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.greater ){
-            greater.push( ( <QualitativeValue props={ this.props.greater } /> ) );          }
+            greater.push( ( <QualitativeValue {...this.props.greater } /> ) );          }
         } else {
           greater = ( <QualitativeValue props={ this.props.greater } /> );        }
       }
@@ -51,7 +51,7 @@ PropertyValue.'></div> ) );
             sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
-            sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
+            sameAs = ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> );
         }
       }
       var lesserOrEqual;
@@ -59,7 +59,7 @@ PropertyValue.'></div> ) );
         if( this.props.lesserOrEqual instanceof Array ){
           lesserOrEqual = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.lesserOrEqual ){
-            lesserOrEqual.push( ( <QualitativeValue props={ this.props.lesserOrEqual } /> ) );          }
+            lesserOrEqual.push( ( <QualitativeValue {...this.props.lesserOrEqual } /> ) );          }
         } else {
           lesserOrEqual = ( <QualitativeValue props={ this.props.lesserOrEqual } /> );        }
       }
@@ -68,7 +68,7 @@ PropertyValue.'></div> ) );
         if( this.props.equal instanceof Array ){
           equal = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.equal ){
-            equal.push( ( <QualitativeValue props={ this.props.equal } /> ) );          }
+            equal.push( ( <QualitativeValue {...this.props.equal } /> ) );          }
         } else {
           equal = ( <QualitativeValue props={ this.props.equal } /> );        }
       }
@@ -80,7 +80,7 @@ PropertyValue.'></div> ) );
             name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {
-            name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
+            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
       }
       var lesser;
@@ -88,7 +88,7 @@ PropertyValue.'></div> ) );
         if( this.props.lesser instanceof Array ){
           lesser = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.lesser ){
-            lesser.push( ( <QualitativeValue props={ this.props.lesser } /> ) );          }
+            lesser.push( ( <QualitativeValue {...this.props.lesser } /> ) );          }
         } else {
           lesser = ( <QualitativeValue props={ this.props.lesser } /> );        }
       }
@@ -100,7 +100,7 @@ PropertyValue.'></div> ) );
             url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
-            url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
+            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
         }
       }
       var additionalProperty;
@@ -108,7 +108,7 @@ PropertyValue.'></div> ) );
         if( this.props.additionalProperty instanceof Array ){
           additionalProperty = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.additionalProperty ){
-            additionalProperty.push( ( <PropertyValue props={ this.props.additionalProperty } /> ) );          }
+            additionalProperty.push( ( <PropertyValue {...this.props.additionalProperty } /> ) );          }
         } else {
           additionalProperty = ( <PropertyValue props={ this.props.additionalProperty } /> );        }
       }
@@ -117,14 +117,14 @@ PropertyValue.'></div> ) );
         if( this.props.supersededBy instanceof Array ){
           supersededBy = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.supersededBy ){
-            supersededBy.push( ( <div data-advice='Put your HTML here. supersededBy is a Enumeration or
-Class or
-Property.'></div> ) );
+            supersededBy.push( ( <div data-advice='Put your HTML here. supersededBy is a Class or
+Property or
+Enumeration.'></div> ) );
           }
         } else {
-            supersededBy.push( ( <div data-advice='Put your HTML here. supersededBy is a Enumeration or
-Class or
-Property.'></div> ) );
+            supersededBy = ( <div data-advice='Put your HTML here. supersededBy is a Class or
+Property or
+Enumeration.'></div> );
         }
       }
       var greaterOrEqual;
@@ -132,7 +132,7 @@ Property.'></div> ) );
         if( this.props.greaterOrEqual instanceof Array ){
           greaterOrEqual = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.greaterOrEqual ){
-            greaterOrEqual.push( ( <QualitativeValue props={ this.props.greaterOrEqual } /> ) );          }
+            greaterOrEqual.push( ( <QualitativeValue {...this.props.greaterOrEqual } /> ) );          }
         } else {
           greaterOrEqual = ( <QualitativeValue props={ this.props.greaterOrEqual } /> );        }
       }
@@ -145,8 +145,8 @@ Property.'></div> ) );
 URL.'></div> ) );
           }
         } else {
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> ) );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
+URL.'></div> );
         }
       }
       var additionalType;
@@ -157,7 +157,7 @@ URL.'></div> ) );
             additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
-            additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
+            additionalType = ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> );
         }
       }
       var alternateName;
@@ -168,7 +168,7 @@ URL.'></div> ) );
             alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
-            alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
+            alternateName = ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> );
         }
       }
       var nonEqual;
@@ -176,7 +176,7 @@ URL.'></div> ) );
         if( this.props.nonEqual instanceof Array ){
           nonEqual = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.nonEqual ){
-            nonEqual.push( ( <QualitativeValue props={ this.props.nonEqual } /> ) );          }
+            nonEqual.push( ( <QualitativeValue {...this.props.nonEqual } /> ) );          }
         } else {
           nonEqual = ( <QualitativeValue props={ this.props.nonEqual } /> );        }
       }
@@ -189,8 +189,8 @@ URL.'></div> ) );
 ImageObject.'></div> ) );
           }
         } else {
-            image.push( ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> ) );
+            image = ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> );
         }
       }
       var description;
@@ -201,7 +201,7 @@ ImageObject.'></div> ) );
             description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {
-            description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
+            description = ( <div data-advice='Put your HTML here. description is a Text.'></div> );
         }
       }
       return (<div title='QualitativeValue' className='QualitativeValue entity'>

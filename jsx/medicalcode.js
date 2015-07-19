@@ -11,7 +11,7 @@
         if( this.props.code instanceof Array ){
           code = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.code ){
-            code.push( ( <MedicalCode props={ this.props.code } /> ) );          }
+            code.push( ( <MedicalCode {...this.props.code } /> ) );          }
         } else {
           code = ( <MedicalCode props={ this.props.code } /> );        }
       }
@@ -23,7 +23,7 @@
             description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {
-            description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
+            description = ( <div data-advice='Put your HTML here. description is a Text.'></div> );
         }
       }
       var relevantSpecialty;
@@ -31,7 +31,7 @@
         if( this.props.relevantSpecialty instanceof Array ){
           relevantSpecialty = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.relevantSpecialty ){
-            relevantSpecialty.push( ( <MedicalSpecialty props={ this.props.relevantSpecialty } /> ) );          }
+            relevantSpecialty.push( ( <MedicalSpecialty {...this.props.relevantSpecialty } /> ) );          }
         } else {
           relevantSpecialty = ( <MedicalSpecialty props={ this.props.relevantSpecialty } /> );        }
       }
@@ -40,7 +40,7 @@
         if( this.props.study instanceof Array ){
           study = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.study ){
-            study.push( ( <MedicalStudy props={ this.props.study } /> ) );          }
+            study.push( ( <MedicalStudy {...this.props.study } /> ) );          }
         } else {
           study = ( <MedicalStudy props={ this.props.study } /> );        }
       }
@@ -52,7 +52,7 @@
             url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
-            url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
+            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
         }
       }
       var guideline;
@@ -60,7 +60,7 @@
         if( this.props.guideline instanceof Array ){
           guideline = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.guideline ){
-            guideline.push( ( <MedicalGuideline props={ this.props.guideline } /> ) );          }
+            guideline.push( ( <MedicalGuideline {...this.props.guideline } /> ) );          }
         } else {
           guideline = ( <MedicalGuideline props={ this.props.guideline } /> );        }
       }
@@ -72,7 +72,7 @@
             additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
-            additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
+            additionalType = ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> );
         }
       }
       var sameAs;
@@ -83,7 +83,7 @@
             sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
-            sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
+            sameAs = ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> );
         }
       }
       var potentialAction;
@@ -91,7 +91,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action props={ this.props.potentialAction } /> ) );          }
+            potentialAction.push( ( <Action {...this.props.potentialAction } /> ) );          }
         } else {
           potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
       }
@@ -100,7 +100,7 @@
         if( this.props.recognizingAuthority instanceof Array ){
           recognizingAuthority = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.recognizingAuthority ){
-            recognizingAuthority.push( ( <Organization props={ this.props.recognizingAuthority } /> ) );          }
+            recognizingAuthority.push( ( <Organization {...this.props.recognizingAuthority } /> ) );          }
         } else {
           recognizingAuthority = ( <Organization props={ this.props.recognizingAuthority } /> );        }
       }
@@ -109,7 +109,7 @@
         if( this.props.medicineSystem instanceof Array ){
           medicineSystem = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.medicineSystem ){
-            medicineSystem.push( ( <MedicineSystem props={ this.props.medicineSystem } /> ) );          }
+            medicineSystem.push( ( <MedicineSystem {...this.props.medicineSystem } /> ) );          }
         } else {
           medicineSystem = ( <MedicineSystem props={ this.props.medicineSystem } /> );        }
       }
@@ -121,7 +121,7 @@
             codeValue.push( ( <div data-advice='Put your HTML here. codeValue is a Text.'></div> ) );
           }
         } else {
-            codeValue.push( ( <div data-advice='Put your HTML here. codeValue is a Text.'></div> ) );
+            codeValue = ( <div data-advice='Put your HTML here. codeValue is a Text.'></div> );
         }
       }
       var mainEntityOfPage;
@@ -129,12 +129,12 @@
         if( this.props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.mainEntityOfPage ){
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> ) );
+            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> ) );
           }
         } else {
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> ) );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> );
         }
       }
       var codingSystem;
@@ -145,7 +145,7 @@ URL.'></div> ) );
             codingSystem.push( ( <div data-advice='Put your HTML here. codingSystem is a Text.'></div> ) );
           }
         } else {
-            codingSystem.push( ( <div data-advice='Put your HTML here. codingSystem is a Text.'></div> ) );
+            codingSystem = ( <div data-advice='Put your HTML here. codingSystem is a Text.'></div> );
         }
       }
       var alternateName;
@@ -156,7 +156,7 @@ URL.'></div> ) );
             alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
-            alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
+            alternateName = ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> );
         }
       }
       var image;
@@ -168,8 +168,8 @@ URL.'></div> ) );
 ImageObject.'></div> ) );
           }
         } else {
-            image.push( ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> ) );
+            image = ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> );
         }
       }
       var name;
@@ -180,7 +180,7 @@ ImageObject.'></div> ) );
             name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {
-            name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
+            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
       }
       return (<div title='MedicalCode' className='MedicalCode entity'>

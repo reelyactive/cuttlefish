@@ -11,7 +11,7 @@
         if( this.props.status instanceof Array ){
           status = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.status ){
-            status.push( ( <MedicalStudyStatus props={ this.props.status } /> ) );          }
+            status.push( ( <MedicalStudyStatus {...this.props.status } /> ) );          }
         } else {
           status = ( <MedicalStudyStatus props={ this.props.status } /> );        }
       }
@@ -20,7 +20,7 @@
         if( this.props.studySubject instanceof Array ){
           studySubject = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.studySubject ){
-            studySubject.push( ( <MedicalEntity props={ this.props.studySubject } /> ) );          }
+            studySubject.push( ( <MedicalEntity {...this.props.studySubject } /> ) );          }
         } else {
           studySubject = ( <MedicalEntity props={ this.props.studySubject } /> );        }
       }
@@ -29,7 +29,7 @@
         if( this.props.code instanceof Array ){
           code = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.code ){
-            code.push( ( <MedicalCode props={ this.props.code } /> ) );          }
+            code.push( ( <MedicalCode {...this.props.code } /> ) );          }
         } else {
           code = ( <MedicalCode props={ this.props.code } /> );        }
       }
@@ -41,7 +41,7 @@
             description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {
-            description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
+            description = ( <div data-advice='Put your HTML here. description is a Text.'></div> );
         }
       }
       var name;
@@ -52,7 +52,7 @@
             name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {
-            name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
+            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
       }
       var relevantSpecialty;
@@ -60,7 +60,7 @@
         if( this.props.relevantSpecialty instanceof Array ){
           relevantSpecialty = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.relevantSpecialty ){
-            relevantSpecialty.push( ( <MedicalSpecialty props={ this.props.relevantSpecialty } /> ) );          }
+            relevantSpecialty.push( ( <MedicalSpecialty {...this.props.relevantSpecialty } /> ) );          }
         } else {
           relevantSpecialty = ( <MedicalSpecialty props={ this.props.relevantSpecialty } /> );        }
       }
@@ -69,7 +69,7 @@
         if( this.props.medicineSystem instanceof Array ){
           medicineSystem = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.medicineSystem ){
-            medicineSystem.push( ( <MedicineSystem props={ this.props.medicineSystem } /> ) );          }
+            medicineSystem.push( ( <MedicineSystem {...this.props.medicineSystem } /> ) );          }
         } else {
           medicineSystem = ( <MedicineSystem props={ this.props.medicineSystem } /> );        }
       }
@@ -81,7 +81,7 @@
             url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
-            url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
+            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
         }
       }
       var guideline;
@@ -89,7 +89,7 @@
         if( this.props.guideline instanceof Array ){
           guideline = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.guideline ){
-            guideline.push( ( <MedicalGuideline props={ this.props.guideline } /> ) );          }
+            guideline.push( ( <MedicalGuideline {...this.props.guideline } /> ) );          }
         } else {
           guideline = ( <MedicalGuideline props={ this.props.guideline } /> );        }
       }
@@ -101,7 +101,7 @@
             sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
-            sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
+            sameAs = ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> );
         }
       }
       var potentialAction;
@@ -109,7 +109,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action props={ this.props.potentialAction } /> ) );          }
+            potentialAction.push( ( <Action {...this.props.potentialAction } /> ) );          }
         } else {
           potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
       }
@@ -118,7 +118,7 @@
         if( this.props.recognizingAuthority instanceof Array ){
           recognizingAuthority = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.recognizingAuthority ){
-            recognizingAuthority.push( ( <Organization props={ this.props.recognizingAuthority } /> ) );          }
+            recognizingAuthority.push( ( <Organization {...this.props.recognizingAuthority } /> ) );          }
         } else {
           recognizingAuthority = ( <Organization props={ this.props.recognizingAuthority } /> );        }
       }
@@ -127,7 +127,7 @@
         if( this.props.sponsor instanceof Array ){
           sponsor = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.sponsor ){
-            sponsor.push( ( <Organization props={ this.props.sponsor } /> ) );          }
+            sponsor.push( ( <Organization {...this.props.sponsor } /> ) );          }
         } else {
           sponsor = ( <Organization props={ this.props.sponsor } /> );        }
       }
@@ -140,8 +140,8 @@
 ImageObject.'></div> ) );
           }
         } else {
-            image.push( ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> ) );
+            image = ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> );
         }
       }
       var studyLocation;
@@ -149,7 +149,7 @@ ImageObject.'></div> ) );
         if( this.props.studyLocation instanceof Array ){
           studyLocation = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.studyLocation ){
-            studyLocation.push( ( <AdministrativeArea props={ this.props.studyLocation } /> ) );          }
+            studyLocation.push( ( <AdministrativeArea {...this.props.studyLocation } /> ) );          }
         } else {
           studyLocation = ( <AdministrativeArea props={ this.props.studyLocation } /> );        }
       }
@@ -158,12 +158,12 @@ ImageObject.'></div> ) );
         if( this.props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.mainEntityOfPage ){
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
-CreativeWork.'></div> ) );
+            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
+URL.'></div> ) );
           }
         } else {
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
-CreativeWork.'></div> ) );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
+URL.'></div> );
         }
       }
       var additionalType;
@@ -174,7 +174,7 @@ CreativeWork.'></div> ) );
             additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
-            additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
+            additionalType = ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> );
         }
       }
       var alternateName;
@@ -185,7 +185,7 @@ CreativeWork.'></div> ) );
             alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
-            alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
+            alternateName = ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> );
         }
       }
       var outcome;
@@ -196,7 +196,7 @@ CreativeWork.'></div> ) );
             outcome.push( ( <div data-advice='Put your HTML here. outcome is a Text.'></div> ) );
           }
         } else {
-            outcome.push( ( <div data-advice='Put your HTML here. outcome is a Text.'></div> ) );
+            outcome = ( <div data-advice='Put your HTML here. outcome is a Text.'></div> );
         }
       }
       var study;
@@ -204,7 +204,7 @@ CreativeWork.'></div> ) );
         if( this.props.study instanceof Array ){
           study = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.study ){
-            study.push( ( <MedicalStudy props={ this.props.study } /> ) );          }
+            study.push( ( <MedicalStudy {...this.props.study } /> ) );          }
         } else {
           study = ( <MedicalStudy props={ this.props.study } /> );        }
       }
@@ -216,7 +216,7 @@ CreativeWork.'></div> ) );
             population.push( ( <div data-advice='Put your HTML here. population is a Text.'></div> ) );
           }
         } else {
-            population.push( ( <div data-advice='Put your HTML here. population is a Text.'></div> ) );
+            population = ( <div data-advice='Put your HTML here. population is a Text.'></div> );
         }
       }
       return (<div title='MedicalStudy' className='MedicalStudy entity'>

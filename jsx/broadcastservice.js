@@ -11,7 +11,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action props={ this.props.potentialAction } /> ) );          }
+            potentialAction.push( ( <Action {...this.props.potentialAction } /> ) );          }
         } else {
           potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
       }
@@ -23,7 +23,7 @@
             broadcastDisplayName.push( ( <div data-advice='Put your HTML here. broadcastDisplayName is a Text.'></div> ) );
           }
         } else {
-            broadcastDisplayName.push( ( <div data-advice='Put your HTML here. broadcastDisplayName is a Text.'></div> ) );
+            broadcastDisplayName = ( <div data-advice='Put your HTML here. broadcastDisplayName is a Text.'></div> );
         }
       }
       var broadcastTimezone;
@@ -34,7 +34,7 @@
             broadcastTimezone.push( ( <div data-advice='Put your HTML here. broadcastTimezone is a Text.'></div> ) );
           }
         } else {
-            broadcastTimezone.push( ( <div data-advice='Put your HTML here. broadcastTimezone is a Text.'></div> ) );
+            broadcastTimezone = ( <div data-advice='Put your HTML here. broadcastTimezone is a Text.'></div> );
         }
       }
       var sameAs;
@@ -45,7 +45,7 @@
             sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
-            sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
+            sameAs = ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> );
         }
       }
       var broadcastAffiliateOf;
@@ -53,7 +53,7 @@
         if( this.props.broadcastAffiliateOf instanceof Array ){
           broadcastAffiliateOf = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.broadcastAffiliateOf ){
-            broadcastAffiliateOf.push( ( <Organization props={ this.props.broadcastAffiliateOf } /> ) );          }
+            broadcastAffiliateOf.push( ( <Organization {...this.props.broadcastAffiliateOf } /> ) );          }
         } else {
           broadcastAffiliateOf = ( <Organization props={ this.props.broadcastAffiliateOf } /> );        }
       }
@@ -66,8 +66,8 @@
 ImageObject.'></div> ) );
           }
         } else {
-            image.push( ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> ) );
+            image = ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> );
         }
       }
       var parentService;
@@ -75,7 +75,7 @@ ImageObject.'></div> ) );
         if( this.props.parentService instanceof Array ){
           parentService = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.parentService ){
-            parentService.push( ( <BroadcastService props={ this.props.parentService } /> ) );          }
+            parentService.push( ( <BroadcastService {...this.props.parentService } /> ) );          }
         } else {
           parentService = ( <BroadcastService props={ this.props.parentService } /> );        }
       }
@@ -87,7 +87,7 @@ ImageObject.'></div> ) );
             name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {
-            name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
+            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
       }
       var url;
@@ -98,7 +98,7 @@ ImageObject.'></div> ) );
             url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
-            url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
+            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
         }
       }
       var broadcaster;
@@ -106,7 +106,7 @@ ImageObject.'></div> ) );
         if( this.props.broadcaster instanceof Array ){
           broadcaster = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.broadcaster ){
-            broadcaster.push( ( <Organization props={ this.props.broadcaster } /> ) );          }
+            broadcaster.push( ( <Organization {...this.props.broadcaster } /> ) );          }
         } else {
           broadcaster = ( <Organization props={ this.props.broadcaster } /> );        }
       }
@@ -119,8 +119,8 @@ ImageObject.'></div> ) );
 URL.'></div> ) );
           }
         } else {
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> ) );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
+URL.'></div> );
         }
       }
       var additionalType;
@@ -131,7 +131,7 @@ URL.'></div> ) );
             additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
-            additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
+            additionalType = ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> );
         }
       }
       var alternateName;
@@ -142,7 +142,7 @@ URL.'></div> ) );
             alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
-            alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
+            alternateName = ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> );
         }
       }
       var description;
@@ -153,7 +153,7 @@ URL.'></div> ) );
             description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {
-            description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
+            description = ( <div data-advice='Put your HTML here. description is a Text.'></div> );
         }
       }
       return (<div title='BroadcastService' className='BroadcastService entity'>

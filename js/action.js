@@ -1,7 +1,7 @@
 /* Thing > Action - An action performed by a direct agent and indirect participants upon a direct object. Optionally happens at a location with the help of an inanimate instrument. The execution of the action may produce a result. Specific action sub-type documentation specifies the exact expectation of each argument/role.
 
 See also blog post and Actions overview document.. Generated automatically by the reactGenerator. */
- define(['../bower_components/react/react', './actionstatustype', './person', './imageobject', './datetime', './thing', './place', './action', './organization', './postaladdress', './creativework', './entrypoint'], function(React, ActionStatusType, Person, ImageObject, DateTime, Thing, Place, Action, Organization, PostalAddress, CreativeWork, EntryPoint){
+ define(['../bower_components/react/react', './actionstatustype', './thing', './imageobject', './datetime', './person', './place', './action', './organization', './postaladdress', './creativework', './entrypoint'], function(React, ActionStatusType, Thing, ImageObject, DateTime, Person, Place, Action, Organization, PostalAddress, CreativeWork, EntryPoint){
   return React.createClass({
     getDefaultProps: function(){
       return {
@@ -13,7 +13,7 @@ See also blog post and Actions overview document.. Generated automatically by th
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( React.createElement(Action, {props:  this.props.potentialAction}) ) );          }
+            potentialAction.push( ( React.createElement(Action, React.__spread({},  this.props.potentialAction )) ) );          }
         } else {
           potentialAction = ( React.createElement(Action, {props:  this.props.potentialAction}) );        }
       }
@@ -22,12 +22,12 @@ See also blog post and Actions overview document.. Generated automatically by th
         if( this.props.participant instanceof Array ){
           participant = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.participant ){
-            participant.push( ( React.createElement("div", {"data-advice": "Put your HTML here. participant is a Organization or" + ' ' +
-"Person."}) ) );
+            participant.push( ( React.createElement("div", {"data-advice": "Put your HTML here. participant is a Person or" + ' ' +
+"Organization."}) ) );
           }
         } else {
-            participant.push( ( React.createElement("div", {"data-advice": "Put your HTML here. participant is a Organization or" + ' ' +
-"Person."}) ) );
+            participant = ( React.createElement("div", {"data-advice": "Put your HTML here. participant is a Person or" + ' ' +
+"Organization."}) );
         }
       }
       var target;
@@ -35,7 +35,7 @@ See also blog post and Actions overview document.. Generated automatically by th
         if( this.props.target instanceof Array ){
           target = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.target ){
-            target.push( ( React.createElement(EntryPoint, {props:  this.props.target}) ) );          }
+            target.push( ( React.createElement(EntryPoint, React.__spread({},  this.props.target )) ) );          }
         } else {
           target = ( React.createElement(EntryPoint, {props:  this.props.target}) );        }
       }
@@ -47,7 +47,7 @@ See also blog post and Actions overview document.. Generated automatically by th
             sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
           }
         } else {
-            sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
+            sameAs = ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) );
         }
       }
       var description;
@@ -58,7 +58,7 @@ See also blog post and Actions overview document.. Generated automatically by th
             description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
           }
         } else {
-            description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
+            description = ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) );
         }
       }
       var object;
@@ -66,7 +66,7 @@ See also blog post and Actions overview document.. Generated automatically by th
         if( this.props.object instanceof Array ){
           object = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.object ){
-            object.push( ( React.createElement(Thing, {props:  this.props.object}) ) );          }
+            object.push( ( React.createElement(Thing, React.__spread({},  this.props.object )) ) );          }
         } else {
           object = ( React.createElement(Thing, {props:  this.props.object}) );        }
       }
@@ -75,12 +75,12 @@ See also blog post and Actions overview document.. Generated automatically by th
         if( this.props.agent instanceof Array ){
           agent = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.agent ){
-            agent.push( ( React.createElement("div", {"data-advice": "Put your HTML here. agent is a Organization or" + ' ' +
-"Person."}) ) );
+            agent.push( ( React.createElement("div", {"data-advice": "Put your HTML here. agent is a Person or" + ' ' +
+"Organization."}) ) );
           }
         } else {
-            agent.push( ( React.createElement("div", {"data-advice": "Put your HTML here. agent is a Organization or" + ' ' +
-"Person."}) ) );
+            agent = ( React.createElement("div", {"data-advice": "Put your HTML here. agent is a Person or" + ' ' +
+"Organization."}) );
         }
       }
       var name;
@@ -91,7 +91,7 @@ See also blog post and Actions overview document.. Generated automatically by th
             name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
           }
         } else {
-            name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
+            name = ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) );
         }
       }
       var actionStatus;
@@ -99,7 +99,7 @@ See also blog post and Actions overview document.. Generated automatically by th
         if( this.props.actionStatus instanceof Array ){
           actionStatus = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.actionStatus ){
-            actionStatus.push( ( React.createElement(ActionStatusType, {props:  this.props.actionStatus}) ) );          }
+            actionStatus.push( ( React.createElement(ActionStatusType, React.__spread({},  this.props.actionStatus )) ) );          }
         } else {
           actionStatus = ( React.createElement(ActionStatusType, {props:  this.props.actionStatus}) );        }
       }
@@ -108,7 +108,7 @@ See also blog post and Actions overview document.. Generated automatically by th
         if( this.props.instrument instanceof Array ){
           instrument = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.instrument ){
-            instrument.push( ( React.createElement(Thing, {props:  this.props.instrument}) ) );          }
+            instrument.push( ( React.createElement(Thing, React.__spread({},  this.props.instrument )) ) );          }
         } else {
           instrument = ( React.createElement(Thing, {props:  this.props.instrument}) );        }
       }
@@ -120,7 +120,7 @@ See also blog post and Actions overview document.. Generated automatically by th
             url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
           }
         } else {
-            url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
+            url = ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) );
         }
       }
       var location;
@@ -132,8 +132,8 @@ See also blog post and Actions overview document.. Generated automatically by th
 "PostalAddress."}) ) );
           }
         } else {
-            location.push( ( React.createElement("div", {"data-advice": "Put your HTML here. location is a Place or" + ' ' +
-"PostalAddress."}) ) );
+            location = ( React.createElement("div", {"data-advice": "Put your HTML here. location is a Place or" + ' ' +
+"PostalAddress."}) );
         }
       }
       var startTime;
@@ -141,7 +141,7 @@ See also blog post and Actions overview document.. Generated automatically by th
         if( this.props.startTime instanceof Array ){
           startTime = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.startTime ){
-            startTime.push( ( React.createElement(DateTime, {props:  this.props.startTime}) ) );          }
+            startTime.push( ( React.createElement(DateTime, React.__spread({},  this.props.startTime )) ) );          }
         } else {
           startTime = ( React.createElement(DateTime, {props:  this.props.startTime}) );        }
       }
@@ -150,7 +150,7 @@ See also blog post and Actions overview document.. Generated automatically by th
         if( this.props.error instanceof Array ){
           error = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.error ){
-            error.push( ( React.createElement(Thing, {props:  this.props.error}) ) );          }
+            error.push( ( React.createElement(Thing, React.__spread({},  this.props.error )) ) );          }
         } else {
           error = ( React.createElement(Thing, {props:  this.props.error}) );        }
       }
@@ -163,8 +163,8 @@ See also blog post and Actions overview document.. Generated automatically by th
 "URL."}) ) );
           }
         } else {
-            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
-"URL."}) ) );
+            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
+"URL."}) );
         }
       }
       var additionalType;
@@ -175,7 +175,7 @@ See also blog post and Actions overview document.. Generated automatically by th
             additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
           }
         } else {
-            additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
+            additionalType = ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) );
         }
       }
       var alternateName;
@@ -186,7 +186,7 @@ See also blog post and Actions overview document.. Generated automatically by th
             alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
           }
         } else {
-            alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
+            alternateName = ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) );
         }
       }
       var endTime;
@@ -194,7 +194,7 @@ See also blog post and Actions overview document.. Generated automatically by th
         if( this.props.endTime instanceof Array ){
           endTime = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.endTime ){
-            endTime.push( ( React.createElement(DateTime, {props:  this.props.endTime}) ) );          }
+            endTime.push( ( React.createElement(DateTime, React.__spread({},  this.props.endTime )) ) );          }
         } else {
           endTime = ( React.createElement(DateTime, {props:  this.props.endTime}) );        }
       }
@@ -207,8 +207,8 @@ See also blog post and Actions overview document.. Generated automatically by th
 "ImageObject."}) ) );
           }
         } else {
-            image.push( ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
-"ImageObject."}) ) );
+            image = ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
+"ImageObject."}) );
         }
       }
       var result;
@@ -216,7 +216,7 @@ See also blog post and Actions overview document.. Generated automatically by th
         if( this.props.result instanceof Array ){
           result = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.result ){
-            result.push( ( React.createElement(Thing, {props:  this.props.result}) ) );          }
+            result.push( ( React.createElement(Thing, React.__spread({},  this.props.result )) ) );          }
         } else {
           result = ( React.createElement(Thing, {props:  this.props.result}) );        }
       }

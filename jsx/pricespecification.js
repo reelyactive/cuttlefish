@@ -11,7 +11,7 @@
         if( this.props.validFrom instanceof Array ){
           validFrom = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.validFrom ){
-            validFrom.push( ( <DateTime props={ this.props.validFrom } /> ) );          }
+            validFrom.push( ( <DateTime {...this.props.validFrom } /> ) );          }
         } else {
           validFrom = ( <DateTime props={ this.props.validFrom } /> );        }
       }
@@ -23,7 +23,7 @@
             description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {
-            description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
+            description = ( <div data-advice='Put your HTML here. description is a Text.'></div> );
         }
       }
       var priceCurrency;
@@ -34,7 +34,7 @@
             priceCurrency.push( ( <div data-advice='Put your HTML here. priceCurrency is a Text.'></div> ) );
           }
         } else {
-            priceCurrency.push( ( <div data-advice='Put your HTML here. priceCurrency is a Text.'></div> ) );
+            priceCurrency = ( <div data-advice='Put your HTML here. priceCurrency is a Text.'></div> );
         }
       }
       var sameAs;
@@ -45,7 +45,7 @@
             sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
-            sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
+            sameAs = ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> );
         }
       }
       var price;
@@ -57,8 +57,8 @@
 Number.'></div> ) );
           }
         } else {
-            price.push( ( <div data-advice='Put your HTML here. price is a Text or
-Number.'></div> ) );
+            price = ( <div data-advice='Put your HTML here. price is a Text or
+Number.'></div> );
         }
       }
       var maxPrice;
@@ -69,7 +69,7 @@ Number.'></div> ) );
             maxPrice.push( ( <div data-advice='Put your HTML here. maxPrice is a Number.'></div> ) );
           }
         } else {
-            maxPrice.push( ( <div data-advice='Put your HTML here. maxPrice is a Number.'></div> ) );
+            maxPrice = ( <div data-advice='Put your HTML here. maxPrice is a Number.'></div> );
         }
       }
       var eligibleTransactionVolume;
@@ -77,7 +77,7 @@ Number.'></div> ) );
         if( this.props.eligibleTransactionVolume instanceof Array ){
           eligibleTransactionVolume = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.eligibleTransactionVolume ){
-            eligibleTransactionVolume.push( ( <PriceSpecification props={ this.props.eligibleTransactionVolume } /> ) );          }
+            eligibleTransactionVolume.push( ( <PriceSpecification {...this.props.eligibleTransactionVolume } /> ) );          }
         } else {
           eligibleTransactionVolume = ( <PriceSpecification props={ this.props.eligibleTransactionVolume } /> );        }
       }
@@ -86,7 +86,7 @@ Number.'></div> ) );
         if( this.props.valueAddedTaxIncluded instanceof Array ){
           valueAddedTaxIncluded = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.valueAddedTaxIncluded ){
-            valueAddedTaxIncluded.push( ( <Boolean props={ this.props.valueAddedTaxIncluded } /> ) );          }
+            valueAddedTaxIncluded.push( ( <Boolean {...this.props.valueAddedTaxIncluded } /> ) );          }
         } else {
           valueAddedTaxIncluded = ( <Boolean props={ this.props.valueAddedTaxIncluded } /> );        }
       }
@@ -95,7 +95,7 @@ Number.'></div> ) );
         if( this.props.eligibleQuantity instanceof Array ){
           eligibleQuantity = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.eligibleQuantity ){
-            eligibleQuantity.push( ( <QuantitativeValue props={ this.props.eligibleQuantity } /> ) );          }
+            eligibleQuantity.push( ( <QuantitativeValue {...this.props.eligibleQuantity } /> ) );          }
         } else {
           eligibleQuantity = ( <QuantitativeValue props={ this.props.eligibleQuantity } /> );        }
       }
@@ -107,7 +107,7 @@ Number.'></div> ) );
             url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
-            url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
+            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
         }
       }
       var potentialAction;
@@ -115,7 +115,7 @@ Number.'></div> ) );
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action props={ this.props.potentialAction } /> ) );          }
+            potentialAction.push( ( <Action {...this.props.potentialAction } /> ) );          }
         } else {
           potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
       }
@@ -124,7 +124,7 @@ Number.'></div> ) );
         if( this.props.validThrough instanceof Array ){
           validThrough = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.validThrough ){
-            validThrough.push( ( <DateTime props={ this.props.validThrough } /> ) );          }
+            validThrough.push( ( <DateTime {...this.props.validThrough } /> ) );          }
         } else {
           validThrough = ( <DateTime props={ this.props.validThrough } /> );        }
       }
@@ -133,12 +133,12 @@ Number.'></div> ) );
         if( this.props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [( <div data-advice='HTML for the *head* of the section'></div> )];
           for( i in this.props.mainEntityOfPage ){
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> ) );
+            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> ) );
           }
         } else {
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> ) );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> );
         }
       }
       var additionalType;
@@ -149,7 +149,7 @@ URL.'></div> ) );
             additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
-            additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
+            additionalType = ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> );
         }
       }
       var alternateName;
@@ -160,7 +160,7 @@ URL.'></div> ) );
             alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
-            alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
+            alternateName = ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> );
         }
       }
       var minPrice;
@@ -171,7 +171,7 @@ URL.'></div> ) );
             minPrice.push( ( <div data-advice='Put your HTML here. minPrice is a Number.'></div> ) );
           }
         } else {
-            minPrice.push( ( <div data-advice='Put your HTML here. minPrice is a Number.'></div> ) );
+            minPrice = ( <div data-advice='Put your HTML here. minPrice is a Number.'></div> );
         }
       }
       var image;
@@ -183,8 +183,8 @@ URL.'></div> ) );
 ImageObject.'></div> ) );
           }
         } else {
-            image.push( ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> ) );
+            image = ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> );
         }
       }
       var name;
@@ -195,7 +195,7 @@ ImageObject.'></div> ) );
             name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {
-            name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
+            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
       }
       return (<div title='PriceSpecification' className='PriceSpecification entity'>

@@ -11,7 +11,7 @@
         if( this.props.validFrom instanceof Array ){
           validFrom = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.validFrom ){
-            validFrom.push( ( React.createElement(DateTime, {props:  this.props.validFrom}) ) );          }
+            validFrom.push( ( React.createElement(DateTime, React.__spread({},  this.props.validFrom )) ) );          }
         } else {
           validFrom = ( React.createElement(DateTime, {props:  this.props.validFrom}) );        }
       }
@@ -23,7 +23,7 @@
             description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
           }
         } else {
-            description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
+            description = ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) );
         }
       }
       var priceCurrency;
@@ -34,7 +34,7 @@
             priceCurrency.push( ( React.createElement("div", {"data-advice": "Put your HTML here. priceCurrency is a Text."}) ) );
           }
         } else {
-            priceCurrency.push( ( React.createElement("div", {"data-advice": "Put your HTML here. priceCurrency is a Text."}) ) );
+            priceCurrency = ( React.createElement("div", {"data-advice": "Put your HTML here. priceCurrency is a Text."}) );
         }
       }
       var sameAs;
@@ -45,7 +45,7 @@
             sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
           }
         } else {
-            sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
+            sameAs = ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) );
         }
       }
       var price;
@@ -57,8 +57,8 @@
 "Number."}) ) );
           }
         } else {
-            price.push( ( React.createElement("div", {"data-advice": "Put your HTML here. price is a Text or" + ' ' +
-"Number."}) ) );
+            price = ( React.createElement("div", {"data-advice": "Put your HTML here. price is a Text or" + ' ' +
+"Number."}) );
         }
       }
       var maxPrice;
@@ -69,7 +69,7 @@
             maxPrice.push( ( React.createElement("div", {"data-advice": "Put your HTML here. maxPrice is a Number."}) ) );
           }
         } else {
-            maxPrice.push( ( React.createElement("div", {"data-advice": "Put your HTML here. maxPrice is a Number."}) ) );
+            maxPrice = ( React.createElement("div", {"data-advice": "Put your HTML here. maxPrice is a Number."}) );
         }
       }
       var eligibleTransactionVolume;
@@ -77,7 +77,7 @@
         if( this.props.eligibleTransactionVolume instanceof Array ){
           eligibleTransactionVolume = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.eligibleTransactionVolume ){
-            eligibleTransactionVolume.push( ( React.createElement(PriceSpecification, {props:  this.props.eligibleTransactionVolume}) ) );          }
+            eligibleTransactionVolume.push( ( React.createElement(PriceSpecification, React.__spread({},  this.props.eligibleTransactionVolume )) ) );          }
         } else {
           eligibleTransactionVolume = ( React.createElement(PriceSpecification, {props:  this.props.eligibleTransactionVolume}) );        }
       }
@@ -86,7 +86,7 @@
         if( this.props.valueAddedTaxIncluded instanceof Array ){
           valueAddedTaxIncluded = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.valueAddedTaxIncluded ){
-            valueAddedTaxIncluded.push( ( React.createElement(Boolean, {props:  this.props.valueAddedTaxIncluded}) ) );          }
+            valueAddedTaxIncluded.push( ( React.createElement(Boolean, React.__spread({},  this.props.valueAddedTaxIncluded )) ) );          }
         } else {
           valueAddedTaxIncluded = ( React.createElement(Boolean, {props:  this.props.valueAddedTaxIncluded}) );        }
       }
@@ -95,7 +95,7 @@
         if( this.props.eligibleQuantity instanceof Array ){
           eligibleQuantity = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.eligibleQuantity ){
-            eligibleQuantity.push( ( React.createElement(QuantitativeValue, {props:  this.props.eligibleQuantity}) ) );          }
+            eligibleQuantity.push( ( React.createElement(QuantitativeValue, React.__spread({},  this.props.eligibleQuantity )) ) );          }
         } else {
           eligibleQuantity = ( React.createElement(QuantitativeValue, {props:  this.props.eligibleQuantity}) );        }
       }
@@ -107,7 +107,7 @@
             url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
           }
         } else {
-            url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
+            url = ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) );
         }
       }
       var potentialAction;
@@ -115,7 +115,7 @@
         if( this.props.potentialAction instanceof Array ){
           potentialAction = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.potentialAction ){
-            potentialAction.push( ( React.createElement(Action, {props:  this.props.potentialAction}) ) );          }
+            potentialAction.push( ( React.createElement(Action, React.__spread({},  this.props.potentialAction )) ) );          }
         } else {
           potentialAction = ( React.createElement(Action, {props:  this.props.potentialAction}) );        }
       }
@@ -124,7 +124,7 @@
         if( this.props.validThrough instanceof Array ){
           validThrough = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.validThrough ){
-            validThrough.push( ( React.createElement(DateTime, {props:  this.props.validThrough}) ) );          }
+            validThrough.push( ( React.createElement(DateTime, React.__spread({},  this.props.validThrough )) ) );          }
         } else {
           validThrough = ( React.createElement(DateTime, {props:  this.props.validThrough}) );        }
       }
@@ -133,12 +133,12 @@
         if( this.props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
           for( i in this.props.mainEntityOfPage ){
-            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
-"URL."}) ) );
+            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
+"CreativeWork."}) ) );
           }
         } else {
-            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
-"URL."}) ) );
+            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
+"CreativeWork."}) );
         }
       }
       var additionalType;
@@ -149,7 +149,7 @@
             additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
           }
         } else {
-            additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
+            additionalType = ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) );
         }
       }
       var alternateName;
@@ -160,7 +160,7 @@
             alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
           }
         } else {
-            alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
+            alternateName = ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) );
         }
       }
       var minPrice;
@@ -171,7 +171,7 @@
             minPrice.push( ( React.createElement("div", {"data-advice": "Put your HTML here. minPrice is a Number."}) ) );
           }
         } else {
-            minPrice.push( ( React.createElement("div", {"data-advice": "Put your HTML here. minPrice is a Number."}) ) );
+            minPrice = ( React.createElement("div", {"data-advice": "Put your HTML here. minPrice is a Number."}) );
         }
       }
       var image;
@@ -183,8 +183,8 @@
 "ImageObject."}) ) );
           }
         } else {
-            image.push( ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
-"ImageObject."}) ) );
+            image = ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
+"ImageObject."}) );
         }
       }
       var name;
@@ -195,7 +195,7 @@
             name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
           }
         } else {
-            name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
+            name = ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) );
         }
       }
       return (React.createElement("div", {title: "PriceSpecification", className: "PriceSpecification entity"}, 
