@@ -1,5 +1,5 @@
-/* Thing > Product - Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.. Generated automatically by the reactGenerator. */ 
- define(['../bower_components/react/react', './distance', './product', './productmodel', './thing', './offeritemcondition', './brand', './offer', './quantitativevalue', './propertyvalue', './aggregaterating', './audience', './physicalactivitycategory', './action', './organization', './creativework', './imageobject', './review'], function(React, Distance, Product, ProductModel, Thing, OfferItemCondition, Brand, Offer, QuantitativeValue, PropertyValue, AggregateRating, Audience, PhysicalActivityCategory, Action, Organization, CreativeWork, ImageObject, Review){
+/* Thing > Product > ProductModel - A datasheet or vendor specification of a product (in the sense of a prototypical description).. Generated automatically by the reactGenerator. */ 
+ define(['../bower_components/react/react', './distance', './product', './thing', './productmodel', './brand', './offer', './quantitativevalue', './propertyvalue', './aggregaterating', './audience', './physicalactivitycategory', './offeritemcondition', './action', './organization', './creativework', './imageobject', './review'], function(React, Distance, Product, Thing, ProductModel, Brand, Offer, QuantitativeValue, PropertyValue, AggregateRating, Audience, PhysicalActivityCategory, OfferItemCondition, Action, Organization, CreativeWork, ImageObject, Review){
   return React.createClass({
     getDefaultProps: function(){
       return {
@@ -163,6 +163,15 @@
           category = ( <div class='category'>{this.props.category}</div> );
         }
       }
+      var predecessorOf;
+      if( this.props.predecessorOf ){
+        if( this.props.predecessorOf instanceof Array ){
+          predecessorOf = [(<p>predecessorOf:</p> )];
+          for( i in this.props.predecessorOf ){
+            predecessorOf.push( ( <ProductModel props={ this.props.predecessorOf } /> ) );          }
+        } else {
+          predecessorOf = ( <ProductModel props={ this.props.predecessorOf } /> );        }
+      }
       var isSimilarTo;
       if( this.props.isSimilarTo ){
         if( this.props.isSimilarTo instanceof Array ){
@@ -181,14 +190,16 @@
         } else {
           review = ( <Review props={ this.props.review } /> );        }
       }
-      var audience;
-      if( this.props.audience ){
-        if( this.props.audience instanceof Array ){
-          audience = [(<p>audience:</p> )];
-          for( i in this.props.audience ){
-            audience.push( ( <Audience props={ this.props.audience } /> ) );          }
+      var depth;
+      if( this.props.depth ){
+        if( this.props.depth instanceof Array ){
+          depth = [(<p>depth:</p> )];
+          for( i in this.props.depth ){
+            depth.push( ( <div class='depth'></div> ) );
+          }
         } else {
-          audience = ( <Audience props={ this.props.audience } /> );        }
+          depth = ( <div class='depth'>{this.props.depth}</div> );
+        }
       }
       var width;
       if( this.props.width ){
@@ -230,15 +241,24 @@
           mainEntityOfPage = ( <div class='mainEntityOfPage'>{this.props.mainEntityOfPage}</div> );
         }
       }
-      var productionDate;
-      if( this.props.productionDate ){
-        if( this.props.productionDate instanceof Array ){
-          productionDate = [(<p>productionDate:</p> )];
-          for( i in this.props.productionDate ){
-            productionDate.push( ( <div class='productionDate'></div> ) );
+      var manufacturer;
+      if( this.props.manufacturer ){
+        if( this.props.manufacturer instanceof Array ){
+          manufacturer = [(<p>manufacturer:</p> )];
+          for( i in this.props.manufacturer ){
+            manufacturer.push( ( <Organization props={ this.props.manufacturer } /> ) );          }
+        } else {
+          manufacturer = ( <Organization props={ this.props.manufacturer } /> );        }
+      }
+      var brand;
+      if( this.props.brand ){
+        if( this.props.brand instanceof Array ){
+          brand = [(<p>brand:</p> )];
+          for( i in this.props.brand ){
+            brand.push( ( <div class='brand'></div> ) );
           }
         } else {
-          productionDate = ( <div class='productionDate'>{this.props.productionDate}</div> );
+          brand = ( <div class='brand'>{this.props.brand}</div> );
         }
       }
       var sku;
@@ -274,16 +294,14 @@
           mpn = ( <div class='mpn'>{this.props.mpn}</div> );
         }
       }
-      var brand;
-      if( this.props.brand ){
-        if( this.props.brand instanceof Array ){
-          brand = [(<p>brand:</p> )];
-          for( i in this.props.brand ){
-            brand.push( ( <div class='brand'></div> ) );
-          }
+      var successorOf;
+      if( this.props.successorOf ){
+        if( this.props.successorOf instanceof Array ){
+          successorOf = [(<p>successorOf:</p> )];
+          for( i in this.props.successorOf ){
+            successorOf.push( ( <ProductModel props={ this.props.successorOf } /> ) );          }
         } else {
-          brand = ( <div class='brand'>{this.props.brand}</div> );
-        }
+          successorOf = ( <ProductModel props={ this.props.successorOf } /> );        }
       }
       var award;
       if( this.props.award ){
@@ -295,6 +313,15 @@
         } else {
           award = ( <div class='award'>{this.props.award}</div> );
         }
+      }
+      var potentialAction;
+      if( this.props.potentialAction ){
+        if( this.props.potentialAction instanceof Array ){
+          potentialAction = [(<p>potentialAction:</p> )];
+          for( i in this.props.potentialAction ){
+            potentialAction.push( ( <Action props={ this.props.potentialAction } /> ) );          }
+        } else {
+          potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
       }
       var itemCondition;
       if( this.props.itemCondition ){
@@ -316,23 +343,25 @@
           alternateName = ( <div class='alternateName'>{this.props.alternateName}</div> );
         }
       }
-      var manufacturer;
-      if( this.props.manufacturer ){
-        if( this.props.manufacturer instanceof Array ){
-          manufacturer = [(<p>manufacturer:</p> )];
-          for( i in this.props.manufacturer ){
-            manufacturer.push( ( <Organization props={ this.props.manufacturer } /> ) );          }
+      var isVariantOf;
+      if( this.props.isVariantOf ){
+        if( this.props.isVariantOf instanceof Array ){
+          isVariantOf = [(<p>isVariantOf:</p> )];
+          for( i in this.props.isVariantOf ){
+            isVariantOf.push( ( <ProductModel props={ this.props.isVariantOf } /> ) );          }
         } else {
-          manufacturer = ( <Organization props={ this.props.manufacturer } /> );        }
+          isVariantOf = ( <ProductModel props={ this.props.isVariantOf } /> );        }
       }
-      var potentialAction;
-      if( this.props.potentialAction ){
-        if( this.props.potentialAction instanceof Array ){
-          potentialAction = [(<p>potentialAction:</p> )];
-          for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action props={ this.props.potentialAction } /> ) );          }
+      var productionDate;
+      if( this.props.productionDate ){
+        if( this.props.productionDate instanceof Array ){
+          productionDate = [(<p>productionDate:</p> )];
+          for( i in this.props.productionDate ){
+            productionDate.push( ( <div class='productionDate'></div> ) );
+          }
         } else {
-          potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
+          productionDate = ( <div class='productionDate'>{this.props.productionDate}</div> );
+        }
       }
       var name;
       if( this.props.name ){
@@ -376,16 +405,14 @@
           gtin14 = ( <div class='gtin14'>{this.props.gtin14}</div> );
         }
       }
-      var depth;
-      if( this.props.depth ){
-        if( this.props.depth instanceof Array ){
-          depth = [(<p>depth:</p> )];
-          for( i in this.props.depth ){
-            depth.push( ( <div class='depth'></div> ) );
-          }
+      var audience;
+      if( this.props.audience ){
+        if( this.props.audience instanceof Array ){
+          audience = [(<p>audience:</p> )];
+          for( i in this.props.audience ){
+            audience.push( ( <Audience props={ this.props.audience } /> ) );          }
         } else {
-          depth = ( <div class='depth'>{this.props.depth}</div> );
-        }
+          audience = ( <Audience props={ this.props.audience } /> );        }
       }
       var gtin13;
       if( this.props.gtin13 ){
@@ -420,7 +447,7 @@
           model = ( <div class='model'>{this.props.model}</div> );
         }
       }
-      return (<div title='Product' className='Product entity'>
+      return (<div title='ProductModel' className='ProductModel entity'>
         { isConsumableFor }
         { weight }
         { isAccessoryOrSparePartFor }
@@ -436,28 +463,31 @@
         { logo }
         { productID }
         { category }
+        { predecessorOf }
         { isSimilarTo }
         { review }
-        { audience }
+        { depth }
         { width }
         { additionalProperty }
         { offers }
         { mainEntityOfPage }
-        { productionDate }
+        { manufacturer }
+        { brand }
         { sku }
         { description }
         { mpn }
-        { brand }
+        { successorOf }
         { award }
+        { potentialAction }
         { itemCondition }
         { alternateName }
-        { manufacturer }
-        { potentialAction }
+        { isVariantOf }
+        { productionDate }
         { name }
         { aggregateRating }
         { url }
         { gtin14 }
-        { depth }
+        { audience }
         { gtin13 }
         { gtin12 }
         { model }

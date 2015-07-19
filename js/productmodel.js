@@ -1,5 +1,5 @@
-/* Thing > Product - Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.. Generated automatically by the reactGenerator. */ 
- define(['../bower_components/react/react', './distance', './product', './productmodel', './thing', './offeritemcondition', './brand', './offer', './quantitativevalue', './propertyvalue', './aggregaterating', './audience', './physicalactivitycategory', './action', './organization', './creativework', './imageobject', './review'], function(React, Distance, Product, ProductModel, Thing, OfferItemCondition, Brand, Offer, QuantitativeValue, PropertyValue, AggregateRating, Audience, PhysicalActivityCategory, Action, Organization, CreativeWork, ImageObject, Review){
+/* Thing > Product > ProductModel - A datasheet or vendor specification of a product (in the sense of a prototypical description).. Generated automatically by the reactGenerator. */ 
+ define(['../bower_components/react/react', './distance', './product', './thing', './productmodel', './brand', './offer', './quantitativevalue', './propertyvalue', './aggregaterating', './audience', './physicalactivitycategory', './offeritemcondition', './action', './organization', './creativework', './imageobject', './review'], function(React, Distance, Product, Thing, ProductModel, Brand, Offer, QuantitativeValue, PropertyValue, AggregateRating, Audience, PhysicalActivityCategory, OfferItemCondition, Action, Organization, CreativeWork, ImageObject, Review){
   return React.createClass({
     getDefaultProps: function(){
       return {
@@ -163,6 +163,15 @@
           category = ( React.createElement("div", {class: "category"}, this.props.category) );
         }
       }
+      var predecessorOf;
+      if( this.props.predecessorOf ){
+        if( this.props.predecessorOf instanceof Array ){
+          predecessorOf = [(React.createElement("p", null, "predecessorOf:") )];
+          for( i in this.props.predecessorOf ){
+            predecessorOf.push( ( React.createElement(ProductModel, {props:  this.props.predecessorOf}) ) );          }
+        } else {
+          predecessorOf = ( React.createElement(ProductModel, {props:  this.props.predecessorOf}) );        }
+      }
       var isSimilarTo;
       if( this.props.isSimilarTo ){
         if( this.props.isSimilarTo instanceof Array ){
@@ -181,14 +190,16 @@
         } else {
           review = ( React.createElement(Review, {props:  this.props.review}) );        }
       }
-      var audience;
-      if( this.props.audience ){
-        if( this.props.audience instanceof Array ){
-          audience = [(React.createElement("p", null, "audience:") )];
-          for( i in this.props.audience ){
-            audience.push( ( React.createElement(Audience, {props:  this.props.audience}) ) );          }
+      var depth;
+      if( this.props.depth ){
+        if( this.props.depth instanceof Array ){
+          depth = [(React.createElement("p", null, "depth:") )];
+          for( i in this.props.depth ){
+            depth.push( ( React.createElement("div", {class: "depth"}) ) );
+          }
         } else {
-          audience = ( React.createElement(Audience, {props:  this.props.audience}) );        }
+          depth = ( React.createElement("div", {class: "depth"}, this.props.depth) );
+        }
       }
       var width;
       if( this.props.width ){
@@ -230,15 +241,24 @@
           mainEntityOfPage = ( React.createElement("div", {class: "mainEntityOfPage"}, this.props.mainEntityOfPage) );
         }
       }
-      var productionDate;
-      if( this.props.productionDate ){
-        if( this.props.productionDate instanceof Array ){
-          productionDate = [(React.createElement("p", null, "productionDate:") )];
-          for( i in this.props.productionDate ){
-            productionDate.push( ( React.createElement("div", {class: "productionDate"}) ) );
+      var manufacturer;
+      if( this.props.manufacturer ){
+        if( this.props.manufacturer instanceof Array ){
+          manufacturer = [(React.createElement("p", null, "manufacturer:") )];
+          for( i in this.props.manufacturer ){
+            manufacturer.push( ( React.createElement(Organization, {props:  this.props.manufacturer}) ) );          }
+        } else {
+          manufacturer = ( React.createElement(Organization, {props:  this.props.manufacturer}) );        }
+      }
+      var brand;
+      if( this.props.brand ){
+        if( this.props.brand instanceof Array ){
+          brand = [(React.createElement("p", null, "brand:") )];
+          for( i in this.props.brand ){
+            brand.push( ( React.createElement("div", {class: "brand"}) ) );
           }
         } else {
-          productionDate = ( React.createElement("div", {class: "productionDate"}, this.props.productionDate) );
+          brand = ( React.createElement("div", {class: "brand"}, this.props.brand) );
         }
       }
       var sku;
@@ -274,16 +294,14 @@
           mpn = ( React.createElement("div", {class: "mpn"}, this.props.mpn) );
         }
       }
-      var brand;
-      if( this.props.brand ){
-        if( this.props.brand instanceof Array ){
-          brand = [(React.createElement("p", null, "brand:") )];
-          for( i in this.props.brand ){
-            brand.push( ( React.createElement("div", {class: "brand"}) ) );
-          }
+      var successorOf;
+      if( this.props.successorOf ){
+        if( this.props.successorOf instanceof Array ){
+          successorOf = [(React.createElement("p", null, "successorOf:") )];
+          for( i in this.props.successorOf ){
+            successorOf.push( ( React.createElement(ProductModel, {props:  this.props.successorOf}) ) );          }
         } else {
-          brand = ( React.createElement("div", {class: "brand"}, this.props.brand) );
-        }
+          successorOf = ( React.createElement(ProductModel, {props:  this.props.successorOf}) );        }
       }
       var award;
       if( this.props.award ){
@@ -295,6 +313,15 @@
         } else {
           award = ( React.createElement("div", {class: "award"}, this.props.award) );
         }
+      }
+      var potentialAction;
+      if( this.props.potentialAction ){
+        if( this.props.potentialAction instanceof Array ){
+          potentialAction = [(React.createElement("p", null, "potentialAction:") )];
+          for( i in this.props.potentialAction ){
+            potentialAction.push( ( React.createElement(Action, {props:  this.props.potentialAction}) ) );          }
+        } else {
+          potentialAction = ( React.createElement(Action, {props:  this.props.potentialAction}) );        }
       }
       var itemCondition;
       if( this.props.itemCondition ){
@@ -316,23 +343,25 @@
           alternateName = ( React.createElement("div", {class: "alternateName"}, this.props.alternateName) );
         }
       }
-      var manufacturer;
-      if( this.props.manufacturer ){
-        if( this.props.manufacturer instanceof Array ){
-          manufacturer = [(React.createElement("p", null, "manufacturer:") )];
-          for( i in this.props.manufacturer ){
-            manufacturer.push( ( React.createElement(Organization, {props:  this.props.manufacturer}) ) );          }
+      var isVariantOf;
+      if( this.props.isVariantOf ){
+        if( this.props.isVariantOf instanceof Array ){
+          isVariantOf = [(React.createElement("p", null, "isVariantOf:") )];
+          for( i in this.props.isVariantOf ){
+            isVariantOf.push( ( React.createElement(ProductModel, {props:  this.props.isVariantOf}) ) );          }
         } else {
-          manufacturer = ( React.createElement(Organization, {props:  this.props.manufacturer}) );        }
+          isVariantOf = ( React.createElement(ProductModel, {props:  this.props.isVariantOf}) );        }
       }
-      var potentialAction;
-      if( this.props.potentialAction ){
-        if( this.props.potentialAction instanceof Array ){
-          potentialAction = [(React.createElement("p", null, "potentialAction:") )];
-          for( i in this.props.potentialAction ){
-            potentialAction.push( ( React.createElement(Action, {props:  this.props.potentialAction}) ) );          }
+      var productionDate;
+      if( this.props.productionDate ){
+        if( this.props.productionDate instanceof Array ){
+          productionDate = [(React.createElement("p", null, "productionDate:") )];
+          for( i in this.props.productionDate ){
+            productionDate.push( ( React.createElement("div", {class: "productionDate"}) ) );
+          }
         } else {
-          potentialAction = ( React.createElement(Action, {props:  this.props.potentialAction}) );        }
+          productionDate = ( React.createElement("div", {class: "productionDate"}, this.props.productionDate) );
+        }
       }
       var name;
       if( this.props.name ){
@@ -376,16 +405,14 @@
           gtin14 = ( React.createElement("div", {class: "gtin14"}, this.props.gtin14) );
         }
       }
-      var depth;
-      if( this.props.depth ){
-        if( this.props.depth instanceof Array ){
-          depth = [(React.createElement("p", null, "depth:") )];
-          for( i in this.props.depth ){
-            depth.push( ( React.createElement("div", {class: "depth"}) ) );
-          }
+      var audience;
+      if( this.props.audience ){
+        if( this.props.audience instanceof Array ){
+          audience = [(React.createElement("p", null, "audience:") )];
+          for( i in this.props.audience ){
+            audience.push( ( React.createElement(Audience, {props:  this.props.audience}) ) );          }
         } else {
-          depth = ( React.createElement("div", {class: "depth"}, this.props.depth) );
-        }
+          audience = ( React.createElement(Audience, {props:  this.props.audience}) );        }
       }
       var gtin13;
       if( this.props.gtin13 ){
@@ -420,7 +447,7 @@
           model = ( React.createElement("div", {class: "model"}, this.props.model) );
         }
       }
-      return (React.createElement("div", {title: "Product", className: "Product entity"}, 
+      return (React.createElement("div", {title: "ProductModel", className: "ProductModel entity"}, 
          isConsumableFor, 
          weight, 
          isAccessoryOrSparePartFor, 
@@ -436,28 +463,31 @@
          logo, 
          productID, 
          category, 
+         predecessorOf, 
          isSimilarTo, 
          review, 
-         audience, 
+         depth, 
          width, 
          additionalProperty, 
          offers, 
          mainEntityOfPage, 
-         productionDate, 
+         manufacturer, 
+         brand, 
          sku, 
          description, 
          mpn, 
-         brand, 
+         successorOf, 
          award, 
+         potentialAction, 
          itemCondition, 
          alternateName, 
-         manufacturer, 
-         potentialAction, 
+         isVariantOf, 
+         productionDate, 
          name, 
          aggregateRating, 
          url, 
          gtin14, 
-         depth, 
+         audience, 
          gtin13, 
          gtin12, 
          model 
