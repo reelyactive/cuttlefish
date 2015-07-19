@@ -325,15 +325,12 @@ URL.'></div> );
       var brand;
       if( props.brand ){
         if( props.brand instanceof Array ){
-          brand = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          brand = [ (<span key='header'>Brands: </span>) ]
           brand = brand.concat( props.brand.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. brand is a Brand or
-Organization.'></div> )
+              return ( <span className='brand' key={index}>{result}</span> )
            }) );
-         brand.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            brand = ( <div data-advice='Put your HTML here. brand is a Brand or
-Organization.'></div> );
+          brand = ( <span className='brand'>{props.brand} </span> );
         }
       }
       var award;
@@ -396,13 +393,12 @@ Organization.'></div> );
       var name;
       if( props.name ){
         if( props.name instanceof Array ){
-          name = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          name = [ (<p key='header'>Names:</p>) ]
           name = name.concat( props.name.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. name is a Text.'></div> )
+              return ( <span key={index}>{result} </span> )
            }) );
-         name.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
+          name = ( <span>{ props.name }</span> );
         }
       }
       var aggregateRating;

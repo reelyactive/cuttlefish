@@ -325,15 +325,12 @@
       var brand;
       if( props.brand ){
         if( props.brand instanceof Array ){
-          brand = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
+          brand = [ (React.createElement("span", {key: "header"}, "Brands: ")) ]
           brand = brand.concat( props.brand.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. brand is a Brand or" + ' ' +
-"Organization."}) )
+              return ( React.createElement("span", {className: "brand", key: index}, result) )
            }) );
-         brand.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            brand = ( React.createElement("div", {"data-advice": "Put your HTML here. brand is a Brand or" + ' ' +
-"Organization."}) );
+          brand = ( React.createElement("span", {className: "brand"}, props.brand, " ") );
         }
       }
       var award;
@@ -396,13 +393,12 @@
       var name;
       if( props.name ){
         if( props.name instanceof Array ){
-          name = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
+          name = [ (React.createElement("p", {key: "header"}, "Names:")) ]
           name = name.concat( props.name.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. name is a Text."}) )
+              return ( React.createElement("span", {key: index}, result, " ") )
            }) );
-         name.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            name = ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) );
+          name = ( React.createElement("span", null,  props.name) );
         }
       }
       var aggregateRating;
