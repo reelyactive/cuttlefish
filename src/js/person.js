@@ -54,15 +54,12 @@
       var image;
       if( props.image ){
         if( props.image instanceof Array ){
-          image = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
+          image = [ (React.createElement("p", {key: "header"}, "Images:")) ]
           image = image.concat( props.image.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. image is a URL or" + ' ' +
-"ImageObject."}) )
+              return ( React.createElement("img", {key: index, src: result, className: "image"}) )
            }) );
-         image.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            image = ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
-"ImageObject."}) );
+          image = ( React.createElement("img", {src: props.image, class: "image"}) );
         }
       }
       var relatedTo;
@@ -408,7 +405,7 @@
            }) );
          familyName.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            familyName = ( React.createElement("div", {"data-advice": "Put your HTML here. familyName is a Text."}) );
+          familyName = ( React.createElement("div", {class: "familyName"}, "Last Name: ", props.familyName) );
         }
       }
       var award;
@@ -528,15 +525,12 @@
       var owns;
       if( props.owns ){
         if( props.owns instanceof Array ){
-          owns = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
+          owns = [ (React.createElement("p", {key: "header"}, "Owns:")) ]
           owns = owns.concat( props.owns.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. owns is a OwnershipInfo or" + ' ' +
-"Product."}) )
+              return ( React.createElement(Product, {key: index, props: result, className: "owns"}) )
            }) );
-         owns.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            owns = ( React.createElement("div", {"data-advice": "Put your HTML here. owns is a OwnershipInfo or" + ' ' +
-"Product."}) );
+          owns = ( React.createElement(Product, React.__spread({},  props.owns, {className: "owns"})) );
         }
       }
       var name;
@@ -548,7 +542,7 @@
            }) );
          name.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            name = ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) );
+          name = ( React.createElement("div", {class: "name"}, "Name :", props.name) );
         }
       }
       var naics;
@@ -566,13 +560,12 @@
       var url;
       if( props.url ){
         if( props.url instanceof Array ){
-          url = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
+          url = [ (React.createElement("p", {key: "header"}, "Urls:")) ]
           url = url.concat( props.url.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. url is a URL."}) )
+              return ( React.createElement("a", {key: index, href: result, target: "_blank"}, result) )
            }) );
-         url.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            url = ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) );
+          url = ( React.createElement("a", {href: props.url, target: "_blank"}, props.url) );
         }
       }
       var gender;
@@ -584,7 +577,7 @@
            }) );
          gender.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            gender = ( React.createElement("div", {"data-advice": "Put your HTML here. gender is a Text."}) );
+          gender = ( React.createElement("div", {class: "gender"}, "Gender: ", props.gender) );
         }
       }
       var vatID;
@@ -644,7 +637,7 @@
            }) );
          givenName.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            givenName = ( React.createElement("div", {"data-advice": "Put your HTML here. givenName is a Text."}) );
+          givenName = ( React.createElement("div", {class: "givenName"}, "Given name: ", props.givenName) );
         }
       }
       var alumniOf;
@@ -704,6 +697,7 @@
          memberOf, 
          jobTitle, 
          brand, 
+         givenName, 
          familyName, 
          award, 
          alternateName, 
@@ -724,7 +718,6 @@
          height, 
          deathPlace, 
          follows, 
-         givenName, 
          alumniOf, 
          globalLocationNumber 
      ));

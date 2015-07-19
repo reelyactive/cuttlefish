@@ -54,15 +54,12 @@
       var image;
       if( props.image ){
         if( props.image instanceof Array ){
-          image = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          image = [ (<p key='header'>Images:</p>) ]
           image = image.concat( props.image.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> )
+              return ( <img key={index} src={result} className='image' /> )
            }) );
-         image.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            image = ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> );
+          image = ( <img src={props.image} class='image' /> );
         }
       }
       var relatedTo;
@@ -408,7 +405,7 @@ Organization.'></div> );
            }) );
          familyName.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            familyName = ( <div data-advice='Put your HTML here. familyName is a Text.'></div> );
+          familyName = ( <div class='familyName'>Last Name: {props.familyName}</div> );
         }
       }
       var award;
@@ -528,15 +525,12 @@ Organization.'></div> );
       var owns;
       if( props.owns ){
         if( props.owns instanceof Array ){
-          owns = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          owns = [ (<p key='header'>Owns:</p>) ]
           owns = owns.concat( props.owns.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. owns is a OwnershipInfo or
-Product.'></div> )
+              return ( <Product key={index} props={result} className='owns' /> )
            }) );
-         owns.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            owns = ( <div data-advice='Put your HTML here. owns is a OwnershipInfo or
-Product.'></div> );
+          owns = ( <Product {...props.owns} className='owns' /> );
         }
       }
       var name;
@@ -548,7 +542,7 @@ Product.'></div> );
            }) );
          name.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
+          name = ( <div class='name'>Name :{props.name}</div> );
         }
       }
       var naics;
@@ -566,13 +560,12 @@ Product.'></div> );
       var url;
       if( props.url ){
         if( props.url instanceof Array ){
-          url = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          url = [ (<p key='header'>Urls:</p>) ]
           url = url.concat( props.url.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. url is a URL.'></div> )
+              return ( <a key={index} href={result} target='_blank'>{result}</a> )
            }) );
-         url.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
+          url = ( <a href={props.url} target='_blank'>{props.url}</a> );
         }
       }
       var gender;
@@ -584,7 +577,7 @@ Product.'></div> );
            }) );
          gender.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            gender = ( <div data-advice='Put your HTML here. gender is a Text.'></div> );
+          gender = ( <div class='gender'>Gender: {props.gender}</div> );
         }
       }
       var vatID;
@@ -644,7 +637,7 @@ QuantitativeValue.'></div> );
            }) );
          givenName.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            givenName = ( <div data-advice='Put your HTML here. givenName is a Text.'></div> );
+          givenName = ( <div class='givenName'>Given name: {props.givenName}</div> );
         }
       }
       var alumniOf;
@@ -704,6 +697,7 @@ QuantitativeValue.'></div> );
         { memberOf }
         { jobTitle }
         { brand }
+        { givenName }
         { familyName }
         { award }
         { alternateName }
@@ -724,7 +718,6 @@ QuantitativeValue.'></div> );
         { height }
         { deathPlace }
         { follows }
-        { givenName }
         { alumniOf }
         { globalLocationNumber }
      </div>);
