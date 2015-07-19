@@ -6,20 +6,21 @@
       }
     },
     render: function(){
+      var props = this.props.props;
       var potentialAction;
-      if( this.props.potentialAction ){
-        if( this.props.potentialAction instanceof Array ){
+      if( props.potentialAction ){
+        if( props.potentialAction instanceof Array ){
           potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action {...this.props.potentialAction } /> ) );          }
+          for( i in props.potentialAction ){
+            potentialAction.push( ( <Action {...props.potentialAction } /> ) );          }
         } else {
-          potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
+          potentialAction = ( <Action props={ props.potentialAction } /> );        }
       }
       var description;
-      if( this.props.description ){
-        if( this.props.description instanceof Array ){
+      if( props.description ){
+        if( props.description instanceof Array ){
           description = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.description ){
+          for( i in props.description ){
             description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {
@@ -27,10 +28,10 @@
         }
       }
       var sameAs;
-      if( this.props.sameAs ){
-        if( this.props.sameAs instanceof Array ){
+      if( props.sameAs ){
+        if( props.sameAs instanceof Array ){
           sameAs = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.sameAs ){
+          for( i in props.sameAs ){
             sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
@@ -38,19 +39,19 @@
         }
       }
       var ownedFrom;
-      if( this.props.ownedFrom ){
-        if( this.props.ownedFrom instanceof Array ){
+      if( props.ownedFrom ){
+        if( props.ownedFrom instanceof Array ){
           ownedFrom = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.ownedFrom ){
-            ownedFrom.push( ( <DateTime {...this.props.ownedFrom } /> ) );          }
+          for( i in props.ownedFrom ){
+            ownedFrom.push( ( <DateTime {...props.ownedFrom } /> ) );          }
         } else {
-          ownedFrom = ( <DateTime props={ this.props.ownedFrom } /> );        }
+          ownedFrom = ( <DateTime props={ props.ownedFrom } /> );        }
       }
       var acquiredFrom;
-      if( this.props.acquiredFrom ){
-        if( this.props.acquiredFrom instanceof Array ){
+      if( props.acquiredFrom ){
+        if( props.acquiredFrom instanceof Array ){
           acquiredFrom = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.acquiredFrom ){
+          for( i in props.acquiredFrom ){
             acquiredFrom.push( ( <div data-advice='Put your HTML here. acquiredFrom is a Person or
 Organization.'></div> ) );
           }
@@ -60,10 +61,10 @@ Organization.'></div> );
         }
       }
       var url;
-      if( this.props.url ){
-        if( this.props.url instanceof Array ){
+      if( props.url ){
+        if( props.url instanceof Array ){
           url = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.url ){
+          for( i in props.url ){
             url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
@@ -71,32 +72,32 @@ Organization.'></div> );
         }
       }
       var ownedThrough;
-      if( this.props.ownedThrough ){
-        if( this.props.ownedThrough instanceof Array ){
+      if( props.ownedThrough ){
+        if( props.ownedThrough instanceof Array ){
           ownedThrough = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.ownedThrough ){
-            ownedThrough.push( ( <DateTime {...this.props.ownedThrough } /> ) );          }
+          for( i in props.ownedThrough ){
+            ownedThrough.push( ( <DateTime {...props.ownedThrough } /> ) );          }
         } else {
-          ownedThrough = ( <DateTime props={ this.props.ownedThrough } /> );        }
+          ownedThrough = ( <DateTime props={ props.ownedThrough } /> );        }
       }
       var mainEntityOfPage;
-      if( this.props.mainEntityOfPage ){
-        if( this.props.mainEntityOfPage instanceof Array ){
+      if( props.mainEntityOfPage ){
+        if( props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.mainEntityOfPage ){
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> ) );
+          for( i in props.mainEntityOfPage ){
+            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> ) );
           }
         } else {
-            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
-URL.'></div> );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
+CreativeWork.'></div> );
         }
       }
       var additionalType;
-      if( this.props.additionalType ){
-        if( this.props.additionalType instanceof Array ){
+      if( props.additionalType ){
+        if( props.additionalType instanceof Array ){
           additionalType = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.additionalType ){
+          for( i in props.additionalType ){
             additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
@@ -104,10 +105,10 @@ URL.'></div> );
         }
       }
       var alternateName;
-      if( this.props.alternateName ){
-        if( this.props.alternateName instanceof Array ){
+      if( props.alternateName ){
+        if( props.alternateName instanceof Array ){
           alternateName = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.alternateName ){
+          for( i in props.alternateName ){
             alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
@@ -115,10 +116,10 @@ URL.'></div> );
         }
       }
       var image;
-      if( this.props.image ){
-        if( this.props.image instanceof Array ){
+      if( props.image ){
+        if( props.image instanceof Array ){
           image = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.image ){
+          for( i in props.image ){
             image.push( ( <div data-advice='Put your HTML here. image is a URL or
 ImageObject.'></div> ) );
           }
@@ -128,19 +129,19 @@ ImageObject.'></div> );
         }
       }
       var typeOfGood;
-      if( this.props.typeOfGood ){
-        if( this.props.typeOfGood instanceof Array ){
+      if( props.typeOfGood ){
+        if( props.typeOfGood instanceof Array ){
           typeOfGood = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.typeOfGood ){
-            typeOfGood.push( ( <Product {...this.props.typeOfGood } /> ) );          }
+          for( i in props.typeOfGood ){
+            typeOfGood.push( ( <Product {...props.typeOfGood } /> ) );          }
         } else {
-          typeOfGood = ( <Product props={ this.props.typeOfGood } /> );        }
+          typeOfGood = ( <Product props={ props.typeOfGood } /> );        }
       }
       var name;
-      if( this.props.name ){
-        if( this.props.name instanceof Array ){
+      if( props.name ){
+        if( props.name instanceof Array ){
           name = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.name ){
+          for( i in props.name ){
             name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {

@@ -6,20 +6,21 @@
       }
     },
     render: function(){
+      var props = this.props.props;
       var sibling;
-      if( this.props.sibling ){
-        if( this.props.sibling instanceof Array ){
+      if( props.sibling ){
+        if( props.sibling instanceof Array ){
           sibling = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.sibling ){
-            sibling.push( ( <Person {...this.props.sibling } /> ) );          }
+          for( i in props.sibling ){
+            sibling.push( ( <Person {...props.sibling } /> ) );          }
         } else {
-          sibling = ( <Person props={ this.props.sibling } /> );        }
+          sibling = ( <Person props={ props.sibling } /> );        }
       }
       var honorificPrefix;
-      if( this.props.honorificPrefix ){
-        if( this.props.honorificPrefix instanceof Array ){
+      if( props.honorificPrefix ){
+        if( props.honorificPrefix instanceof Array ){
           honorificPrefix = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.honorificPrefix ){
+          for( i in props.honorificPrefix ){
             honorificPrefix.push( ( <div data-advice='Put your HTML here. honorificPrefix is a Text.'></div> ) );
           }
         } else {
@@ -27,19 +28,19 @@
         }
       }
       var weight;
-      if( this.props.weight ){
-        if( this.props.weight instanceof Array ){
+      if( props.weight ){
+        if( props.weight instanceof Array ){
           weight = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.weight ){
-            weight.push( ( <QuantitativeValue {...this.props.weight } /> ) );          }
+          for( i in props.weight ){
+            weight.push( ( <QuantitativeValue {...props.weight } /> ) );          }
         } else {
-          weight = ( <QuantitativeValue props={ this.props.weight } /> );        }
+          weight = ( <QuantitativeValue props={ props.weight } /> );        }
       }
       var sameAs;
-      if( this.props.sameAs ){
-        if( this.props.sameAs instanceof Array ){
+      if( props.sameAs ){
+        if( props.sameAs instanceof Array ){
           sameAs = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.sameAs ){
+          for( i in props.sameAs ){
             sameAs.push( ( <div data-advice='Put your HTML here. sameAs is a URL.'></div> ) );
           }
         } else {
@@ -47,10 +48,10 @@
         }
       }
       var image;
-      if( this.props.image ){
-        if( this.props.image instanceof Array ){
+      if( props.image ){
+        if( props.image instanceof Array ){
           image = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.image ){
+          for( i in props.image ){
             image.push( ( <div data-advice='Put your HTML here. image is a URL or
 ImageObject.'></div> ) );
           }
@@ -60,19 +61,19 @@ ImageObject.'></div> );
         }
       }
       var relatedTo;
-      if( this.props.relatedTo ){
-        if( this.props.relatedTo instanceof Array ){
+      if( props.relatedTo ){
+        if( props.relatedTo instanceof Array ){
           relatedTo = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.relatedTo ){
-            relatedTo.push( ( <Person {...this.props.relatedTo } /> ) );          }
+          for( i in props.relatedTo ){
+            relatedTo.push( ( <Person {...props.relatedTo } /> ) );          }
         } else {
-          relatedTo = ( <Person props={ this.props.relatedTo } /> );        }
+          relatedTo = ( <Person props={ props.relatedTo } /> );        }
       }
       var telephone;
-      if( this.props.telephone ){
-        if( this.props.telephone instanceof Array ){
+      if( props.telephone ){
+        if( props.telephone instanceof Array ){
           telephone = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.telephone ){
+          for( i in props.telephone ){
             telephone.push( ( <div data-advice='Put your HTML here. telephone is a Text.'></div> ) );
           }
         } else {
@@ -80,10 +81,10 @@ ImageObject.'></div> );
         }
       }
       var birthDate;
-      if( this.props.birthDate ){
-        if( this.props.birthDate instanceof Array ){
+      if( props.birthDate ){
+        if( props.birthDate instanceof Array ){
           birthDate = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.birthDate ){
+          for( i in props.birthDate ){
             birthDate.push( ( <div data-advice='Put your HTML here. birthDate is a Date.'></div> ) );
           }
         } else {
@@ -91,10 +92,10 @@ ImageObject.'></div> );
         }
       }
       var faxNumber;
-      if( this.props.faxNumber ){
-        if( this.props.faxNumber instanceof Array ){
+      if( props.faxNumber ){
+        if( props.faxNumber instanceof Array ){
           faxNumber = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.faxNumber ){
+          for( i in props.faxNumber ){
             faxNumber.push( ( <div data-advice='Put your HTML here. faxNumber is a Text.'></div> ) );
           }
         } else {
@@ -102,19 +103,19 @@ ImageObject.'></div> );
         }
       }
       var affiliation;
-      if( this.props.affiliation ){
-        if( this.props.affiliation instanceof Array ){
+      if( props.affiliation ){
+        if( props.affiliation instanceof Array ){
           affiliation = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.affiliation ){
-            affiliation.push( ( <Organization {...this.props.affiliation } /> ) );          }
+          for( i in props.affiliation ){
+            affiliation.push( ( <Organization {...props.affiliation } /> ) );          }
         } else {
-          affiliation = ( <Organization props={ this.props.affiliation } /> );        }
+          affiliation = ( <Organization props={ props.affiliation } /> );        }
       }
       var additionalName;
-      if( this.props.additionalName ){
-        if( this.props.additionalName instanceof Array ){
+      if( props.additionalName ){
+        if( props.additionalName instanceof Array ){
           additionalName = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.additionalName ){
+          for( i in props.additionalName ){
             additionalName.push( ( <div data-advice='Put your HTML here. additionalName is a Text.'></div> ) );
           }
         } else {
@@ -122,23 +123,23 @@ ImageObject.'></div> );
         }
       }
       var workLocation;
-      if( this.props.workLocation ){
-        if( this.props.workLocation instanceof Array ){
+      if( props.workLocation ){
+        if( props.workLocation instanceof Array ){
           workLocation = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.workLocation ){
-            workLocation.push( ( <div data-advice='Put your HTML here. workLocation is a ContactPoint or
-Place.'></div> ) );
+          for( i in props.workLocation ){
+            workLocation.push( ( <div data-advice='Put your HTML here. workLocation is a Place or
+ContactPoint.'></div> ) );
           }
         } else {
-            workLocation = ( <div data-advice='Put your HTML here. workLocation is a ContactPoint or
-Place.'></div> );
+            workLocation = ( <div data-advice='Put your HTML here. workLocation is a Place or
+ContactPoint.'></div> );
         }
       }
       var additionalType;
-      if( this.props.additionalType ){
-        if( this.props.additionalType instanceof Array ){
+      if( props.additionalType ){
+        if( props.additionalType instanceof Array ){
           additionalType = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.additionalType ){
+          for( i in props.additionalType ){
             additionalType.push( ( <div data-advice='Put your HTML here. additionalType is a URL.'></div> ) );
           }
         } else {
@@ -146,19 +147,19 @@ Place.'></div> );
         }
       }
       var children;
-      if( this.props.children ){
-        if( this.props.children instanceof Array ){
+      if( props.children ){
+        if( props.children instanceof Array ){
           children = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.children ){
-            children.push( ( <Person {...this.props.children } /> ) );          }
+          for( i in props.children ){
+            children.push( ( <Person {...props.children } /> ) );          }
         } else {
-          children = ( <Person props={ this.props.children } /> );        }
+          children = ( <Person props={ props.children } /> );        }
       }
       var description;
-      if( this.props.description ){
-        if( this.props.description instanceof Array ){
+      if( props.description ){
+        if( props.description instanceof Array ){
           description = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.description ){
+          for( i in props.description ){
             description.push( ( <div data-advice='Put your HTML here. description is a Text.'></div> ) );
           }
         } else {
@@ -166,10 +167,10 @@ Place.'></div> );
         }
       }
       var isicV4;
-      if( this.props.isicV4 ){
-        if( this.props.isicV4 instanceof Array ){
+      if( props.isicV4 ){
+        if( props.isicV4 instanceof Array ){
           isicV4 = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.isicV4 ){
+          for( i in props.isicV4 ){
             isicV4.push( ( <div data-advice='Put your HTML here. isicV4 is a Text.'></div> ) );
           }
         } else {
@@ -177,28 +178,28 @@ Place.'></div> );
         }
       }
       var spouse;
-      if( this.props.spouse ){
-        if( this.props.spouse instanceof Array ){
+      if( props.spouse ){
+        if( props.spouse instanceof Array ){
           spouse = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.spouse ){
-            spouse.push( ( <Person {...this.props.spouse } /> ) );          }
+          for( i in props.spouse ){
+            spouse.push( ( <Person {...props.spouse } /> ) );          }
         } else {
-          spouse = ( <Person props={ this.props.spouse } /> );        }
+          spouse = ( <Person props={ props.spouse } /> );        }
       }
       var worksFor;
-      if( this.props.worksFor ){
-        if( this.props.worksFor instanceof Array ){
+      if( props.worksFor ){
+        if( props.worksFor instanceof Array ){
           worksFor = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.worksFor ){
-            worksFor.push( ( <Organization {...this.props.worksFor } /> ) );          }
+          for( i in props.worksFor ){
+            worksFor.push( ( <Organization {...props.worksFor } /> ) );          }
         } else {
-          worksFor = ( <Organization props={ this.props.worksFor } /> );        }
+          worksFor = ( <Organization props={ props.worksFor } /> );        }
       }
       var taxID;
-      if( this.props.taxID ){
-        if( this.props.taxID instanceof Array ){
+      if( props.taxID ){
+        if( props.taxID instanceof Array ){
           taxID = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.taxID ){
+          for( i in props.taxID ){
             taxID.push( ( <div data-advice='Put your HTML here. taxID is a Text.'></div> ) );
           }
         } else {
@@ -206,10 +207,10 @@ Place.'></div> );
         }
       }
       var honorificSuffix;
-      if( this.props.honorificSuffix ){
-        if( this.props.honorificSuffix instanceof Array ){
+      if( props.honorificSuffix ){
+        if( props.honorificSuffix instanceof Array ){
           honorificSuffix = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.honorificSuffix ){
+          for( i in props.honorificSuffix ){
             honorificSuffix.push( ( <div data-advice='Put your HTML here. honorificSuffix is a Text.'></div> ) );
           }
         } else {
@@ -217,45 +218,45 @@ Place.'></div> );
         }
       }
       var netWorth;
-      if( this.props.netWorth ){
-        if( this.props.netWorth instanceof Array ){
+      if( props.netWorth ){
+        if( props.netWorth instanceof Array ){
           netWorth = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.netWorth ){
-            netWorth.push( ( <PriceSpecification {...this.props.netWorth } /> ) );          }
+          for( i in props.netWorth ){
+            netWorth.push( ( <PriceSpecification {...props.netWorth } /> ) );          }
         } else {
-          netWorth = ( <PriceSpecification props={ this.props.netWorth } /> );        }
+          netWorth = ( <PriceSpecification props={ props.netWorth } /> );        }
       }
       var mainEntityOfPage;
-      if( this.props.mainEntityOfPage ){
-        if( this.props.mainEntityOfPage instanceof Array ){
+      if( props.mainEntityOfPage ){
+        if( props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.mainEntityOfPage ){
-            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
-CreativeWork.'></div> ) );
+          for( i in props.mainEntityOfPage ){
+            mainEntityOfPage.push( ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
+URL.'></div> ) );
           }
         } else {
-            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
-CreativeWork.'></div> );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
+URL.'></div> );
         }
       }
       var homeLocation;
-      if( this.props.homeLocation ){
-        if( this.props.homeLocation instanceof Array ){
+      if( props.homeLocation ){
+        if( props.homeLocation instanceof Array ){
           homeLocation = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.homeLocation ){
-            homeLocation.push( ( <div data-advice='Put your HTML here. homeLocation is a ContactPoint or
-Place.'></div> ) );
+          for( i in props.homeLocation ){
+            homeLocation.push( ( <div data-advice='Put your HTML here. homeLocation is a Place or
+ContactPoint.'></div> ) );
           }
         } else {
-            homeLocation = ( <div data-advice='Put your HTML here. homeLocation is a ContactPoint or
-Place.'></div> );
+            homeLocation = ( <div data-advice='Put your HTML here. homeLocation is a Place or
+ContactPoint.'></div> );
         }
       }
       var email;
-      if( this.props.email ){
-        if( this.props.email instanceof Array ){
+      if( props.email ){
+        if( props.email instanceof Array ){
           email = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.email ){
+          for( i in props.email ){
             email.push( ( <div data-advice='Put your HTML here. email is a Text.'></div> ) );
           }
         } else {
@@ -263,64 +264,64 @@ Place.'></div> );
         }
       }
       var seeks;
-      if( this.props.seeks ){
-        if( this.props.seeks instanceof Array ){
+      if( props.seeks ){
+        if( props.seeks instanceof Array ){
           seeks = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.seeks ){
-            seeks.push( ( <Demand {...this.props.seeks } /> ) );          }
+          for( i in props.seeks ){
+            seeks.push( ( <Demand {...props.seeks } /> ) );          }
         } else {
-          seeks = ( <Demand props={ this.props.seeks } /> );        }
+          seeks = ( <Demand props={ props.seeks } /> );        }
       }
       var colleague;
-      if( this.props.colleague ){
-        if( this.props.colleague instanceof Array ){
+      if( props.colleague ){
+        if( props.colleague instanceof Array ){
           colleague = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.colleague ){
-            colleague.push( ( <Person {...this.props.colleague } /> ) );          }
+          for( i in props.colleague ){
+            colleague.push( ( <Person {...props.colleague } /> ) );          }
         } else {
-          colleague = ( <Person props={ this.props.colleague } /> );        }
+          colleague = ( <Person props={ props.colleague } /> );        }
       }
       var performerIn;
-      if( this.props.performerIn ){
-        if( this.props.performerIn instanceof Array ){
+      if( props.performerIn ){
+        if( props.performerIn instanceof Array ){
           performerIn = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.performerIn ){
-            performerIn.push( ( <Event {...this.props.performerIn } /> ) );          }
+          for( i in props.performerIn ){
+            performerIn.push( ( <Event {...props.performerIn } /> ) );          }
         } else {
-          performerIn = ( <Event props={ this.props.performerIn } /> );        }
+          performerIn = ( <Event props={ props.performerIn } /> );        }
       }
       var birthPlace;
-      if( this.props.birthPlace ){
-        if( this.props.birthPlace instanceof Array ){
+      if( props.birthPlace ){
+        if( props.birthPlace instanceof Array ){
           birthPlace = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.birthPlace ){
-            birthPlace.push( ( <Place {...this.props.birthPlace } /> ) );          }
+          for( i in props.birthPlace ){
+            birthPlace.push( ( <Place {...props.birthPlace } /> ) );          }
         } else {
-          birthPlace = ( <Place props={ this.props.birthPlace } /> );        }
+          birthPlace = ( <Place props={ props.birthPlace } /> );        }
       }
       var knows;
-      if( this.props.knows ){
-        if( this.props.knows instanceof Array ){
+      if( props.knows ){
+        if( props.knows instanceof Array ){
           knows = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.knows ){
-            knows.push( ( <Person {...this.props.knows } /> ) );          }
+          for( i in props.knows ){
+            knows.push( ( <Person {...props.knows } /> ) );          }
         } else {
-          knows = ( <Person props={ this.props.knows } /> );        }
+          knows = ( <Person props={ props.knows } /> );        }
       }
       var parent;
-      if( this.props.parent ){
-        if( this.props.parent instanceof Array ){
+      if( props.parent ){
+        if( props.parent instanceof Array ){
           parent = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.parent ){
-            parent.push( ( <Person {...this.props.parent } /> ) );          }
+          for( i in props.parent ){
+            parent.push( ( <Person {...props.parent } /> ) );          }
         } else {
-          parent = ( <Person props={ this.props.parent } /> );        }
+          parent = ( <Person props={ props.parent } /> );        }
       }
       var memberOf;
-      if( this.props.memberOf ){
-        if( this.props.memberOf instanceof Array ){
+      if( props.memberOf ){
+        if( props.memberOf instanceof Array ){
           memberOf = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.memberOf ){
+          for( i in props.memberOf ){
             memberOf.push( ( <div data-advice='Put your HTML here. memberOf is a Organization or
 ProgramMembership.'></div> ) );
           }
@@ -330,10 +331,10 @@ ProgramMembership.'></div> );
         }
       }
       var jobTitle;
-      if( this.props.jobTitle ){
-        if( this.props.jobTitle instanceof Array ){
+      if( props.jobTitle ){
+        if( props.jobTitle instanceof Array ){
           jobTitle = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.jobTitle ){
+          for( i in props.jobTitle ){
             jobTitle.push( ( <div data-advice='Put your HTML here. jobTitle is a Text.'></div> ) );
           }
         } else {
@@ -341,23 +342,23 @@ ProgramMembership.'></div> );
         }
       }
       var brand;
-      if( this.props.brand ){
-        if( this.props.brand instanceof Array ){
+      if( props.brand ){
+        if( props.brand instanceof Array ){
           brand = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.brand ){
-            brand.push( ( <div data-advice='Put your HTML here. brand is a Brand or
-Organization.'></div> ) );
+          for( i in props.brand ){
+            brand.push( ( <div data-advice='Put your HTML here. brand is a Organization or
+Brand.'></div> ) );
           }
         } else {
-            brand = ( <div data-advice='Put your HTML here. brand is a Brand or
-Organization.'></div> );
+            brand = ( <div data-advice='Put your HTML here. brand is a Organization or
+Brand.'></div> );
         }
       }
       var familyName;
-      if( this.props.familyName ){
-        if( this.props.familyName instanceof Array ){
+      if( props.familyName ){
+        if( props.familyName instanceof Array ){
           familyName = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.familyName ){
+          for( i in props.familyName ){
             familyName.push( ( <div data-advice='Put your HTML here. familyName is a Text.'></div> ) );
           }
         } else {
@@ -365,10 +366,10 @@ Organization.'></div> );
         }
       }
       var award;
-      if( this.props.award ){
-        if( this.props.award instanceof Array ){
+      if( props.award ){
+        if( props.award instanceof Array ){
           award = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.award ){
+          for( i in props.award ){
             award.push( ( <div data-advice='Put your HTML here. award is a Text.'></div> ) );
           }
         } else {
@@ -376,10 +377,10 @@ Organization.'></div> );
         }
       }
       var alternateName;
-      if( this.props.alternateName ){
-        if( this.props.alternateName instanceof Array ){
+      if( props.alternateName ){
+        if( props.alternateName instanceof Array ){
           alternateName = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.alternateName ){
+          for( i in props.alternateName ){
             alternateName.push( ( <div data-advice='Put your HTML here. alternateName is a Text.'></div> ) );
           }
         } else {
@@ -387,28 +388,28 @@ Organization.'></div> );
         }
       }
       var potentialAction;
-      if( this.props.potentialAction ){
-        if( this.props.potentialAction instanceof Array ){
+      if( props.potentialAction ){
+        if( props.potentialAction instanceof Array ){
           potentialAction = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.potentialAction ){
-            potentialAction.push( ( <Action {...this.props.potentialAction } /> ) );          }
+          for( i in props.potentialAction ){
+            potentialAction.push( ( <Action {...props.potentialAction } /> ) );          }
         } else {
-          potentialAction = ( <Action props={ this.props.potentialAction } /> );        }
+          potentialAction = ( <Action props={ props.potentialAction } /> );        }
       }
       var address;
-      if( this.props.address ){
-        if( this.props.address instanceof Array ){
+      if( props.address ){
+        if( props.address instanceof Array ){
           address = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.address ){
-            address.push( ( <PostalAddress {...this.props.address } /> ) );          }
+          for( i in props.address ){
+            address.push( ( <PostalAddress {...props.address } /> ) );          }
         } else {
-          address = ( <PostalAddress props={ this.props.address } /> );        }
+          address = ( <PostalAddress props={ props.address } /> );        }
       }
       var duns;
-      if( this.props.duns ){
-        if( this.props.duns instanceof Array ){
+      if( props.duns ){
+        if( props.duns instanceof Array ){
           duns = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.duns ){
+          for( i in props.duns ){
             duns.push( ( <div data-advice='Put your HTML here. duns is a Text.'></div> ) );
           }
         } else {
@@ -416,28 +417,28 @@ Organization.'></div> );
         }
       }
       var nationality;
-      if( this.props.nationality ){
-        if( this.props.nationality instanceof Array ){
+      if( props.nationality ){
+        if( props.nationality instanceof Array ){
           nationality = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.nationality ){
-            nationality.push( ( <Country {...this.props.nationality } /> ) );          }
+          for( i in props.nationality ){
+            nationality.push( ( <Country {...props.nationality } /> ) );          }
         } else {
-          nationality = ( <Country props={ this.props.nationality } /> );        }
+          nationality = ( <Country props={ props.nationality } /> );        }
       }
       var contactPoint;
-      if( this.props.contactPoint ){
-        if( this.props.contactPoint instanceof Array ){
+      if( props.contactPoint ){
+        if( props.contactPoint instanceof Array ){
           contactPoint = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.contactPoint ){
-            contactPoint.push( ( <ContactPoint {...this.props.contactPoint } /> ) );          }
+          for( i in props.contactPoint ){
+            contactPoint.push( ( <ContactPoint {...props.contactPoint } /> ) );          }
         } else {
-          contactPoint = ( <ContactPoint props={ this.props.contactPoint } /> );        }
+          contactPoint = ( <ContactPoint props={ props.contactPoint } /> );        }
       }
       var deathDate;
-      if( this.props.deathDate ){
-        if( this.props.deathDate instanceof Array ){
+      if( props.deathDate ){
+        if( props.deathDate instanceof Array ){
           deathDate = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.deathDate ){
+          for( i in props.deathDate ){
             deathDate.push( ( <div data-advice='Put your HTML here. deathDate is a Date.'></div> ) );
           }
         } else {
@@ -445,28 +446,28 @@ Organization.'></div> );
         }
       }
       var makesOffer;
-      if( this.props.makesOffer ){
-        if( this.props.makesOffer instanceof Array ){
+      if( props.makesOffer ){
+        if( props.makesOffer instanceof Array ){
           makesOffer = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.makesOffer ){
-            makesOffer.push( ( <Offer {...this.props.makesOffer } /> ) );          }
+          for( i in props.makesOffer ){
+            makesOffer.push( ( <Offer {...props.makesOffer } /> ) );          }
         } else {
-          makesOffer = ( <Offer props={ this.props.makesOffer } /> );        }
+          makesOffer = ( <Offer props={ props.makesOffer } /> );        }
       }
       var hasPOS;
-      if( this.props.hasPOS ){
-        if( this.props.hasPOS instanceof Array ){
+      if( props.hasPOS ){
+        if( props.hasPOS instanceof Array ){
           hasPOS = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.hasPOS ){
-            hasPOS.push( ( <Place {...this.props.hasPOS } /> ) );          }
+          for( i in props.hasPOS ){
+            hasPOS.push( ( <Place {...props.hasPOS } /> ) );          }
         } else {
-          hasPOS = ( <Place props={ this.props.hasPOS } /> );        }
+          hasPOS = ( <Place props={ props.hasPOS } /> );        }
       }
       var owns;
-      if( this.props.owns ){
-        if( this.props.owns instanceof Array ){
+      if( props.owns ){
+        if( props.owns instanceof Array ){
           owns = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.owns ){
+          for( i in props.owns ){
             owns.push( ( <div data-advice='Put your HTML here. owns is a OwnershipInfo or
 Product.'></div> ) );
           }
@@ -476,10 +477,10 @@ Product.'></div> );
         }
       }
       var name;
-      if( this.props.name ){
-        if( this.props.name instanceof Array ){
+      if( props.name ){
+        if( props.name instanceof Array ){
           name = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.name ){
+          for( i in props.name ){
             name.push( ( <div data-advice='Put your HTML here. name is a Text.'></div> ) );
           }
         } else {
@@ -487,10 +488,10 @@ Product.'></div> );
         }
       }
       var naics;
-      if( this.props.naics ){
-        if( this.props.naics instanceof Array ){
+      if( props.naics ){
+        if( props.naics instanceof Array ){
           naics = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.naics ){
+          for( i in props.naics ){
             naics.push( ( <div data-advice='Put your HTML here. naics is a Text.'></div> ) );
           }
         } else {
@@ -498,10 +499,10 @@ Product.'></div> );
         }
       }
       var url;
-      if( this.props.url ){
-        if( this.props.url instanceof Array ){
+      if( props.url ){
+        if( props.url instanceof Array ){
           url = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.url ){
+          for( i in props.url ){
             url.push( ( <div data-advice='Put your HTML here. url is a URL.'></div> ) );
           }
         } else {
@@ -509,10 +510,10 @@ Product.'></div> );
         }
       }
       var gender;
-      if( this.props.gender ){
-        if( this.props.gender instanceof Array ){
+      if( props.gender ){
+        if( props.gender instanceof Array ){
           gender = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.gender ){
+          for( i in props.gender ){
             gender.push( ( <div data-advice='Put your HTML here. gender is a Text.'></div> ) );
           }
         } else {
@@ -520,10 +521,10 @@ Product.'></div> );
         }
       }
       var vatID;
-      if( this.props.vatID ){
-        if( this.props.vatID instanceof Array ){
+      if( props.vatID ){
+        if( props.vatID instanceof Array ){
           vatID = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.vatID ){
+          for( i in props.vatID ){
             vatID.push( ( <div data-advice='Put your HTML here. vatID is a Text.'></div> ) );
           }
         } else {
@@ -531,41 +532,41 @@ Product.'></div> );
         }
       }
       var height;
-      if( this.props.height ){
-        if( this.props.height instanceof Array ){
+      if( props.height ){
+        if( props.height instanceof Array ){
           height = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.height ){
-            height.push( ( <div data-advice='Put your HTML here. height is a QuantitativeValue or
-Distance.'></div> ) );
+          for( i in props.height ){
+            height.push( ( <div data-advice='Put your HTML here. height is a Distance or
+QuantitativeValue.'></div> ) );
           }
         } else {
-            height = ( <div data-advice='Put your HTML here. height is a QuantitativeValue or
-Distance.'></div> );
+            height = ( <div data-advice='Put your HTML here. height is a Distance or
+QuantitativeValue.'></div> );
         }
       }
       var deathPlace;
-      if( this.props.deathPlace ){
-        if( this.props.deathPlace instanceof Array ){
+      if( props.deathPlace ){
+        if( props.deathPlace instanceof Array ){
           deathPlace = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.deathPlace ){
-            deathPlace.push( ( <Place {...this.props.deathPlace } /> ) );          }
+          for( i in props.deathPlace ){
+            deathPlace.push( ( <Place {...props.deathPlace } /> ) );          }
         } else {
-          deathPlace = ( <Place props={ this.props.deathPlace } /> );        }
+          deathPlace = ( <Place props={ props.deathPlace } /> );        }
       }
       var follows;
-      if( this.props.follows ){
-        if( this.props.follows instanceof Array ){
+      if( props.follows ){
+        if( props.follows instanceof Array ){
           follows = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.follows ){
-            follows.push( ( <Person {...this.props.follows } /> ) );          }
+          for( i in props.follows ){
+            follows.push( ( <Person {...props.follows } /> ) );          }
         } else {
-          follows = ( <Person props={ this.props.follows } /> );        }
+          follows = ( <Person props={ props.follows } /> );        }
       }
       var givenName;
-      if( this.props.givenName ){
-        if( this.props.givenName instanceof Array ){
+      if( props.givenName ){
+        if( props.givenName instanceof Array ){
           givenName = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.givenName ){
+          for( i in props.givenName ){
             givenName.push( ( <div data-advice='Put your HTML here. givenName is a Text.'></div> ) );
           }
         } else {
@@ -573,19 +574,19 @@ Distance.'></div> );
         }
       }
       var alumniOf;
-      if( this.props.alumniOf ){
-        if( this.props.alumniOf instanceof Array ){
+      if( props.alumniOf ){
+        if( props.alumniOf instanceof Array ){
           alumniOf = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.alumniOf ){
-            alumniOf.push( ( <EducationalOrganization {...this.props.alumniOf } /> ) );          }
+          for( i in props.alumniOf ){
+            alumniOf.push( ( <EducationalOrganization {...props.alumniOf } /> ) );          }
         } else {
-          alumniOf = ( <EducationalOrganization props={ this.props.alumniOf } /> );        }
+          alumniOf = ( <EducationalOrganization props={ props.alumniOf } /> );        }
       }
       var globalLocationNumber;
-      if( this.props.globalLocationNumber ){
-        if( this.props.globalLocationNumber instanceof Array ){
+      if( props.globalLocationNumber ){
+        if( props.globalLocationNumber instanceof Array ){
           globalLocationNumber = [( <div data-advice='HTML for the *head* of the section'></div> )];
-          for( i in this.props.globalLocationNumber ){
+          for( i in props.globalLocationNumber ){
             globalLocationNumber.push( ( <div data-advice='Put your HTML here. globalLocationNumber is a Text.'></div> ) );
           }
         } else {

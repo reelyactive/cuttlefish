@@ -6,38 +6,39 @@
       }
     },
     render: function(){
+      var props = this.props.props;
       var status;
-      if( this.props.status ){
-        if( this.props.status instanceof Array ){
+      if( props.status ){
+        if( props.status instanceof Array ){
           status = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.status ){
-            status.push( ( React.createElement(MedicalStudyStatus, React.__spread({},  this.props.status )) ) );          }
+          for( i in props.status ){
+            status.push( ( React.createElement(MedicalStudyStatus, React.__spread({},  props.status )) ) );          }
         } else {
-          status = ( React.createElement(MedicalStudyStatus, {props:  this.props.status}) );        }
+          status = ( React.createElement(MedicalStudyStatus, {props:  props.status}) );        }
       }
       var studySubject;
-      if( this.props.studySubject ){
-        if( this.props.studySubject instanceof Array ){
+      if( props.studySubject ){
+        if( props.studySubject instanceof Array ){
           studySubject = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.studySubject ){
-            studySubject.push( ( React.createElement(MedicalEntity, React.__spread({},  this.props.studySubject )) ) );          }
+          for( i in props.studySubject ){
+            studySubject.push( ( React.createElement(MedicalEntity, React.__spread({},  props.studySubject )) ) );          }
         } else {
-          studySubject = ( React.createElement(MedicalEntity, {props:  this.props.studySubject}) );        }
+          studySubject = ( React.createElement(MedicalEntity, {props:  props.studySubject}) );        }
       }
       var code;
-      if( this.props.code ){
-        if( this.props.code instanceof Array ){
+      if( props.code ){
+        if( props.code instanceof Array ){
           code = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.code ){
-            code.push( ( React.createElement(MedicalCode, React.__spread({},  this.props.code )) ) );          }
+          for( i in props.code ){
+            code.push( ( React.createElement(MedicalCode, React.__spread({},  props.code )) ) );          }
         } else {
-          code = ( React.createElement(MedicalCode, {props:  this.props.code}) );        }
+          code = ( React.createElement(MedicalCode, {props:  props.code}) );        }
       }
       var description;
-      if( this.props.description ){
-        if( this.props.description instanceof Array ){
+      if( props.description ){
+        if( props.description instanceof Array ){
           description = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.description ){
+          for( i in props.description ){
             description.push( ( React.createElement("div", {"data-advice": "Put your HTML here. description is a Text."}) ) );
           }
         } else {
@@ -45,10 +46,10 @@
         }
       }
       var name;
-      if( this.props.name ){
-        if( this.props.name instanceof Array ){
+      if( props.name ){
+        if( props.name instanceof Array ){
           name = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.name ){
+          for( i in props.name ){
             name.push( ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) ) );
           }
         } else {
@@ -56,28 +57,28 @@
         }
       }
       var relevantSpecialty;
-      if( this.props.relevantSpecialty ){
-        if( this.props.relevantSpecialty instanceof Array ){
+      if( props.relevantSpecialty ){
+        if( props.relevantSpecialty instanceof Array ){
           relevantSpecialty = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.relevantSpecialty ){
-            relevantSpecialty.push( ( React.createElement(MedicalSpecialty, React.__spread({},  this.props.relevantSpecialty )) ) );          }
+          for( i in props.relevantSpecialty ){
+            relevantSpecialty.push( ( React.createElement(MedicalSpecialty, React.__spread({},  props.relevantSpecialty )) ) );          }
         } else {
-          relevantSpecialty = ( React.createElement(MedicalSpecialty, {props:  this.props.relevantSpecialty}) );        }
+          relevantSpecialty = ( React.createElement(MedicalSpecialty, {props:  props.relevantSpecialty}) );        }
       }
       var medicineSystem;
-      if( this.props.medicineSystem ){
-        if( this.props.medicineSystem instanceof Array ){
+      if( props.medicineSystem ){
+        if( props.medicineSystem instanceof Array ){
           medicineSystem = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.medicineSystem ){
-            medicineSystem.push( ( React.createElement(MedicineSystem, React.__spread({},  this.props.medicineSystem )) ) );          }
+          for( i in props.medicineSystem ){
+            medicineSystem.push( ( React.createElement(MedicineSystem, React.__spread({},  props.medicineSystem )) ) );          }
         } else {
-          medicineSystem = ( React.createElement(MedicineSystem, {props:  this.props.medicineSystem}) );        }
+          medicineSystem = ( React.createElement(MedicineSystem, {props:  props.medicineSystem}) );        }
       }
       var url;
-      if( this.props.url ){
-        if( this.props.url instanceof Array ){
+      if( props.url ){
+        if( props.url instanceof Array ){
           url = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.url ){
+          for( i in props.url ){
             url.push( ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) ) );
           }
         } else {
@@ -85,19 +86,19 @@
         }
       }
       var guideline;
-      if( this.props.guideline ){
-        if( this.props.guideline instanceof Array ){
+      if( props.guideline ){
+        if( props.guideline instanceof Array ){
           guideline = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.guideline ){
-            guideline.push( ( React.createElement(MedicalGuideline, React.__spread({},  this.props.guideline )) ) );          }
+          for( i in props.guideline ){
+            guideline.push( ( React.createElement(MedicalGuideline, React.__spread({},  props.guideline )) ) );          }
         } else {
-          guideline = ( React.createElement(MedicalGuideline, {props:  this.props.guideline}) );        }
+          guideline = ( React.createElement(MedicalGuideline, {props:  props.guideline}) );        }
       }
       var sameAs;
-      if( this.props.sameAs ){
-        if( this.props.sameAs instanceof Array ){
+      if( props.sameAs ){
+        if( props.sameAs instanceof Array ){
           sameAs = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.sameAs ){
+          for( i in props.sameAs ){
             sameAs.push( ( React.createElement("div", {"data-advice": "Put your HTML here. sameAs is a URL."}) ) );
           }
         } else {
@@ -105,37 +106,37 @@
         }
       }
       var potentialAction;
-      if( this.props.potentialAction ){
-        if( this.props.potentialAction instanceof Array ){
+      if( props.potentialAction ){
+        if( props.potentialAction instanceof Array ){
           potentialAction = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.potentialAction ){
-            potentialAction.push( ( React.createElement(Action, React.__spread({},  this.props.potentialAction )) ) );          }
+          for( i in props.potentialAction ){
+            potentialAction.push( ( React.createElement(Action, React.__spread({},  props.potentialAction )) ) );          }
         } else {
-          potentialAction = ( React.createElement(Action, {props:  this.props.potentialAction}) );        }
+          potentialAction = ( React.createElement(Action, {props:  props.potentialAction}) );        }
       }
       var recognizingAuthority;
-      if( this.props.recognizingAuthority ){
-        if( this.props.recognizingAuthority instanceof Array ){
+      if( props.recognizingAuthority ){
+        if( props.recognizingAuthority instanceof Array ){
           recognizingAuthority = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.recognizingAuthority ){
-            recognizingAuthority.push( ( React.createElement(Organization, React.__spread({},  this.props.recognizingAuthority )) ) );          }
+          for( i in props.recognizingAuthority ){
+            recognizingAuthority.push( ( React.createElement(Organization, React.__spread({},  props.recognizingAuthority )) ) );          }
         } else {
-          recognizingAuthority = ( React.createElement(Organization, {props:  this.props.recognizingAuthority}) );        }
+          recognizingAuthority = ( React.createElement(Organization, {props:  props.recognizingAuthority}) );        }
       }
       var sponsor;
-      if( this.props.sponsor ){
-        if( this.props.sponsor instanceof Array ){
+      if( props.sponsor ){
+        if( props.sponsor instanceof Array ){
           sponsor = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.sponsor ){
-            sponsor.push( ( React.createElement(Organization, React.__spread({},  this.props.sponsor )) ) );          }
+          for( i in props.sponsor ){
+            sponsor.push( ( React.createElement(Organization, React.__spread({},  props.sponsor )) ) );          }
         } else {
-          sponsor = ( React.createElement(Organization, {props:  this.props.sponsor}) );        }
+          sponsor = ( React.createElement(Organization, {props:  props.sponsor}) );        }
       }
       var image;
-      if( this.props.image ){
-        if( this.props.image instanceof Array ){
+      if( props.image ){
+        if( props.image instanceof Array ){
           image = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.image ){
+          for( i in props.image ){
             image.push( ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
 "ImageObject."}) ) );
           }
@@ -145,32 +146,32 @@
         }
       }
       var studyLocation;
-      if( this.props.studyLocation ){
-        if( this.props.studyLocation instanceof Array ){
+      if( props.studyLocation ){
+        if( props.studyLocation instanceof Array ){
           studyLocation = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.studyLocation ){
-            studyLocation.push( ( React.createElement(AdministrativeArea, React.__spread({},  this.props.studyLocation )) ) );          }
+          for( i in props.studyLocation ){
+            studyLocation.push( ( React.createElement(AdministrativeArea, React.__spread({},  props.studyLocation )) ) );          }
         } else {
-          studyLocation = ( React.createElement(AdministrativeArea, {props:  this.props.studyLocation}) );        }
+          studyLocation = ( React.createElement(AdministrativeArea, {props:  props.studyLocation}) );        }
       }
       var mainEntityOfPage;
-      if( this.props.mainEntityOfPage ){
-        if( this.props.mainEntityOfPage instanceof Array ){
+      if( props.mainEntityOfPage ){
+        if( props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.mainEntityOfPage ){
-            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
-"URL."}) ) );
+          for( i in props.mainEntityOfPage ){
+            mainEntityOfPage.push( ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
+"CreativeWork."}) ) );
           }
         } else {
-            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
-"URL."}) );
+            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
+"CreativeWork."}) );
         }
       }
       var additionalType;
-      if( this.props.additionalType ){
-        if( this.props.additionalType instanceof Array ){
+      if( props.additionalType ){
+        if( props.additionalType instanceof Array ){
           additionalType = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.additionalType ){
+          for( i in props.additionalType ){
             additionalType.push( ( React.createElement("div", {"data-advice": "Put your HTML here. additionalType is a URL."}) ) );
           }
         } else {
@@ -178,10 +179,10 @@
         }
       }
       var alternateName;
-      if( this.props.alternateName ){
-        if( this.props.alternateName instanceof Array ){
+      if( props.alternateName ){
+        if( props.alternateName instanceof Array ){
           alternateName = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.alternateName ){
+          for( i in props.alternateName ){
             alternateName.push( ( React.createElement("div", {"data-advice": "Put your HTML here. alternateName is a Text."}) ) );
           }
         } else {
@@ -189,10 +190,10 @@
         }
       }
       var outcome;
-      if( this.props.outcome ){
-        if( this.props.outcome instanceof Array ){
+      if( props.outcome ){
+        if( props.outcome instanceof Array ){
           outcome = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.outcome ){
+          for( i in props.outcome ){
             outcome.push( ( React.createElement("div", {"data-advice": "Put your HTML here. outcome is a Text."}) ) );
           }
         } else {
@@ -200,19 +201,19 @@
         }
       }
       var study;
-      if( this.props.study ){
-        if( this.props.study instanceof Array ){
+      if( props.study ){
+        if( props.study instanceof Array ){
           study = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.study ){
-            study.push( ( React.createElement(MedicalStudy, React.__spread({},  this.props.study )) ) );          }
+          for( i in props.study ){
+            study.push( ( React.createElement(MedicalStudy, React.__spread({},  props.study )) ) );          }
         } else {
-          study = ( React.createElement(MedicalStudy, {props:  this.props.study}) );        }
+          study = ( React.createElement(MedicalStudy, {props:  props.study}) );        }
       }
       var population;
-      if( this.props.population ){
-        if( this.props.population instanceof Array ){
+      if( props.population ){
+        if( props.population instanceof Array ){
           population = [( React.createElement("div", {"data-advice": "HTML for the *head* of the section"}) )];
-          for( i in this.props.population ){
+          for( i in props.population ){
             population.push( ( React.createElement("div", {"data-advice": "Put your HTML here. population is a Text."}) ) );
           }
         } else {
