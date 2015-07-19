@@ -64,7 +64,7 @@ ImageObject.'></div> );
            }) );
          addressLocality.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            addressLocality = ( <div data-advice='Put your HTML here. addressLocality is a Text.'></div> );
+            addressLocality = ( <p className='address-locality'>{props.addressLocality}</p> );
         }
       }
       var contactType;
@@ -148,7 +148,7 @@ Text.'></div> );
            }) );
          addressCountry.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-          addressCountry = ( <Country props={ props.addressCountry } /> );        }
+          addressCountry = ( <p className="country">{ props.addressCountry }</p> );        }
       }
       var streetAddress;
       if( props.streetAddress ){
@@ -159,7 +159,7 @@ Text.'></div> );
            }) );
          streetAddress.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            streetAddress = ( <div data-advice='Put your HTML here. streetAddress is a Text.'></div> );
+            streetAddress = ( <p className='street-adress'>{props.streetAdress}</p> );
         }
       }
       var mainEntityOfPage;
@@ -209,7 +209,7 @@ URL.'></div> );
            }) );
          postalCode.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            postalCode = ( <div data-advice='Put your HTML here. postalCode is a Text.'></div> );
+            postalCode = ( <p className='postal-code'>{props.postalCode}</p> );
         }
       }
       var hoursAvailable;
@@ -279,7 +279,7 @@ URL.'></div> );
            }) );
          addressRegion.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            addressRegion = ( <div data-advice='Put your HTML here. addressRegion is a Text.'></div> );
+            addressRegion = ( <p className='address-region'>{props.adressRegion}</p> );
         }
       }
       var areaServed;
@@ -294,30 +294,30 @@ URL.'></div> );
           areaServed = ( <AdministrativeArea props={ props.areaServed } /> );        }
       }
       return (<div title='PostalAddress' className='PostalAddress entity'>
-        { sameAs }
         { image }
+        { name }
+        { alternateName }
+        { description }
+        { url }
+        { email }
         { telephone }
         { faxNumber }
-        { addressLocality }
+        { contactOption }
         { contactType }
         { additionalType }
-        { availableLanguage }
-        { postOfficeBoxNumber }
-        { productSupported }
-        { contactOption }
-        { addressCountry }
         { streetAddress }
-        { mainEntityOfPage }
-        { email }
-        { description }
         { postalCode }
-        { hoursAvailable }
-        { alternateName }
-        { potentialAction }
-        { name }
-        { url }
+        { addressLocality }
+        { postOfficeBoxNumber }
         { addressRegion }
+        { addressCountry }
+        { hoursAvailable }
+        { availableLanguage }
         { areaServed }
+        { productSupported }
+        { mainEntityOfPage }
+        { potentialAction }
+        { sameAs }
      </div>);
     }
   });

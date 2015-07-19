@@ -64,7 +64,7 @@
            }) );
          addressLocality.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            addressLocality = ( React.createElement("div", {"data-advice": "Put your HTML here. addressLocality is a Text."}) );
+            addressLocality = ( React.createElement("p", {className: "address-locality"}, props.addressLocality) );
         }
       }
       var contactType;
@@ -148,7 +148,7 @@
            }) );
          addressCountry.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-          addressCountry = ( React.createElement(Country, {props:  props.addressCountry}) );        }
+          addressCountry = ( React.createElement("p", {className: "country"},  props.addressCountry) );        }
       }
       var streetAddress;
       if( props.streetAddress ){
@@ -159,7 +159,7 @@
            }) );
          streetAddress.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            streetAddress = ( React.createElement("div", {"data-advice": "Put your HTML here. streetAddress is a Text."}) );
+            streetAddress = ( React.createElement("p", {className: "street-adress"}, props.streetAdress) );
         }
       }
       var mainEntityOfPage;
@@ -209,7 +209,7 @@
            }) );
          postalCode.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            postalCode = ( React.createElement("div", {"data-advice": "Put your HTML here. postalCode is a Text."}) );
+            postalCode = ( React.createElement("p", {className: "postal-code"}, props.postalCode) );
         }
       }
       var hoursAvailable;
@@ -279,7 +279,7 @@
            }) );
          addressRegion.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            addressRegion = ( React.createElement("div", {"data-advice": "Put your HTML here. addressRegion is a Text."}) );
+            addressRegion = ( React.createElement("p", {className: "address-region"}, props.adressRegion) );
         }
       }
       var areaServed;
@@ -294,30 +294,30 @@
           areaServed = ( React.createElement(AdministrativeArea, {props:  props.areaServed}) );        }
       }
       return (React.createElement("div", {title: "PostalAddress", className: "PostalAddress entity"}, 
-         sameAs, 
          image, 
+         name, 
+         alternateName, 
+         description, 
+         url, 
+         email, 
          telephone, 
          faxNumber, 
-         addressLocality, 
+         contactOption, 
          contactType, 
          additionalType, 
-         availableLanguage, 
-         postOfficeBoxNumber, 
-         productSupported, 
-         contactOption, 
-         addressCountry, 
          streetAddress, 
-         mainEntityOfPage, 
-         email, 
-         description, 
          postalCode, 
-         hoursAvailable, 
-         alternateName, 
-         potentialAction, 
-         name, 
-         url, 
+         addressLocality, 
+         postOfficeBoxNumber, 
          addressRegion, 
-         areaServed 
+         addressCountry, 
+         hoursAvailable, 
+         availableLanguage, 
+         areaServed, 
+         productSupported, 
+         mainEntityOfPage, 
+         potentialAction, 
+         sameAs 
      ));
     }
   });

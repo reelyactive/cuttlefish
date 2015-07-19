@@ -65,15 +65,12 @@
       var image;
       if( props.image ){
         if( props.image instanceof Array ){
-          image = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
+          image = [ (React.createElement("div", {key: "header"}, "Images:")) ]
           image = image.concat( props.image.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. image is a URL or" + ' ' +
-"ImageObject."}) )
+              return ( React.createElement("div", {key: index}, React.createElement("img", {className: "product-image", src: result})) )
            }) );
-         image.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            image = ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
-"ImageObject."}) );
+            image = ( React.createElement("img", {className: "product-image", src: props.image}) );
         }
       }
       var gtin8;
@@ -152,15 +149,12 @@
       var logo;
       if( props.logo ){
         if( props.logo instanceof Array ){
-          logo = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
+          logo = [ (React.createElement("p", {key: "header"}, "Logos:")) ]
           logo = logo.concat( props.logo.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. logo is a URL or" + ' ' +
-"ImageObject."}) )
+              return ( React.createElement("div", {key: index}, React.createElement("img", {className: "product-logo", src: result})) )
            }) );
-         logo.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            logo = ( React.createElement("div", {"data-advice": "Put your HTML here. logo is a URL or" + ' ' +
-"ImageObject."}) );
+            logo = ( React.createElement("img", {className: "product-logo", src: props.logo}) );
         }
       }
       var productID;
@@ -477,58 +471,55 @@
       var model;
       if( props.model ){
         if( props.model instanceof Array ){
-          model = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
+          model = [ (React.createElement("p", {key: "header"}, "Models:")) ]
           model = model.concat( props.model.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. model is a ProductModel or" + ' ' +
-"Text."}) )
+              return ( React.createElement("p", {key: index}, result) )
            }) );
-         model.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            model = ( React.createElement("div", {"data-advice": "Put your HTML here. model is a ProductModel or" + ' ' +
-"Text."}) );
+            model = ( React.createElement("p", null, props.model) );
         }
       }
       return (React.createElement("div", {title: "Product", className: "Product entity"}, 
-         isConsumableFor, 
-         weight, 
-         isAccessoryOrSparePartFor, 
-         color, 
-         purchaseDate, 
          image, 
-         gtin8, 
-         sameAs, 
-         height, 
-         releaseDate, 
-         isRelatedTo, 
-         additionalType, 
          logo, 
          productID, 
-         category, 
-         isSimilarTo, 
-         review, 
-         audience, 
-         width, 
-         additionalProperty, 
-         offers, 
-         mainEntityOfPage, 
-         productionDate, 
-         sku, 
-         description, 
-         mpn, 
-         brand, 
-         award, 
-         itemCondition, 
-         alternateName, 
-         manufacturer, 
-         potentialAction, 
          name, 
-         aggregateRating, 
+         alternateName, 
+         model, 
+         manufacturer, 
+         brand, 
+         category, 
+         description, 
+         releaseDate, 
+         productionDate, 
+         purchaseDate, 
+         itemCondition, 
          url, 
-         gtin14, 
+         award, 
+         color, 
+         height, 
+         width, 
          depth, 
+         weight, 
+         audience, 
+         aggregateRating, 
+         review, 
+         isConsumableFor, 
+         isAccessoryOrSparePartFor, 
+         isRelatedTo, 
+         isSimilarTo, 
+         offers, 
+         additionalType, 
+         gtin8, 
+         sameAs, 
+         potentialAction, 
+         additionalProperty, 
+         mainEntityOfPage, 
+         sku, 
+         mpn, 
+         gtin14, 
          gtin13, 
-         gtin12, 
-         model 
+         gtin12 
      ));
     }
   });
