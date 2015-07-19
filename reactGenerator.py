@@ -43,7 +43,7 @@ def extract_react_component_from_URL( componentName ):
     
     title = dom( 'h1.page-title' )[0]
     comment = dom( 'div[property=rdfs:comment]' )[0]
-    outputTopComments = "/* " + plaintext( "%s" % title ) + " - " + plaintext( "%s" % comment ) + ". Generated automatically by the reactGenerator. */ "
+    outputTopComments = "/* " + plaintext( "%s" % title ) + " - " + plaintext( "%s" % comment ) + ". Generated automatically by the reactGenerator. */"
 
     table = dom( 'tbody.supertype' )
     properties = {}
@@ -93,27 +93,22 @@ def outputInFile( componentName, topComments, otherDependencies, properties, def
     lines.append( "      var " + propertyName + ";\n" )
     lines.append( "      if( this.props." + propertyName + " ){\n" )
     lines.append( "        if( this.props." + propertyName + " instanceof Array ){\n" )
-#    lines.append( "          " + propertyName +" = [( /* HTML for the 'head' of the section */ )];\n" )
-    lines.append( "          " + propertyName +" = [(<p>" + propertyName + ":</p> )];\n" )
+    lines.append( "          " + propertyName +" = [( /* HTML for the 'head' of the section */ )];\n" )
     lines.append( "          for( i in this.props." + propertyName + " ){\n" )
     if isEntity( typeName ) and ' ' not in typeName:
       lines.append( "            " + propertyName + ".push( ( <" + typeName +" props=" 
       + "{ this.props." + propertyName + " } /> ) );" )
     else:
-#      lines.append( "            " + propertyName + ".push( ( /* Put your HTML here ("
-#      + propertyName + " is a " + typeName + ")*/ ) );\n" )
-      lines.append( "            " + propertyName + ".push( ( <div class='"
-      + propertyName + "'></div> ) );\n" )
+      lines.append( "            " + propertyName + ".push( ( /* Put your HTML here ("
+      + propertyName + " is a " + typeName + ")*/ ) );\n" )
     lines.append( "          }\n" )
     lines.append( "        } else {\n" )
     if isEntity( typeName ) and ' ' not in typeName:
       lines.append( "          " + propertyName + " = ( <" + typeName +" props=" 
       + "{ this.props." + propertyName + " } /> );" )
     else:
-#      lines.append( "          " + propertyName + " = ( /* Put your HTML here ("
-#      + propertyName + " is a " + typeName + ")*/ );\n" )
-      lines.append( "          " + propertyName + " = ( <div class='"
-      + propertyName + "'>{this.props."+propertyName+"}</div> );\n" )
+      lines.append( "          " + propertyName + " = ( /* Put your HTML here ("
+      + propertyName + " is a " + typeName + ")*/ );\n" )
     lines.append( "        }\n" )
     lines.append( "      }\n" )
   lines.append( "      return (<div title='" + componentName + "' className='"
@@ -124,7 +119,6 @@ def outputInFile( componentName, topComments, otherDependencies, properties, def
   lines.append( "    }\n" )
   lines.append( "  });\n" )
   lines.append( "});\n" )
-#  print "Writing lines: %s" % lines
   safeLines = []
   for line in lines:
     safeLines.append( safe_unicode( safe_str( line ) ) )
