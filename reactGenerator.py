@@ -89,15 +89,16 @@ def outputInFile( componentName, topComments, otherDependencies, properties, def
   lines.append( "      }\n" )
   lines.append( "    },\n" )
   lines.append( "    render: function(){\n" )
+  lines.append( "      var props = this.props.props;\n" )
   for (propertyName, typeName) in properties.iteritems():
     lines.append( "      var " + propertyName + ";\n" )
-    lines.append( "      if( this.props." + propertyName + " ){\n" )
-    lines.append( "        if( this.props." + propertyName + " instanceof Array ){\n" )
+    lines.append( "      if( props." + propertyName + " ){\n" )
+    lines.append( "        if( props." + propertyName + " instanceof Array ){\n" )
     lines.append( "          " + propertyName +" = [( <div data-advice='HTML for the *head* of the section'></div> )];\n" )
-    lines.append( "          for( i in this.props." + propertyName + " ){\n" )
+    lines.append( "          for( i in props." + propertyName + " ){\n" )
     if isEntity( typeName ) and ' ' not in typeName:
       lines.append( "            " + propertyName + ".push( ( <" + typeName +" {..." 
-      + "this.props." + propertyName + " } /> ) );" )
+      + "props." + propertyName + " } /> ) );" )
     else:
       lines.append( "            " + propertyName + ".push( ( <div data-advice='Put your HTML here. "
       + propertyName + " is a " + typeName + ".'></div> ) );\n" )
@@ -105,7 +106,7 @@ def outputInFile( componentName, topComments, otherDependencies, properties, def
     lines.append( "        } else {\n" )
     if isEntity( typeName ) and ' ' not in typeName:
       lines.append( "          " + propertyName + " = ( <" + typeName +" props=" 
-      + "{ this.props." + propertyName + " } /> );" )
+      + "{ props." + propertyName + " } /> );" )
     else:
       lines.append( "            " + propertyName + " = ( <div data-advice='Put your HTML here. "
       + propertyName + " is a " + typeName + ".'></div> );\n" )
