@@ -94,15 +94,17 @@ def outputInFile( componentName, topComments, otherDependencies, properties, def
     lines.append( "      var " + propertyName + ";\n" )
     lines.append( "      if( props." + propertyName + " ){\n" )
     lines.append( "        if( props." + propertyName + " instanceof Array ){\n" )
-    lines.append( "          " + propertyName +" = [( <div data-advice='HTML for the *head* of the section'></div> )];\n" )
-    lines.append( "          for( i in props." + propertyName + " ){\n" )
+    lines.append( "          " + propertyName + " = [ "
+      + "(<div key='header' data-advice='HTML for the *head* of the section'></div>) ]\n" )
+    lines.append( "          " + propertyName + " = " + propertyName
+      + ".concat( props." + propertyName + ".map( function(result, index){\n" )
     if isEntity( typeName ) and ' ' not in typeName:
-      lines.append( "            " + propertyName + ".push( ( <" + typeName +" {..." 
-      + "props." + propertyName + " } /> ) );" )
+      lines.append( "              return ( <" + typeName +" {...result} key={index} /> )\n" )
     else:
-      lines.append( "            " + propertyName + ".push( ( <div data-advice='Put your HTML here. "
-      + propertyName + " is a " + typeName + ".'></div> ) );\n" )
-    lines.append( "          }\n" )
+      lines.append( "              return ( <div key={index} data-advice='Put your HTML here. "
+        + propertyName + " is a " + typeName + ".'></div> )\n" )
+    lines.append( "           }) );\n" )
+    lines.append( "         " + propertyName + ".push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );\n" )
     lines.append( "        } else {\n" )
     if isEntity( typeName ) and ' ' not in typeName:
       lines.append( "          " + propertyName + " = ( <" + typeName +" props=" 
