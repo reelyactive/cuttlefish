@@ -207,13 +207,15 @@ ContactPoint.'></div> );
       var worksFor;
       if( props.worksFor ){
         if( props.worksFor instanceof Array ){
-          worksFor = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
-          worksFor = worksFor.concat( props.worksFor.map( function(result, index){
-              return ( <Organization {...result} key={index} /> )
-           }) );
-         worksFor.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
+          worksFor = [(<p key='header'>Works for:</p>)]
+          worksFor.push( (<ul>
+            {props.worksFor.map( function(result, index){
+              return <li key={index}>{result}</li>
+           })}
+           </ul>) );
         } else {
-          worksFor = ( <Organization props={ props.worksFor } /> );        }
+          worksFor = ( <p>Works for: { props.worksFor } </p> );
+        }
       }
       var taxID;
       if( props.taxID ){
@@ -379,7 +381,7 @@ Organization.'></div> );
            }) );
          jobTitle.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            jobTitle = ( <div data-advice='Put your HTML here. jobTitle is a Text.'></div> );
+            jobTitle = ( <p>Job Title: {props.jobTitle}</p> );
         }
       }
       var brand;
@@ -475,7 +477,7 @@ Organization.'></div> );
            }) );
          nationality.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-          nationality = ( <Country props={ props.nationality } /> );        }
+          nationality = ( <p>Nationality: { props.nationality }</p> );        }
       }
       var contactPoint;
       if( props.contactPoint ){
@@ -664,62 +666,62 @@ QuantitativeValue.'></div> );
         }
       }
       return (<div title='Person' className='Person entity'>
-        { sibling }
-        { honorificPrefix }
-        { weight }
-        { sameAs }
         { image }
-        { relatedTo }
-        { telephone }
-        { birthDate }
-        { faxNumber }
-        { affiliation }
-        { additionalName }
-        { workLocation }
-        { additionalType }
-        { children }
-        { description }
-        { isicV4 }
-        { spouse }
-        { worksFor }
-        { taxID }
-        { honorificSuffix }
-        { netWorth }
-        { mainEntityOfPage }
-        { homeLocation }
-        { email }
-        { seeks }
-        { colleague }
-        { performerIn }
-        { birthPlace }
-        { knows }
-        { parent }
-        { memberOf }
-        { jobTitle }
-        { brand }
+        { name }
+        { honorificPrefix }
         { givenName }
-        { familyName }
-        { award }
         { alternateName }
-        { potentialAction }
-        { address }
-        { duns }
+        { additionalName }
+        { familyName }
+        { honorificSuffix }
         { nationality }
         { contactPoint }
-        { deathDate }
-        { makesOffer }
-        { hasPOS }
-        { owns }
-        { name }
-        { naics }
+        { address }
+        { email }
+        { telephone }
+        { faxNumber }
         { url }
         { gender }
-        { vatID }
         { height }
+        { weight }
+        { birthDate }
+        { birthPlace }
+        { deathDate }
         { deathPlace }
-        { follows }
-        { alumniOf }
+        { homeLocation }
         { globalLocationNumber }
+        { description }
+        { taxID }
+        { netWorth }
+        { sameAs }
+        { parent }
+        { sibling }
+        { spouse }
+        { children }
+        { relatedTo }
+        { affiliation }
+        { additionalType }
+        { worksFor }
+        { workLocation }
+        { jobTitle }
+        { isicV4 }
+        { performerIn }
+        { colleague }
+        { mainEntityOfPage }
+        { follows }
+        { knows }
+        { makesOffer }
+        { seeks }
+        { memberOf }
+        { alumniOf }
+        { brand }
+        { award }
+        { potentialAction }
+        { duns }
+        { hasPOS }
+        { owns }
+        { naics }
+        { vatID }
      </div>);
     }
   });
