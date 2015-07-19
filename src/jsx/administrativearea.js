@@ -52,8 +52,7 @@ ImageObject.'></div> )
            }) );
          image.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            image = ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> );
+            image = ( <img src={props.image} className='place-image' />);
         }
       }
       var telephone;
@@ -101,8 +100,7 @@ ImageObject.'></div> )
            }) );
          logo.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            logo = ( <div data-advice='Put your HTML here. logo is a URL or
-ImageObject.'></div> );
+            logo = ( <img src={props.logo} className='place-logo' />);
         }
       }
       var additionalType;
@@ -264,13 +262,12 @@ Map.'></div> );
       var name;
       if( props.name ){
         if( props.name instanceof Array ){
-          name = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          name = [ (<p key='header'>Names:</p>) ]
           name = name.concat( props.name.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. name is a Text.'></div> )
+              return ( <div key={index}>{result}</div> )
            }) );
-         name.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
+            name = ( <div class='name'>Name :{props.name}</div> );
         }
       }
       var url;
@@ -282,7 +279,7 @@ Map.'></div> );
            }) );
          url.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
+            url = ( <a href={props.url} target='_blank'>{props.url}</a> ) ;
         }
       }
       var globalLocationNumber;
@@ -302,26 +299,28 @@ Map.'></div> );
         { sameAs }
         { photo }
         { image }
+        { logo }
+        { name }
+        { alternateName }
+        { description }
+        { isicV4 }
+        { url }
         { telephone }
         { faxNumber }
-        { aggregateRating }
-        { logo }
-        { additionalType }
-        { event }
-        { isicV4 }
-        { geo }
-        { review }
-        { additionalProperty }
-        { mainEntityOfPage }
-        { description }
-        { containedIn }
         { address }
-        { alternateName }
+        { geo }
+        { event }
+        { review }
+        { aggregateRating }
+        { additionalProperty }
+        { additionalType }
         { hasMap }
+        { containedIn }
         { potentialAction }
-        { name }
-        { url }
         { globalLocationNumber }
+        { openingHoursSpecification }
+        { mainEntityOfPage }
+        { sameAs }
      </div>);
     }
   });

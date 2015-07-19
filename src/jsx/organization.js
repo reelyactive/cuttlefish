@@ -433,7 +433,7 @@ Product.'></div> );
            }) );
          name.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
+            name = ( <span>{props.name}</span> );
         }
       }
       var naics;
@@ -511,48 +511,48 @@ ProgramMembership.'></div> );
         }
       }
       return (<div title='Organization' className='Organization entity'>
-        { founder }
-        { sameAs }
         { image }
+        { logo }
+        { name }
+        { alternateName }
+        { legalName }
+        { description }
+        { founder }
         { foundingDate }
+        { foundingLocation }
+        { dissolutionDate }
+        { contactPoint }
+        { email }
+        { url }
         { telephone }
         { faxNumber }
-        { aggregateRating }
-        { additionalType }
-        { logo }
-        { event }
-        { isicV4 }
-        { review }
-        { taxID }
-        { mainEntityOfPage }
-        { member }
-        { foundingLocation }
-        { location }
-        { employee }
-        { email }
-        { seeks }
-        { description }
-        { numberOfEmployees }
-        { subOrganization }
-        { brand }
-        { owns }
-        { award }
         { department }
-        { dissolutionDate }
-        { alternateName }
         { address }
+        { location }
+        { globalLocationNumber }
+        { subOrganization }
+        { aggregateRating }
+        { review }
         { duns }
-        { contactPoint }
+        { isicV4 }
+        { naics }
+        { taxID }
+        { owns }
+        { seeks }
+        { event }
+        { brand }
+        { award }
+        { numberOfEmployees }
+        { employee }
+        { member }
         { makesOffer }
         { hasPOS }
         { potentialAction }
-        { name }
-        { naics }
-        { url }
         { memberOf }
-        { legalName }
+        { mainEntityOfPage }
+        { additionalType }
+        { sameAs }
         { vatID }
-        { globalLocationNumber }
      </div>);
     }
   });

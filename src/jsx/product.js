@@ -65,15 +65,12 @@
       var image;
       if( props.image ){
         if( props.image instanceof Array ){
-          image = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          image = [ (<div key='header'>Images:</div>) ]
           image = image.concat( props.image.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> )
+              return ( <div key={index}><img className='product-image' src={result} /></div> )
            }) );
-         image.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            image = ( <div data-advice='Put your HTML here. image is a URL or
-ImageObject.'></div> );
+            image = ( <img className='product-image' src={props.image} /> );
         }
       }
       var gtin8;
@@ -152,15 +149,12 @@ QuantitativeValue.'></div> );
       var logo;
       if( props.logo ){
         if( props.logo instanceof Array ){
-          logo = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          logo = [ (<p key='header'>Logos:</p>) ]
           logo = logo.concat( props.logo.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. logo is a URL or
-ImageObject.'></div> )
+              return ( <div key={index}><img className='product-logo' src={result} /></div> )
            }) );
-         logo.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            logo = ( <div data-advice='Put your HTML here. logo is a URL or
-ImageObject.'></div> );
+            logo = ( <img className='product-logo' src={props.logo} /> );
         }
       }
       var productID;
@@ -477,58 +471,55 @@ QuantitativeValue.'></div> );
       var model;
       if( props.model ){
         if( props.model instanceof Array ){
-          model = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          model = [ (<p key='header'>Models:</p>) ]
           model = model.concat( props.model.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. model is a ProductModel or
-Text.'></div> )
+              return ( <p key={index}>{result}</p> )
            }) );
-         model.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            model = ( <div data-advice='Put your HTML here. model is a ProductModel or
-Text.'></div> );
+            model = ( <p>{props.model}</p> );
         }
       }
       return (<div title='Product' className='Product entity'>
-        { isConsumableFor }
-        { weight }
-        { isAccessoryOrSparePartFor }
-        { color }
-        { purchaseDate }
         { image }
-        { gtin8 }
-        { sameAs }
-        { height }
-        { releaseDate }
-        { isRelatedTo }
-        { additionalType }
         { logo }
         { productID }
-        { category }
-        { isSimilarTo }
-        { review }
-        { audience }
-        { width }
-        { additionalProperty }
-        { offers }
-        { mainEntityOfPage }
-        { productionDate }
-        { sku }
-        { description }
-        { mpn }
-        { brand }
-        { award }
-        { itemCondition }
-        { alternateName }
-        { manufacturer }
-        { potentialAction }
         { name }
-        { aggregateRating }
+        { alternateName }
+        { model }
+        { manufacturer }
+        { brand }
+        { category }
+        { description }
+        { releaseDate }
+        { productionDate }
+        { purchaseDate }
+        { itemCondition }
         { url }
-        { gtin14 }
+        { award }
+        { color }
+        { height }
+        { width }
         { depth }
+        { weight }
+        { audience }
+        { aggregateRating }
+        { review }
+        { isConsumableFor }
+        { isAccessoryOrSparePartFor }
+        { isRelatedTo }
+        { isSimilarTo }
+        { offers }
+        { additionalType }
+        { gtin8 }
+        { sameAs }
+        { potentialAction }
+        { additionalProperty }
+        { mainEntityOfPage }
+        { sku }
+        { mpn }
+        { gtin14 }
         { gtin13 }
         { gtin12 }
-        { model }
      </div>);
     }
   });

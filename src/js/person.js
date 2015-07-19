@@ -59,7 +59,7 @@
               return ( React.createElement("img", {key: index, src: result, className: "image"}) )
            }) );
         } else {
-          image = ( React.createElement("img", {src: props.image, class: "image"}) );
+          image = ( React.createElement("img", {src: props.image, className: "image"}) );
         }
       }
       var relatedTo;
@@ -214,7 +214,7 @@
            })
            )) );
         } else {
-          worksFor = ( React.createElement("p", null, "Works for: ",  props.worksFor, " ") );
+          worksFor = ( React.createElement("div", null, React.createElement("p", null, "Works for: ", props.worksFor)) );
         }
       }
       var taxID;
@@ -407,7 +407,7 @@
            }) );
          familyName.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-          familyName = ( React.createElement("div", {class: "familyName"}, "Last Name: ", props.familyName) );
+          familyName = ( React.createElement("div", {className: "familyName"}, "Last Name: ", props.familyName) );
         }
       }
       var award;
@@ -544,7 +544,7 @@
            }) );
          name.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-          name = ( React.createElement("div", {class: "name"}, "Name :", props.name) );
+          name = ( React.createElement("div", {className: "name"}, "Name :", props.name) );
         }
       }
       var naics;
@@ -579,7 +579,7 @@
            }) );
          gender.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-          gender = ( React.createElement("div", {class: "gender"}, "Gender: ", props.gender) );
+          gender = ( React.createElement("div", {className: "gender"}, "Gender: ", props.gender) );
         }
       }
       var vatID;
@@ -639,7 +639,7 @@
            }) );
          givenName.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-          givenName = ( React.createElement("div", {class: "givenName"}, "Given name: ", props.givenName) );
+          givenName = ( React.createElement("div", {className: "givenName"}, "Given name: ", props.givenName) );
         }
       }
       var alumniOf;
