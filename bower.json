@@ -6,7 +6,7 @@
     "Adrien Thiery <adrien.thiery@gmail.com>"
   ],
   "description": "A set of react components for visualising IoT related elements",
-  "main": "main.js",
+  "main": "dist/cormorant.min.js",
   "keywords": [
     "IoT",
     "reelyActive",
@@ -22,8 +22,7 @@
     "tests"
   ],
   "dependencies": {
-    "react": "~0.13.3",
-    "requirejs": "~2.1.19"
+    "react": "~0.13.3"
   },
   "devDependencies": {}
 }
