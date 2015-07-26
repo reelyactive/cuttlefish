@@ -1,6 +1,4 @@
-/* Thing > Intangible > StructuredValue > ContactPoint > PostalAddress - The mailing address.. Generated automatically by the reactGenerator. */
- define(['../bower_components/react/react', './openinghoursspecification', './product', './language', './country', './imageobject', './administrativearea', './action', './creativework', './contactpointoption'], function(React, OpeningHoursSpecification, Product, Language, Country, ImageObject, AdministrativeArea, Action, CreativeWork, ContactPointOption){
-  return React.createClass({
+/* Thing > Intangible > StructuredValue > ContactPoint > PostalAddress - The mailing address.. Generated automatically by the reactGenerator. */  var PostalAddress= React.createClass({displayName: "PostalAddress",
     getDefaultProps: function(){
       return {
       }
@@ -121,13 +119,13 @@
         if( props.productSupported instanceof Array ){
           productSupported = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
           productSupported = productSupported.concat( props.productSupported.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. productSupported is a Text or" + ' ' +
-"Product."}) )
+              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. productSupported is a Product or" + ' ' +
+"Text."}) )
            }) );
          productSupported.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            productSupported = ( React.createElement("div", {"data-advice": "Put your HTML here. productSupported is a Text or" + ' ' +
-"Product."}) );
+            productSupported = ( React.createElement("div", {"data-advice": "Put your HTML here. productSupported is a Product or" + ' ' +
+"Text."}) );
         }
       }
       var contactOption;
@@ -169,13 +167,13 @@
         if( props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
           mainEntityOfPage = mainEntityOfPage.concat( props.mainEntityOfPage.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
-"CreativeWork."}) )
+              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
+"URL."}) )
            }) );
          mainEntityOfPage.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
-"CreativeWork."}) );
+            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
+"URL."}) );
         }
       }
       var email;
@@ -323,4 +321,3 @@
      ));
     }
   });
-});

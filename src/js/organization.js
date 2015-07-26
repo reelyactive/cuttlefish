@@ -1,6 +1,4 @@
-/* Thing > Organization - An organization such as a school, NGO, corporation, club, etc.. Generated automatically by the reactGenerator. */
- define(['../bower_components/react/react', './quantitativevalue', './programmembership', './product', './person', './brand', './offer', './imageobject', './event', './aggregaterating', './ownershipinfo', './place', './demand', './action', './organization', './postaladdress', './creativework', './contactpoint', './review'], function(React, QuantitativeValue, ProgramMembership, Product, Person, Brand, Offer, ImageObject, Event, AggregateRating, OwnershipInfo, Place, Demand, Action, Organization, PostalAddress, CreativeWork, ContactPoint, Review){
-  return React.createClass({
+/* Thing > Organization - An organization such as a school, NGO, corporation, club, etc.. Generated automatically by the reactGenerator. */  var Organization= React.createClass({displayName: "Organization",
     getDefaultProps: function(){
       return {
       }
@@ -558,4 +556,3 @@
      ));
     }
   });
-});

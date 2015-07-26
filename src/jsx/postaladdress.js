@@ -1,6 +1,4 @@
-/* Thing > Intangible > StructuredValue > ContactPoint > PostalAddress - The mailing address.. Generated automatically by the reactGenerator. */
- define(['../bower_components/react/react', './openinghoursspecification', './product', './language', './country', './imageobject', './administrativearea', './action', './creativework', './contactpointoption'], function(React, OpeningHoursSpecification, Product, Language, Country, ImageObject, AdministrativeArea, Action, CreativeWork, ContactPointOption){
-  return React.createClass({
+/* Thing > Intangible > StructuredValue > ContactPoint > PostalAddress - The mailing address.. Generated automatically by the reactGenerator. */  var PostalAddress= React.createClass({
     getDefaultProps: function(){
       return {
       }
@@ -121,13 +119,13 @@ ImageObject.'></div> );
         if( props.productSupported instanceof Array ){
           productSupported = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           productSupported = productSupported.concat( props.productSupported.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. productSupported is a Text or
-Product.'></div> )
+              return ( <div key={index} data-advice='Put your HTML here. productSupported is a Product or
+Text.'></div> )
            }) );
          productSupported.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            productSupported = ( <div data-advice='Put your HTML here. productSupported is a Text or
-Product.'></div> );
+            productSupported = ( <div data-advice='Put your HTML here. productSupported is a Product or
+Text.'></div> );
         }
       }
       var contactOption;
@@ -169,13 +167,13 @@ Product.'></div> );
         if( props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           mainEntityOfPage = mainEntityOfPage.concat( props.mainEntityOfPage.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. mainEntityOfPage is a URL or
-CreativeWork.'></div> )
+              return ( <div key={index} data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
+URL.'></div> )
            }) );
          mainEntityOfPage.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
-CreativeWork.'></div> );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
+URL.'></div> );
         }
       }
       var email;
@@ -323,4 +321,3 @@ CreativeWork.'></div> );
      </div>);
     }
   });
-});

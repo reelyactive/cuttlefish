@@ -1,6 +1,4 @@
-/* Thing > Place - Entities that have a somewhat fixed, physical extension.. Generated automatically by the reactGenerator. */
- define(['../bower_components/react/react', './map', './geoshape', './openinghoursspecification', './photograph', './review', './imageobject', './propertyvalue', './aggregaterating', './place', './action', './postaladdress', './creativework', './event', './geocoordinates'], function(React, Map, GeoShape, OpeningHoursSpecification, Photograph, Review, ImageObject, PropertyValue, AggregateRating, Place, Action, PostalAddress, CreativeWork, Event, GeoCoordinates){
-  return React.createClass({
+/* Thing > Place - Entities that have a somewhat fixed, physical extension.. Generated automatically by the reactGenerator. */  var Place= React.createClass({
     getDefaultProps: function(){
       return {
       }
@@ -147,13 +145,13 @@ ImageObject.'></div> );
         if( props.geo instanceof Array ){
           geo = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           geo = geo.concat( props.geo.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. geo is a GeoShape or
-GeoCoordinates.'></div> )
+              return ( <div key={index} data-advice='Put your HTML here. geo is a GeoCoordinates or
+GeoShape.'></div> )
            }) );
          geo.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            geo = ( <div data-advice='Put your HTML here. geo is a GeoShape or
-GeoCoordinates.'></div> );
+            geo = ( <div data-advice='Put your HTML here. geo is a GeoCoordinates or
+GeoShape.'></div> );
         }
       }
       var review;
@@ -183,13 +181,13 @@ GeoCoordinates.'></div> );
         if( props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           mainEntityOfPage = mainEntityOfPage.concat( props.mainEntityOfPage.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. mainEntityOfPage is a URL or
-CreativeWork.'></div> )
+              return ( <div key={index} data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
+URL.'></div> )
            }) );
          mainEntityOfPage.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
-CreativeWork.'></div> );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
+URL.'></div> );
         }
       }
       var description;
@@ -243,13 +241,13 @@ CreativeWork.'></div> );
         if( props.hasMap instanceof Array ){
           hasMap = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           hasMap = hasMap.concat( props.hasMap.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. hasMap is a URL or
-Map.'></div> )
+              return ( <div key={index} data-advice='Put your HTML here. hasMap is a Map or
+URL.'></div> )
            }) );
          hasMap.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            hasMap = ( <div data-advice='Put your HTML here. hasMap is a URL or
-Map.'></div> );
+            hasMap = ( <div data-advice='Put your HTML here. hasMap is a Map or
+URL.'></div> );
         }
       }
       var potentialAction;
@@ -327,4 +325,3 @@ Map.'></div> );
      </div>);
     }
   });
-});

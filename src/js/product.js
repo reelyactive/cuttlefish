@@ -1,6 +1,4 @@
-/* Thing > Product - Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.. Generated automatically by the reactGenerator. */
- define(['../bower_components/react/react', './distance', './product', './productmodel', './thing', './offeritemcondition', './brand', './offer', './quantitativevalue', './propertyvalue', './aggregaterating', './audience', './physicalactivitycategory', './action', './organization', './creativework', './imageobject', './review'], function(React, Distance, Product, ProductModel, Thing, OfferItemCondition, Brand, Offer, QuantitativeValue, PropertyValue, AggregateRating, Audience, PhysicalActivityCategory, Action, Organization, CreativeWork, ImageObject, Review){
-  return React.createClass({
+/* Thing > Product - Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.. Generated automatically by the reactGenerator. */  var Product= React.createClass({displayName: "Product",
     getDefaultProps: function(){
       return {
       }
@@ -107,13 +105,13 @@
         if( props.height instanceof Array ){
           height = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
           height = height.concat( props.height.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. height is a QuantitativeValue or" + ' ' +
-"Distance."}) )
+              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. height is a Distance or" + ' ' +
+"QuantitativeValue."}) )
            }) );
          height.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            height = ( React.createElement("div", {"data-advice": "Put your HTML here. height is a QuantitativeValue or" + ' ' +
-"Distance."}) );
+            height = ( React.createElement("div", {"data-advice": "Put your HTML here. height is a Distance or" + ' ' +
+"QuantitativeValue."}) );
         }
       }
       var releaseDate;
@@ -182,15 +180,15 @@
         if( props.category instanceof Array ){
           category = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
           category = category.concat( props.category.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. category is a Thing or" + ' ' +
-"Text or" + ' ' +
-"PhysicalActivityCategory."}) )
+              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. category is a PhysicalActivityCategory or" + ' ' +
+"Thing or" + ' ' +
+"Text."}) )
            }) );
          category.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            category = ( React.createElement("div", {"data-advice": "Put your HTML here. category is a Thing or" + ' ' +
-"Text or" + ' ' +
-"PhysicalActivityCategory."}) );
+            category = ( React.createElement("div", {"data-advice": "Put your HTML here. category is a PhysicalActivityCategory or" + ' ' +
+"Thing or" + ' ' +
+"Text."}) );
         }
       }
       var isSimilarTo;
@@ -231,13 +229,13 @@
         if( props.width instanceof Array ){
           width = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
           width = width.concat( props.width.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. width is a QuantitativeValue or" + ' ' +
-"Distance."}) )
+              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. width is a Distance or" + ' ' +
+"QuantitativeValue."}) )
            }) );
          width.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            width = ( React.createElement("div", {"data-advice": "Put your HTML here. width is a QuantitativeValue or" + ' ' +
-"Distance."}) );
+            width = ( React.createElement("div", {"data-advice": "Put your HTML here. width is a Distance or" + ' ' +
+"QuantitativeValue."}) );
         }
       }
       var additionalProperty;
@@ -267,13 +265,13 @@
         if( props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
           mainEntityOfPage = mainEntityOfPage.concat( props.mainEntityOfPage.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
-"CreativeWork."}) )
+              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
+"URL."}) )
            }) );
          mainEntityOfPage.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
-"CreativeWork."}) );
+            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
+"URL."}) );
         }
       }
       var productionDate;
@@ -447,13 +445,13 @@
         if( props.depth instanceof Array ){
           depth = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
           depth = depth.concat( props.depth.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. depth is a QuantitativeValue or" + ' ' +
-"Distance."}) )
+              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. depth is a Distance or" + ' ' +
+"QuantitativeValue."}) )
            }) );
          depth.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            depth = ( React.createElement("div", {"data-advice": "Put your HTML here. depth is a QuantitativeValue or" + ' ' +
-"Distance."}) );
+            depth = ( React.createElement("div", {"data-advice": "Put your HTML here. depth is a Distance or" + ' ' +
+"QuantitativeValue."}) );
         }
       }
       var gtin13;
@@ -485,13 +483,13 @@
         if( props.model instanceof Array ){
           model = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
           model = model.concat( props.model.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. model is a Text or" + ' ' +
-"ProductModel."}) )
+              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. model is a ProductModel or" + ' ' +
+"Text."}) )
            }) );
          model.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            model = ( React.createElement("div", {"data-advice": "Put your HTML here. model is a Text or" + ' ' +
-"ProductModel."}) );
+            model = ( React.createElement("div", {"data-advice": "Put your HTML here. model is a ProductModel or" + ' ' +
+"Text."}) );
         }
       }
       return (React.createElement("div", {title: "Product", className: "Product entity"}, 
@@ -538,4 +536,3 @@
      ));
     }
   });
-});
