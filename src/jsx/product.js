@@ -1,6 +1,4 @@
-/* Thing > Product - Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.. Generated automatically by the reactGenerator. */
- define(['../bower_components/react/react', './distance', './product', './productmodel', './thing', './offeritemcondition', './brand', './offer', './quantitativevalue', './propertyvalue', './aggregaterating', './audience', './physicalactivitycategory', './action', './organization', './creativework', './imageobject', './review'], function(React, Distance, Product, ProductModel, Thing, OfferItemCondition, Brand, Offer, QuantitativeValue, PropertyValue, AggregateRating, Audience, PhysicalActivityCategory, Action, Organization, CreativeWork, ImageObject, Review){
-  return React.createClass({
+/* Thing > Product - Any offered product or service. For example: a pair of shoes; a concert ticket; the rental of a car; a haircut; or an episode of a TV show streamed online.. Generated automatically by the reactGenerator. */  var Product= React.createClass({
     getDefaultProps: function(){
       return {
       }
@@ -107,13 +105,13 @@ ImageObject.'></div> );
         if( props.height instanceof Array ){
           height = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           height = height.concat( props.height.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. height is a QuantitativeValue or
-Distance.'></div> )
+              return ( <div key={index} data-advice='Put your HTML here. height is a Distance or
+QuantitativeValue.'></div> )
            }) );
          height.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            height = ( <div data-advice='Put your HTML here. height is a QuantitativeValue or
-Distance.'></div> );
+            height = ( <div data-advice='Put your HTML here. height is a Distance or
+QuantitativeValue.'></div> );
         }
       }
       var releaseDate;
@@ -182,15 +180,15 @@ ImageObject.'></div> );
         if( props.category instanceof Array ){
           category = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           category = category.concat( props.category.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. category is a Thing or
-Text or
-PhysicalActivityCategory.'></div> )
+              return ( <div key={index} data-advice='Put your HTML here. category is a PhysicalActivityCategory or
+Thing or
+Text.'></div> )
            }) );
          category.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            category = ( <div data-advice='Put your HTML here. category is a Thing or
-Text or
-PhysicalActivityCategory.'></div> );
+            category = ( <div data-advice='Put your HTML here. category is a PhysicalActivityCategory or
+Thing or
+Text.'></div> );
         }
       }
       var isSimilarTo;
@@ -231,13 +229,13 @@ PhysicalActivityCategory.'></div> );
         if( props.width instanceof Array ){
           width = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           width = width.concat( props.width.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. width is a QuantitativeValue or
-Distance.'></div> )
+              return ( <div key={index} data-advice='Put your HTML here. width is a Distance or
+QuantitativeValue.'></div> )
            }) );
          width.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            width = ( <div data-advice='Put your HTML here. width is a QuantitativeValue or
-Distance.'></div> );
+            width = ( <div data-advice='Put your HTML here. width is a Distance or
+QuantitativeValue.'></div> );
         }
       }
       var additionalProperty;
@@ -267,13 +265,13 @@ Distance.'></div> );
         if( props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           mainEntityOfPage = mainEntityOfPage.concat( props.mainEntityOfPage.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. mainEntityOfPage is a URL or
-CreativeWork.'></div> )
+              return ( <div key={index} data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
+URL.'></div> )
            }) );
          mainEntityOfPage.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a URL or
-CreativeWork.'></div> );
+            mainEntityOfPage = ( <div data-advice='Put your HTML here. mainEntityOfPage is a CreativeWork or
+URL.'></div> );
         }
       }
       var productionDate;
@@ -447,13 +445,13 @@ Organization.'></div> );
         if( props.depth instanceof Array ){
           depth = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           depth = depth.concat( props.depth.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. depth is a QuantitativeValue or
-Distance.'></div> )
+              return ( <div key={index} data-advice='Put your HTML here. depth is a Distance or
+QuantitativeValue.'></div> )
            }) );
          depth.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            depth = ( <div data-advice='Put your HTML here. depth is a QuantitativeValue or
-Distance.'></div> );
+            depth = ( <div data-advice='Put your HTML here. depth is a Distance or
+QuantitativeValue.'></div> );
         }
       }
       var gtin13;
@@ -485,13 +483,13 @@ Distance.'></div> );
         if( props.model instanceof Array ){
           model = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           model = model.concat( props.model.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. model is a Text or
-ProductModel.'></div> )
+              return ( <div key={index} data-advice='Put your HTML here. model is a ProductModel or
+Text.'></div> )
            }) );
          model.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            model = ( <div data-advice='Put your HTML here. model is a Text or
-ProductModel.'></div> );
+            model = ( <div data-advice='Put your HTML here. model is a ProductModel or
+Text.'></div> );
         }
       }
       return (<div title='Product' className='Product entity'>
@@ -538,4 +536,3 @@ ProductModel.'></div> );
      </div>);
     }
   });
-});

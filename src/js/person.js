@@ -1,6 +1,4 @@
-/* Thing > Person - A person (alive, dead, undead, or fictional).. Generated automatically by the reactGenerator. */
- define(['../bower_components/react/react', './distance', './product', './educationalorganization', './offer', './country', './brand', './pricespecification', './quantitativevalue', './programmembership', './person', './ownershipinfo', './place', './imageobject', './demand', './action', './organization', './postaladdress', './creativework', './contactpoint', './event'], function(React, Distance, Product, EducationalOrganization, Offer, Country, Brand, PriceSpecification, QuantitativeValue, ProgramMembership, Person, OwnershipInfo, Place, ImageObject, Demand, Action, Organization, PostalAddress, CreativeWork, ContactPoint, Event){
-  return React.createClass({
+/* Thing > Person - A person (alive, dead, undead, or fictional).. Generated automatically by the reactGenerator. */  var Person= React.createClass({displayName: "Person",
     getDefaultProps: function(){
       return {
       }
@@ -366,13 +364,13 @@
         if( props.memberOf instanceof Array ){
           memberOf = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
           memberOf = memberOf.concat( props.memberOf.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. memberOf is a Organization or" + ' ' +
-"ProgramMembership."}) )
+              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. memberOf is a ProgramMembership or" + ' ' +
+"Organization."}) )
            }) );
          memberOf.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            memberOf = ( React.createElement("div", {"data-advice": "Put your HTML here. memberOf is a Organization or" + ' ' +
-"ProgramMembership."}) );
+            memberOf = ( React.createElement("div", {"data-advice": "Put your HTML here. memberOf is a ProgramMembership or" + ' ' +
+"Organization."}) );
         }
       }
       var jobTitle;
@@ -392,13 +390,13 @@
         if( props.brand instanceof Array ){
           brand = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
           brand = brand.concat( props.brand.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. brand is a Organization or" + ' ' +
-"Brand."}) )
+              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. brand is a Brand or" + ' ' +
+"Organization."}) )
            }) );
          brand.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            brand = ( React.createElement("div", {"data-advice": "Put your HTML here. brand is a Organization or" + ' ' +
-"Brand."}) );
+            brand = ( React.createElement("div", {"data-advice": "Put your HTML here. brand is a Brand or" + ' ' +
+"Organization."}) );
         }
       }
       var familyName;
@@ -732,4 +730,3 @@
      ));
     }
   });
-});

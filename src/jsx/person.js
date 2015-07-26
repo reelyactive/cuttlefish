@@ -1,6 +1,4 @@
-/* Thing > Person - A person (alive, dead, undead, or fictional).. Generated automatically by the reactGenerator. */
- define(['../bower_components/react/react', './distance', './product', './educationalorganization', './offer', './country', './brand', './pricespecification', './quantitativevalue', './programmembership', './person', './ownershipinfo', './place', './imageobject', './demand', './action', './organization', './postaladdress', './creativework', './contactpoint', './event'], function(React, Distance, Product, EducationalOrganization, Offer, Country, Brand, PriceSpecification, QuantitativeValue, ProgramMembership, Person, OwnershipInfo, Place, ImageObject, Demand, Action, Organization, PostalAddress, CreativeWork, ContactPoint, Event){
-  return React.createClass({
+/* Thing > Person - A person (alive, dead, undead, or fictional).. Generated automatically by the reactGenerator. */  var Person= React.createClass({
     getDefaultProps: function(){
       return {
       }
@@ -366,13 +364,13 @@ ContactPoint.'></div> );
         if( props.memberOf instanceof Array ){
           memberOf = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           memberOf = memberOf.concat( props.memberOf.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. memberOf is a Organization or
-ProgramMembership.'></div> )
+              return ( <div key={index} data-advice='Put your HTML here. memberOf is a ProgramMembership or
+Organization.'></div> )
            }) );
          memberOf.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            memberOf = ( <div data-advice='Put your HTML here. memberOf is a Organization or
-ProgramMembership.'></div> );
+            memberOf = ( <div data-advice='Put your HTML here. memberOf is a ProgramMembership or
+Organization.'></div> );
         }
       }
       var jobTitle;
@@ -392,13 +390,13 @@ ProgramMembership.'></div> );
         if( props.brand instanceof Array ){
           brand = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           brand = brand.concat( props.brand.map( function(result, index){
-              return ( <div key={index} data-advice='Put your HTML here. brand is a Organization or
-Brand.'></div> )
+              return ( <div key={index} data-advice='Put your HTML here. brand is a Brand or
+Organization.'></div> )
            }) );
          brand.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            brand = ( <div data-advice='Put your HTML here. brand is a Organization or
-Brand.'></div> );
+            brand = ( <div data-advice='Put your HTML here. brand is a Brand or
+Organization.'></div> );
         }
       }
       var familyName;
@@ -732,4 +730,3 @@ QuantitativeValue.'></div> );
      </div>);
     }
   });
-});

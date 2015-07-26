@@ -1,6 +1,4 @@
-/* Thing > Place - Entities that have a somewhat fixed, physical extension.. Generated automatically by the reactGenerator. */
- define(['../bower_components/react/react', './map', './geoshape', './openinghoursspecification', './photograph', './review', './imageobject', './propertyvalue', './aggregaterating', './place', './action', './postaladdress', './creativework', './event', './geocoordinates'], function(React, Map, GeoShape, OpeningHoursSpecification, Photograph, Review, ImageObject, PropertyValue, AggregateRating, Place, Action, PostalAddress, CreativeWork, Event, GeoCoordinates){
-  return React.createClass({
+/* Thing > Place - Entities that have a somewhat fixed, physical extension.. Generated automatically by the reactGenerator. */  var Place= React.createClass({displayName: "Place",
     getDefaultProps: function(){
       return {
       }
@@ -147,13 +145,13 @@
         if( props.geo instanceof Array ){
           geo = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
           geo = geo.concat( props.geo.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. geo is a GeoShape or" + ' ' +
-"GeoCoordinates."}) )
+              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. geo is a GeoCoordinates or" + ' ' +
+"GeoShape."}) )
            }) );
          geo.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            geo = ( React.createElement("div", {"data-advice": "Put your HTML here. geo is a GeoShape or" + ' ' +
-"GeoCoordinates."}) );
+            geo = ( React.createElement("div", {"data-advice": "Put your HTML here. geo is a GeoCoordinates or" + ' ' +
+"GeoShape."}) );
         }
       }
       var review;
@@ -183,13 +181,13 @@
         if( props.mainEntityOfPage instanceof Array ){
           mainEntityOfPage = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
           mainEntityOfPage = mainEntityOfPage.concat( props.mainEntityOfPage.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
-"CreativeWork."}) )
+              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
+"URL."}) )
            }) );
          mainEntityOfPage.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a URL or" + ' ' +
-"CreativeWork."}) );
+            mainEntityOfPage = ( React.createElement("div", {"data-advice": "Put your HTML here. mainEntityOfPage is a CreativeWork or" + ' ' +
+"URL."}) );
         }
       }
       var description;
@@ -243,13 +241,13 @@
         if( props.hasMap instanceof Array ){
           hasMap = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
           hasMap = hasMap.concat( props.hasMap.map( function(result, index){
-              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. hasMap is a URL or" + ' ' +
-"Map."}) )
+              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. hasMap is a Map or" + ' ' +
+"URL."}) )
            }) );
          hasMap.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            hasMap = ( React.createElement("div", {"data-advice": "Put your HTML here. hasMap is a URL or" + ' ' +
-"Map."}) );
+            hasMap = ( React.createElement("div", {"data-advice": "Put your HTML here. hasMap is a Map or" + ' ' +
+"URL."}) );
         }
       }
       var potentialAction;
@@ -327,4 +325,3 @@
      ));
     }
   });
-});
