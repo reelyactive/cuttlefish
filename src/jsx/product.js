@@ -67,12 +67,15 @@
       var image;
       if( props.image ){
         if( props.image instanceof Array ){
-          image = [ (<div key='header'>Images:</div>) ]
+          image = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           image = image.concat( props.image.map( function(result, index){
-              return ( <div key={index}><img className='product-image' src={result} /></div> )
+              return ( <div key={index} data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> )
            }) );
+         image.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            image = ( <img className='product-image' src={props.image} /> );
+            image = ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> );
         }
       }
       var gtin8;
@@ -151,12 +154,15 @@ Distance.'></div> );
       var logo;
       if( props.logo ){
         if( props.logo instanceof Array ){
-          logo = [ (<p key='header'>Logos:</p>) ]
+          logo = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           logo = logo.concat( props.logo.map( function(result, index){
-              return ( <div key={index}><img className='product-logo' src={result} /></div> )
+              return ( <div key={index} data-advice='Put your HTML here. logo is a URL or
+ImageObject.'></div> )
            }) );
+         logo.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            logo = ( <img className='product-logo' src={props.logo} /> );
+            logo = ( <div data-advice='Put your HTML here. logo is a URL or
+ImageObject.'></div> );
         }
       }
       var productID;
@@ -321,12 +327,15 @@ CreativeWork.'></div> );
       var brand;
       if( props.brand ){
         if( props.brand instanceof Array ){
-          brand = [ (<span key='header'>Brands: </span>) ]
+          brand = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           brand = brand.concat( props.brand.map( function(result, index){
-              return ( <span className='brand' key={index}>{result}</span> )
+              return ( <div key={index} data-advice='Put your HTML here. brand is a Brand or
+Organization.'></div> )
            }) );
+         brand.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-          brand = ( <span className='brand'>{props.brand} </span> );
+            brand = ( <div data-advice='Put your HTML here. brand is a Brand or
+Organization.'></div> );
         }
       }
       var award;
@@ -389,12 +398,13 @@ CreativeWork.'></div> );
       var name;
       if( props.name ){
         if( props.name instanceof Array ){
-          name = [ (<p key='header'>Names:</p>) ]
+          name = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           name = name.concat( props.name.map( function(result, index){
-              return ( <span key={index}>{result} </span> )
+              return ( <div key={index} data-advice='Put your HTML here. name is a Text.'></div> )
            }) );
+         name.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-          name = ( <span>{ props.name }</span> );
+            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
       }
       var aggregateRating;
@@ -473,55 +483,58 @@ Distance.'></div> );
       var model;
       if( props.model ){
         if( props.model instanceof Array ){
-          model = [ (<p key='header'>Models:</p>) ]
+          model = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           model = model.concat( props.model.map( function(result, index){
-              return ( <p key={index}>{result}</p> )
+              return ( <div key={index} data-advice='Put your HTML here. model is a Text or
+ProductModel.'></div> )
            }) );
+         model.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            model = ( <p>{props.model}</p> );
+            model = ( <div data-advice='Put your HTML here. model is a Text or
+ProductModel.'></div> );
         }
       }
       return (<div title='Product' className='Product entity'>
-        { image }
-        { logo }
-        { productID }
-        { name }
-        { alternateName }
-        { model }
-        { manufacturer }
-        { brand }
-        { category }
-        { description }
-        { releaseDate }
-        { productionDate }
-        { purchaseDate }
-        { itemCondition }
-        { url }
-        { award }
-        { color }
-        { height }
-        { width }
-        { depth }
-        { weight }
-        { audience }
-        { aggregateRating }
-        { review }
         { isConsumableFor }
+        { weight }
         { isAccessoryOrSparePartFor }
-        { isRelatedTo }
-        { isSimilarTo }
-        { offers }
-        { additionalType }
+        { color }
+        { purchaseDate }
+        { image }
         { gtin8 }
         { sameAs }
-        { potentialAction }
+        { height }
+        { releaseDate }
+        { isRelatedTo }
+        { additionalType }
+        { logo }
+        { productID }
+        { category }
+        { isSimilarTo }
+        { review }
+        { audience }
+        { width }
         { additionalProperty }
+        { offers }
         { mainEntityOfPage }
+        { productionDate }
         { sku }
+        { description }
         { mpn }
+        { brand }
+        { award }
+        { itemCondition }
+        { alternateName }
+        { manufacturer }
+        { potentialAction }
+        { name }
+        { aggregateRating }
+        { url }
         { gtin14 }
+        { depth }
         { gtin13 }
         { gtin12 }
+        { model }
      </div>);
     }
   });

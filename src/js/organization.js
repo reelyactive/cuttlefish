@@ -435,7 +435,7 @@
            }) );
          name.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            name = ( React.createElement("span", null, props.name) );
+            name = ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) );
         }
       }
       var naics;
@@ -513,48 +513,48 @@
         }
       }
       return (React.createElement("div", {title: "Organization", className: "Organization entity"}, 
-         image, 
-         logo, 
-         name, 
-         alternateName, 
-         legalName, 
-         description, 
          founder, 
+         sameAs, 
+         image, 
          foundingDate, 
-         foundingLocation, 
-         dissolutionDate, 
-         contactPoint, 
-         email, 
-         url, 
          telephone, 
          faxNumber, 
-         department, 
-         address, 
-         location, 
-         globalLocationNumber, 
-         subOrganization, 
          aggregateRating, 
-         review, 
-         duns, 
-         isicV4, 
-         naics, 
-         taxID, 
-         owns, 
-         seeks, 
+         additionalType, 
+         logo, 
          event, 
-         brand, 
-         award, 
-         numberOfEmployees, 
-         employee, 
+         isicV4, 
+         review, 
+         taxID, 
+         mainEntityOfPage, 
          member, 
+         foundingLocation, 
+         location, 
+         employee, 
+         email, 
+         seeks, 
+         description, 
+         numberOfEmployees, 
+         subOrganization, 
+         brand, 
+         owns, 
+         award, 
+         department, 
+         dissolutionDate, 
+         alternateName, 
+         address, 
+         duns, 
+         contactPoint, 
          makesOffer, 
          hasPOS, 
          potentialAction, 
+         name, 
+         naics, 
+         url, 
          memberOf, 
-         mainEntityOfPage, 
-         additionalType, 
-         sameAs, 
-         vatID 
+         legalName, 
+         vatID, 
+         globalLocationNumber 
      ));
     }
   });

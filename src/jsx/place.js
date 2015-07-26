@@ -54,7 +54,8 @@ ImageObject.'></div> )
            }) );
          image.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            image = ( <img src={props.image} className='place-image' />);
+            image = ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> );
         }
       }
       var telephone;
@@ -102,7 +103,8 @@ ImageObject.'></div> )
            }) );
          logo.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            logo = ( <img src={props.logo} className='place-logo' />);
+            logo = ( <div data-advice='Put your HTML here. logo is a URL or
+ImageObject.'></div> );
         }
       }
       var additionalType;
@@ -264,12 +266,13 @@ Map.'></div> );
       var name;
       if( props.name ){
         if( props.name instanceof Array ){
-          name = [ (<p key='header'>Names:</p>) ]
+          name = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           name = name.concat( props.name.map( function(result, index){
-              return ( <div key={index}>{result}</div> )
+              return ( <div key={index} data-advice='Put your HTML here. name is a Text.'></div> )
            }) );
+         name.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            name = ( <div class='name'>Name :{props.name}</div> );
+            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
       }
       var url;
@@ -281,7 +284,7 @@ Map.'></div> );
            }) );
          url.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            url = ( <a href={props.url} target='_blank'>{props.url}</a> ) ;
+            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
         }
       }
       var globalLocationNumber;
@@ -297,30 +300,30 @@ Map.'></div> );
         }
       }
       return (<div title='Place' className='Place entity'>
+        { openingHoursSpecification }
+        { sameAs }
         { photo }
         { image }
-        { logo }
-        { name }
-        { alternateName }
-        { description }
-        { isicV4 }
-        { url }
         { telephone }
         { faxNumber }
-        { address }
-        { geo }
-        { event }
-        { review }
         { aggregateRating }
-        { additionalProperty }
+        { logo }
         { additionalType }
-        { hasMap }
-        { containedIn }
-        { potentialAction }
-        { globalLocationNumber }
-        { openingHoursSpecification }
+        { event }
+        { isicV4 }
+        { geo }
+        { review }
+        { additionalProperty }
         { mainEntityOfPage }
-        { sameAs }
+        { description }
+        { containedIn }
+        { address }
+        { alternateName }
+        { hasMap }
+        { potentialAction }
+        { name }
+        { url }
+        { globalLocationNumber }
      </div>);
     }
   });

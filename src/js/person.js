@@ -56,12 +56,15 @@
       var image;
       if( props.image ){
         if( props.image instanceof Array ){
-          image = [ (React.createElement("p", {key: "header"}, "Images:")) ]
+          image = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
           image = image.concat( props.image.map( function(result, index){
-              return ( React.createElement("img", {key: index, src: result, className: "image"}) )
+              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. image is a URL or" + ' ' +
+"ImageObject."}) )
            }) );
+         image.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-          image = ( React.createElement("img", {src: props.image, className: "image"}) );
+            image = ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
+"ImageObject."}) );
         }
       }
       var relatedTo;
@@ -209,15 +212,13 @@
       var worksFor;
       if( props.worksFor ){
         if( props.worksFor instanceof Array ){
-          worksFor = [(React.createElement("p", {key: "header"}, "Works for:"))]
-          worksFor.push( (React.createElement("ul", null, 
-            props.worksFor.map( function(result, index){
-              return React.createElement("li", {key: index}, result)
-           })
-           )) );
+          worksFor = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
+          worksFor = worksFor.concat( props.worksFor.map( function(result, index){
+              return ( React.createElement(Organization, React.__spread({},  result, {key: index})) )
+           }) );
+         worksFor.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-          worksFor = ( React.createElement("div", null, React.createElement("p", null, "Works for: ", props.worksFor)) );
-        }
+          worksFor = ( React.createElement(Organization, {props:  props.worksFor}) );        }
       }
       var taxID;
       if( props.taxID ){
@@ -383,7 +384,7 @@
            }) );
          jobTitle.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            jobTitle = ( React.createElement("p", null, "Job Title: ", props.jobTitle) );
+            jobTitle = ( React.createElement("div", {"data-advice": "Put your HTML here. jobTitle is a Text."}) );
         }
       }
       var brand;
@@ -409,7 +410,7 @@
            }) );
          familyName.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-          familyName = ( React.createElement("div", {className: "familyName"}, "Last Name: ", props.familyName) );
+            familyName = ( React.createElement("div", {"data-advice": "Put your HTML here. familyName is a Text."}) );
         }
       }
       var award;
@@ -479,7 +480,7 @@
            }) );
          nationality.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-          nationality = ( React.createElement("p", null, "Nationality: ",  props.nationality) );        }
+          nationality = ( React.createElement(Country, {props:  props.nationality}) );        }
       }
       var contactPoint;
       if( props.contactPoint ){
@@ -529,12 +530,15 @@
       var owns;
       if( props.owns ){
         if( props.owns instanceof Array ){
-          owns = [ (React.createElement("p", {key: "header"}, "Owns:")) ]
+          owns = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
           owns = owns.concat( props.owns.map( function(result, index){
-              return ( React.createElement(Product, {key: index, props: result, className: "owns"}) )
+              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. owns is a OwnershipInfo or" + ' ' +
+"Product."}) )
            }) );
+         owns.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-          owns = ( React.createElement(Product, React.__spread({},  props.owns, {className: "owns"})) );
+            owns = ( React.createElement("div", {"data-advice": "Put your HTML here. owns is a OwnershipInfo or" + ' ' +
+"Product."}) );
         }
       }
       var name;
@@ -546,7 +550,7 @@
            }) );
          name.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-          name = ( React.createElement("div", {className: "name"}, "Name :", props.name) );
+            name = ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) );
         }
       }
       var naics;
@@ -564,12 +568,13 @@
       var url;
       if( props.url ){
         if( props.url instanceof Array ){
-          url = [ (React.createElement("p", {key: "header"}, "Urls:")) ]
+          url = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
           url = url.concat( props.url.map( function(result, index){
-              return ( React.createElement("a", {key: index, href: result, target: "_blank"}, result) )
+              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. url is a URL."}) )
            }) );
+         url.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-          url = ( React.createElement("a", {href: props.url, target: "_blank"}, props.url) );
+            url = ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) );
         }
       }
       var gender;
@@ -581,7 +586,7 @@
            }) );
          gender.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-          gender = ( React.createElement("div", {className: "gender"}, "Gender: ", props.gender) );
+            gender = ( React.createElement("div", {"data-advice": "Put your HTML here. gender is a Text."}) );
         }
       }
       var vatID;
@@ -641,7 +646,7 @@
            }) );
          givenName.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-          givenName = ( React.createElement("div", {className: "givenName"}, "Given name: ", props.givenName) );
+            givenName = ( React.createElement("div", {"data-advice": "Put your HTML here. givenName is a Text."}) );
         }
       }
       var alumniOf;
@@ -668,62 +673,62 @@
         }
       }
       return (React.createElement("div", {title: "Person", className: "Person entity"}, 
-         image, 
-         name, 
+         sibling, 
          honorificPrefix, 
-         givenName, 
-         alternateName, 
+         weight, 
+         sameAs, 
+         image, 
+         relatedTo, 
+         telephone, 
+         birthDate, 
+         faxNumber, 
+         affiliation, 
          additionalName, 
-         familyName, 
+         workLocation, 
+         additionalType, 
+         children, 
+         description, 
+         isicV4, 
+         spouse, 
+         worksFor, 
+         taxID, 
          honorificSuffix, 
+         netWorth, 
+         mainEntityOfPage, 
+         homeLocation, 
+         email, 
+         seeks, 
+         colleague, 
+         performerIn, 
+         birthPlace, 
+         knows, 
+         parent, 
+         memberOf, 
+         jobTitle, 
+         brand, 
+         familyName, 
+         award, 
+         alternateName, 
+         potentialAction, 
+         address, 
+         duns, 
          nationality, 
          contactPoint, 
-         address, 
-         email, 
-         telephone, 
-         faxNumber, 
-         url, 
-         gender, 
-         height, 
-         weight, 
-         birthDate, 
-         birthPlace, 
          deathDate, 
-         deathPlace, 
-         homeLocation, 
-         globalLocationNumber, 
-         description, 
-         taxID, 
-         netWorth, 
-         sameAs, 
-         parent, 
-         sibling, 
-         spouse, 
-         children, 
-         relatedTo, 
-         affiliation, 
-         additionalType, 
-         worksFor, 
-         workLocation, 
-         jobTitle, 
-         isicV4, 
-         performerIn, 
-         colleague, 
-         mainEntityOfPage, 
-         follows, 
-         knows, 
          makesOffer, 
-         seeks, 
-         memberOf, 
-         alumniOf, 
-         brand, 
-         award, 
-         potentialAction, 
-         duns, 
          hasPOS, 
          owns, 
+         name, 
          naics, 
-         vatID 
+         url, 
+         gender, 
+         vatID, 
+         height, 
+         deathPlace, 
+         follows, 
+         givenName, 
+         alumniOf, 
+         globalLocationNumber 
      ));
     }
   });

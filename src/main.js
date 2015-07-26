@@ -3,8 +3,8 @@ window.cormorant = {
   // This file should know automatically which react component to send back
   'getElement': function(myJson){
     if( myJson['@type'] == 'Person' )
-      return person;
+      return Person;
     else if( myJson['@type'] == 'Product' )
-      return product;
+      return Product;
   }
-}
+};
