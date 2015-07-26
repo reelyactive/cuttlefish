@@ -1,5 +1,4 @@
-define(function (require, exports, module) {
-  module.exports = {
+  window.cormorantTools = {
     "highlight": function highlight( json ) {
        if (typeof json != 'string') {
          json = JSON.stringify(json, undefined, 4);
@@ -56,6 +55,5 @@ define(function (require, exports, module) {
       });
       return vars;
     }
-  }
-});
+  };
 
