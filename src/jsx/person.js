@@ -56,12 +56,15 @@
       var image;
       if( props.image ){
         if( props.image instanceof Array ){
-          image = [ (<p key='header'>Images:</p>) ]
+          image = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           image = image.concat( props.image.map( function(result, index){
-              return ( <img key={index} src={result} className='image' /> )
+              return ( <div key={index} data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> )
            }) );
+         image.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-          image = ( <img src={props.image} className='image' /> );
+            image = ( <div data-advice='Put your HTML here. image is a URL or
+ImageObject.'></div> );
         }
       }
       var relatedTo;
@@ -209,15 +212,13 @@ ContactPoint.'></div> );
       var worksFor;
       if( props.worksFor ){
         if( props.worksFor instanceof Array ){
-          worksFor = [(<p key='header'>Works for:</p>)]
-          worksFor.push( (<ul>
-            {props.worksFor.map( function(result, index){
-              return <li key={index}>{result}</li>
-           })}
-           </ul>) );
+          worksFor = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
+          worksFor = worksFor.concat( props.worksFor.map( function(result, index){
+              return ( <Organization {...result} key={index} /> )
+           }) );
+         worksFor.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-          worksFor = ( <div><p>Works for: {props.worksFor}</p></div> );
-        }
+          worksFor = ( <Organization props={ props.worksFor } /> );        }
       }
       var taxID;
       if( props.taxID ){
@@ -383,7 +384,7 @@ ProgramMembership.'></div> );
            }) );
          jobTitle.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            jobTitle = ( <p>Job Title: {props.jobTitle}</p> );
+            jobTitle = ( <div data-advice='Put your HTML here. jobTitle is a Text.'></div> );
         }
       }
       var brand;
@@ -409,7 +410,7 @@ Brand.'></div> );
            }) );
          familyName.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-          familyName = ( <div className='familyName'>Last Name: {props.familyName}</div> );
+            familyName = ( <div data-advice='Put your HTML here. familyName is a Text.'></div> );
         }
       }
       var award;
@@ -479,7 +480,7 @@ Brand.'></div> );
            }) );
          nationality.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-          nationality = ( <p>Nationality: { props.nationality }</p> );        }
+          nationality = ( <Country props={ props.nationality } /> );        }
       }
       var contactPoint;
       if( props.contactPoint ){
@@ -529,12 +530,15 @@ Brand.'></div> );
       var owns;
       if( props.owns ){
         if( props.owns instanceof Array ){
-          owns = [ (<p key='header'>Owns:</p>) ]
+          owns = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           owns = owns.concat( props.owns.map( function(result, index){
-              return ( <Product key={index} props={result} className='owns' /> )
+              return ( <div key={index} data-advice='Put your HTML here. owns is a OwnershipInfo or
+Product.'></div> )
            }) );
+         owns.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-          owns = ( <Product {...props.owns} className='owns' /> );
+            owns = ( <div data-advice='Put your HTML here. owns is a OwnershipInfo or
+Product.'></div> );
         }
       }
       var name;
@@ -546,7 +550,7 @@ Brand.'></div> );
            }) );
          name.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-          name = ( <div className='name'>Name :{props.name}</div> );
+            name = ( <div data-advice='Put your HTML here. name is a Text.'></div> );
         }
       }
       var naics;
@@ -564,12 +568,13 @@ Brand.'></div> );
       var url;
       if( props.url ){
         if( props.url instanceof Array ){
-          url = [ (<p key='header'>Urls:</p>) ]
+          url = [ (<div key='header' data-advice='HTML for the *head* of the section'></div>) ]
           url = url.concat( props.url.map( function(result, index){
-              return ( <a key={index} href={result} target='_blank'>{result}</a> )
+              return ( <div key={index} data-advice='Put your HTML here. url is a URL.'></div> )
            }) );
+         url.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-          url = ( <a href={props.url} target='_blank'>{props.url}</a> );
+            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
         }
       }
       var gender;
@@ -581,7 +586,7 @@ Brand.'></div> );
            }) );
          gender.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-          gender = ( <div className='gender'>Gender: {props.gender}</div> );
+            gender = ( <div data-advice='Put your HTML here. gender is a Text.'></div> );
         }
       }
       var vatID;
@@ -641,7 +646,7 @@ QuantitativeValue.'></div> );
            }) );
          givenName.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-          givenName = ( <div className='givenName'>Given name: {props.givenName}</div> );
+            givenName = ( <div data-advice='Put your HTML here. givenName is a Text.'></div> );
         }
       }
       var alumniOf;
@@ -668,62 +673,62 @@ QuantitativeValue.'></div> );
         }
       }
       return (<div title='Person' className='Person entity'>
-        { image }
-        { name }
+        { sibling }
         { honorificPrefix }
-        { givenName }
-        { alternateName }
+        { weight }
+        { sameAs }
+        { image }
+        { relatedTo }
+        { telephone }
+        { birthDate }
+        { faxNumber }
+        { affiliation }
         { additionalName }
-        { familyName }
+        { workLocation }
+        { additionalType }
+        { children }
+        { description }
+        { isicV4 }
+        { spouse }
+        { worksFor }
+        { taxID }
         { honorificSuffix }
+        { netWorth }
+        { mainEntityOfPage }
+        { homeLocation }
+        { email }
+        { seeks }
+        { colleague }
+        { performerIn }
+        { birthPlace }
+        { knows }
+        { parent }
+        { memberOf }
+        { jobTitle }
+        { brand }
+        { familyName }
+        { award }
+        { alternateName }
+        { potentialAction }
+        { address }
+        { duns }
         { nationality }
         { contactPoint }
-        { address }
-        { email }
-        { telephone }
-        { faxNumber }
-        { url }
-        { gender }
-        { height }
-        { weight }
-        { birthDate }
-        { birthPlace }
         { deathDate }
-        { deathPlace }
-        { homeLocation }
-        { globalLocationNumber }
-        { description }
-        { taxID }
-        { netWorth }
-        { sameAs }
-        { parent }
-        { sibling }
-        { spouse }
-        { children }
-        { relatedTo }
-        { affiliation }
-        { additionalType }
-        { worksFor }
-        { workLocation }
-        { jobTitle }
-        { isicV4 }
-        { performerIn }
-        { colleague }
-        { mainEntityOfPage }
-        { follows }
-        { knows }
         { makesOffer }
-        { seeks }
-        { memberOf }
-        { alumniOf }
-        { brand }
-        { award }
-        { potentialAction }
-        { duns }
         { hasPOS }
         { owns }
+        { name }
         { naics }
+        { url }
+        { gender }
         { vatID }
+        { height }
+        { deathPlace }
+        { follows }
+        { givenName }
+        { alumniOf }
+        { globalLocationNumber }
      </div>);
     }
   });

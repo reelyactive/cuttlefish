@@ -54,7 +54,8 @@
            }) );
          image.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            image = ( React.createElement("img", {src: props.image, className: "place-image"}));
+            image = ( React.createElement("div", {"data-advice": "Put your HTML here. image is a URL or" + ' ' +
+"ImageObject."}) );
         }
       }
       var telephone;
@@ -102,7 +103,8 @@
            }) );
          logo.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            logo = ( React.createElement("img", {src: props.logo, className: "place-logo"}));
+            logo = ( React.createElement("div", {"data-advice": "Put your HTML here. logo is a URL or" + ' ' +
+"ImageObject."}) );
         }
       }
       var additionalType;
@@ -264,12 +266,13 @@
       var name;
       if( props.name ){
         if( props.name instanceof Array ){
-          name = [ (React.createElement("p", {key: "header"}, "Names:")) ]
+          name = [ (React.createElement("div", {key: "header", "data-advice": "HTML for the *head* of the section"})) ]
           name = name.concat( props.name.map( function(result, index){
-              return ( React.createElement("div", {key: index}, result) )
+              return ( React.createElement("div", {key: index, "data-advice": "Put your HTML here. name is a Text."}) )
            }) );
+         name.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            name = ( React.createElement("div", {class: "name"}, "Name :", props.name) );
+            name = ( React.createElement("div", {"data-advice": "Put your HTML here. name is a Text."}) );
         }
       }
       var url;
@@ -281,7 +284,7 @@
            }) );
          url.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            url = ( React.createElement("a", {href: props.url, target: "_blank"}, props.url) ) ;
+            url = ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) );
         }
       }
       var globalLocationNumber;
@@ -297,30 +300,30 @@
         }
       }
       return (React.createElement("div", {title: "Place", className: "Place entity"}, 
+         openingHoursSpecification, 
+         sameAs, 
          photo, 
          image, 
-         logo, 
-         name, 
-         alternateName, 
-         description, 
-         isicV4, 
-         url, 
          telephone, 
          faxNumber, 
-         address, 
-         geo, 
-         event, 
-         review, 
          aggregateRating, 
-         additionalProperty, 
+         logo, 
          additionalType, 
-         hasMap, 
-         containedIn, 
-         potentialAction, 
-         globalLocationNumber, 
-         openingHoursSpecification, 
+         event, 
+         isicV4, 
+         geo, 
+         review, 
+         additionalProperty, 
          mainEntityOfPage, 
-         sameAs 
+         description, 
+         containedIn, 
+         address, 
+         alternateName, 
+         hasMap, 
+         potentialAction, 
+         name, 
+         url, 
+         globalLocationNumber 
      ));
     }
   });
