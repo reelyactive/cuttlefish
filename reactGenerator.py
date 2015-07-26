@@ -3,7 +3,7 @@ from pattern.web import *
 import os, re
 import os.path as path
 
-jsxPath = path.join( os.path.dirname(os.path.realpath(__file__)), 'jsx')
+jsxPath = path.join( os.path.dirname(os.path.realpath(__file__)), 'src/jsx')
 schemaOrgUrl = 'https://schema.org/'
 
 def safe_unicode(obj, * args):
@@ -73,14 +73,7 @@ def outputInFile( componentName, topComments, otherDependencies, properties, def
   f = open( pathOfNewFile, 'w' )
   lines = []
   lines.append( topComments )
-  dependencyLineStart = "\n define(['../bower_components/react/react'"
-  dependencyLineMiddle = "], function(React"
-  dependencyLineEnd = "){\n"
-  for (name, filename) in otherDependencies.iteritems():
-    dependencyLineStart += ", '" + filename + "'"
-    dependencyLineMiddle += ", " + name
-  lines.append( dependencyLineStart + dependencyLineMiddle + dependencyLineEnd )
-  lines.append( "  return React.createClass({\n" )
+  lines.append( "  var " + componentName + "= React.createClass({\n" )
   lines.append( "    getDefaultProps: function(){\n" )
   lines.append( "      return {\n" )
   if defaultProps:
@@ -121,7 +114,6 @@ def outputInFile( componentName, topComments, otherDependencies, properties, def
   lines.append( "     </div>);\n" )
   lines.append( "    }\n" )
   lines.append( "  });\n" )
-  lines.append( "});\n" )
   safeLines = []
   for line in lines:
     safeLines.append( safe_unicode( safe_str( line ) ) )
