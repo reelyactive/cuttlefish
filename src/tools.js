@@ -28,6 +28,27 @@
          return result;
        });
      },
+    "translateToJSONLD": function translateToJSONLD( json, type ){
+      var mappingJSONld = {
+        'firstName': 'givenName',
+        'lastName': 'familyName',
+        'portraitImageUrl': 'image',
+        'companyName': 'worksFor',
+        'linkedInPublicUrl': 'url'
+      }
+      var newObj = {};
+      newObj['@type'] = type;
+      newObj['@context'] = 'http://schema.org';
+      keys = Object.keys(json);
+      for( var index in keys ){
+        if( mappingJSONld[ keys[index] ] != undefined ){
+          newObj[ mappingJSONld[ keys[index] ] ] = json[ keys[index] ];
+        } else {
+          newObj[ keys[index] ] = json[ keys[index] ];
+        }
+      }
+      return newObj;
+    },
     "renderJSON": function renderJSON( element ){
        if( element.getAttribute( "rendered" ) !== "true" ){
          var content = element.innerHTML;
