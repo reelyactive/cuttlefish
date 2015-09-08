@@ -721,7 +721,8 @@
          hasPOS, 
          owns, 
          naics, 
-         vatID 
+         vatID, 
+        React.createElement("div", {className: "clear"})
      ));
     }
   });

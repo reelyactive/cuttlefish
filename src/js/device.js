@@ -7,22 +7,23 @@ var Device = React.createClass({displayName: "Device",
     },
     render: function(){
       var props = this.props.props;
-      var manufacterer;
-      if( props.manufacterer ){
-        manufacterer = ( React.createElement("p", null, "Manufacterer: ", props.manufacterer, " ") );
+      var manufacturer;
+      if( props.manufacturer ){
+        manufacterer = ( React.createElement("div", null, "Manufacturer: ", props.manufacturer, " ") );
       }
       var model;
       if( props.model ){
-        model = ( React.createElement("p", null, "Model: ", props.model) );
+        model = ( React.createElement("div", null, "Model: ", props.model) );
       }
-      var portraitImageUrl;
-      if( props.portraitImageUrl ){
-        portraitImageUrl = ( React.createElement("img", {class: "image", src: "{props.model}"}) );
+      var image;
+      if( props.image ){
+        image = ( React.createElement("img", {className: "image", src: props.image}) );
       }
       return (React.createElement("div", {title: "Device", className: "Device entity"}, 
-         portraitImageUrl, 
+         image, 
          manufacterer, 
-         model 
-     ));
+         model, 
+        React.createElement("div", {className: "clear"})
+      ));
     }
   });

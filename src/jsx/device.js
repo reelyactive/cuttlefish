@@ -7,22 +7,23 @@ var Device = React.createClass({
     },
     render: function(){
       var props = this.props.props;
-      var manufacterer;
-      if( props.manufacterer ){
-        manufacterer = ( <p>Manufacterer: {props.manufacterer} </p> );
+      var manufacturer;
+      if( props.manufacturer ){
+        manufacterer = ( <div>Manufacturer: {props.manufacturer} </div> );
       }
       var model;
       if( props.model ){
-        model = ( <p>Model: {props.model}</p> );
+        model = ( <div>Model: {props.model}</div> );
       }
-      var portraitImageUrl;
-      if( props.portraitImageUrl ){
-        portraitImageUrl = ( <img class='image' src='{props.model}'/> );
+      var image;
+      if( props.image ){
+        image = ( <img className='image' src={props.image}/> );
       }
       return (<div title='Device' className='Device entity'>
-        { portraitImageUrl }
+        { image }
         { manufacterer }
         { model }
-     </div>);
+        <div className='clear'></div>
+      </div>);
     }
   });
