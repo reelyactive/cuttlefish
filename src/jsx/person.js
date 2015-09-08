@@ -722,6 +722,7 @@ QuantitativeValue.'></div> );
         { owns }
         { naics }
         { vatID }
+        <div className='clear'></div>
      </div>);
     }
   });

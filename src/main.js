@@ -4,6 +4,8 @@ window.cormorant = {
   'getComponent': function(myJson){
     if( myJson['@type'] == 'Person' )
       return Person;
+    if( myJson['@type'] == 'Device' )
+      return Device;
     else if( myJson['@type'] == 'Product' )
       return Product;
   }

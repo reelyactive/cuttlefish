@@ -46,6 +46,7 @@ a:hover {
   padding: 5px;
   background-color: white;
   margin: 5px;
+  clear: both;
 }
 
 .Device + .Device {
@@ -85,6 +86,10 @@ a:hover {
     height: auto;
     float: left;
     margin: 5px;
+}
+
+.Person .clear, .Device .clear {
+    clear: both;
 }
 
 img.icon {
