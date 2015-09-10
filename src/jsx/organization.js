@@ -433,7 +433,7 @@ Product.'></div> );
            }) );
          name.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            name = ( <span>{props.name}</span> );
+            name = ( <span>Name: {props.name}</span> );
         }
       }
       var naics;
@@ -457,7 +457,7 @@ Product.'></div> );
            }) );
          url.push( ( <div key='footer' data-advice='HTML for the *footer* of the section'></div> ) );
         } else {
-            url = ( <div data-advice='Put your HTML here. url is a URL.'></div> );
+            url = ( <a href={props.url} target='_blank'>Link</a> );
         }
       }
       var memberOf;
