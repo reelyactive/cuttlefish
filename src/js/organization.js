@@ -433,7 +433,7 @@
            }) );
          name.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            name = ( React.createElement("span", null, props.name) );
+            name = ( React.createElement("span", null, "Name: ", props.name) );
         }
       }
       var naics;
@@ -457,7 +457,7 @@
            }) );
          url.push( ( React.createElement("div", {key: "footer", "data-advice": "HTML for the *footer* of the section"}) ) );
         } else {
-            url = ( React.createElement("div", {"data-advice": "Put your HTML here. url is a URL."}) );
+            url = ( React.createElement("a", {href: props.url, target: "_blank"}, "Link") );
         }
       }
       var memberOf;

@@ -33,7 +33,8 @@
         'firstName': 'givenName',
         'lastName': 'familyName',
         'portraitImageUrl': 'image',
-        'companyName': 'worksFor',
+        'companyName': 'name',
+        'companyUrl': 'url',
         'linkedInPublicUrl': 'url'
       }
       var newObj = {};
@@ -42,7 +43,16 @@
       keys = Object.keys(json);
       for( var index in keys ){
         if( mappingJSONld[ keys[index] ] != undefined ){
-          newObj[ mappingJSONld[ keys[index] ] ] = json[ keys[index] ];
+          if('companyName' === key || 'companyUrl' === key){
+            if(!newObj.worksFor) {
+              newObj.worksFor = {};
+            }
+            newObj.worksFor['@type'] = 'Organization';
+            newObj.worksFor['@context'] = "http://schema.org/";
+            newObj.worksFor[ mappingJSONld[key] ] = json[ key ];
+          } else {
+            newObj[ mappingJSONld[ keys[index] ] ] = json[ keys[index] ];
+          }
         } else {
           newObj[ keys[index] ] = json[ keys[index] ];
         }
