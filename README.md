@@ -31,18 +31,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
 THE SOFTWARE.
-=======
-# cormorant
-
-The power of react at the disposal of the Internet of Things
-
-Cormorant, based on the structure of (http://schema.org) proposes a set of react
-components to help you create visualisations of data models in a very efficient
-way.
-
-To start, you only need to do 
-```
-  bower install
-``` 
-
-(if you don't have bower installed : ```npm install -g bower```)
