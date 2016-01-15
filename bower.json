@@ -1,0 +1,16 @@
+{
+  "name": "cuttlefish",
+  "description": "Human-friendly HTML rendering of machine-friendly JSON-LD. We believe in an open Internet of Things.",
+  "keywords": [
+    "JSON-LD",
+    "IoT"
+  ],
+  "authors": [
+    { "name": "Adrien Thiery" }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/reelyactive/cuttlefish.git"
+  },
+  "license": "MIT"
+}
