@@ -1,6 +1,6 @@
 {
   "name": "cuttlefish",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "Human-friendly HTML rendering of machine-friendly JSON-LD. We believe in an open Internet of Things.",
   "homepage": "https://github.com/reelyactive/cuttlefish",
   "keywords": [
