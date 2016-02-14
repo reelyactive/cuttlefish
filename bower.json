@@ -2,19 +2,20 @@
   "name": "cuttlefish",
   "version": "0.0.0",
   "description": "Human-friendly HTML rendering of machine-friendly JSON-LD. We believe in an open Internet of Things.",
+  "homepage": "https://github.com/reelyactive/cuttlefish",
   "keywords": [
     "JSON-LD",
     "IoT"
   ],
   "authors": [
-    { "name": "Adrien Thiery" }
+    "Adrien Thiery <adrien.thiery@gmail.com>"
   ],
   "repository": {
     "type": "git",
     "url": "git://github.com/reelyactive/cuttlefish.git"
   },
   "license": "MIT",
-  "main": "js/main.js",
+  "main": "dist/cuttlefish.min.js",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -23,7 +24,7 @@
     "tests"
   ],
   "dependencies": {
-    "react": "~0.13.3"
+    "react": "~0.14.3"
   },
   "devDependencies": {}
 }
