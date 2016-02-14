@@ -1,12 +1,12 @@
 {
-  "name": "cormorant",
+  "name": "cuttlefish",
   "version": "0.0.0",
-  "homepage": "https://github.com/adrienthiery/cormorant",
+  "homepage": "https://github.com/reelyactive/cuttlefish",
   "authors": [
     "Adrien Thiery <adrien.thiery@gmail.com>"
   ],
   "description": "A set of react components for visualising IoT related elements",
-  "main": "dist/cormorant.min.js",
+  "main": "dist/cuttlefish.min.js",
   "keywords": [
     "IoT",
     "reelyActive",
@@ -22,7 +22,7 @@
     "tests"
   ],
   "dependencies": {
-    "react": "~0.13.3"
+    "react": "~0.14.3"
   },
   "devDependencies": {}
 }
