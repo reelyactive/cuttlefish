@@ -5,5 +5,5 @@ del           = require 'del'
 
 # Clean the served directory
 gulp.task 'clean', ->
-  gulp.src './dist/'
+  gulp.src './dist/*.js'
   .pipe vinylPaths(del)

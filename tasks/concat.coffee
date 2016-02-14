@@ -13,5 +13,5 @@ gulp.task 'concat', ->
   ]
   gulp.src files
   .pipe plumber()
-  .pipe concat( 'cormorant.min.js')
+  .pipe concat( 'cuttlefish.js')
   .pipe gulp.dest './dist/'
