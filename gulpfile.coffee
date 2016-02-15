@@ -4,8 +4,8 @@ requireDir './tasks'
 runSequence = require 'run-sequence'
 
 gulp.task 'build', (done) ->
-  runSequence 'clean', 'concat', done
+  runSequence 'clean', 'babel', 'concat', done
 
 gulp.task 'build-dist', (done) ->
-  runSequence 'clean', 'concat', 'minify', done
+  runSequence 'clean', 'babel', 'concat', 'minify', done
 

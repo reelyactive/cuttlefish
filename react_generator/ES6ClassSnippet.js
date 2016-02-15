@@ -1,27 +1,23 @@
 %imports%
 
 import React, {
-  Component,
-  %reactImports%
+  Component
 } from 'react';
 
-class %className% extends Component {
+export default class %className% extends Component {
   %constructor%
-
   %componentWillMount%
-
   %componentWillUnmount%
-
   %componentWillReceiveProps%
-
   %componentWillUpdate%
-
   %render%
+};
+
+%className%.defaultProps = {
+  %defaultProps%
 };
 
 %className%.propTypes = {
   %propTypes%
-}
-
-module.exports = %className%;
+};
 

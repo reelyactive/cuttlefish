@@ -9,7 +9,6 @@ gulp.task 'concat', ->
   files = [
     path.join('./bower_components/react/react.min.js')
     path.join('./src/*.js')
-    path.join('./src/js/*.js')
   ]
   gulp.src files
   .pipe plumber()
