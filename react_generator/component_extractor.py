@@ -28,9 +28,9 @@ class ComponentExtractor:
                     if len(line('.prop-ect')) > 0:
                         typeElement = line('.prop-ect')[0]
                         typeText = plaintext("%s" % typeElement)
-                        properties[ plaintext("%s" % line('.prop-nam')[0]) ] = typeText
                         if Helpers.isEntity(typeText): 
                             arrayOfDependencies = re.findall(r"(\w{2,}).{0,2}", typeText)
+                            properties[ plaintext("%s" % line('.prop-nam')[0]) ] = arrayOfDependencies
                             for dependency in arrayOfDependencies:
                                 if Helpers.isEntity(dependency):
                                     dependencies[ dependency ] = './' + dependency.lower()
@@ -42,3 +42,5 @@ class ComponentExtractor:
             print "Sorry, %s is already treated" % componentName
 
 ComponentExtractor('Person')
+ComponentExtractor('Place')
+ComponentExtractor('Product')

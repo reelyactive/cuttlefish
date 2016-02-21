@@ -51,7 +51,8 @@ class ReactWriter:
             "    render() {\n"
         ]
 
-        for (propertyName, typeName) in properties.iteritems():
+        for (propertyName, typeNameArray) in properties.iteritems():
+
             renderProperty = [
                 "        let %s;\n" % propertyName,
                 "        if (this.props.%s) {\n" % propertyName,
@@ -59,18 +60,22 @@ class ReactWriter:
                 "                %s = (\n" % propertyName,
                 "                   <div className='%s-container'>\n" % propertyName,
                 "                       <div className='%s-header' data-advice='HTML for the *head* of the section'>%ss</div>\n" % (propertyName, propertyName),
-                "                       {this.props.%s.map((item, index) => {\n" % propertyName,
-                "                           return %s;\n" % self.getPropertyRepresentation(propertyName, typeName, True),
+                "                       {this.props.%s.map((item, index) => {\n" % propertyName
+            ]
+            renderProperty += self.getPropertyReturn(propertyName, typeNameArray, 'return')
+            renderProperty += [
                 "                       })};\n",
                 "                       <div className='%s-footer' data-advice='HTML for the *footer* of the section'></div>;\n" % propertyName,
                 "                   </div>\n",
                 "                );\n",
-                "            } else {\n",
-                "                %s = %s;\n" % (propertyName, self.getPropertyRepresentation(propertyName, typeName)),
+                "            } else {\n"
+            ]
+            renderProperty += self.getPropertyReturn(propertyName, typeNameArray, '=')
+            renderProperty += [
                 "            }\n",
                 "        }\n\n",
             ]
-            render = render + renderProperty
+            render += renderProperty
 
         render = render + [
             "        return (\n",
@@ -89,6 +94,39 @@ class ReactWriter:
         ]
 
         self.lines = self.lines + render
+
+    def getPropertyReturn(self, propertyName, typeNameArray, returnOrEqual):
+        if returnOrEqual == '=':
+            returnOrEqual = '%s =' % propertyName
+            tabs = ''
+        else:
+            tabs = '            '
+        if len(typeNameArray) > 1:
+            propertyReturn = []
+            number = 0
+            for typeName in typeNameArray:
+                if number == 0:
+                    propertyReturn.append(
+                        "               %sif (this.props['@type'] === '%s') {\n" % (tabs, typeName)
+                    )
+                elif number == len(typeNameArray):
+                    propertyReturn.append(
+                        "               %selse {\n" % tabs
+                    )
+                else:
+                    propertyReturn.append(
+                        "               %selse if (this.props['@type'] === '%s') {\n" % (tabs, typeName)
+                    )
+                number += 1
+                propertyReturn += [
+                    "                   %s%s %s;\n" % (tabs, returnOrEqual, self.getPropertyRepresentation(propertyName, typeName, True)),
+                    "               %s}\n" % tabs
+                ]
+        else:
+            propertyReturn = [
+                "                %s%s %s;\n" % (tabs, returnOrEqual, self.getPropertyRepresentation(propertyName, typeNameArray[0], True)),
+            ]
+        return propertyReturn
 
     def writePropTypes(self, properties):
         for (propertyName, typeName) in properties.iteritems():

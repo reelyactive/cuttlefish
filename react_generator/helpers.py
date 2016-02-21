@@ -37,6 +37,8 @@ class Helpers:
             return '<time className="%s">%s: {this.props.%s}</time>' % (className, value, value)
         elif typeText == u'Text':
             return '<p className="%s">%s: {this.props.%s}</p>' % (className, value, value)
+        elif value == u'image':
+            return '<img className="%s" src={this.props.%s} />' % (className, value)
         elif typeText == u'URL':
             return '<a className="%s" href={this.props.%s} target="_blank">%s</a>' % (className, value, value)
         elif typeText == u'Number':
@@ -45,8 +47,6 @@ class Helpers:
             return '<p className="%s">%s: {this.props.%s}</p>' % (className, value, value)
         elif typeText == u'boolean':
             return '<p className="%s">%s: {this.props.%s}</p>' % (className, value, value)
-        elif value == u'image':
-            return '<img className="%s" src={this.props.%s} />' % (className, value)
         else:
             return '<div className="%s">%s: {this.props.%s}</div>' % (className, value, value)
 
