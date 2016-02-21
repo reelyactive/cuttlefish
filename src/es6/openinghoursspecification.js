@@ -19,13 +19,13 @@ export default class OpeningHoursSpecification extends Component {
                    <div className='dayOfWeek-container'>
                        <div className='dayOfWeek-header' data-advice='HTML for the *head* of the section'>dayOfWeeks</div>
                        {this.props.dayOfWeek.map((item, index) => {
-                           return (<DayOfWeek key={index} {...this.props.dayOfWeek} />);
+                            return (<DayOfWeek key={index} {...this.props.dayOfWeek} />);
                        })};
                        <div className='dayOfWeek-footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
-                dayOfWeek = (<DayOfWeek  {...this.props.dayOfWeek} />);
+                dayOfWeek = (<DayOfWeek key={index} {...this.props.dayOfWeek} />);
             }
         }
 
@@ -36,13 +36,13 @@ export default class OpeningHoursSpecification extends Component {
                    <div className='closes-container'>
                        <div className='closes-header' data-advice='HTML for the *head* of the section'>closess</div>
                        {this.props.closes.map((item, index) => {
-                           return (<Time key={index} {...this.props.closes} />);
+                            return (<Time key={index} {...this.props.closes} />);
                        })};
                        <div className='closes-footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
-                closes = (<Time  {...this.props.closes} />);
+                closes = (<Time key={index} {...this.props.closes} />);
             }
         }
 
@@ -53,47 +53,13 @@ export default class OpeningHoursSpecification extends Component {
                    <div className='potentialAction-container'>
                        <div className='potentialAction-header' data-advice='HTML for the *head* of the section'>potentialActions</div>
                        {this.props.potentialAction.map((item, index) => {
-                           return (<Action key={index} {...this.props.potentialAction} />);
+                            return (<Action key={index} {...this.props.potentialAction} />);
                        })};
                        <div className='potentialAction-footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
-                potentialAction = (<Action  {...this.props.potentialAction} />);
-            }
-        }
-
-        let description;
-        if (this.props.description) {
-            if (this.props.description instanceof Array) {
-                description = (
-                   <div className='description-container'>
-                       <div className='description-header' data-advice='HTML for the *head* of the section'>descriptions</div>
-                       {this.props.description.map((item, index) => {
-                           return (<div className='description' data-advice='Put your HTML here. description is a Text.'><p className="OpeningHoursSpecification-description">description: {this.props.description}</p></div>);
-                       })};
-                       <div className='description-footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-                description = (<div className='description' data-advice='Put your HTML here. description is a Text.'><p className="OpeningHoursSpecification-description">description: {this.props.description}</p></div>);
-            }
-        }
-
-        let sameAs;
-        if (this.props.sameAs) {
-            if (this.props.sameAs instanceof Array) {
-                sameAs = (
-                   <div className='sameAs-container'>
-                       <div className='sameAs-header' data-advice='HTML for the *head* of the section'>sameAss</div>
-                       {this.props.sameAs.map((item, index) => {
-                           return (<div className='sameAs' data-advice='Put your HTML here. sameAs is a URL.'><a className="OpeningHoursSpecification-sameAs" href={this.props.sameAs} target="_blank">sameAs</a></div>);
-                       })};
-                       <div className='sameAs-footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-                sameAs = (<div className='sameAs' data-advice='Put your HTML here. sameAs is a URL.'><a className="OpeningHoursSpecification-sameAs" href={this.props.sameAs} target="_blank">sameAs</a></div>);
+                potentialAction = (<Action key={index} {...this.props.potentialAction} />);
             }
         }
 
@@ -104,47 +70,23 @@ export default class OpeningHoursSpecification extends Component {
                    <div className='image-container'>
                        <div className='image-header' data-advice='HTML for the *head* of the section'>images</div>
                        {this.props.image.map((item, index) => {
-                           return (<div className='image' data-advice='Put your HTML here. image is a ImageObject or URL.'><img className="OpeningHoursSpecification-image" src={this.props.image} /></div>);
+                           if (this.props['@type'] === 'ImageObject') {
+                               return (<ImageObject key={index} {...this.props.image} />);
+                           }
+                           else if (this.props['@type'] === 'URL') {
+                               return (<div className='image' data-advice='Put your HTML here. image is a URL.'><img className="OpeningHoursSpecification-image" src={this.props.image} /></div>);
+                           }
                        })};
                        <div className='image-footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
-                image = (<div className='image' data-advice='Put your HTML here. image is a ImageObject or URL.'><img className="OpeningHoursSpecification-image" src={this.props.image} /></div>);
-            }
-        }
-
-        let url;
-        if (this.props.url) {
-            if (this.props.url instanceof Array) {
-                url = (
-                   <div className='url-container'>
-                       <div className='url-header' data-advice='HTML for the *head* of the section'>urls</div>
-                       {this.props.url.map((item, index) => {
-                           return (<div className='url' data-advice='Put your HTML here. url is a URL.'><a className="OpeningHoursSpecification-url" href={this.props.url} target="_blank">url</a></div>);
-                       })};
-                       <div className='url-footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-                url = (<div className='url' data-advice='Put your HTML here. url is a URL.'><a className="OpeningHoursSpecification-url" href={this.props.url} target="_blank">url</a></div>);
-            }
-        }
-
-        let validThrough;
-        if (this.props.validThrough) {
-            if (this.props.validThrough instanceof Array) {
-                validThrough = (
-                   <div className='validThrough-container'>
-                       <div className='validThrough-header' data-advice='HTML for the *head* of the section'>validThroughs</div>
-                       {this.props.validThrough.map((item, index) => {
-                           return (<div className='validThrough' data-advice='Put your HTML here. validThrough is a DateTime.'><time className="OpeningHoursSpecification-validThrough">validThrough: {this.props.validThrough}</time></div>);
-                       })};
-                       <div className='validThrough-footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-                validThrough = (<div className='validThrough' data-advice='Put your HTML here. validThrough is a DateTime.'><time className="OpeningHoursSpecification-validThrough">validThrough: {this.props.validThrough}</time></div>);
+               if (this.props['@type'] === 'ImageObject') {
+                   image = (<ImageObject key={index} {...this.props.image} />);
+               }
+               else if (this.props['@type'] === 'URL') {
+                   image = (<div className='image' data-advice='Put your HTML here. image is a URL.'><img className="OpeningHoursSpecification-image" src={this.props.image} /></div>);
+               }
             }
         }
 
@@ -155,64 +97,23 @@ export default class OpeningHoursSpecification extends Component {
                    <div className='mainEntityOfPage-container'>
                        <div className='mainEntityOfPage-header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
                        {this.props.mainEntityOfPage.map((item, index) => {
-                           return (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL or CreativeWork.'><div className="OpeningHoursSpecification-mainEntityOfPage">mainEntityOfPage: {this.props.mainEntityOfPage}</div></div>);
+                           if (this.props['@type'] === 'URL') {
+                               return (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL.'><a className="OpeningHoursSpecification-mainEntityOfPage" href={this.props.mainEntityOfPage} target="_blank">mainEntityOfPage</a></div>);
+                           }
+                           else if (this.props['@type'] === 'CreativeWork') {
+                               return (<CreativeWork key={index} {...this.props.mainEntityOfPage} />);
+                           }
                        })};
                        <div className='mainEntityOfPage-footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
-                mainEntityOfPage = (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL or CreativeWork.'><div className="OpeningHoursSpecification-mainEntityOfPage">mainEntityOfPage: {this.props.mainEntityOfPage}</div></div>);
-            }
-        }
-
-        let additionalType;
-        if (this.props.additionalType) {
-            if (this.props.additionalType instanceof Array) {
-                additionalType = (
-                   <div className='additionalType-container'>
-                       <div className='additionalType-header' data-advice='HTML for the *head* of the section'>additionalTypes</div>
-                       {this.props.additionalType.map((item, index) => {
-                           return (<div className='additionalType' data-advice='Put your HTML here. additionalType is a URL.'><a className="OpeningHoursSpecification-additionalType" href={this.props.additionalType} target="_blank">additionalType</a></div>);
-                       })};
-                       <div className='additionalType-footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-                additionalType = (<div className='additionalType' data-advice='Put your HTML here. additionalType is a URL.'><a className="OpeningHoursSpecification-additionalType" href={this.props.additionalType} target="_blank">additionalType</a></div>);
-            }
-        }
-
-        let alternateName;
-        if (this.props.alternateName) {
-            if (this.props.alternateName instanceof Array) {
-                alternateName = (
-                   <div className='alternateName-container'>
-                       <div className='alternateName-header' data-advice='HTML for the *head* of the section'>alternateNames</div>
-                       {this.props.alternateName.map((item, index) => {
-                           return (<div className='alternateName' data-advice='Put your HTML here. alternateName is a Text.'><p className="OpeningHoursSpecification-alternateName">alternateName: {this.props.alternateName}</p></div>);
-                       })};
-                       <div className='alternateName-footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-                alternateName = (<div className='alternateName' data-advice='Put your HTML here. alternateName is a Text.'><p className="OpeningHoursSpecification-alternateName">alternateName: {this.props.alternateName}</p></div>);
-            }
-        }
-
-        let validFrom;
-        if (this.props.validFrom) {
-            if (this.props.validFrom instanceof Array) {
-                validFrom = (
-                   <div className='validFrom-container'>
-                       <div className='validFrom-header' data-advice='HTML for the *head* of the section'>validFroms</div>
-                       {this.props.validFrom.map((item, index) => {
-                           return (<div className='validFrom' data-advice='Put your HTML here. validFrom is a DateTime.'><time className="OpeningHoursSpecification-validFrom">validFrom: {this.props.validFrom}</time></div>);
-                       })};
-                       <div className='validFrom-footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-                validFrom = (<div className='validFrom' data-advice='Put your HTML here. validFrom is a DateTime.'><time className="OpeningHoursSpecification-validFrom">validFrom: {this.props.validFrom}</time></div>);
+               if (this.props['@type'] === 'URL') {
+                   mainEntityOfPage = (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL.'><a className="OpeningHoursSpecification-mainEntityOfPage" href={this.props.mainEntityOfPage} target="_blank">mainEntityOfPage</a></div>);
+               }
+               else if (this.props['@type'] === 'CreativeWork') {
+                   mainEntityOfPage = (<CreativeWork key={index} {...this.props.mainEntityOfPage} />);
+               }
             }
         }
 
@@ -223,30 +124,13 @@ export default class OpeningHoursSpecification extends Component {
                    <div className='opens-container'>
                        <div className='opens-header' data-advice='HTML for the *head* of the section'>openss</div>
                        {this.props.opens.map((item, index) => {
-                           return (<Time key={index} {...this.props.opens} />);
+                            return (<Time key={index} {...this.props.opens} />);
                        })};
                        <div className='opens-footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
-                opens = (<Time  {...this.props.opens} />);
-            }
-        }
-
-        let name;
-        if (this.props.name) {
-            if (this.props.name instanceof Array) {
-                name = (
-                   <div className='name-container'>
-                       <div className='name-header' data-advice='HTML for the *head* of the section'>names</div>
-                       {this.props.name.map((item, index) => {
-                           return (<div className='name' data-advice='Put your HTML here. name is a Text.'><p className="OpeningHoursSpecification-name">name: {this.props.name}</p></div>);
-                       })};
-                       <div className='name-footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-                name = (<div className='name' data-advice='Put your HTML here. name is a Text.'><p className="OpeningHoursSpecification-name">name: {this.props.name}</p></div>);
+                opens = (<Time key={index} {...this.props.opens} />);
             }
         }
 
@@ -255,17 +139,9 @@ export default class OpeningHoursSpecification extends Component {
                 {dayOfWeek}
                 {closes}
                 {potentialAction}
-                {description}
-                {sameAs}
                 {image}
-                {url}
-                {validThrough}
                 {mainEntityOfPage}
-                {additionalType}
-                {alternateName}
-                {validFrom}
                 {opens}
-                {name}
             </div>
         );
     }
@@ -278,16 +154,8 @@ OpeningHoursSpecification.propTypes = {
    dayOfWeek: React.propTypes.object,
    closes: React.propTypes.object,
    potentialAction: React.propTypes.object,
-   description: React.propTypes.string,
-   sameAs: React.propTypes.string,
    image: React.propTypes.object,
-   url: React.propTypes.string,
-   validThrough: React.propTypes.string,
    mainEntityOfPage: React.propTypes.object,
-   additionalType: React.propTypes.string,
-   alternateName: React.propTypes.string,
-   validFrom: React.propTypes.string,
    opens: React.propTypes.object,
-   name: React.propTypes.string,
 };
 
