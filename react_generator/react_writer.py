@@ -58,14 +58,14 @@ class ReactWriter:
                 "        if (this.props.%s) {\n" % propertyName,
                 "            if (this.props.%s instanceof Array) {\n" % propertyName,
                 "                %s = (\n" % propertyName,
-                "                   <div className='%s-container'>\n" % propertyName,
-                "                       <div className='%s-header' data-advice='HTML for the *head* of the section'>%ss</div>\n" % (propertyName, propertyName),
+                "                   <div className='%s__container'>\n" % propertyName,
+                "                       <div className='%s__header' data-advice='HTML for the *head* of the section'>%ss</div>\n" % (propertyName, propertyName),
                 "                       {this.props.%s.map((item, index) => {\n" % propertyName
             ]
             renderProperty += self.getPropertyReturn(propertyName, typeNameArray, 'return')
             renderProperty += [
                 "                       })};\n",
-                "                       <div className='%s-footer' data-advice='HTML for the *footer* of the section'></div>;\n" % propertyName,
+                "                       <div className='%s__footer' data-advice='HTML for the *footer* of the section'></div>;\n" % propertyName,
                 "                   </div>\n",
                 "                );\n",
                 "            } else {\n"
