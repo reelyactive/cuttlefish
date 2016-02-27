@@ -15,12 +15,12 @@ export default class AggregateRating extends Component {
         if (this.props.potentialAction) {
             if (this.props.potentialAction instanceof Array) {
                 potentialAction = (
-                   <div className='potentialAction-container'>
-                       <div className='potentialAction-header' data-advice='HTML for the *head* of the section'>potentialActions</div>
+                   <div className='potentialAction__container'>
+                       <div className='potentialAction__header' data-advice='HTML for the *head* of the section'>potentialActions</div>
                        {this.props.potentialAction.map((item, index) => {
                             return (<Action key={index} {...this.props.potentialAction} />);
                        })};
-                       <div className='potentialAction-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -32,8 +32,8 @@ export default class AggregateRating extends Component {
         if (this.props.image) {
             if (this.props.image instanceof Array) {
                 image = (
-                   <div className='image-container'>
-                       <div className='image-header' data-advice='HTML for the *head* of the section'>images</div>
+                   <div className='image__container'>
+                       <div className='image__header' data-advice='HTML for the *head* of the section'>images</div>
                        {this.props.image.map((item, index) => {
                            if (this.props['@type'] === 'ImageObject') {
                                return (<ImageObject key={index} {...this.props.image} />);
@@ -42,7 +42,7 @@ export default class AggregateRating extends Component {
                                return (<div className='image' data-advice='Put your HTML here. image is a URL.'><img className="AggregateRating-image" src={this.props.image} /></div>);
                            }
                        })};
-                       <div className='image-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -59,8 +59,8 @@ export default class AggregateRating extends Component {
         if (this.props.bestRating) {
             if (this.props.bestRating instanceof Array) {
                 bestRating = (
-                   <div className='bestRating-container'>
-                       <div className='bestRating-header' data-advice='HTML for the *head* of the section'>bestRatings</div>
+                   <div className='bestRating__container'>
+                       <div className='bestRating__header' data-advice='HTML for the *head* of the section'>bestRatings</div>
                        {this.props.bestRating.map((item, index) => {
                            if (this.props['@type'] === 'Text') {
                                return (<div className='bestRating' data-advice='Put your HTML here. bestRating is a Text.'><p className="AggregateRating-bestRating">bestRating: {this.props.bestRating}</p></div>);
@@ -69,7 +69,7 @@ export default class AggregateRating extends Component {
                                return (<div className='bestRating' data-advice='Put your HTML here. bestRating is a Number.'><p className="AggregateRating-bestRating">bestRating: {this.props.bestRating}</p></div>);
                            }
                        })};
-                       <div className='bestRating-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='bestRating__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -86,8 +86,8 @@ export default class AggregateRating extends Component {
         if (this.props.worstRating) {
             if (this.props.worstRating instanceof Array) {
                 worstRating = (
-                   <div className='worstRating-container'>
-                       <div className='worstRating-header' data-advice='HTML for the *head* of the section'>worstRatings</div>
+                   <div className='worstRating__container'>
+                       <div className='worstRating__header' data-advice='HTML for the *head* of the section'>worstRatings</div>
                        {this.props.worstRating.map((item, index) => {
                            if (this.props['@type'] === 'Text') {
                                return (<div className='worstRating' data-advice='Put your HTML here. worstRating is a Text.'><p className="AggregateRating-worstRating">worstRating: {this.props.worstRating}</p></div>);
@@ -96,7 +96,7 @@ export default class AggregateRating extends Component {
                                return (<div className='worstRating' data-advice='Put your HTML here. worstRating is a Number.'><p className="AggregateRating-worstRating">worstRating: {this.props.worstRating}</p></div>);
                            }
                        })};
-                       <div className='worstRating-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='worstRating__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -113,8 +113,8 @@ export default class AggregateRating extends Component {
         if (this.props.mainEntityOfPage) {
             if (this.props.mainEntityOfPage instanceof Array) {
                 mainEntityOfPage = (
-                   <div className='mainEntityOfPage-container'>
-                       <div className='mainEntityOfPage-header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
+                   <div className='mainEntityOfPage__container'>
+                       <div className='mainEntityOfPage__header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
                        {this.props.mainEntityOfPage.map((item, index) => {
                            if (this.props['@type'] === 'URL') {
                                return (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL.'><a className="AggregateRating-mainEntityOfPage" href={this.props.mainEntityOfPage} target="_blank">mainEntityOfPage</a></div>);
@@ -123,7 +123,7 @@ export default class AggregateRating extends Component {
                                return (<CreativeWork key={index} {...this.props.mainEntityOfPage} />);
                            }
                        })};
-                       <div className='mainEntityOfPage-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -140,12 +140,12 @@ export default class AggregateRating extends Component {
         if (this.props.itemReviewed) {
             if (this.props.itemReviewed instanceof Array) {
                 itemReviewed = (
-                   <div className='itemReviewed-container'>
-                       <div className='itemReviewed-header' data-advice='HTML for the *head* of the section'>itemRevieweds</div>
+                   <div className='itemReviewed__container'>
+                       <div className='itemReviewed__header' data-advice='HTML for the *head* of the section'>itemRevieweds</div>
                        {this.props.itemReviewed.map((item, index) => {
                             return (<Thing key={index} {...this.props.itemReviewed} />);
                        })};
-                       <div className='itemReviewed-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='itemReviewed__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {

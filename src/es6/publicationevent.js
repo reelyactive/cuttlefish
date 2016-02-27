@@ -26,8 +26,8 @@ export default class PublicationEvent extends Component {
         if (this.props.inLanguage) {
             if (this.props.inLanguage instanceof Array) {
                 inLanguage = (
-                   <div className='inLanguage-container'>
-                       <div className='inLanguage-header' data-advice='HTML for the *head* of the section'>inLanguages</div>
+                   <div className='inLanguage__container'>
+                       <div className='inLanguage__header' data-advice='HTML for the *head* of the section'>inLanguages</div>
                        {this.props.inLanguage.map((item, index) => {
                            if (this.props['@type'] === 'Text') {
                                return (<div className='inLanguage' data-advice='Put your HTML here. inLanguage is a Text.'><p className="PublicationEvent-inLanguage">inLanguage: {this.props.inLanguage}</p></div>);
@@ -36,7 +36,7 @@ export default class PublicationEvent extends Component {
                                return (<Language key={index} {...this.props.inLanguage} />);
                            }
                        })};
-                       <div className='inLanguage-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='inLanguage__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -53,8 +53,8 @@ export default class PublicationEvent extends Component {
         if (this.props.attendee) {
             if (this.props.attendee instanceof Array) {
                 attendee = (
-                   <div className='attendee-container'>
-                       <div className='attendee-header' data-advice='HTML for the *head* of the section'>attendees</div>
+                   <div className='attendee__container'>
+                       <div className='attendee__header' data-advice='HTML for the *head* of the section'>attendees</div>
                        {this.props.attendee.map((item, index) => {
                            if (this.props['@type'] === 'Person') {
                                return (<Person key={index} {...this.props.attendee} />);
@@ -63,7 +63,7 @@ export default class PublicationEvent extends Component {
                                return (<Organization key={index} {...this.props.attendee} />);
                            }
                        })};
-                       <div className='attendee-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='attendee__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -80,8 +80,8 @@ export default class PublicationEvent extends Component {
         if (this.props.performer) {
             if (this.props.performer instanceof Array) {
                 performer = (
-                   <div className='performer-container'>
-                       <div className='performer-header' data-advice='HTML for the *head* of the section'>performers</div>
+                   <div className='performer__container'>
+                       <div className='performer__header' data-advice='HTML for the *head* of the section'>performers</div>
                        {this.props.performer.map((item, index) => {
                            if (this.props['@type'] === 'Person') {
                                return (<Person key={index} {...this.props.performer} />);
@@ -90,7 +90,7 @@ export default class PublicationEvent extends Component {
                                return (<Organization key={index} {...this.props.performer} />);
                            }
                        })};
-                       <div className='performer-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='performer__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -107,12 +107,12 @@ export default class PublicationEvent extends Component {
         if (this.props.workPerformed) {
             if (this.props.workPerformed instanceof Array) {
                 workPerformed = (
-                   <div className='workPerformed-container'>
-                       <div className='workPerformed-header' data-advice='HTML for the *head* of the section'>workPerformeds</div>
+                   <div className='workPerformed__container'>
+                       <div className='workPerformed__header' data-advice='HTML for the *head* of the section'>workPerformeds</div>
                        {this.props.workPerformed.map((item, index) => {
                             return (<CreativeWork key={index} {...this.props.workPerformed} />);
                        })};
-                       <div className='workPerformed-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='workPerformed__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -124,12 +124,12 @@ export default class PublicationEvent extends Component {
         if (this.props.potentialAction) {
             if (this.props.potentialAction instanceof Array) {
                 potentialAction = (
-                   <div className='potentialAction-container'>
-                       <div className='potentialAction-header' data-advice='HTML for the *head* of the section'>potentialActions</div>
+                   <div className='potentialAction__container'>
+                       <div className='potentialAction__header' data-advice='HTML for the *head* of the section'>potentialActions</div>
                        {this.props.potentialAction.map((item, index) => {
                             return (<Action key={index} {...this.props.potentialAction} />);
                        })};
-                       <div className='potentialAction-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -141,8 +141,8 @@ export default class PublicationEvent extends Component {
         if (this.props.mainEntityOfPage) {
             if (this.props.mainEntityOfPage instanceof Array) {
                 mainEntityOfPage = (
-                   <div className='mainEntityOfPage-container'>
-                       <div className='mainEntityOfPage-header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
+                   <div className='mainEntityOfPage__container'>
+                       <div className='mainEntityOfPage__header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
                        {this.props.mainEntityOfPage.map((item, index) => {
                            if (this.props['@type'] === 'CreativeWork') {
                                return (<CreativeWork key={index} {...this.props.mainEntityOfPage} />);
@@ -151,7 +151,7 @@ export default class PublicationEvent extends Component {
                                return (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL.'><a className="PublicationEvent-mainEntityOfPage" href={this.props.mainEntityOfPage} target="_blank">mainEntityOfPage</a></div>);
                            }
                        })};
-                       <div className='mainEntityOfPage-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -168,12 +168,12 @@ export default class PublicationEvent extends Component {
         if (this.props.superEvent) {
             if (this.props.superEvent instanceof Array) {
                 superEvent = (
-                   <div className='superEvent-container'>
-                       <div className='superEvent-header' data-advice='HTML for the *head* of the section'>superEvents</div>
+                   <div className='superEvent__container'>
+                       <div className='superEvent__header' data-advice='HTML for the *head* of the section'>superEvents</div>
                        {this.props.superEvent.map((item, index) => {
                             return (<Event key={index} {...this.props.superEvent} />);
                        })};
-                       <div className='superEvent-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='superEvent__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -185,12 +185,12 @@ export default class PublicationEvent extends Component {
         if (this.props.review) {
             if (this.props.review instanceof Array) {
                 review = (
-                   <div className='review-container'>
-                       <div className='review-header' data-advice='HTML for the *head* of the section'>reviews</div>
+                   <div className='review__container'>
+                       <div className='review__header' data-advice='HTML for the *head* of the section'>reviews</div>
                        {this.props.review.map((item, index) => {
                             return (<Review key={index} {...this.props.review} />);
                        })};
-                       <div className='review-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='review__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -202,12 +202,12 @@ export default class PublicationEvent extends Component {
         if (this.props.recordedIn) {
             if (this.props.recordedIn instanceof Array) {
                 recordedIn = (
-                   <div className='recordedIn-container'>
-                       <div className='recordedIn-header' data-advice='HTML for the *head* of the section'>recordedIns</div>
+                   <div className='recordedIn__container'>
+                       <div className='recordedIn__header' data-advice='HTML for the *head* of the section'>recordedIns</div>
                        {this.props.recordedIn.map((item, index) => {
                             return (<CreativeWork key={index} {...this.props.recordedIn} />);
                        })};
-                       <div className='recordedIn-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='recordedIn__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -219,12 +219,12 @@ export default class PublicationEvent extends Component {
         if (this.props.workFeatured) {
             if (this.props.workFeatured instanceof Array) {
                 workFeatured = (
-                   <div className='workFeatured-container'>
-                       <div className='workFeatured-header' data-advice='HTML for the *head* of the section'>workFeatureds</div>
+                   <div className='workFeatured__container'>
+                       <div className='workFeatured__header' data-advice='HTML for the *head* of the section'>workFeatureds</div>
                        {this.props.workFeatured.map((item, index) => {
                             return (<CreativeWork key={index} {...this.props.workFeatured} />);
                        })};
-                       <div className='workFeatured-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='workFeatured__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -236,12 +236,12 @@ export default class PublicationEvent extends Component {
         if (this.props.aggregateRating) {
             if (this.props.aggregateRating instanceof Array) {
                 aggregateRating = (
-                   <div className='aggregateRating-container'>
-                       <div className='aggregateRating-header' data-advice='HTML for the *head* of the section'>aggregateRatings</div>
+                   <div className='aggregateRating__container'>
+                       <div className='aggregateRating__header' data-advice='HTML for the *head* of the section'>aggregateRatings</div>
                        {this.props.aggregateRating.map((item, index) => {
                             return (<AggregateRating key={index} {...this.props.aggregateRating} />);
                        })};
-                       <div className='aggregateRating-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='aggregateRating__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -253,12 +253,12 @@ export default class PublicationEvent extends Component {
         if (this.props.subEvent) {
             if (this.props.subEvent instanceof Array) {
                 subEvent = (
-                   <div className='subEvent-container'>
-                       <div className='subEvent-header' data-advice='HTML for the *head* of the section'>subEvents</div>
+                   <div className='subEvent__container'>
+                       <div className='subEvent__header' data-advice='HTML for the *head* of the section'>subEvents</div>
                        {this.props.subEvent.map((item, index) => {
                             return (<Event key={index} {...this.props.subEvent} />);
                        })};
-                       <div className='subEvent-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='subEvent__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -270,12 +270,12 @@ export default class PublicationEvent extends Component {
         if (this.props.offers) {
             if (this.props.offers instanceof Array) {
                 offers = (
-                   <div className='offers-container'>
-                       <div className='offers-header' data-advice='HTML for the *head* of the section'>offerss</div>
+                   <div className='offers__container'>
+                       <div className='offers__header' data-advice='HTML for the *head* of the section'>offerss</div>
                        {this.props.offers.map((item, index) => {
                             return (<Offer key={index} {...this.props.offers} />);
                        })};
-                       <div className='offers-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='offers__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -287,12 +287,12 @@ export default class PublicationEvent extends Component {
         if (this.props.eventStatus) {
             if (this.props.eventStatus instanceof Array) {
                 eventStatus = (
-                   <div className='eventStatus-container'>
-                       <div className='eventStatus-header' data-advice='HTML for the *head* of the section'>eventStatuss</div>
+                   <div className='eventStatus__container'>
+                       <div className='eventStatus__header' data-advice='HTML for the *head* of the section'>eventStatuss</div>
                        {this.props.eventStatus.map((item, index) => {
                             return (<EventStatusType key={index} {...this.props.eventStatus} />);
                        })};
-                       <div className='eventStatus-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='eventStatus__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -304,8 +304,8 @@ export default class PublicationEvent extends Component {
         if (this.props.image) {
             if (this.props.image instanceof Array) {
                 image = (
-                   <div className='image-container'>
-                       <div className='image-header' data-advice='HTML for the *head* of the section'>images</div>
+                   <div className='image__container'>
+                       <div className='image__header' data-advice='HTML for the *head* of the section'>images</div>
                        {this.props.image.map((item, index) => {
                            if (this.props['@type'] === 'ImageObject') {
                                return (<ImageObject key={index} {...this.props.image} />);
@@ -314,7 +314,7 @@ export default class PublicationEvent extends Component {
                                return (<div className='image' data-advice='Put your HTML here. image is a URL.'><img className="PublicationEvent-image" src={this.props.image} /></div>);
                            }
                        })};
-                       <div className='image-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -331,12 +331,12 @@ export default class PublicationEvent extends Component {
         if (this.props.duration) {
             if (this.props.duration instanceof Array) {
                 duration = (
-                   <div className='duration-container'>
-                       <div className='duration-header' data-advice='HTML for the *head* of the section'>durations</div>
+                   <div className='duration__container'>
+                       <div className='duration__header' data-advice='HTML for the *head* of the section'>durations</div>
                        {this.props.duration.map((item, index) => {
                             return (<Duration key={index} {...this.props.duration} />);
                        })};
-                       <div className='duration-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='duration__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -348,12 +348,12 @@ export default class PublicationEvent extends Component {
         if (this.props.publishedOn) {
             if (this.props.publishedOn instanceof Array) {
                 publishedOn = (
-                   <div className='publishedOn-container'>
-                       <div className='publishedOn-header' data-advice='HTML for the *head* of the section'>publishedOns</div>
+                   <div className='publishedOn__container'>
+                       <div className='publishedOn__header' data-advice='HTML for the *head* of the section'>publishedOns</div>
                        {this.props.publishedOn.map((item, index) => {
                             return (<BroadcastService key={index} {...this.props.publishedOn} />);
                        })};
-                       <div className='publishedOn-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='publishedOn__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -365,8 +365,8 @@ export default class PublicationEvent extends Component {
         if (this.props.organizer) {
             if (this.props.organizer instanceof Array) {
                 organizer = (
-                   <div className='organizer-container'>
-                       <div className='organizer-header' data-advice='HTML for the *head* of the section'>organizers</div>
+                   <div className='organizer__container'>
+                       <div className='organizer__header' data-advice='HTML for the *head* of the section'>organizers</div>
                        {this.props.organizer.map((item, index) => {
                            if (this.props['@type'] === 'Person') {
                                return (<Person key={index} {...this.props.organizer} />);
@@ -375,7 +375,7 @@ export default class PublicationEvent extends Component {
                                return (<Organization key={index} {...this.props.organizer} />);
                            }
                        })};
-                       <div className='organizer-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='organizer__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -392,8 +392,8 @@ export default class PublicationEvent extends Component {
         if (this.props.location) {
             if (this.props.location instanceof Array) {
                 location = (
-                   <div className='location-container'>
-                       <div className='location-header' data-advice='HTML for the *head* of the section'>locations</div>
+                   <div className='location__container'>
+                       <div className='location__header' data-advice='HTML for the *head* of the section'>locations</div>
                        {this.props.location.map((item, index) => {
                            if (this.props['@type'] === 'Place') {
                                return (<Place key={index} {...this.props.location} />);
@@ -405,7 +405,7 @@ export default class PublicationEvent extends Component {
                                return (<PostalAddress key={index} {...this.props.location} />);
                            }
                        })};
-                       <div className='location-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='location__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {

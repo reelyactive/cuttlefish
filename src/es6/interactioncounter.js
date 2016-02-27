@@ -16,8 +16,8 @@ export default class InteractionCounter extends Component {
         if (this.props.mainEntityOfPage) {
             if (this.props.mainEntityOfPage instanceof Array) {
                 mainEntityOfPage = (
-                   <div className='mainEntityOfPage-container'>
-                       <div className='mainEntityOfPage-header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
+                   <div className='mainEntityOfPage__container'>
+                       <div className='mainEntityOfPage__header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
                        {this.props.mainEntityOfPage.map((item, index) => {
                            if (this.props['@type'] === 'URL') {
                                return (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL.'><a className="InteractionCounter-mainEntityOfPage" href={this.props.mainEntityOfPage} target="_blank">mainEntityOfPage</a></div>);
@@ -26,7 +26,7 @@ export default class InteractionCounter extends Component {
                                return (<CreativeWork key={index} {...this.props.mainEntityOfPage} />);
                            }
                        })};
-                       <div className='mainEntityOfPage-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -43,8 +43,8 @@ export default class InteractionCounter extends Component {
         if (this.props.image) {
             if (this.props.image instanceof Array) {
                 image = (
-                   <div className='image-container'>
-                       <div className='image-header' data-advice='HTML for the *head* of the section'>images</div>
+                   <div className='image__container'>
+                       <div className='image__header' data-advice='HTML for the *head* of the section'>images</div>
                        {this.props.image.map((item, index) => {
                            if (this.props['@type'] === 'ImageObject') {
                                return (<ImageObject key={index} {...this.props.image} />);
@@ -53,7 +53,7 @@ export default class InteractionCounter extends Component {
                                return (<div className='image' data-advice='Put your HTML here. image is a URL.'><img className="InteractionCounter-image" src={this.props.image} /></div>);
                            }
                        })};
-                       <div className='image-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -70,8 +70,8 @@ export default class InteractionCounter extends Component {
         if (this.props.interactionService) {
             if (this.props.interactionService instanceof Array) {
                 interactionService = (
-                   <div className='interactionService-container'>
-                       <div className='interactionService-header' data-advice='HTML for the *head* of the section'>interactionServices</div>
+                   <div className='interactionService__container'>
+                       <div className='interactionService__header' data-advice='HTML for the *head* of the section'>interactionServices</div>
                        {this.props.interactionService.map((item, index) => {
                            if (this.props['@type'] === 'SoftwareApplication') {
                                return (<SoftwareApplication key={index} {...this.props.interactionService} />);
@@ -80,7 +80,7 @@ export default class InteractionCounter extends Component {
                                return (<WebSite key={index} {...this.props.interactionService} />);
                            }
                        })};
-                       <div className='interactionService-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='interactionService__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -97,12 +97,12 @@ export default class InteractionCounter extends Component {
         if (this.props.potentialAction) {
             if (this.props.potentialAction instanceof Array) {
                 potentialAction = (
-                   <div className='potentialAction-container'>
-                       <div className='potentialAction-header' data-advice='HTML for the *head* of the section'>potentialActions</div>
+                   <div className='potentialAction__container'>
+                       <div className='potentialAction__header' data-advice='HTML for the *head* of the section'>potentialActions</div>
                        {this.props.potentialAction.map((item, index) => {
                             return (<Action key={index} {...this.props.potentialAction} />);
                        })};
-                       <div className='potentialAction-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -114,12 +114,12 @@ export default class InteractionCounter extends Component {
         if (this.props.interactionType) {
             if (this.props.interactionType instanceof Array) {
                 interactionType = (
-                   <div className='interactionType-container'>
-                       <div className='interactionType-header' data-advice='HTML for the *head* of the section'>interactionTypes</div>
+                   <div className='interactionType__container'>
+                       <div className='interactionType__header' data-advice='HTML for the *head* of the section'>interactionTypes</div>
                        {this.props.interactionType.map((item, index) => {
                             return (<Action key={index} {...this.props.interactionType} />);
                        })};
-                       <div className='interactionType-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='interactionType__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {

@@ -22,12 +22,12 @@ export default class Action extends Component {
         if (this.props.potentialAction) {
             if (this.props.potentialAction instanceof Array) {
                 potentialAction = (
-                   <div className='potentialAction-container'>
-                       <div className='potentialAction-header' data-advice='HTML for the *head* of the section'>potentialActions</div>
+                   <div className='potentialAction__container'>
+                       <div className='potentialAction__header' data-advice='HTML for the *head* of the section'>potentialActions</div>
                        {this.props.potentialAction.map((item, index) => {
                             return (<Action key={index} {...this.props.potentialAction} />);
                        })};
-                       <div className='potentialAction-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -39,8 +39,8 @@ export default class Action extends Component {
         if (this.props.participant) {
             if (this.props.participant instanceof Array) {
                 participant = (
-                   <div className='participant-container'>
-                       <div className='participant-header' data-advice='HTML for the *head* of the section'>participants</div>
+                   <div className='participant__container'>
+                       <div className='participant__header' data-advice='HTML for the *head* of the section'>participants</div>
                        {this.props.participant.map((item, index) => {
                            if (this.props['@type'] === 'Person') {
                                return (<Person key={index} {...this.props.participant} />);
@@ -49,7 +49,7 @@ export default class Action extends Component {
                                return (<Organization key={index} {...this.props.participant} />);
                            }
                        })};
-                       <div className='participant-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='participant__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -66,12 +66,12 @@ export default class Action extends Component {
         if (this.props.target) {
             if (this.props.target instanceof Array) {
                 target = (
-                   <div className='target-container'>
-                       <div className='target-header' data-advice='HTML for the *head* of the section'>targets</div>
+                   <div className='target__container'>
+                       <div className='target__header' data-advice='HTML for the *head* of the section'>targets</div>
                        {this.props.target.map((item, index) => {
                             return (<EntryPoint key={index} {...this.props.target} />);
                        })};
-                       <div className='target-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='target__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -83,8 +83,8 @@ export default class Action extends Component {
         if (this.props.image) {
             if (this.props.image instanceof Array) {
                 image = (
-                   <div className='image-container'>
-                       <div className='image-header' data-advice='HTML for the *head* of the section'>images</div>
+                   <div className='image__container'>
+                       <div className='image__header' data-advice='HTML for the *head* of the section'>images</div>
                        {this.props.image.map((item, index) => {
                            if (this.props['@type'] === 'ImageObject') {
                                return (<ImageObject key={index} {...this.props.image} />);
@@ -93,7 +93,7 @@ export default class Action extends Component {
                                return (<div className='image' data-advice='Put your HTML here. image is a URL.'><img className="Action-image" src={this.props.image} /></div>);
                            }
                        })};
-                       <div className='image-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -110,12 +110,12 @@ export default class Action extends Component {
         if (this.props.object) {
             if (this.props.object instanceof Array) {
                 object = (
-                   <div className='object-container'>
-                       <div className='object-header' data-advice='HTML for the *head* of the section'>objects</div>
+                   <div className='object__container'>
+                       <div className='object__header' data-advice='HTML for the *head* of the section'>objects</div>
                        {this.props.object.map((item, index) => {
                             return (<Thing key={index} {...this.props.object} />);
                        })};
-                       <div className='object-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='object__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -127,8 +127,8 @@ export default class Action extends Component {
         if (this.props.agent) {
             if (this.props.agent instanceof Array) {
                 agent = (
-                   <div className='agent-container'>
-                       <div className='agent-header' data-advice='HTML for the *head* of the section'>agents</div>
+                   <div className='agent__container'>
+                       <div className='agent__header' data-advice='HTML for the *head* of the section'>agents</div>
                        {this.props.agent.map((item, index) => {
                            if (this.props['@type'] === 'Person') {
                                return (<Person key={index} {...this.props.agent} />);
@@ -137,7 +137,7 @@ export default class Action extends Component {
                                return (<Organization key={index} {...this.props.agent} />);
                            }
                        })};
-                       <div className='agent-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='agent__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -154,12 +154,12 @@ export default class Action extends Component {
         if (this.props.actionStatus) {
             if (this.props.actionStatus instanceof Array) {
                 actionStatus = (
-                   <div className='actionStatus-container'>
-                       <div className='actionStatus-header' data-advice='HTML for the *head* of the section'>actionStatuss</div>
+                   <div className='actionStatus__container'>
+                       <div className='actionStatus__header' data-advice='HTML for the *head* of the section'>actionStatuss</div>
                        {this.props.actionStatus.map((item, index) => {
                             return (<ActionStatusType key={index} {...this.props.actionStatus} />);
                        })};
-                       <div className='actionStatus-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='actionStatus__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -171,12 +171,12 @@ export default class Action extends Component {
         if (this.props.instrument) {
             if (this.props.instrument instanceof Array) {
                 instrument = (
-                   <div className='instrument-container'>
-                       <div className='instrument-header' data-advice='HTML for the *head* of the section'>instruments</div>
+                   <div className='instrument__container'>
+                       <div className='instrument__header' data-advice='HTML for the *head* of the section'>instruments</div>
                        {this.props.instrument.map((item, index) => {
                             return (<Thing key={index} {...this.props.instrument} />);
                        })};
-                       <div className='instrument-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='instrument__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -188,8 +188,8 @@ export default class Action extends Component {
         if (this.props.location) {
             if (this.props.location instanceof Array) {
                 location = (
-                   <div className='location-container'>
-                       <div className='location-header' data-advice='HTML for the *head* of the section'>locations</div>
+                   <div className='location__container'>
+                       <div className='location__header' data-advice='HTML for the *head* of the section'>locations</div>
                        {this.props.location.map((item, index) => {
                            if (this.props['@type'] === 'Place') {
                                return (<Place key={index} {...this.props.location} />);
@@ -201,7 +201,7 @@ export default class Action extends Component {
                                return (<PostalAddress key={index} {...this.props.location} />);
                            }
                        })};
-                       <div className='location-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='location__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -221,12 +221,12 @@ export default class Action extends Component {
         if (this.props.error) {
             if (this.props.error instanceof Array) {
                 error = (
-                   <div className='error-container'>
-                       <div className='error-header' data-advice='HTML for the *head* of the section'>errors</div>
+                   <div className='error__container'>
+                       <div className='error__header' data-advice='HTML for the *head* of the section'>errors</div>
                        {this.props.error.map((item, index) => {
                             return (<Thing key={index} {...this.props.error} />);
                        })};
-                       <div className='error-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='error__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -238,8 +238,8 @@ export default class Action extends Component {
         if (this.props.mainEntityOfPage) {
             if (this.props.mainEntityOfPage instanceof Array) {
                 mainEntityOfPage = (
-                   <div className='mainEntityOfPage-container'>
-                       <div className='mainEntityOfPage-header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
+                   <div className='mainEntityOfPage__container'>
+                       <div className='mainEntityOfPage__header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
                        {this.props.mainEntityOfPage.map((item, index) => {
                            if (this.props['@type'] === 'URL') {
                                return (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL.'><a className="Action-mainEntityOfPage" href={this.props.mainEntityOfPage} target="_blank">mainEntityOfPage</a></div>);
@@ -248,7 +248,7 @@ export default class Action extends Component {
                                return (<CreativeWork key={index} {...this.props.mainEntityOfPage} />);
                            }
                        })};
-                       <div className='mainEntityOfPage-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -265,12 +265,12 @@ export default class Action extends Component {
         if (this.props.result) {
             if (this.props.result instanceof Array) {
                 result = (
-                   <div className='result-container'>
-                       <div className='result-header' data-advice='HTML for the *head* of the section'>results</div>
+                   <div className='result__container'>
+                       <div className='result__header' data-advice='HTML for the *head* of the section'>results</div>
                        {this.props.result.map((item, index) => {
                             return (<Thing key={index} {...this.props.result} />);
                        })};
-                       <div className='result-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='result__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {

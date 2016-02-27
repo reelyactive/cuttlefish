@@ -20,12 +20,12 @@ export default class QualitativeValue extends Component {
         if (this.props.potentialAction) {
             if (this.props.potentialAction instanceof Array) {
                 potentialAction = (
-                   <div className='potentialAction-container'>
-                       <div className='potentialAction-header' data-advice='HTML for the *head* of the section'>potentialActions</div>
+                   <div className='potentialAction__container'>
+                       <div className='potentialAction__header' data-advice='HTML for the *head* of the section'>potentialActions</div>
                        {this.props.potentialAction.map((item, index) => {
                             return (<Action key={index} {...this.props.potentialAction} />);
                        })};
-                       <div className='potentialAction-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -37,8 +37,8 @@ export default class QualitativeValue extends Component {
         if (this.props.valueReference) {
             if (this.props.valueReference instanceof Array) {
                 valueReference = (
-                   <div className='valueReference-container'>
-                       <div className='valueReference-header' data-advice='HTML for the *head* of the section'>valueReferences</div>
+                   <div className='valueReference__container'>
+                       <div className='valueReference__header' data-advice='HTML for the *head* of the section'>valueReferences</div>
                        {this.props.valueReference.map((item, index) => {
                            if (this.props['@type'] === 'QualitativeValue') {
                                return (<QualitativeValue key={index} {...this.props.valueReference} />);
@@ -56,7 +56,7 @@ export default class QualitativeValue extends Component {
                                return (<PropertyValue key={index} {...this.props.valueReference} />);
                            }
                        })};
-                       <div className='valueReference-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='valueReference__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -82,12 +82,12 @@ export default class QualitativeValue extends Component {
         if (this.props.greater) {
             if (this.props.greater instanceof Array) {
                 greater = (
-                   <div className='greater-container'>
-                       <div className='greater-header' data-advice='HTML for the *head* of the section'>greaters</div>
+                   <div className='greater__container'>
+                       <div className='greater__header' data-advice='HTML for the *head* of the section'>greaters</div>
                        {this.props.greater.map((item, index) => {
                             return (<QualitativeValue key={index} {...this.props.greater} />);
                        })};
-                       <div className='greater-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='greater__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -99,12 +99,12 @@ export default class QualitativeValue extends Component {
         if (this.props.lesserOrEqual) {
             if (this.props.lesserOrEqual instanceof Array) {
                 lesserOrEqual = (
-                   <div className='lesserOrEqual-container'>
-                       <div className='lesserOrEqual-header' data-advice='HTML for the *head* of the section'>lesserOrEquals</div>
+                   <div className='lesserOrEqual__container'>
+                       <div className='lesserOrEqual__header' data-advice='HTML for the *head* of the section'>lesserOrEquals</div>
                        {this.props.lesserOrEqual.map((item, index) => {
                             return (<QualitativeValue key={index} {...this.props.lesserOrEqual} />);
                        })};
-                       <div className='lesserOrEqual-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='lesserOrEqual__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -116,12 +116,12 @@ export default class QualitativeValue extends Component {
         if (this.props.equal) {
             if (this.props.equal instanceof Array) {
                 equal = (
-                   <div className='equal-container'>
-                       <div className='equal-header' data-advice='HTML for the *head* of the section'>equals</div>
+                   <div className='equal__container'>
+                       <div className='equal__header' data-advice='HTML for the *head* of the section'>equals</div>
                        {this.props.equal.map((item, index) => {
                             return (<QualitativeValue key={index} {...this.props.equal} />);
                        })};
-                       <div className='equal-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='equal__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -133,12 +133,12 @@ export default class QualitativeValue extends Component {
         if (this.props.lesser) {
             if (this.props.lesser instanceof Array) {
                 lesser = (
-                   <div className='lesser-container'>
-                       <div className='lesser-header' data-advice='HTML for the *head* of the section'>lessers</div>
+                   <div className='lesser__container'>
+                       <div className='lesser__header' data-advice='HTML for the *head* of the section'>lessers</div>
                        {this.props.lesser.map((item, index) => {
                             return (<QualitativeValue key={index} {...this.props.lesser} />);
                        })};
-                       <div className='lesser-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='lesser__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -150,12 +150,12 @@ export default class QualitativeValue extends Component {
         if (this.props.additionalProperty) {
             if (this.props.additionalProperty instanceof Array) {
                 additionalProperty = (
-                   <div className='additionalProperty-container'>
-                       <div className='additionalProperty-header' data-advice='HTML for the *head* of the section'>additionalPropertys</div>
+                   <div className='additionalProperty__container'>
+                       <div className='additionalProperty__header' data-advice='HTML for the *head* of the section'>additionalPropertys</div>
                        {this.props.additionalProperty.map((item, index) => {
                             return (<PropertyValue key={index} {...this.props.additionalProperty} />);
                        })};
-                       <div className='additionalProperty-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='additionalProperty__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -167,8 +167,8 @@ export default class QualitativeValue extends Component {
         if (this.props.supersededBy) {
             if (this.props.supersededBy instanceof Array) {
                 supersededBy = (
-                   <div className='supersededBy-container'>
-                       <div className='supersededBy-header' data-advice='HTML for the *head* of the section'>supersededBys</div>
+                   <div className='supersededBy__container'>
+                       <div className='supersededBy__header' data-advice='HTML for the *head* of the section'>supersededBys</div>
                        {this.props.supersededBy.map((item, index) => {
                            if (this.props['@type'] === 'Enumeration') {
                                return (<Enumeration key={index} {...this.props.supersededBy} />);
@@ -180,7 +180,7 @@ export default class QualitativeValue extends Component {
                                return (<Property key={index} {...this.props.supersededBy} />);
                            }
                        })};
-                       <div className='supersededBy-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='supersededBy__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -200,12 +200,12 @@ export default class QualitativeValue extends Component {
         if (this.props.greaterOrEqual) {
             if (this.props.greaterOrEqual instanceof Array) {
                 greaterOrEqual = (
-                   <div className='greaterOrEqual-container'>
-                       <div className='greaterOrEqual-header' data-advice='HTML for the *head* of the section'>greaterOrEquals</div>
+                   <div className='greaterOrEqual__container'>
+                       <div className='greaterOrEqual__header' data-advice='HTML for the *head* of the section'>greaterOrEquals</div>
                        {this.props.greaterOrEqual.map((item, index) => {
                             return (<QualitativeValue key={index} {...this.props.greaterOrEqual} />);
                        })};
-                       <div className='greaterOrEqual-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='greaterOrEqual__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -217,8 +217,8 @@ export default class QualitativeValue extends Component {
         if (this.props.mainEntityOfPage) {
             if (this.props.mainEntityOfPage instanceof Array) {
                 mainEntityOfPage = (
-                   <div className='mainEntityOfPage-container'>
-                       <div className='mainEntityOfPage-header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
+                   <div className='mainEntityOfPage__container'>
+                       <div className='mainEntityOfPage__header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
                        {this.props.mainEntityOfPage.map((item, index) => {
                            if (this.props['@type'] === 'CreativeWork') {
                                return (<CreativeWork key={index} {...this.props.mainEntityOfPage} />);
@@ -227,7 +227,7 @@ export default class QualitativeValue extends Component {
                                return (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL.'><a className="QualitativeValue-mainEntityOfPage" href={this.props.mainEntityOfPage} target="_blank">mainEntityOfPage</a></div>);
                            }
                        })};
-                       <div className='mainEntityOfPage-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -244,12 +244,12 @@ export default class QualitativeValue extends Component {
         if (this.props.nonEqual) {
             if (this.props.nonEqual instanceof Array) {
                 nonEqual = (
-                   <div className='nonEqual-container'>
-                       <div className='nonEqual-header' data-advice='HTML for the *head* of the section'>nonEquals</div>
+                   <div className='nonEqual__container'>
+                       <div className='nonEqual__header' data-advice='HTML for the *head* of the section'>nonEquals</div>
                        {this.props.nonEqual.map((item, index) => {
                             return (<QualitativeValue key={index} {...this.props.nonEqual} />);
                        })};
-                       <div className='nonEqual-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='nonEqual__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -261,8 +261,8 @@ export default class QualitativeValue extends Component {
         if (this.props.image) {
             if (this.props.image instanceof Array) {
                 image = (
-                   <div className='image-container'>
-                       <div className='image-header' data-advice='HTML for the *head* of the section'>images</div>
+                   <div className='image__container'>
+                       <div className='image__header' data-advice='HTML for the *head* of the section'>images</div>
                        {this.props.image.map((item, index) => {
                            if (this.props['@type'] === 'ImageObject') {
                                return (<ImageObject key={index} {...this.props.image} />);
@@ -271,7 +271,7 @@ export default class QualitativeValue extends Component {
                                return (<div className='image' data-advice='Put your HTML here. image is a URL.'><img className="QualitativeValue-image" src={this.props.image} /></div>);
                            }
                        })};
-                       <div className='image-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {

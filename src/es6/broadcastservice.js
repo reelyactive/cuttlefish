@@ -27,8 +27,8 @@ export default class BroadcastService extends Component {
         if (this.props.category) {
             if (this.props.category instanceof Array) {
                 category = (
-                   <div className='category-container'>
-                       <div className='category-header' data-advice='HTML for the *head* of the section'>categorys</div>
+                   <div className='category__container'>
+                       <div className='category__header' data-advice='HTML for the *head* of the section'>categorys</div>
                        {this.props.category.map((item, index) => {
                            if (this.props['@type'] === 'Thing') {
                                return (<Thing key={index} {...this.props.category} />);
@@ -40,7 +40,7 @@ export default class BroadcastService extends Component {
                                return (<div className='category' data-advice='Put your HTML here. category is a Text.'><p className="BroadcastService-category">category: {this.props.category}</p></div>);
                            }
                        })};
-                       <div className='category-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='category__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -60,12 +60,12 @@ export default class BroadcastService extends Component {
         if (this.props.potentialAction) {
             if (this.props.potentialAction instanceof Array) {
                 potentialAction = (
-                   <div className='potentialAction-container'>
-                       <div className='potentialAction-header' data-advice='HTML for the *head* of the section'>potentialActions</div>
+                   <div className='potentialAction__container'>
+                       <div className='potentialAction__header' data-advice='HTML for the *head* of the section'>potentialActions</div>
                        {this.props.potentialAction.map((item, index) => {
                             return (<Action key={index} {...this.props.potentialAction} />);
                        })};
-                       <div className='potentialAction-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -77,12 +77,12 @@ export default class BroadcastService extends Component {
         if (this.props.availableChannel) {
             if (this.props.availableChannel instanceof Array) {
                 availableChannel = (
-                   <div className='availableChannel-container'>
-                       <div className='availableChannel-header' data-advice='HTML for the *head* of the section'>availableChannels</div>
+                   <div className='availableChannel__container'>
+                       <div className='availableChannel__header' data-advice='HTML for the *head* of the section'>availableChannels</div>
                        {this.props.availableChannel.map((item, index) => {
                             return (<ServiceChannel key={index} {...this.props.availableChannel} />);
                        })};
-                       <div className='availableChannel-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='availableChannel__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -94,12 +94,12 @@ export default class BroadcastService extends Component {
         if (this.props.broadcastAffiliateOf) {
             if (this.props.broadcastAffiliateOf instanceof Array) {
                 broadcastAffiliateOf = (
-                   <div className='broadcastAffiliateOf-container'>
-                       <div className='broadcastAffiliateOf-header' data-advice='HTML for the *head* of the section'>broadcastAffiliateOfs</div>
+                   <div className='broadcastAffiliateOf__container'>
+                       <div className='broadcastAffiliateOf__header' data-advice='HTML for the *head* of the section'>broadcastAffiliateOfs</div>
                        {this.props.broadcastAffiliateOf.map((item, index) => {
                             return (<Organization key={index} {...this.props.broadcastAffiliateOf} />);
                        })};
-                       <div className='broadcastAffiliateOf-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='broadcastAffiliateOf__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -111,12 +111,12 @@ export default class BroadcastService extends Component {
         if (this.props.review) {
             if (this.props.review instanceof Array) {
                 review = (
-                   <div className='review-container'>
-                       <div className='review-header' data-advice='HTML for the *head* of the section'>reviews</div>
+                   <div className='review__container'>
+                       <div className='review__header' data-advice='HTML for the *head* of the section'>reviews</div>
                        {this.props.review.map((item, index) => {
                             return (<Review key={index} {...this.props.review} />);
                        })};
-                       <div className='review-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='review__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -128,12 +128,12 @@ export default class BroadcastService extends Component {
         if (this.props.serviceOutput) {
             if (this.props.serviceOutput instanceof Array) {
                 serviceOutput = (
-                   <div className='serviceOutput-container'>
-                       <div className='serviceOutput-header' data-advice='HTML for the *head* of the section'>serviceOutputs</div>
+                   <div className='serviceOutput__container'>
+                       <div className='serviceOutput__header' data-advice='HTML for the *head* of the section'>serviceOutputs</div>
                        {this.props.serviceOutput.map((item, index) => {
                             return (<Thing key={index} {...this.props.serviceOutput} />);
                        })};
-                       <div className='serviceOutput-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='serviceOutput__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -145,12 +145,12 @@ export default class BroadcastService extends Component {
         if (this.props.parentService) {
             if (this.props.parentService instanceof Array) {
                 parentService = (
-                   <div className='parentService-container'>
-                       <div className='parentService-header' data-advice='HTML for the *head* of the section'>parentServices</div>
+                   <div className='parentService__container'>
+                       <div className='parentService__header' data-advice='HTML for the *head* of the section'>parentServices</div>
                        {this.props.parentService.map((item, index) => {
                             return (<BroadcastService key={index} {...this.props.parentService} />);
                        })};
-                       <div className='parentService-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='parentService__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -162,8 +162,8 @@ export default class BroadcastService extends Component {
         if (this.props.mainEntityOfPage) {
             if (this.props.mainEntityOfPage instanceof Array) {
                 mainEntityOfPage = (
-                   <div className='mainEntityOfPage-container'>
-                       <div className='mainEntityOfPage-header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
+                   <div className='mainEntityOfPage__container'>
+                       <div className='mainEntityOfPage__header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
                        {this.props.mainEntityOfPage.map((item, index) => {
                            if (this.props['@type'] === 'CreativeWork') {
                                return (<CreativeWork key={index} {...this.props.mainEntityOfPage} />);
@@ -172,7 +172,7 @@ export default class BroadcastService extends Component {
                                return (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL.'><a className="BroadcastService-mainEntityOfPage" href={this.props.mainEntityOfPage} target="_blank">mainEntityOfPage</a></div>);
                            }
                        })};
-                       <div className='mainEntityOfPage-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -189,12 +189,12 @@ export default class BroadcastService extends Component {
         if (this.props.offers) {
             if (this.props.offers instanceof Array) {
                 offers = (
-                   <div className='offers-container'>
-                       <div className='offers-header' data-advice='HTML for the *head* of the section'>offerss</div>
+                   <div className='offers__container'>
+                       <div className='offers__header' data-advice='HTML for the *head* of the section'>offerss</div>
                        {this.props.offers.map((item, index) => {
                             return (<Offer key={index} {...this.props.offers} />);
                        })};
-                       <div className='offers-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='offers__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -206,12 +206,12 @@ export default class BroadcastService extends Component {
         if (this.props.aggregateRating) {
             if (this.props.aggregateRating instanceof Array) {
                 aggregateRating = (
-                   <div className='aggregateRating-container'>
-                       <div className='aggregateRating-header' data-advice='HTML for the *head* of the section'>aggregateRatings</div>
+                   <div className='aggregateRating__container'>
+                       <div className='aggregateRating__header' data-advice='HTML for the *head* of the section'>aggregateRatings</div>
                        {this.props.aggregateRating.map((item, index) => {
                             return (<AggregateRating key={index} {...this.props.aggregateRating} />);
                        })};
-                       <div className='aggregateRating-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='aggregateRating__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -223,12 +223,12 @@ export default class BroadcastService extends Component {
         if (this.props.broadcaster) {
             if (this.props.broadcaster instanceof Array) {
                 broadcaster = (
-                   <div className='broadcaster-container'>
-                       <div className='broadcaster-header' data-advice='HTML for the *head* of the section'>broadcasters</div>
+                   <div className='broadcaster__container'>
+                       <div className='broadcaster__header' data-advice='HTML for the *head* of the section'>broadcasters</div>
                        {this.props.broadcaster.map((item, index) => {
                             return (<Organization key={index} {...this.props.broadcaster} />);
                        })};
-                       <div className='broadcaster-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='broadcaster__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -240,12 +240,12 @@ export default class BroadcastService extends Component {
         if (this.props.hoursAvailable) {
             if (this.props.hoursAvailable instanceof Array) {
                 hoursAvailable = (
-                   <div className='hoursAvailable-container'>
-                       <div className='hoursAvailable-header' data-advice='HTML for the *head* of the section'>hoursAvailables</div>
+                   <div className='hoursAvailable__container'>
+                       <div className='hoursAvailable__header' data-advice='HTML for the *head* of the section'>hoursAvailables</div>
                        {this.props.hoursAvailable.map((item, index) => {
                             return (<OpeningHoursSpecification key={index} {...this.props.hoursAvailable} />);
                        })};
-                       <div className='hoursAvailable-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='hoursAvailable__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -257,8 +257,8 @@ export default class BroadcastService extends Component {
         if (this.props.areaServed) {
             if (this.props.areaServed instanceof Array) {
                 areaServed = (
-                   <div className='areaServed-container'>
-                       <div className='areaServed-header' data-advice='HTML for the *head* of the section'>areaServeds</div>
+                   <div className='areaServed__container'>
+                       <div className='areaServed__header' data-advice='HTML for the *head* of the section'>areaServeds</div>
                        {this.props.areaServed.map((item, index) => {
                            if (this.props['@type'] === 'AdministrativeArea') {
                                return (<AdministrativeArea key={index} {...this.props.areaServed} />);
@@ -273,7 +273,7 @@ export default class BroadcastService extends Component {
                                return (<GeoShape key={index} {...this.props.areaServed} />);
                            }
                        })};
-                       <div className='areaServed-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='areaServed__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -296,8 +296,8 @@ export default class BroadcastService extends Component {
         if (this.props.provider) {
             if (this.props.provider instanceof Array) {
                 provider = (
-                   <div className='provider-container'>
-                       <div className='provider-header' data-advice='HTML for the *head* of the section'>providers</div>
+                   <div className='provider__container'>
+                       <div className='provider__header' data-advice='HTML for the *head* of the section'>providers</div>
                        {this.props.provider.map((item, index) => {
                            if (this.props['@type'] === 'Person') {
                                return (<Person key={index} {...this.props.provider} />);
@@ -306,7 +306,7 @@ export default class BroadcastService extends Component {
                                return (<Organization key={index} {...this.props.provider} />);
                            }
                        })};
-                       <div className='provider-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='provider__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -323,12 +323,12 @@ export default class BroadcastService extends Component {
         if (this.props.hasOfferCatalog) {
             if (this.props.hasOfferCatalog instanceof Array) {
                 hasOfferCatalog = (
-                   <div className='hasOfferCatalog-container'>
-                       <div className='hasOfferCatalog-header' data-advice='HTML for the *head* of the section'>hasOfferCatalogs</div>
+                   <div className='hasOfferCatalog__container'>
+                       <div className='hasOfferCatalog__header' data-advice='HTML for the *head* of the section'>hasOfferCatalogs</div>
                        {this.props.hasOfferCatalog.map((item, index) => {
                             return (<OfferCatalog key={index} {...this.props.hasOfferCatalog} />);
                        })};
-                       <div className='hasOfferCatalog-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='hasOfferCatalog__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -340,8 +340,8 @@ export default class BroadcastService extends Component {
         if (this.props.image) {
             if (this.props.image instanceof Array) {
                 image = (
-                   <div className='image-container'>
-                       <div className='image-header' data-advice='HTML for the *head* of the section'>images</div>
+                   <div className='image__container'>
+                       <div className='image__header' data-advice='HTML for the *head* of the section'>images</div>
                        {this.props.image.map((item, index) => {
                            if (this.props['@type'] === 'ImageObject') {
                                return (<ImageObject key={index} {...this.props.image} />);
@@ -350,7 +350,7 @@ export default class BroadcastService extends Component {
                                return (<div className='image' data-advice='Put your HTML here. image is a URL.'><img className="BroadcastService-image" src={this.props.image} /></div>);
                            }
                        })};
-                       <div className='image-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
