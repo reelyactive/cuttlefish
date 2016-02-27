@@ -31,12 +31,12 @@ export default class Organization extends Component {
         if (this.props.founder) {
             if (this.props.founder instanceof Array) {
                 founder = (
-                   <div className='founder-container'>
-                       <div className='founder-header' data-advice='HTML for the *head* of the section'>founders</div>
+                   <div className='founder__container'>
+                       <div className='founder__header' data-advice='HTML for the *head* of the section'>founders</div>
                        {this.props.founder.map((item, index) => {
                             return (<Person key={index} {...this.props.founder} />);
                        })};
-                       <div className='founder-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='founder__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -48,12 +48,12 @@ export default class Organization extends Component {
         if (this.props.parentOrganization) {
             if (this.props.parentOrganization instanceof Array) {
                 parentOrganization = (
-                   <div className='parentOrganization-container'>
-                       <div className='parentOrganization-header' data-advice='HTML for the *head* of the section'>parentOrganizations</div>
+                   <div className='parentOrganization__container'>
+                       <div className='parentOrganization__header' data-advice='HTML for the *head* of the section'>parentOrganizations</div>
                        {this.props.parentOrganization.map((item, index) => {
                             return (<Organization key={index} {...this.props.parentOrganization} />);
                        })};
-                       <div className='parentOrganization-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='parentOrganization__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -65,8 +65,8 @@ export default class Organization extends Component {
         if (this.props.image) {
             if (this.props.image instanceof Array) {
                 image = (
-                   <div className='image-container'>
-                       <div className='image-header' data-advice='HTML for the *head* of the section'>images</div>
+                   <div className='image__container'>
+                       <div className='image__header' data-advice='HTML for the *head* of the section'>images</div>
                        {this.props.image.map((item, index) => {
                            if (this.props['@type'] === 'ImageObject') {
                                return (<ImageObject key={index} {...this.props.image} />);
@@ -75,7 +75,7 @@ export default class Organization extends Component {
                                return (<div className='image' data-advice='Put your HTML here. image is a URL.'><img className="Organization-image" src={this.props.image} /></div>);
                            }
                        })};
-                       <div className='image-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -92,12 +92,12 @@ export default class Organization extends Component {
         if (this.props.aggregateRating) {
             if (this.props.aggregateRating instanceof Array) {
                 aggregateRating = (
-                   <div className='aggregateRating-container'>
-                       <div className='aggregateRating-header' data-advice='HTML for the *head* of the section'>aggregateRatings</div>
+                   <div className='aggregateRating__container'>
+                       <div className='aggregateRating__header' data-advice='HTML for the *head* of the section'>aggregateRatings</div>
                        {this.props.aggregateRating.map((item, index) => {
                             return (<AggregateRating key={index} {...this.props.aggregateRating} />);
                        })};
-                       <div className='aggregateRating-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='aggregateRating__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -109,12 +109,12 @@ export default class Organization extends Component {
         if (this.props.hasOfferCatalog) {
             if (this.props.hasOfferCatalog instanceof Array) {
                 hasOfferCatalog = (
-                   <div className='hasOfferCatalog-container'>
-                       <div className='hasOfferCatalog-header' data-advice='HTML for the *head* of the section'>hasOfferCatalogs</div>
+                   <div className='hasOfferCatalog__container'>
+                       <div className='hasOfferCatalog__header' data-advice='HTML for the *head* of the section'>hasOfferCatalogs</div>
                        {this.props.hasOfferCatalog.map((item, index) => {
                             return (<OfferCatalog key={index} {...this.props.hasOfferCatalog} />);
                        })};
-                       <div className='hasOfferCatalog-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='hasOfferCatalog__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -126,8 +126,8 @@ export default class Organization extends Component {
         if (this.props.logo) {
             if (this.props.logo instanceof Array) {
                 logo = (
-                   <div className='logo-container'>
-                       <div className='logo-header' data-advice='HTML for the *head* of the section'>logos</div>
+                   <div className='logo__container'>
+                       <div className='logo__header' data-advice='HTML for the *head* of the section'>logos</div>
                        {this.props.logo.map((item, index) => {
                            if (this.props['@type'] === 'ImageObject') {
                                return (<ImageObject key={index} {...this.props.logo} />);
@@ -136,7 +136,7 @@ export default class Organization extends Component {
                                return (<div className='logo' data-advice='Put your HTML here. logo is a URL.'><a className="Organization-logo" href={this.props.logo} target="_blank">logo</a></div>);
                            }
                        })};
-                       <div className='logo-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='logo__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -153,12 +153,12 @@ export default class Organization extends Component {
         if (this.props.event) {
             if (this.props.event instanceof Array) {
                 event = (
-                   <div className='event-container'>
-                       <div className='event-header' data-advice='HTML for the *head* of the section'>events</div>
+                   <div className='event__container'>
+                       <div className='event__header' data-advice='HTML for the *head* of the section'>events</div>
                        {this.props.event.map((item, index) => {
                             return (<Event key={index} {...this.props.event} />);
                        })};
-                       <div className='event-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='event__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -170,12 +170,12 @@ export default class Organization extends Component {
         if (this.props.review) {
             if (this.props.review instanceof Array) {
                 review = (
-                   <div className='review-container'>
-                       <div className='review-header' data-advice='HTML for the *head* of the section'>reviews</div>
+                   <div className='review__container'>
+                       <div className='review__header' data-advice='HTML for the *head* of the section'>reviews</div>
                        {this.props.review.map((item, index) => {
                             return (<Review key={index} {...this.props.review} />);
                        })};
-                       <div className='review-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='review__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -187,8 +187,8 @@ export default class Organization extends Component {
         if (this.props.mainEntityOfPage) {
             if (this.props.mainEntityOfPage instanceof Array) {
                 mainEntityOfPage = (
-                   <div className='mainEntityOfPage-container'>
-                       <div className='mainEntityOfPage-header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
+                   <div className='mainEntityOfPage__container'>
+                       <div className='mainEntityOfPage__header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
                        {this.props.mainEntityOfPage.map((item, index) => {
                            if (this.props['@type'] === 'CreativeWork') {
                                return (<CreativeWork key={index} {...this.props.mainEntityOfPage} />);
@@ -197,7 +197,7 @@ export default class Organization extends Component {
                                return (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL.'><a className="Organization-mainEntityOfPage" href={this.props.mainEntityOfPage} target="_blank">mainEntityOfPage</a></div>);
                            }
                        })};
-                       <div className='mainEntityOfPage-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -214,8 +214,8 @@ export default class Organization extends Component {
         if (this.props.member) {
             if (this.props.member instanceof Array) {
                 member = (
-                   <div className='member-container'>
-                       <div className='member-header' data-advice='HTML for the *head* of the section'>members</div>
+                   <div className='member__container'>
+                       <div className='member__header' data-advice='HTML for the *head* of the section'>members</div>
                        {this.props.member.map((item, index) => {
                            if (this.props['@type'] === 'Person') {
                                return (<Person key={index} {...this.props.member} />);
@@ -224,7 +224,7 @@ export default class Organization extends Component {
                                return (<Organization key={index} {...this.props.member} />);
                            }
                        })};
-                       <div className='member-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='member__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -241,12 +241,12 @@ export default class Organization extends Component {
         if (this.props.foundingLocation) {
             if (this.props.foundingLocation instanceof Array) {
                 foundingLocation = (
-                   <div className='foundingLocation-container'>
-                       <div className='foundingLocation-header' data-advice='HTML for the *head* of the section'>foundingLocations</div>
+                   <div className='foundingLocation__container'>
+                       <div className='foundingLocation__header' data-advice='HTML for the *head* of the section'>foundingLocations</div>
                        {this.props.foundingLocation.map((item, index) => {
                             return (<Place key={index} {...this.props.foundingLocation} />);
                        })};
-                       <div className='foundingLocation-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='foundingLocation__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -258,8 +258,8 @@ export default class Organization extends Component {
         if (this.props.location) {
             if (this.props.location instanceof Array) {
                 location = (
-                   <div className='location-container'>
-                       <div className='location-header' data-advice='HTML for the *head* of the section'>locations</div>
+                   <div className='location__container'>
+                       <div className='location__header' data-advice='HTML for the *head* of the section'>locations</div>
                        {this.props.location.map((item, index) => {
                            if (this.props['@type'] === 'Place') {
                                return (<Place key={index} {...this.props.location} />);
@@ -271,7 +271,7 @@ export default class Organization extends Component {
                                return (<PostalAddress key={index} {...this.props.location} />);
                            }
                        })};
-                       <div className='location-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='location__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -291,12 +291,12 @@ export default class Organization extends Component {
         if (this.props.employee) {
             if (this.props.employee instanceof Array) {
                 employee = (
-                   <div className='employee-container'>
-                       <div className='employee-header' data-advice='HTML for the *head* of the section'>employees</div>
+                   <div className='employee__container'>
+                       <div className='employee__header' data-advice='HTML for the *head* of the section'>employees</div>
                        {this.props.employee.map((item, index) => {
                             return (<Person key={index} {...this.props.employee} />);
                        })};
-                       <div className='employee-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='employee__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -308,12 +308,12 @@ export default class Organization extends Component {
         if (this.props.seeks) {
             if (this.props.seeks instanceof Array) {
                 seeks = (
-                   <div className='seeks-container'>
-                       <div className='seeks-header' data-advice='HTML for the *head* of the section'>seekss</div>
+                   <div className='seeks__container'>
+                       <div className='seeks__header' data-advice='HTML for the *head* of the section'>seekss</div>
                        {this.props.seeks.map((item, index) => {
                             return (<Demand key={index} {...this.props.seeks} />);
                        })};
-                       <div className='seeks-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='seeks__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -325,12 +325,12 @@ export default class Organization extends Component {
         if (this.props.numberOfEmployees) {
             if (this.props.numberOfEmployees instanceof Array) {
                 numberOfEmployees = (
-                   <div className='numberOfEmployees-container'>
-                       <div className='numberOfEmployees-header' data-advice='HTML for the *head* of the section'>numberOfEmployeess</div>
+                   <div className='numberOfEmployees__container'>
+                       <div className='numberOfEmployees__header' data-advice='HTML for the *head* of the section'>numberOfEmployeess</div>
                        {this.props.numberOfEmployees.map((item, index) => {
                             return (<QuantitativeValue key={index} {...this.props.numberOfEmployees} />);
                        })};
-                       <div className='numberOfEmployees-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='numberOfEmployees__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -342,8 +342,8 @@ export default class Organization extends Component {
         if (this.props.brand) {
             if (this.props.brand instanceof Array) {
                 brand = (
-                   <div className='brand-container'>
-                       <div className='brand-header' data-advice='HTML for the *head* of the section'>brands</div>
+                   <div className='brand__container'>
+                       <div className='brand__header' data-advice='HTML for the *head* of the section'>brands</div>
                        {this.props.brand.map((item, index) => {
                            if (this.props['@type'] === 'Organization') {
                                return (<Organization key={index} {...this.props.brand} />);
@@ -352,7 +352,7 @@ export default class Organization extends Component {
                                return (<Brand key={index} {...this.props.brand} />);
                            }
                        })};
-                       <div className='brand-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='brand__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -369,12 +369,12 @@ export default class Organization extends Component {
         if (this.props.department) {
             if (this.props.department instanceof Array) {
                 department = (
-                   <div className='department-container'>
-                       <div className='department-header' data-advice='HTML for the *head* of the section'>departments</div>
+                   <div className='department__container'>
+                       <div className='department__header' data-advice='HTML for the *head* of the section'>departments</div>
                        {this.props.department.map((item, index) => {
                             return (<Organization key={index} {...this.props.department} />);
                        })};
-                       <div className='department-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='department__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -386,8 +386,8 @@ export default class Organization extends Component {
         if (this.props.address) {
             if (this.props.address instanceof Array) {
                 address = (
-                   <div className='address-container'>
-                       <div className='address-header' data-advice='HTML for the *head* of the section'>addresss</div>
+                   <div className='address__container'>
+                       <div className='address__header' data-advice='HTML for the *head* of the section'>addresss</div>
                        {this.props.address.map((item, index) => {
                            if (this.props['@type'] === 'Text') {
                                return (<div className='address' data-advice='Put your HTML here. address is a Text.'><p className="Organization-address">address: {this.props.address}</p></div>);
@@ -396,7 +396,7 @@ export default class Organization extends Component {
                                return (<PostalAddress key={index} {...this.props.address} />);
                            }
                        })};
-                       <div className='address-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='address__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -413,12 +413,12 @@ export default class Organization extends Component {
         if (this.props.subOrganization) {
             if (this.props.subOrganization instanceof Array) {
                 subOrganization = (
-                   <div className='subOrganization-container'>
-                       <div className='subOrganization-header' data-advice='HTML for the *head* of the section'>subOrganizations</div>
+                   <div className='subOrganization__container'>
+                       <div className='subOrganization__header' data-advice='HTML for the *head* of the section'>subOrganizations</div>
                        {this.props.subOrganization.map((item, index) => {
                             return (<Organization key={index} {...this.props.subOrganization} />);
                        })};
-                       <div className='subOrganization-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='subOrganization__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -430,12 +430,12 @@ export default class Organization extends Component {
         if (this.props.contactPoint) {
             if (this.props.contactPoint instanceof Array) {
                 contactPoint = (
-                   <div className='contactPoint-container'>
-                       <div className='contactPoint-header' data-advice='HTML for the *head* of the section'>contactPoints</div>
+                   <div className='contactPoint__container'>
+                       <div className='contactPoint__header' data-advice='HTML for the *head* of the section'>contactPoints</div>
                        {this.props.contactPoint.map((item, index) => {
                             return (<ContactPoint key={index} {...this.props.contactPoint} />);
                        })};
-                       <div className='contactPoint-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='contactPoint__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -447,12 +447,12 @@ export default class Organization extends Component {
         if (this.props.makesOffer) {
             if (this.props.makesOffer instanceof Array) {
                 makesOffer = (
-                   <div className='makesOffer-container'>
-                       <div className='makesOffer-header' data-advice='HTML for the *head* of the section'>makesOffers</div>
+                   <div className='makesOffer__container'>
+                       <div className='makesOffer__header' data-advice='HTML for the *head* of the section'>makesOffers</div>
                        {this.props.makesOffer.map((item, index) => {
                             return (<Offer key={index} {...this.props.makesOffer} />);
                        })};
-                       <div className='makesOffer-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='makesOffer__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -464,12 +464,12 @@ export default class Organization extends Component {
         if (this.props.hasPOS) {
             if (this.props.hasPOS instanceof Array) {
                 hasPOS = (
-                   <div className='hasPOS-container'>
-                       <div className='hasPOS-header' data-advice='HTML for the *head* of the section'>hasPOSs</div>
+                   <div className='hasPOS__container'>
+                       <div className='hasPOS__header' data-advice='HTML for the *head* of the section'>hasPOSs</div>
                        {this.props.hasPOS.map((item, index) => {
                             return (<Place key={index} {...this.props.hasPOS} />);
                        })};
-                       <div className='hasPOS-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='hasPOS__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -481,12 +481,12 @@ export default class Organization extends Component {
         if (this.props.potentialAction) {
             if (this.props.potentialAction instanceof Array) {
                 potentialAction = (
-                   <div className='potentialAction-container'>
-                       <div className='potentialAction-header' data-advice='HTML for the *head* of the section'>potentialActions</div>
+                   <div className='potentialAction__container'>
+                       <div className='potentialAction__header' data-advice='HTML for the *head* of the section'>potentialActions</div>
                        {this.props.potentialAction.map((item, index) => {
                             return (<Action key={index} {...this.props.potentialAction} />);
                        })};
-                       <div className='potentialAction-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -498,8 +498,8 @@ export default class Organization extends Component {
         if (this.props.memberOf) {
             if (this.props.memberOf instanceof Array) {
                 memberOf = (
-                   <div className='memberOf-container'>
-                       <div className='memberOf-header' data-advice='HTML for the *head* of the section'>memberOfs</div>
+                   <div className='memberOf__container'>
+                       <div className='memberOf__header' data-advice='HTML for the *head* of the section'>memberOfs</div>
                        {this.props.memberOf.map((item, index) => {
                            if (this.props['@type'] === 'Organization') {
                                return (<Organization key={index} {...this.props.memberOf} />);
@@ -508,7 +508,7 @@ export default class Organization extends Component {
                                return (<ProgramMembership key={index} {...this.props.memberOf} />);
                            }
                        })};
-                       <div className='memberOf-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='memberOf__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -525,12 +525,12 @@ export default class Organization extends Component {
         if (this.props.alumni) {
             if (this.props.alumni instanceof Array) {
                 alumni = (
-                   <div className='alumni-container'>
-                       <div className='alumni-header' data-advice='HTML for the *head* of the section'>alumnis</div>
+                   <div className='alumni__container'>
+                       <div className='alumni__header' data-advice='HTML for the *head* of the section'>alumnis</div>
                        {this.props.alumni.map((item, index) => {
                             return (<Person key={index} {...this.props.alumni} />);
                        })};
-                       <div className='alumni-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='alumni__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -542,8 +542,8 @@ export default class Organization extends Component {
         if (this.props.areaServed) {
             if (this.props.areaServed instanceof Array) {
                 areaServed = (
-                   <div className='areaServed-container'>
-                       <div className='areaServed-header' data-advice='HTML for the *head* of the section'>areaServeds</div>
+                   <div className='areaServed__container'>
+                       <div className='areaServed__header' data-advice='HTML for the *head* of the section'>areaServeds</div>
                        {this.props.areaServed.map((item, index) => {
                            if (this.props['@type'] === 'AdministrativeArea') {
                                return (<AdministrativeArea key={index} {...this.props.areaServed} />);
@@ -558,7 +558,7 @@ export default class Organization extends Component {
                                return (<GeoShape key={index} {...this.props.areaServed} />);
                            }
                        })};
-                       <div className='areaServed-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='areaServed__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -581,8 +581,8 @@ export default class Organization extends Component {
         if (this.props.owns) {
             if (this.props.owns instanceof Array) {
                 owns = (
-                   <div className='owns-container'>
-                       <div className='owns-header' data-advice='HTML for the *head* of the section'>ownss</div>
+                   <div className='owns__container'>
+                       <div className='owns__header' data-advice='HTML for the *head* of the section'>ownss</div>
                        {this.props.owns.map((item, index) => {
                            if (this.props['@type'] === 'Product') {
                                return (<Product key={index} {...this.props.owns} />);
@@ -591,7 +591,7 @@ export default class Organization extends Component {
                                return (<OwnershipInfo key={index} {...this.props.owns} />);
                            }
                        })};
-                       <div className='owns-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='owns__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {

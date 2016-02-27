@@ -15,8 +15,8 @@ export default class EntryPoint extends Component {
         if (this.props.mainEntityOfPage) {
             if (this.props.mainEntityOfPage instanceof Array) {
                 mainEntityOfPage = (
-                   <div className='mainEntityOfPage-container'>
-                       <div className='mainEntityOfPage-header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
+                   <div className='mainEntityOfPage__container'>
+                       <div className='mainEntityOfPage__header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
                        {this.props.mainEntityOfPage.map((item, index) => {
                            if (this.props['@type'] === 'URL') {
                                return (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL.'><a className="EntryPoint-mainEntityOfPage" href={this.props.mainEntityOfPage} target="_blank">mainEntityOfPage</a></div>);
@@ -25,7 +25,7 @@ export default class EntryPoint extends Component {
                                return (<CreativeWork key={index} {...this.props.mainEntityOfPage} />);
                            }
                        })};
-                       <div className='mainEntityOfPage-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -42,12 +42,12 @@ export default class EntryPoint extends Component {
         if (this.props.actionApplication) {
             if (this.props.actionApplication instanceof Array) {
                 actionApplication = (
-                   <div className='actionApplication-container'>
-                       <div className='actionApplication-header' data-advice='HTML for the *head* of the section'>actionApplications</div>
+                   <div className='actionApplication__container'>
+                       <div className='actionApplication__header' data-advice='HTML for the *head* of the section'>actionApplications</div>
                        {this.props.actionApplication.map((item, index) => {
                             return (<SoftwareApplication key={index} {...this.props.actionApplication} />);
                        })};
-                       <div className='actionApplication-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='actionApplication__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -59,8 +59,8 @@ export default class EntryPoint extends Component {
         if (this.props.image) {
             if (this.props.image instanceof Array) {
                 image = (
-                   <div className='image-container'>
-                       <div className='image-header' data-advice='HTML for the *head* of the section'>images</div>
+                   <div className='image__container'>
+                       <div className='image__header' data-advice='HTML for the *head* of the section'>images</div>
                        {this.props.image.map((item, index) => {
                            if (this.props['@type'] === 'ImageObject') {
                                return (<ImageObject key={index} {...this.props.image} />);
@@ -69,7 +69,7 @@ export default class EntryPoint extends Component {
                                return (<div className='image' data-advice='Put your HTML here. image is a URL.'><img className="EntryPoint-image" src={this.props.image} /></div>);
                            }
                        })};
-                       <div className='image-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -86,12 +86,12 @@ export default class EntryPoint extends Component {
         if (this.props.potentialAction) {
             if (this.props.potentialAction instanceof Array) {
                 potentialAction = (
-                   <div className='potentialAction-container'>
-                       <div className='potentialAction-header' data-advice='HTML for the *head* of the section'>potentialActions</div>
+                   <div className='potentialAction__container'>
+                       <div className='potentialAction__header' data-advice='HTML for the *head* of the section'>potentialActions</div>
                        {this.props.potentialAction.map((item, index) => {
                             return (<Action key={index} {...this.props.potentialAction} />);
                        })};
-                       <div className='potentialAction-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -103,8 +103,8 @@ export default class EntryPoint extends Component {
         if (this.props.actionPlatform) {
             if (this.props.actionPlatform instanceof Array) {
                 actionPlatform = (
-                   <div className='actionPlatform-container'>
-                       <div className='actionPlatform-header' data-advice='HTML for the *head* of the section'>actionPlatforms</div>
+                   <div className='actionPlatform__container'>
+                       <div className='actionPlatform__header' data-advice='HTML for the *head* of the section'>actionPlatforms</div>
                        {this.props.actionPlatform.map((item, index) => {
                            if (this.props['@type'] === 'URL') {
                                return (<div className='actionPlatform' data-advice='Put your HTML here. actionPlatform is a URL.'><a className="EntryPoint-actionPlatform" href={this.props.actionPlatform} target="_blank">actionPlatform</a></div>);
@@ -113,7 +113,7 @@ export default class EntryPoint extends Component {
                                return (<div className='actionPlatform' data-advice='Put your HTML here. actionPlatform is a Text.'><p className="EntryPoint-actionPlatform">actionPlatform: {this.props.actionPlatform}</p></div>);
                            }
                        })};
-                       <div className='actionPlatform-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='actionPlatform__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {

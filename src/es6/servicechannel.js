@@ -20,12 +20,12 @@ export default class ServiceChannel extends Component {
         if (this.props.serviceLocation) {
             if (this.props.serviceLocation instanceof Array) {
                 serviceLocation = (
-                   <div className='serviceLocation-container'>
-                       <div className='serviceLocation-header' data-advice='HTML for the *head* of the section'>serviceLocations</div>
+                   <div className='serviceLocation__container'>
+                       <div className='serviceLocation__header' data-advice='HTML for the *head* of the section'>serviceLocations</div>
                        {this.props.serviceLocation.map((item, index) => {
                             return (<Place key={index} {...this.props.serviceLocation} />);
                        })};
-                       <div className='serviceLocation-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='serviceLocation__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -37,12 +37,12 @@ export default class ServiceChannel extends Component {
         if (this.props.servicePhone) {
             if (this.props.servicePhone instanceof Array) {
                 servicePhone = (
-                   <div className='servicePhone-container'>
-                       <div className='servicePhone-header' data-advice='HTML for the *head* of the section'>servicePhones</div>
+                   <div className='servicePhone__container'>
+                       <div className='servicePhone__header' data-advice='HTML for the *head* of the section'>servicePhones</div>
                        {this.props.servicePhone.map((item, index) => {
                             return (<ContactPoint key={index} {...this.props.servicePhone} />);
                        })};
-                       <div className='servicePhone-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='servicePhone__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -54,8 +54,8 @@ export default class ServiceChannel extends Component {
         if (this.props.image) {
             if (this.props.image instanceof Array) {
                 image = (
-                   <div className='image-container'>
-                       <div className='image-header' data-advice='HTML for the *head* of the section'>images</div>
+                   <div className='image__container'>
+                       <div className='image__header' data-advice='HTML for the *head* of the section'>images</div>
                        {this.props.image.map((item, index) => {
                            if (this.props['@type'] === 'ImageObject') {
                                return (<ImageObject key={index} {...this.props.image} />);
@@ -64,7 +64,7 @@ export default class ServiceChannel extends Component {
                                return (<div className='image' data-advice='Put your HTML here. image is a URL.'><img className="ServiceChannel-image" src={this.props.image} /></div>);
                            }
                        })};
-                       <div className='image-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -81,12 +81,12 @@ export default class ServiceChannel extends Component {
         if (this.props.processingTime) {
             if (this.props.processingTime instanceof Array) {
                 processingTime = (
-                   <div className='processingTime-container'>
-                       <div className='processingTime-header' data-advice='HTML for the *head* of the section'>processingTimes</div>
+                   <div className='processingTime__container'>
+                       <div className='processingTime__header' data-advice='HTML for the *head* of the section'>processingTimes</div>
                        {this.props.processingTime.map((item, index) => {
                             return (<Duration key={index} {...this.props.processingTime} />);
                        })};
-                       <div className='processingTime-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='processingTime__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -98,12 +98,12 @@ export default class ServiceChannel extends Component {
         if (this.props.potentialAction) {
             if (this.props.potentialAction instanceof Array) {
                 potentialAction = (
-                   <div className='potentialAction-container'>
-                       <div className='potentialAction-header' data-advice='HTML for the *head* of the section'>potentialActions</div>
+                   <div className='potentialAction__container'>
+                       <div className='potentialAction__header' data-advice='HTML for the *head* of the section'>potentialActions</div>
                        {this.props.potentialAction.map((item, index) => {
                             return (<Action key={index} {...this.props.potentialAction} />);
                        })};
-                       <div className='potentialAction-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -115,12 +115,12 @@ export default class ServiceChannel extends Component {
         if (this.props.servicePostalAddress) {
             if (this.props.servicePostalAddress instanceof Array) {
                 servicePostalAddress = (
-                   <div className='servicePostalAddress-container'>
-                       <div className='servicePostalAddress-header' data-advice='HTML for the *head* of the section'>servicePostalAddresss</div>
+                   <div className='servicePostalAddress__container'>
+                       <div className='servicePostalAddress__header' data-advice='HTML for the *head* of the section'>servicePostalAddresss</div>
                        {this.props.servicePostalAddress.map((item, index) => {
                             return (<PostalAddress key={index} {...this.props.servicePostalAddress} />);
                        })};
-                       <div className='servicePostalAddress-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='servicePostalAddress__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -132,8 +132,8 @@ export default class ServiceChannel extends Component {
         if (this.props.mainEntityOfPage) {
             if (this.props.mainEntityOfPage instanceof Array) {
                 mainEntityOfPage = (
-                   <div className='mainEntityOfPage-container'>
-                       <div className='mainEntityOfPage-header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
+                   <div className='mainEntityOfPage__container'>
+                       <div className='mainEntityOfPage__header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
                        {this.props.mainEntityOfPage.map((item, index) => {
                            if (this.props['@type'] === 'URL') {
                                return (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL.'><a className="ServiceChannel-mainEntityOfPage" href={this.props.mainEntityOfPage} target="_blank">mainEntityOfPage</a></div>);
@@ -142,7 +142,7 @@ export default class ServiceChannel extends Component {
                                return (<CreativeWork key={index} {...this.props.mainEntityOfPage} />);
                            }
                        })};
-                       <div className='mainEntityOfPage-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -159,12 +159,12 @@ export default class ServiceChannel extends Component {
         if (this.props.providesService) {
             if (this.props.providesService instanceof Array) {
                 providesService = (
-                   <div className='providesService-container'>
-                       <div className='providesService-header' data-advice='HTML for the *head* of the section'>providesServices</div>
+                   <div className='providesService__container'>
+                       <div className='providesService__header' data-advice='HTML for the *head* of the section'>providesServices</div>
                        {this.props.providesService.map((item, index) => {
                             return (<Service key={index} {...this.props.providesService} />);
                        })};
-                       <div className='providesService-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='providesService__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -176,12 +176,12 @@ export default class ServiceChannel extends Component {
         if (this.props.availableLanguage) {
             if (this.props.availableLanguage instanceof Array) {
                 availableLanguage = (
-                   <div className='availableLanguage-container'>
-                       <div className='availableLanguage-header' data-advice='HTML for the *head* of the section'>availableLanguages</div>
+                   <div className='availableLanguage__container'>
+                       <div className='availableLanguage__header' data-advice='HTML for the *head* of the section'>availableLanguages</div>
                        {this.props.availableLanguage.map((item, index) => {
                             return (<Language key={index} {...this.props.availableLanguage} />);
                        })};
-                       <div className='availableLanguage-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='availableLanguage__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -193,12 +193,12 @@ export default class ServiceChannel extends Component {
         if (this.props.serviceSmsNumber) {
             if (this.props.serviceSmsNumber instanceof Array) {
                 serviceSmsNumber = (
-                   <div className='serviceSmsNumber-container'>
-                       <div className='serviceSmsNumber-header' data-advice='HTML for the *head* of the section'>serviceSmsNumbers</div>
+                   <div className='serviceSmsNumber__container'>
+                       <div className='serviceSmsNumber__header' data-advice='HTML for the *head* of the section'>serviceSmsNumbers</div>
                        {this.props.serviceSmsNumber.map((item, index) => {
                             return (<ContactPoint key={index} {...this.props.serviceSmsNumber} />);
                        })};
-                       <div className='serviceSmsNumber-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='serviceSmsNumber__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {

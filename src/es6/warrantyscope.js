@@ -22,8 +22,8 @@ export default class WarrantyScope extends Component {
         if (this.props.mainEntityOfPage) {
             if (this.props.mainEntityOfPage instanceof Array) {
                 mainEntityOfPage = (
-                   <div className='mainEntityOfPage-container'>
-                       <div className='mainEntityOfPage-header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
+                   <div className='mainEntityOfPage__container'>
+                       <div className='mainEntityOfPage__header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
                        {this.props.mainEntityOfPage.map((item, index) => {
                            if (this.props['@type'] === 'CreativeWork') {
                                return (<CreativeWork key={index} {...this.props.mainEntityOfPage} />);
@@ -32,7 +32,7 @@ export default class WarrantyScope extends Component {
                                return (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL.'><a className="WarrantyScope-mainEntityOfPage" href={this.props.mainEntityOfPage} target="_blank">mainEntityOfPage</a></div>);
                            }
                        })};
-                       <div className='mainEntityOfPage-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -49,8 +49,8 @@ export default class WarrantyScope extends Component {
         if (this.props.image) {
             if (this.props.image instanceof Array) {
                 image = (
-                   <div className='image-container'>
-                       <div className='image-header' data-advice='HTML for the *head* of the section'>images</div>
+                   <div className='image__container'>
+                       <div className='image__header' data-advice='HTML for the *head* of the section'>images</div>
                        {this.props.image.map((item, index) => {
                            if (this.props['@type'] === 'ImageObject') {
                                return (<ImageObject key={index} {...this.props.image} />);
@@ -59,7 +59,7 @@ export default class WarrantyScope extends Component {
                                return (<div className='image' data-advice='Put your HTML here. image is a URL.'><img className="WarrantyScope-image" src={this.props.image} /></div>);
                            }
                        })};
-                       <div className='image-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -76,8 +76,8 @@ export default class WarrantyScope extends Component {
         if (this.props.supersededBy) {
             if (this.props.supersededBy instanceof Array) {
                 supersededBy = (
-                   <div className='supersededBy-container'>
-                       <div className='supersededBy-header' data-advice='HTML for the *head* of the section'>supersededBys</div>
+                   <div className='supersededBy__container'>
+                       <div className='supersededBy__header' data-advice='HTML for the *head* of the section'>supersededBys</div>
                        {this.props.supersededBy.map((item, index) => {
                            if (this.props['@type'] === 'Enumeration') {
                                return (<Enumeration key={index} {...this.props.supersededBy} />);
@@ -89,7 +89,7 @@ export default class WarrantyScope extends Component {
                                return (<Property key={index} {...this.props.supersededBy} />);
                            }
                        })};
-                       <div className='supersededBy-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='supersededBy__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -109,12 +109,12 @@ export default class WarrantyScope extends Component {
         if (this.props.potentialAction) {
             if (this.props.potentialAction instanceof Array) {
                 potentialAction = (
-                   <div className='potentialAction-container'>
-                       <div className='potentialAction-header' data-advice='HTML for the *head* of the section'>potentialActions</div>
+                   <div className='potentialAction__container'>
+                       <div className='potentialAction__header' data-advice='HTML for the *head* of the section'>potentialActions</div>
                        {this.props.potentialAction.map((item, index) => {
                             return (<Action key={index} {...this.props.potentialAction} />);
                        })};
-                       <div className='potentialAction-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {

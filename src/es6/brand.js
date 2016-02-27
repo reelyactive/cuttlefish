@@ -16,12 +16,12 @@ export default class Brand extends Component {
         if (this.props.potentialAction) {
             if (this.props.potentialAction instanceof Array) {
                 potentialAction = (
-                   <div className='potentialAction-container'>
-                       <div className='potentialAction-header' data-advice='HTML for the *head* of the section'>potentialActions</div>
+                   <div className='potentialAction__container'>
+                       <div className='potentialAction__header' data-advice='HTML for the *head* of the section'>potentialActions</div>
                        {this.props.potentialAction.map((item, index) => {
                             return (<Action key={index} {...this.props.potentialAction} />);
                        })};
-                       <div className='potentialAction-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -33,12 +33,12 @@ export default class Brand extends Component {
         if (this.props.review) {
             if (this.props.review instanceof Array) {
                 review = (
-                   <div className='review-container'>
-                       <div className='review-header' data-advice='HTML for the *head* of the section'>reviews</div>
+                   <div className='review__container'>
+                       <div className='review__header' data-advice='HTML for the *head* of the section'>reviews</div>
                        {this.props.review.map((item, index) => {
                             return (<Review key={index} {...this.props.review} />);
                        })};
-                       <div className='review-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='review__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -50,12 +50,12 @@ export default class Brand extends Component {
         if (this.props.aggregateRating) {
             if (this.props.aggregateRating instanceof Array) {
                 aggregateRating = (
-                   <div className='aggregateRating-container'>
-                       <div className='aggregateRating-header' data-advice='HTML for the *head* of the section'>aggregateRatings</div>
+                   <div className='aggregateRating__container'>
+                       <div className='aggregateRating__header' data-advice='HTML for the *head* of the section'>aggregateRatings</div>
                        {this.props.aggregateRating.map((item, index) => {
                             return (<AggregateRating key={index} {...this.props.aggregateRating} />);
                        })};
-                       <div className='aggregateRating-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='aggregateRating__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -67,8 +67,8 @@ export default class Brand extends Component {
         if (this.props.mainEntityOfPage) {
             if (this.props.mainEntityOfPage instanceof Array) {
                 mainEntityOfPage = (
-                   <div className='mainEntityOfPage-container'>
-                       <div className='mainEntityOfPage-header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
+                   <div className='mainEntityOfPage__container'>
+                       <div className='mainEntityOfPage__header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
                        {this.props.mainEntityOfPage.map((item, index) => {
                            if (this.props['@type'] === 'URL') {
                                return (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL.'><a className="Brand-mainEntityOfPage" href={this.props.mainEntityOfPage} target="_blank">mainEntityOfPage</a></div>);
@@ -77,7 +77,7 @@ export default class Brand extends Component {
                                return (<CreativeWork key={index} {...this.props.mainEntityOfPage} />);
                            }
                        })};
-                       <div className='mainEntityOfPage-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -94,8 +94,8 @@ export default class Brand extends Component {
         if (this.props.logo) {
             if (this.props.logo instanceof Array) {
                 logo = (
-                   <div className='logo-container'>
-                       <div className='logo-header' data-advice='HTML for the *head* of the section'>logos</div>
+                   <div className='logo__container'>
+                       <div className='logo__header' data-advice='HTML for the *head* of the section'>logos</div>
                        {this.props.logo.map((item, index) => {
                            if (this.props['@type'] === 'URL') {
                                return (<div className='logo' data-advice='Put your HTML here. logo is a URL.'><a className="Brand-logo" href={this.props.logo} target="_blank">logo</a></div>);
@@ -104,7 +104,7 @@ export default class Brand extends Component {
                                return (<ImageObject key={index} {...this.props.logo} />);
                            }
                        })};
-                       <div className='logo-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='logo__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -121,8 +121,8 @@ export default class Brand extends Component {
         if (this.props.image) {
             if (this.props.image instanceof Array) {
                 image = (
-                   <div className='image-container'>
-                       <div className='image-header' data-advice='HTML for the *head* of the section'>images</div>
+                   <div className='image__container'>
+                       <div className='image__header' data-advice='HTML for the *head* of the section'>images</div>
                        {this.props.image.map((item, index) => {
                            if (this.props['@type'] === 'ImageObject') {
                                return (<ImageObject key={index} {...this.props.image} />);
@@ -131,7 +131,7 @@ export default class Brand extends Component {
                                return (<div className='image' data-advice='Put your HTML here. image is a URL.'><img className="Brand-image" src={this.props.image} /></div>);
                            }
                        })};
-                       <div className='image-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {

@@ -16,12 +16,12 @@ export default class OpeningHoursSpecification extends Component {
         if (this.props.dayOfWeek) {
             if (this.props.dayOfWeek instanceof Array) {
                 dayOfWeek = (
-                   <div className='dayOfWeek-container'>
-                       <div className='dayOfWeek-header' data-advice='HTML for the *head* of the section'>dayOfWeeks</div>
+                   <div className='dayOfWeek__container'>
+                       <div className='dayOfWeek__header' data-advice='HTML for the *head* of the section'>dayOfWeeks</div>
                        {this.props.dayOfWeek.map((item, index) => {
                             return (<DayOfWeek key={index} {...this.props.dayOfWeek} />);
                        })};
-                       <div className='dayOfWeek-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='dayOfWeek__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -33,12 +33,12 @@ export default class OpeningHoursSpecification extends Component {
         if (this.props.closes) {
             if (this.props.closes instanceof Array) {
                 closes = (
-                   <div className='closes-container'>
-                       <div className='closes-header' data-advice='HTML for the *head* of the section'>closess</div>
+                   <div className='closes__container'>
+                       <div className='closes__header' data-advice='HTML for the *head* of the section'>closess</div>
                        {this.props.closes.map((item, index) => {
                             return (<Time key={index} {...this.props.closes} />);
                        })};
-                       <div className='closes-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='closes__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -50,12 +50,12 @@ export default class OpeningHoursSpecification extends Component {
         if (this.props.potentialAction) {
             if (this.props.potentialAction instanceof Array) {
                 potentialAction = (
-                   <div className='potentialAction-container'>
-                       <div className='potentialAction-header' data-advice='HTML for the *head* of the section'>potentialActions</div>
+                   <div className='potentialAction__container'>
+                       <div className='potentialAction__header' data-advice='HTML for the *head* of the section'>potentialActions</div>
                        {this.props.potentialAction.map((item, index) => {
                             return (<Action key={index} {...this.props.potentialAction} />);
                        })};
-                       <div className='potentialAction-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -67,8 +67,8 @@ export default class OpeningHoursSpecification extends Component {
         if (this.props.image) {
             if (this.props.image instanceof Array) {
                 image = (
-                   <div className='image-container'>
-                       <div className='image-header' data-advice='HTML for the *head* of the section'>images</div>
+                   <div className='image__container'>
+                       <div className='image__header' data-advice='HTML for the *head* of the section'>images</div>
                        {this.props.image.map((item, index) => {
                            if (this.props['@type'] === 'ImageObject') {
                                return (<ImageObject key={index} {...this.props.image} />);
@@ -77,7 +77,7 @@ export default class OpeningHoursSpecification extends Component {
                                return (<div className='image' data-advice='Put your HTML here. image is a URL.'><img className="OpeningHoursSpecification-image" src={this.props.image} /></div>);
                            }
                        })};
-                       <div className='image-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -94,8 +94,8 @@ export default class OpeningHoursSpecification extends Component {
         if (this.props.mainEntityOfPage) {
             if (this.props.mainEntityOfPage instanceof Array) {
                 mainEntityOfPage = (
-                   <div className='mainEntityOfPage-container'>
-                       <div className='mainEntityOfPage-header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
+                   <div className='mainEntityOfPage__container'>
+                       <div className='mainEntityOfPage__header' data-advice='HTML for the *head* of the section'>mainEntityOfPages</div>
                        {this.props.mainEntityOfPage.map((item, index) => {
                            if (this.props['@type'] === 'URL') {
                                return (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL.'><a className="OpeningHoursSpecification-mainEntityOfPage" href={this.props.mainEntityOfPage} target="_blank">mainEntityOfPage</a></div>);
@@ -104,7 +104,7 @@ export default class OpeningHoursSpecification extends Component {
                                return (<CreativeWork key={index} {...this.props.mainEntityOfPage} />);
                            }
                        })};
-                       <div className='mainEntityOfPage-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
@@ -121,12 +121,12 @@ export default class OpeningHoursSpecification extends Component {
         if (this.props.opens) {
             if (this.props.opens instanceof Array) {
                 opens = (
-                   <div className='opens-container'>
-                       <div className='opens-header' data-advice='HTML for the *head* of the section'>openss</div>
+                   <div className='opens__container'>
+                       <div className='opens__header' data-advice='HTML for the *head* of the section'>openss</div>
                        {this.props.opens.map((item, index) => {
                             return (<Time key={index} {...this.props.opens} />);
                        })};
-                       <div className='opens-footer' data-advice='HTML for the *footer* of the section'></div>;
+                       <div className='opens__footer' data-advice='HTML for the *footer* of the section'></div>;
                    </div>
                 );
             } else {
