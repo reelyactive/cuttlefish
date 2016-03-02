@@ -1,15 +1,4 @@
 /* QualitativeValue - A predefined value for a product characteristic, e.g. the power cord plug type "US" or the garment sizes "S", "M", "L", and "XL".. Generated automatically by the reactGenerator. */
-import Property from './property.js';
-import QuantitativeValue from './quantitativevalue.js';
-import Enumeration from './enumeration.js';
-import StructuredValue from './structuredvalue.js';
-import ImageObject from './imageobject.js';
-import Action from './action.js';
-import PropertyValue from './propertyvalue.js';
-import CreativeWork from './creativework.js';
-import Class from './class.js';
-
-
 import React, {
   Component
 } from 'react';
@@ -23,13 +12,13 @@ export default class QualitativeValue extends Component {
                    <div className='potentialAction__container'>
                        <div className='potentialAction__header' data-advice='HTML for the *head* of the section'>potentialActions</div>
                        {this.props.potentialAction.map((item, index) => {
-                            return (<Action key={index} {...this.props.potentialAction} />);
-                       })};
-                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<Action  {...this.props.potentialAction} />);
+                       })}
+                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                potentialAction = (<Action key={index} {...this.props.potentialAction} />);
+                potentialAction = (<Action  {...this.props.potentialAction} />);
             }
         }
 
@@ -55,8 +44,8 @@ export default class QualitativeValue extends Component {
                            else if (this.props['@type'] === 'PropertyValue') {
                                return (<PropertyValue key={index} {...this.props.valueReference} />);
                            }
-                       })};
-                       <div className='valueReference__footer' data-advice='HTML for the *footer* of the section'></div>;
+                       })}
+                       <div className='valueReference__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
@@ -85,13 +74,30 @@ export default class QualitativeValue extends Component {
                    <div className='greater__container'>
                        <div className='greater__header' data-advice='HTML for the *head* of the section'>greaters</div>
                        {this.props.greater.map((item, index) => {
-                            return (<QualitativeValue key={index} {...this.props.greater} />);
-                       })};
-                       <div className='greater__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<QualitativeValue  {...this.props.greater} />);
+                       })}
+                       <div className='greater__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                greater = (<QualitativeValue key={index} {...this.props.greater} />);
+                greater = (<QualitativeValue  {...this.props.greater} />);
+            }
+        }
+
+        let sameAs;
+        if (this.props.sameAs) {
+            if (this.props.sameAs instanceof Array) {
+                sameAs = (
+                   <div className='sameAs__container'>
+                       <div className='link__header' data-advice='HTML for the *head* of the section'>sameAss</div>
+                       {this.props.sameAs.map((item, index) => {
+                            return (<div className='sameAs' data-advice='Put your HTML here. sameAs is a URL.'><a className="QualitativeValue-sameAs" href={this.props.sameAs} target="_blank">sameAs</a></div>);
+                       })}
+                       <div className='sameAs__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                sameAs = (<div className='sameAs' data-advice='Put your HTML here. sameAs is a URL.'><a className="QualitativeValue-sameAs" href={this.props.sameAs} target="_blank">sameAs</a></div>);
             }
         }
 
@@ -102,13 +108,13 @@ export default class QualitativeValue extends Component {
                    <div className='lesserOrEqual__container'>
                        <div className='lesserOrEqual__header' data-advice='HTML for the *head* of the section'>lesserOrEquals</div>
                        {this.props.lesserOrEqual.map((item, index) => {
-                            return (<QualitativeValue key={index} {...this.props.lesserOrEqual} />);
-                       })};
-                       <div className='lesserOrEqual__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<QualitativeValue  {...this.props.lesserOrEqual} />);
+                       })}
+                       <div className='lesserOrEqual__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                lesserOrEqual = (<QualitativeValue key={index} {...this.props.lesserOrEqual} />);
+                lesserOrEqual = (<QualitativeValue  {...this.props.lesserOrEqual} />);
             }
         }
 
@@ -119,13 +125,30 @@ export default class QualitativeValue extends Component {
                    <div className='equal__container'>
                        <div className='equal__header' data-advice='HTML for the *head* of the section'>equals</div>
                        {this.props.equal.map((item, index) => {
-                            return (<QualitativeValue key={index} {...this.props.equal} />);
-                       })};
-                       <div className='equal__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<QualitativeValue  {...this.props.equal} />);
+                       })}
+                       <div className='equal__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                equal = (<QualitativeValue key={index} {...this.props.equal} />);
+                equal = (<QualitativeValue  {...this.props.equal} />);
+            }
+        }
+
+        let name;
+        if (this.props.name) {
+            if (this.props.name instanceof Array) {
+                name = (
+                   <div className='name__container'>
+                       <div className='name__header' data-advice='HTML for the *head* of the section'>names</div>
+                       {this.props.name.map((item, index) => {
+                            return (<div className='name' data-advice='Put your HTML here. name is a Text.'><p className="QualitativeValue-name">name: {this.props.name}</p></div>);
+                       })}
+                       <div className='name__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                name = (<div className='name' data-advice='Put your HTML here. name is a Text.'><p className="QualitativeValue-name">name: {this.props.name}</p></div>);
             }
         }
 
@@ -136,13 +159,30 @@ export default class QualitativeValue extends Component {
                    <div className='lesser__container'>
                        <div className='lesser__header' data-advice='HTML for the *head* of the section'>lessers</div>
                        {this.props.lesser.map((item, index) => {
-                            return (<QualitativeValue key={index} {...this.props.lesser} />);
-                       })};
-                       <div className='lesser__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<QualitativeValue  {...this.props.lesser} />);
+                       })}
+                       <div className='lesser__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                lesser = (<QualitativeValue key={index} {...this.props.lesser} />);
+                lesser = (<QualitativeValue  {...this.props.lesser} />);
+            }
+        }
+
+        let url;
+        if (this.props.url) {
+            if (this.props.url instanceof Array) {
+                url = (
+                   <div className='url__container'>
+                       <div className='url__header' data-advice='HTML for the *head* of the section'>urls</div>
+                       {this.props.url.map((item, index) => {
+                            return (<div className='url' data-advice='Put your HTML here. url is a URL.'><a className="QualitativeValue-url" href={this.props.url} target="_blank">url</a></div>);
+                       })}
+                       <div className='url__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                url = (<div className='url' data-advice='Put your HTML here. url is a URL.'><a className="QualitativeValue-url" href={this.props.url} target="_blank">url</a></div>);
             }
         }
 
@@ -153,13 +193,13 @@ export default class QualitativeValue extends Component {
                    <div className='additionalProperty__container'>
                        <div className='additionalProperty__header' data-advice='HTML for the *head* of the section'>additionalPropertys</div>
                        {this.props.additionalProperty.map((item, index) => {
-                            return (<PropertyValue key={index} {...this.props.additionalProperty} />);
-                       })};
-                       <div className='additionalProperty__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<PropertyValue  {...this.props.additionalProperty} />);
+                       })}
+                       <div className='additionalProperty__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                additionalProperty = (<PropertyValue key={index} {...this.props.additionalProperty} />);
+                additionalProperty = (<PropertyValue  {...this.props.additionalProperty} />);
             }
         }
 
@@ -179,8 +219,8 @@ export default class QualitativeValue extends Component {
                            else if (this.props['@type'] === 'Property') {
                                return (<Property key={index} {...this.props.supersededBy} />);
                            }
-                       })};
-                       <div className='supersededBy__footer' data-advice='HTML for the *footer* of the section'></div>;
+                       })}
+                       <div className='supersededBy__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
@@ -203,13 +243,13 @@ export default class QualitativeValue extends Component {
                    <div className='greaterOrEqual__container'>
                        <div className='greaterOrEqual__header' data-advice='HTML for the *head* of the section'>greaterOrEquals</div>
                        {this.props.greaterOrEqual.map((item, index) => {
-                            return (<QualitativeValue key={index} {...this.props.greaterOrEqual} />);
-                       })};
-                       <div className='greaterOrEqual__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<QualitativeValue  {...this.props.greaterOrEqual} />);
+                       })}
+                       <div className='greaterOrEqual__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                greaterOrEqual = (<QualitativeValue key={index} {...this.props.greaterOrEqual} />);
+                greaterOrEqual = (<QualitativeValue  {...this.props.greaterOrEqual} />);
             }
         }
 
@@ -226,8 +266,8 @@ export default class QualitativeValue extends Component {
                            else if (this.props['@type'] === 'URL') {
                                return (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL.'><a className="QualitativeValue-mainEntityOfPage" href={this.props.mainEntityOfPage} target="_blank">mainEntityOfPage</a></div>);
                            }
-                       })};
-                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>;
+                       })}
+                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
@@ -240,6 +280,40 @@ export default class QualitativeValue extends Component {
             }
         }
 
+        let additionalType;
+        if (this.props.additionalType) {
+            if (this.props.additionalType instanceof Array) {
+                additionalType = (
+                   <div className='additionalType__container'>
+                       <div className='additionalType__header' data-advice='HTML for the *head* of the section'>additionalTypes</div>
+                       {this.props.additionalType.map((item, index) => {
+                            return (<div className='additionalType' data-advice='Put your HTML here. additionalType is a URL.'><a className="QualitativeValue-additionalType" href={this.props.additionalType} target="_blank">additionalType</a></div>);
+                       })}
+                       <div className='additionalType__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                additionalType = (<div className='additionalType' data-advice='Put your HTML here. additionalType is a URL.'><a className="QualitativeValue-additionalType" href={this.props.additionalType} target="_blank">additionalType</a></div>);
+            }
+        }
+
+        let alternateName;
+        if (this.props.alternateName) {
+            if (this.props.alternateName instanceof Array) {
+                alternateName = (
+                   <div className='alternateName__container'>
+                       <div className='alternateName__header' data-advice='HTML for the *head* of the section'>alternateNames</div>
+                       {this.props.alternateName.map((item, index) => {
+                            return (<div className='alternateName' data-advice='Put your HTML here. alternateName is a Text.'><p className="QualitativeValue-alternateName">alternateName: {this.props.alternateName}</p></div>);
+                       })}
+                       <div className='alternateName__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                alternateName = (<div className='alternateName' data-advice='Put your HTML here. alternateName is a Text.'><p className="QualitativeValue-alternateName">alternateName: {this.props.alternateName}</p></div>);
+            }
+        }
+
         let nonEqual;
         if (this.props.nonEqual) {
             if (this.props.nonEqual instanceof Array) {
@@ -247,13 +321,13 @@ export default class QualitativeValue extends Component {
                    <div className='nonEqual__container'>
                        <div className='nonEqual__header' data-advice='HTML for the *head* of the section'>nonEquals</div>
                        {this.props.nonEqual.map((item, index) => {
-                            return (<QualitativeValue key={index} {...this.props.nonEqual} />);
-                       })};
-                       <div className='nonEqual__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<QualitativeValue  {...this.props.nonEqual} />);
+                       })}
+                       <div className='nonEqual__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                nonEqual = (<QualitativeValue key={index} {...this.props.nonEqual} />);
+                nonEqual = (<QualitativeValue  {...this.props.nonEqual} />);
             }
         }
 
@@ -270,8 +344,8 @@ export default class QualitativeValue extends Component {
                            else if (this.props['@type'] === 'URL') {
                                return (<div className='image' data-advice='Put your HTML here. image is a URL.'><img className="QualitativeValue-image" src={this.props.image} /></div>);
                            }
-                       })};
-                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>;
+                       })}
+                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
@@ -284,20 +358,43 @@ export default class QualitativeValue extends Component {
             }
         }
 
+        let description;
+        if (this.props.description) {
+            if (this.props.description instanceof Array) {
+                description = (
+                   <div className='description__container'>
+                       <div className='description__header' data-advice='HTML for the *head* of the section'>descriptions</div>
+                       {this.props.description.map((item, index) => {
+                            return (<div className='description' data-advice='Put your HTML here. description is a Text.'><p className="QualitativeValue-description">description: {this.props.description}</p></div>);
+                       })}
+                       <div className='description__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                description = (<div className='description' data-advice='Put your HTML here. description is a Text.'><p className="QualitativeValue-description">description: {this.props.description}</p></div>);
+            }
+        }
+
         return (
             <div className='QualitativeValue'>
                 {potentialAction}
                 {valueReference}
                 {greater}
+                {sameAs}
                 {lesserOrEqual}
                 {equal}
+                {name}
                 {lesser}
+                {url}
                 {additionalProperty}
                 {supersededBy}
                 {greaterOrEqual}
                 {mainEntityOfPage}
+                {additionalType}
+                {alternateName}
                 {nonEqual}
                 {image}
+                {description}
             </div>
         );
     }
@@ -307,17 +404,23 @@ QualitativeValue.defaultProps = {
 };
 
 QualitativeValue.propTypes = {
-   potentialAction: React.propTypes.object,
-   valueReference: React.propTypes.object,
-   greater: React.propTypes.object,
-   lesserOrEqual: React.propTypes.object,
-   equal: React.propTypes.object,
-   lesser: React.propTypes.object,
-   additionalProperty: React.propTypes.object,
-   supersededBy: React.propTypes.object,
-   greaterOrEqual: React.propTypes.object,
-   mainEntityOfPage: React.propTypes.object,
-   nonEqual: React.propTypes.object,
-   image: React.propTypes.object,
+   potentialAction: React.PropTypes.object,
+   valueReference: React.PropTypes.object,
+   greater: React.PropTypes.object,
+   sameAs: React.PropTypes.object,
+   lesserOrEqual: React.PropTypes.object,
+   equal: React.PropTypes.object,
+   name: React.PropTypes.object,
+   lesser: React.PropTypes.object,
+   url: React.PropTypes.object,
+   additionalProperty: React.PropTypes.object,
+   supersededBy: React.PropTypes.object,
+   greaterOrEqual: React.PropTypes.object,
+   mainEntityOfPage: React.PropTypes.object,
+   additionalType: React.PropTypes.object,
+   alternateName: React.PropTypes.object,
+   nonEqual: React.PropTypes.object,
+   image: React.PropTypes.object,
+   description: React.PropTypes.object,
 };
 

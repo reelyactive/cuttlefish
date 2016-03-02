@@ -32,7 +32,7 @@ class Helpers:
 
     @classmethod
     def getNonEntityRepresentation(klass, typeText, value, componentName):
-        className = "%s-%s" % (componentName, value)
+        className = "%s--%s" % (componentName, value)
         if typeText == u'Date' or typeText == u'DateTime':
             return '<time className="%s">%s: {this.props.%s}</time>' % (className, value, value)
         elif typeText == u'Text':

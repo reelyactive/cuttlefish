@@ -7,10 +7,9 @@ plumber = require 'gulp-plumber'
 
 gulp.task 'concat', ->
   files = [
-    path.join('./bower_components/react/react.min.js')
     path.join('./src/*.js')
   ]
   gulp.src files
   .pipe plumber()
-  .pipe concat( 'cuttlefish.js')
-  .pipe gulp.dest './dist/'
+  .pipe concat('app.js')
+  .pipe gulp.dest './src/'

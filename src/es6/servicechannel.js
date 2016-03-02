@@ -1,15 +1,4 @@
 /* ServiceChannel - A means for accessing a service, e.g. a government office location, web site, or phone number.. Generated automatically by the reactGenerator. */
-import Language from './language.js';
-import Service from './service.js';
-import ImageObject from './imageobject.js';
-import Action from './action.js';
-import Place from './place.js';
-import Duration from './duration.js';
-import ContactPoint from './contactpoint.js';
-import CreativeWork from './creativework.js';
-import PostalAddress from './postaladdress.js';
-
-
 import React, {
   Component
 } from 'react';
@@ -23,13 +12,30 @@ export default class ServiceChannel extends Component {
                    <div className='serviceLocation__container'>
                        <div className='serviceLocation__header' data-advice='HTML for the *head* of the section'>serviceLocations</div>
                        {this.props.serviceLocation.map((item, index) => {
-                            return (<Place key={index} {...this.props.serviceLocation} />);
-                       })};
-                       <div className='serviceLocation__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<Place  {...this.props.serviceLocation} />);
+                       })}
+                       <div className='serviceLocation__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                serviceLocation = (<Place key={index} {...this.props.serviceLocation} />);
+                serviceLocation = (<Place  {...this.props.serviceLocation} />);
+            }
+        }
+
+        let description;
+        if (this.props.description) {
+            if (this.props.description instanceof Array) {
+                description = (
+                   <div className='description__container'>
+                       <div className='description__header' data-advice='HTML for the *head* of the section'>descriptions</div>
+                       {this.props.description.map((item, index) => {
+                            return (<div className='description' data-advice='Put your HTML here. description is a Text.'><p className="ServiceChannel-description">description: {this.props.description}</p></div>);
+                       })}
+                       <div className='description__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                description = (<div className='description' data-advice='Put your HTML here. description is a Text.'><p className="ServiceChannel-description">description: {this.props.description}</p></div>);
             }
         }
 
@@ -40,13 +46,30 @@ export default class ServiceChannel extends Component {
                    <div className='servicePhone__container'>
                        <div className='servicePhone__header' data-advice='HTML for the *head* of the section'>servicePhones</div>
                        {this.props.servicePhone.map((item, index) => {
-                            return (<ContactPoint key={index} {...this.props.servicePhone} />);
-                       })};
-                       <div className='servicePhone__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<ContactPoint  {...this.props.servicePhone} />);
+                       })}
+                       <div className='servicePhone__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                servicePhone = (<ContactPoint key={index} {...this.props.servicePhone} />);
+                servicePhone = (<ContactPoint  {...this.props.servicePhone} />);
+            }
+        }
+
+        let sameAs;
+        if (this.props.sameAs) {
+            if (this.props.sameAs instanceof Array) {
+                sameAs = (
+                   <div className='sameAs__container'>
+                       <div className='link__header' data-advice='HTML for the *head* of the section'>sameAss</div>
+                       {this.props.sameAs.map((item, index) => {
+                            return (<div className='sameAs' data-advice='Put your HTML here. sameAs is a URL.'><a className="ServiceChannel-sameAs" href={this.props.sameAs} target="_blank">sameAs</a></div>);
+                       })}
+                       <div className='sameAs__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                sameAs = (<div className='sameAs' data-advice='Put your HTML here. sameAs is a URL.'><a className="ServiceChannel-sameAs" href={this.props.sameAs} target="_blank">sameAs</a></div>);
             }
         }
 
@@ -63,8 +86,8 @@ export default class ServiceChannel extends Component {
                            else if (this.props['@type'] === 'URL') {
                                return (<div className='image' data-advice='Put your HTML here. image is a URL.'><img className="ServiceChannel-image" src={this.props.image} /></div>);
                            }
-                       })};
-                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>;
+                       })}
+                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
@@ -77,6 +100,23 @@ export default class ServiceChannel extends Component {
             }
         }
 
+        let name;
+        if (this.props.name) {
+            if (this.props.name instanceof Array) {
+                name = (
+                   <div className='name__container'>
+                       <div className='name__header' data-advice='HTML for the *head* of the section'>names</div>
+                       {this.props.name.map((item, index) => {
+                            return (<div className='name' data-advice='Put your HTML here. name is a Text.'><p className="ServiceChannel-name">name: {this.props.name}</p></div>);
+                       })}
+                       <div className='name__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                name = (<div className='name' data-advice='Put your HTML here. name is a Text.'><p className="ServiceChannel-name">name: {this.props.name}</p></div>);
+            }
+        }
+
         let processingTime;
         if (this.props.processingTime) {
             if (this.props.processingTime instanceof Array) {
@@ -84,13 +124,30 @@ export default class ServiceChannel extends Component {
                    <div className='processingTime__container'>
                        <div className='processingTime__header' data-advice='HTML for the *head* of the section'>processingTimes</div>
                        {this.props.processingTime.map((item, index) => {
-                            return (<Duration key={index} {...this.props.processingTime} />);
-                       })};
-                       <div className='processingTime__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<Duration  {...this.props.processingTime} />);
+                       })}
+                       <div className='processingTime__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                processingTime = (<Duration key={index} {...this.props.processingTime} />);
+                processingTime = (<Duration  {...this.props.processingTime} />);
+            }
+        }
+
+        let url;
+        if (this.props.url) {
+            if (this.props.url instanceof Array) {
+                url = (
+                   <div className='url__container'>
+                       <div className='url__header' data-advice='HTML for the *head* of the section'>urls</div>
+                       {this.props.url.map((item, index) => {
+                            return (<div className='url' data-advice='Put your HTML here. url is a URL.'><a className="ServiceChannel-url" href={this.props.url} target="_blank">url</a></div>);
+                       })}
+                       <div className='url__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                url = (<div className='url' data-advice='Put your HTML here. url is a URL.'><a className="ServiceChannel-url" href={this.props.url} target="_blank">url</a></div>);
             }
         }
 
@@ -101,13 +158,13 @@ export default class ServiceChannel extends Component {
                    <div className='potentialAction__container'>
                        <div className='potentialAction__header' data-advice='HTML for the *head* of the section'>potentialActions</div>
                        {this.props.potentialAction.map((item, index) => {
-                            return (<Action key={index} {...this.props.potentialAction} />);
-                       })};
-                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<Action  {...this.props.potentialAction} />);
+                       })}
+                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                potentialAction = (<Action key={index} {...this.props.potentialAction} />);
+                potentialAction = (<Action  {...this.props.potentialAction} />);
             }
         }
 
@@ -118,13 +175,47 @@ export default class ServiceChannel extends Component {
                    <div className='servicePostalAddress__container'>
                        <div className='servicePostalAddress__header' data-advice='HTML for the *head* of the section'>servicePostalAddresss</div>
                        {this.props.servicePostalAddress.map((item, index) => {
-                            return (<PostalAddress key={index} {...this.props.servicePostalAddress} />);
-                       })};
-                       <div className='servicePostalAddress__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<PostalAddress  {...this.props.servicePostalAddress} />);
+                       })}
+                       <div className='servicePostalAddress__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                servicePostalAddress = (<PostalAddress key={index} {...this.props.servicePostalAddress} />);
+                servicePostalAddress = (<PostalAddress  {...this.props.servicePostalAddress} />);
+            }
+        }
+
+        let serviceUrl;
+        if (this.props.serviceUrl) {
+            if (this.props.serviceUrl instanceof Array) {
+                serviceUrl = (
+                   <div className='serviceUrl__container'>
+                       <div className='serviceUrl__header' data-advice='HTML for the *head* of the section'>serviceUrls</div>
+                       {this.props.serviceUrl.map((item, index) => {
+                            return (<div className='serviceUrl' data-advice='Put your HTML here. serviceUrl is a URL.'><a className="ServiceChannel-serviceUrl" href={this.props.serviceUrl} target="_blank">serviceUrl</a></div>);
+                       })}
+                       <div className='serviceUrl__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                serviceUrl = (<div className='serviceUrl' data-advice='Put your HTML here. serviceUrl is a URL.'><a className="ServiceChannel-serviceUrl" href={this.props.serviceUrl} target="_blank">serviceUrl</a></div>);
+            }
+        }
+
+        let additionalType;
+        if (this.props.additionalType) {
+            if (this.props.additionalType instanceof Array) {
+                additionalType = (
+                   <div className='additionalType__container'>
+                       <div className='additionalType__header' data-advice='HTML for the *head* of the section'>additionalTypes</div>
+                       {this.props.additionalType.map((item, index) => {
+                            return (<div className='additionalType' data-advice='Put your HTML here. additionalType is a URL.'><a className="ServiceChannel-additionalType" href={this.props.additionalType} target="_blank">additionalType</a></div>);
+                       })}
+                       <div className='additionalType__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                additionalType = (<div className='additionalType' data-advice='Put your HTML here. additionalType is a URL.'><a className="ServiceChannel-additionalType" href={this.props.additionalType} target="_blank">additionalType</a></div>);
             }
         }
 
@@ -141,8 +232,8 @@ export default class ServiceChannel extends Component {
                            else if (this.props['@type'] === 'CreativeWork') {
                                return (<CreativeWork key={index} {...this.props.mainEntityOfPage} />);
                            }
-                       })};
-                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>;
+                       })}
+                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
@@ -162,13 +253,30 @@ export default class ServiceChannel extends Component {
                    <div className='providesService__container'>
                        <div className='providesService__header' data-advice='HTML for the *head* of the section'>providesServices</div>
                        {this.props.providesService.map((item, index) => {
-                            return (<Service key={index} {...this.props.providesService} />);
-                       })};
-                       <div className='providesService__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<Service  {...this.props.providesService} />);
+                       })}
+                       <div className='providesService__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                providesService = (<Service key={index} {...this.props.providesService} />);
+                providesService = (<Service  {...this.props.providesService} />);
+            }
+        }
+
+        let alternateName;
+        if (this.props.alternateName) {
+            if (this.props.alternateName instanceof Array) {
+                alternateName = (
+                   <div className='alternateName__container'>
+                       <div className='alternateName__header' data-advice='HTML for the *head* of the section'>alternateNames</div>
+                       {this.props.alternateName.map((item, index) => {
+                            return (<div className='alternateName' data-advice='Put your HTML here. alternateName is a Text.'><p className="ServiceChannel-alternateName">alternateName: {this.props.alternateName}</p></div>);
+                       })}
+                       <div className='alternateName__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                alternateName = (<div className='alternateName' data-advice='Put your HTML here. alternateName is a Text.'><p className="ServiceChannel-alternateName">alternateName: {this.props.alternateName}</p></div>);
             }
         }
 
@@ -179,13 +287,13 @@ export default class ServiceChannel extends Component {
                    <div className='availableLanguage__container'>
                        <div className='availableLanguage__header' data-advice='HTML for the *head* of the section'>availableLanguages</div>
                        {this.props.availableLanguage.map((item, index) => {
-                            return (<Language key={index} {...this.props.availableLanguage} />);
-                       })};
-                       <div className='availableLanguage__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<Language  {...this.props.availableLanguage} />);
+                       })}
+                       <div className='availableLanguage__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                availableLanguage = (<Language key={index} {...this.props.availableLanguage} />);
+                availableLanguage = (<Language  {...this.props.availableLanguage} />);
             }
         }
 
@@ -196,26 +304,33 @@ export default class ServiceChannel extends Component {
                    <div className='serviceSmsNumber__container'>
                        <div className='serviceSmsNumber__header' data-advice='HTML for the *head* of the section'>serviceSmsNumbers</div>
                        {this.props.serviceSmsNumber.map((item, index) => {
-                            return (<ContactPoint key={index} {...this.props.serviceSmsNumber} />);
-                       })};
-                       <div className='serviceSmsNumber__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<ContactPoint  {...this.props.serviceSmsNumber} />);
+                       })}
+                       <div className='serviceSmsNumber__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                serviceSmsNumber = (<ContactPoint key={index} {...this.props.serviceSmsNumber} />);
+                serviceSmsNumber = (<ContactPoint  {...this.props.serviceSmsNumber} />);
             }
         }
 
         return (
             <div className='ServiceChannel'>
                 {serviceLocation}
+                {description}
                 {servicePhone}
+                {sameAs}
                 {image}
+                {name}
                 {processingTime}
+                {url}
                 {potentialAction}
                 {servicePostalAddress}
+                {serviceUrl}
+                {additionalType}
                 {mainEntityOfPage}
                 {providesService}
+                {alternateName}
                 {availableLanguage}
                 {serviceSmsNumber}
             </div>
@@ -227,15 +342,22 @@ ServiceChannel.defaultProps = {
 };
 
 ServiceChannel.propTypes = {
-   serviceLocation: React.propTypes.object,
-   servicePhone: React.propTypes.object,
-   image: React.propTypes.object,
-   processingTime: React.propTypes.object,
-   potentialAction: React.propTypes.object,
-   servicePostalAddress: React.propTypes.object,
-   mainEntityOfPage: React.propTypes.object,
-   providesService: React.propTypes.object,
-   availableLanguage: React.propTypes.object,
-   serviceSmsNumber: React.propTypes.object,
+   serviceLocation: React.PropTypes.object,
+   description: React.PropTypes.object,
+   servicePhone: React.PropTypes.object,
+   sameAs: React.PropTypes.object,
+   image: React.PropTypes.object,
+   name: React.PropTypes.object,
+   processingTime: React.PropTypes.object,
+   url: React.PropTypes.object,
+   potentialAction: React.PropTypes.object,
+   servicePostalAddress: React.PropTypes.object,
+   serviceUrl: React.PropTypes.object,
+   additionalType: React.PropTypes.object,
+   mainEntityOfPage: React.PropTypes.object,
+   providesService: React.PropTypes.object,
+   alternateName: React.PropTypes.object,
+   availableLanguage: React.PropTypes.object,
+   serviceSmsNumber: React.PropTypes.object,
 };
 

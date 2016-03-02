@@ -7,3 +7,10 @@ del           = require 'del'
 gulp.task 'clean', ->
   gulp.src './dist/*.js'
   .pipe vinylPaths(del)
+
+gulp.task 'clean-end', ->
+  gulp.src [
+    './src/components.js',
+    './src/app.js'
+  ]
+  .pipe vinylPaths(del)

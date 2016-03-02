@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#!/usr/bin/python
 from config import *
 from helpers import Helpers
 import os
@@ -26,7 +26,8 @@ class ReactWriter:
         ) as snippet:
             for line in snippet:
                 if '%imports%' in line:
-                    self.writeImports(dependencies)
+                    # self.writeImports(dependencies)
+                    pass
                 elif '%className%' in line:
                     addline = line.replace('%className%', self.componentName)
                     self.lines.append(addline)
@@ -52,20 +53,23 @@ class ReactWriter:
         ]
 
         for (propertyName, typeNameArray) in properties.iteritems():
-
+            if propertyName == 'sameAs':
+                displayName = 'link'
+            else:
+                displayName = propertyName
             renderProperty = [
                 "        let %s;\n" % propertyName,
                 "        if (this.props.%s) {\n" % propertyName,
                 "            if (this.props.%s instanceof Array) {\n" % propertyName,
                 "                %s = (\n" % propertyName,
                 "                   <div className='%s__container'>\n" % propertyName,
-                "                       <div className='%s__header' data-advice='HTML for the *head* of the section'>%ss</div>\n" % (propertyName, propertyName),
+                "                       <div className='%s__header' data-advice='HTML for the *head* of the section'>%ss</div>\n" % (displayName, propertyName),
                 "                       {this.props.%s.map((item, index) => {\n" % propertyName
             ]
             renderProperty += self.getPropertyReturn(propertyName, typeNameArray, 'return')
             renderProperty += [
-                "                       })};\n",
-                "                       <div className='%s__footer' data-advice='HTML for the *footer* of the section'></div>;\n" % propertyName,
+                "                       })}\n",
+                "                       <div className='%s__footer' data-advice='HTML for the *footer* of the section'></div>\n" % propertyName,
                 "                   </div>\n",
                 "                );\n",
                 "            } else {\n"
@@ -124,23 +128,25 @@ class ReactWriter:
                 ]
         else:
             propertyReturn = [
-                "                %s%s %s;\n" % (tabs, returnOrEqual, self.getPropertyRepresentation(propertyName, typeNameArray[0], True)),
+                "                %s%s %s;\n" % (tabs, returnOrEqual, self.getPropertyRepresentation(propertyName, typeNameArray[0], True, True)),
             ]
         return propertyReturn
 
     def writePropTypes(self, properties):
         for (propertyName, typeName) in properties.iteritems():
             if Helpers.isEntity(typeName):
-                self.lines.append("   %s: React.propTypes.object,\n" % propertyName)
+                self.lines.append("   %s: React.PropTypes.object,\n" % propertyName)
             else:
-                self.lines.append("   %s: React.propTypes.%s,\n" % (propertyName, Helpers.typeOfNonEntity(typeName)))
+                self.lines.append("   %s: React.PropTypes.%s,\n" % (propertyName, Helpers.typeOfNonEntity(typeName)))
 
-    def getPropertyRepresentation(self, propertyName, typeName, isElementOfArray=False):
+    def getPropertyRepresentation(self, propertyName, typeName, isElementOfArray=False, isElse=False):
         key = ''
         item = ''
         if isElementOfArray:
             key = 'key={index}'
             item = '{item}'
+        if isElse:
+            key = ''
         if Helpers.isEntity(typeName) and ' ' not in typeName:
             return "(<%s %s {...this.props.%s} />)" % (typeName, key ,propertyName)
         else:
