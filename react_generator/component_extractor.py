@@ -34,6 +34,8 @@ class ComponentExtractor:
                             for dependency in arrayOfDependencies:
                                 if Helpers.isEntity(dependency):
                                     dependencies[ dependency ] = './' + dependency.lower()
+                        else:
+                            properties[ plaintext("%s" % line('.prop-nam')[0]) ] = [ typeText ]
             ReactWriter(componentName, outputTopComments, dependencies, properties)
             for (dependencyName, fileName) in dependencies.iteritems():
                 ComponentExtractor(dependencyName)

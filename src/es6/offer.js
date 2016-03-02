@@ -1,30 +1,4 @@
 /* Offer - An offer to transfer some rights to an item or to provide a service\u2014for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.\n\nFor GTIN-related fields, see\nCheck Digit calculator and validation guide from GS1.. Generated automatically by the reactGenerator. */
-import GeoShape from './geoshape.js';
-import Service from './service.js';
-import BusinessEntityType from './businessentitytype.js';
-import Review from './review.js';
-import QuantitativeValue from './quantitativevalue.js';
-import AdministrativeArea from './administrativearea.js';
-import ItemAvailability from './itemavailability.js';
-import Product from './product.js';
-import OfferItemCondition from './offeritemcondition.js';
-import BusinessFunction from './businessfunction.js';
-import ImageObject from './imageobject.js';
-import AggregateRating from './aggregaterating.js';
-import WarrantyPromise from './warrantypromise.js';
-import PhysicalActivityCategory from './physicalactivitycategory.js';
-import CreativeWork from './creativework.js';
-import Person from './person.js';
-import TypeAndQuantityNode from './typeandquantitynode.js';
-import Place from './place.js';
-import Action from './action.js';
-import Organization from './organization.js';
-import PaymentMethod from './paymentmethod.js';
-import Thing from './thing.js';
-import PriceSpecification from './pricespecification.js';
-import DeliveryMethod from './deliverymethod.js';
-
-
 import React, {
   Component
 } from 'react';
@@ -38,13 +12,13 @@ export default class Offer extends Component {
                    <div className='warranty__container'>
                        <div className='warranty__header' data-advice='HTML for the *head* of the section'>warrantys</div>
                        {this.props.warranty.map((item, index) => {
-                            return (<WarrantyPromise key={index} {...this.props.warranty} />);
-                       })};
-                       <div className='warranty__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<WarrantyPromise  {...this.props.warranty} />);
+                       })}
+                       <div className='warranty__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                warranty = (<WarrantyPromise key={index} {...this.props.warranty} />);
+                warranty = (<WarrantyPromise  {...this.props.warranty} />);
             }
         }
 
@@ -64,8 +38,8 @@ export default class Offer extends Component {
                            else if (this.props['@type'] === 'GeoShape') {
                                return (<GeoShape key={index} {...this.props.ineligibleRegion} />);
                            }
-                       })};
-                       <div className='ineligibleRegion__footer' data-advice='HTML for the *footer* of the section'></div>;
+                       })}
+                       <div className='ineligibleRegion__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
@@ -78,6 +52,40 @@ export default class Offer extends Component {
                else if (this.props['@type'] === 'GeoShape') {
                    ineligibleRegion = (<GeoShape key={index} {...this.props.ineligibleRegion} />);
                }
+            }
+        }
+
+        let priceValidUntil;
+        if (this.props.priceValidUntil) {
+            if (this.props.priceValidUntil instanceof Array) {
+                priceValidUntil = (
+                   <div className='priceValidUntil__container'>
+                       <div className='priceValidUntil__header' data-advice='HTML for the *head* of the section'>priceValidUntils</div>
+                       {this.props.priceValidUntil.map((item, index) => {
+                            return (<div className='priceValidUntil' data-advice='Put your HTML here. priceValidUntil is a Date.'><time className="Offer-priceValidUntil">priceValidUntil: {this.props.priceValidUntil}</time></div>);
+                       })}
+                       <div className='priceValidUntil__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                priceValidUntil = (<div className='priceValidUntil' data-advice='Put your HTML here. priceValidUntil is a Date.'><time className="Offer-priceValidUntil">priceValidUntil: {this.props.priceValidUntil}</time></div>);
+            }
+        }
+
+        let sameAs;
+        if (this.props.sameAs) {
+            if (this.props.sameAs instanceof Array) {
+                sameAs = (
+                   <div className='sameAs__container'>
+                       <div className='link__header' data-advice='HTML for the *head* of the section'>sameAss</div>
+                       {this.props.sameAs.map((item, index) => {
+                            return (<div className='sameAs' data-advice='Put your HTML here. sameAs is a URL.'><a className="Offer-sameAs" href={this.props.sameAs} target="_blank">sameAs</a></div>);
+                       })}
+                       <div className='sameAs__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                sameAs = (<div className='sameAs' data-advice='Put your HTML here. sameAs is a URL.'><a className="Offer-sameAs" href={this.props.sameAs} target="_blank">sameAs</a></div>);
             }
         }
 
@@ -97,8 +105,8 @@ export default class Offer extends Component {
                            else if (this.props['@type'] === 'GeoShape') {
                                return (<GeoShape key={index} {...this.props.eligibleRegion} />);
                            }
-                       })};
-                       <div className='eligibleRegion__footer' data-advice='HTML for the *footer* of the section'></div>;
+                       })}
+                       <div className='eligibleRegion__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
@@ -121,13 +129,13 @@ export default class Offer extends Component {
                    <div className='businessFunction__container'>
                        <div className='businessFunction__header' data-advice='HTML for the *head* of the section'>businessFunctions</div>
                        {this.props.businessFunction.map((item, index) => {
-                            return (<BusinessFunction key={index} {...this.props.businessFunction} />);
-                       })};
-                       <div className='businessFunction__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<BusinessFunction  {...this.props.businessFunction} />);
+                       })}
+                       <div className='businessFunction__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                businessFunction = (<BusinessFunction key={index} {...this.props.businessFunction} />);
+                businessFunction = (<BusinessFunction  {...this.props.businessFunction} />);
             }
         }
 
@@ -138,13 +146,13 @@ export default class Offer extends Component {
                    <div className='deliveryLeadTime__container'>
                        <div className='deliveryLeadTime__header' data-advice='HTML for the *head* of the section'>deliveryLeadTimes</div>
                        {this.props.deliveryLeadTime.map((item, index) => {
-                            return (<QuantitativeValue key={index} {...this.props.deliveryLeadTime} />);
-                       })};
-                       <div className='deliveryLeadTime__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<QuantitativeValue  {...this.props.deliveryLeadTime} />);
+                       })}
+                       <div className='deliveryLeadTime__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                deliveryLeadTime = (<QuantitativeValue key={index} {...this.props.deliveryLeadTime} />);
+                deliveryLeadTime = (<QuantitativeValue  {...this.props.deliveryLeadTime} />);
             }
         }
 
@@ -155,13 +163,47 @@ export default class Offer extends Component {
                    <div className='aggregateRating__container'>
                        <div className='aggregateRating__header' data-advice='HTML for the *head* of the section'>aggregateRatings</div>
                        {this.props.aggregateRating.map((item, index) => {
-                            return (<AggregateRating key={index} {...this.props.aggregateRating} />);
-                       })};
-                       <div className='aggregateRating__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<AggregateRating  {...this.props.aggregateRating} />);
+                       })}
+                       <div className='aggregateRating__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                aggregateRating = (<AggregateRating key={index} {...this.props.aggregateRating} />);
+                aggregateRating = (<AggregateRating  {...this.props.aggregateRating} />);
+            }
+        }
+
+        let sku;
+        if (this.props.sku) {
+            if (this.props.sku instanceof Array) {
+                sku = (
+                   <div className='sku__container'>
+                       <div className='sku__header' data-advice='HTML for the *head* of the section'>skus</div>
+                       {this.props.sku.map((item, index) => {
+                            return (<div className='sku' data-advice='Put your HTML here. sku is a Text.'><p className="Offer-sku">sku: {this.props.sku}</p></div>);
+                       })}
+                       <div className='sku__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                sku = (<div className='sku' data-advice='Put your HTML here. sku is a Text.'><p className="Offer-sku">sku: {this.props.sku}</p></div>);
+            }
+        }
+
+        let additionalType;
+        if (this.props.additionalType) {
+            if (this.props.additionalType instanceof Array) {
+                additionalType = (
+                   <div className='additionalType__container'>
+                       <div className='additionalType__header' data-advice='HTML for the *head* of the section'>additionalTypes</div>
+                       {this.props.additionalType.map((item, index) => {
+                            return (<div className='additionalType' data-advice='Put your HTML here. additionalType is a URL.'><a className="Offer-additionalType" href={this.props.additionalType} target="_blank">additionalType</a></div>);
+                       })}
+                       <div className='additionalType__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                additionalType = (<div className='additionalType' data-advice='Put your HTML here. additionalType is a URL.'><a className="Offer-additionalType" href={this.props.additionalType} target="_blank">additionalType</a></div>);
             }
         }
 
@@ -172,13 +214,13 @@ export default class Offer extends Component {
                    <div className='availability__container'>
                        <div className='availability__header' data-advice='HTML for the *head* of the section'>availabilitys</div>
                        {this.props.availability.map((item, index) => {
-                            return (<ItemAvailability key={index} {...this.props.availability} />);
-                       })};
-                       <div className='availability__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<ItemAvailability  {...this.props.availability} />);
+                       })}
+                       <div className='availability__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                availability = (<ItemAvailability key={index} {...this.props.availability} />);
+                availability = (<ItemAvailability  {...this.props.availability} />);
             }
         }
 
@@ -195,8 +237,8 @@ export default class Offer extends Component {
                            else if (this.props['@type'] === 'Organization') {
                                return (<Organization key={index} {...this.props.offeredBy} />);
                            }
-                       })};
-                       <div className='offeredBy__footer' data-advice='HTML for the *footer* of the section'></div>;
+                       })}
+                       <div className='offeredBy__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
@@ -225,8 +267,8 @@ export default class Offer extends Component {
                            else if (this.props['@type'] === 'Text') {
                                return (<div className='category' data-advice='Put your HTML here. category is a Text.'><p className="Offer-category">category: {this.props.category}</p></div>);
                            }
-                       })};
-                       <div className='category__footer' data-advice='HTML for the *footer* of the section'></div>;
+                       })}
+                       <div className='category__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
@@ -242,6 +284,40 @@ export default class Offer extends Component {
             }
         }
 
+        let includesObject;
+        if (this.props.includesObject) {
+            if (this.props.includesObject instanceof Array) {
+                includesObject = (
+                   <div className='includesObject__container'>
+                       <div className='includesObject__header' data-advice='HTML for the *head* of the section'>includesObjects</div>
+                       {this.props.includesObject.map((item, index) => {
+                            return (<TypeAndQuantityNode  {...this.props.includesObject} />);
+                       })}
+                       <div className='includesObject__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                includesObject = (<TypeAndQuantityNode  {...this.props.includesObject} />);
+            }
+        }
+
+        let gtin14;
+        if (this.props.gtin14) {
+            if (this.props.gtin14 instanceof Array) {
+                gtin14 = (
+                   <div className='gtin14__container'>
+                       <div className='gtin14__header' data-advice='HTML for the *head* of the section'>gtin14s</div>
+                       {this.props.gtin14.map((item, index) => {
+                            return (<div className='gtin14' data-advice='Put your HTML here. gtin14 is a Text.'><p className="Offer-gtin14">gtin14: {this.props.gtin14}</p></div>);
+                       })}
+                       <div className='gtin14__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                gtin14 = (<div className='gtin14' data-advice='Put your HTML here. gtin14 is a Text.'><p className="Offer-gtin14">gtin14: {this.props.gtin14}</p></div>);
+            }
+        }
+
         let review;
         if (this.props.review) {
             if (this.props.review instanceof Array) {
@@ -249,13 +325,40 @@ export default class Offer extends Component {
                    <div className='review__container'>
                        <div className='review__header' data-advice='HTML for the *head* of the section'>reviews</div>
                        {this.props.review.map((item, index) => {
-                            return (<Review key={index} {...this.props.review} />);
-                       })};
-                       <div className='review__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<Review  {...this.props.review} />);
+                       })}
+                       <div className='review__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                review = (<Review key={index} {...this.props.review} />);
+                review = (<Review  {...this.props.review} />);
+            }
+        }
+
+        let itemOffered;
+        if (this.props.itemOffered) {
+            if (this.props.itemOffered instanceof Array) {
+                itemOffered = (
+                   <div className='itemOffered__container'>
+                       <div className='itemOffered__header' data-advice='HTML for the *head* of the section'>itemOffereds</div>
+                       {this.props.itemOffered.map((item, index) => {
+                           if (this.props['@type'] === 'Product') {
+                               return (<Product key={index} {...this.props.itemOffered} />);
+                           }
+                           else if (this.props['@type'] === 'Service') {
+                               return (<Service key={index} {...this.props.itemOffered} />);
+                           }
+                       })}
+                       <div className='itemOffered__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+               if (this.props['@type'] === 'Product') {
+                   itemOffered = (<Product key={index} {...this.props.itemOffered} />);
+               }
+               else if (this.props['@type'] === 'Service') {
+                   itemOffered = (<Service key={index} {...this.props.itemOffered} />);
+               }
             }
         }
 
@@ -272,8 +375,8 @@ export default class Offer extends Component {
                            else if (this.props['@type'] === 'Organization') {
                                return (<Organization key={index} {...this.props.seller} />);
                            }
-                       })};
-                       <div className='seller__footer' data-advice='HTML for the *footer* of the section'></div>;
+                       })}
+                       <div className='seller__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
@@ -286,20 +389,20 @@ export default class Offer extends Component {
             }
         }
 
-        let includesObject;
-        if (this.props.includesObject) {
-            if (this.props.includesObject instanceof Array) {
-                includesObject = (
-                   <div className='includesObject__container'>
-                       <div className='includesObject__header' data-advice='HTML for the *head* of the section'>includesObjects</div>
-                       {this.props.includesObject.map((item, index) => {
-                            return (<TypeAndQuantityNode key={index} {...this.props.includesObject} />);
-                       })};
-                       <div className='includesObject__footer' data-advice='HTML for the *footer* of the section'></div>;
+        let availabilityStarts;
+        if (this.props.availabilityStarts) {
+            if (this.props.availabilityStarts instanceof Array) {
+                availabilityStarts = (
+                   <div className='availabilityStarts__container'>
+                       <div className='availabilityStarts__header' data-advice='HTML for the *head* of the section'>availabilityStartss</div>
+                       {this.props.availabilityStarts.map((item, index) => {
+                            return (<div className='availabilityStarts' data-advice='Put your HTML here. availabilityStarts is a DateTime.'><time className="Offer-availabilityStarts">availabilityStarts: {this.props.availabilityStarts}</time></div>);
+                       })}
+                       <div className='availabilityStarts__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                includesObject = (<TypeAndQuantityNode key={index} {...this.props.includesObject} />);
+                availabilityStarts = (<div className='availabilityStarts' data-advice='Put your HTML here. availabilityStarts is a DateTime.'><time className="Offer-availabilityStarts">availabilityStarts: {this.props.availabilityStarts}</time></div>);
             }
         }
 
@@ -310,13 +413,13 @@ export default class Offer extends Component {
                    <div className='eligibleDuration__container'>
                        <div className='eligibleDuration__header' data-advice='HTML for the *head* of the section'>eligibleDurations</div>
                        {this.props.eligibleDuration.map((item, index) => {
-                            return (<QuantitativeValue key={index} {...this.props.eligibleDuration} />);
-                       })};
-                       <div className='eligibleDuration__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<QuantitativeValue  {...this.props.eligibleDuration} />);
+                       })}
+                       <div className='eligibleDuration__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                eligibleDuration = (<QuantitativeValue key={index} {...this.props.eligibleDuration} />);
+                eligibleDuration = (<QuantitativeValue  {...this.props.eligibleDuration} />);
             }
         }
 
@@ -333,8 +436,8 @@ export default class Offer extends Component {
                            else if (this.props['@type'] === 'URL') {
                                return (<div className='mainEntityOfPage' data-advice='Put your HTML here. mainEntityOfPage is a URL.'><a className="Offer-mainEntityOfPage" href={this.props.mainEntityOfPage} target="_blank">mainEntityOfPage</a></div>);
                            }
-                       })};
-                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>;
+                       })}
+                       <div className='mainEntityOfPage__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
@@ -360,8 +463,8 @@ export default class Offer extends Component {
                            else if (this.props['@type'] === 'URL') {
                                return (<div className='image' data-advice='Put your HTML here. image is a URL.'><img className="Offer-image" src={this.props.image} /></div>);
                            }
-                       })};
-                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>;
+                       })}
+                       <div className='image__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
@@ -374,20 +477,20 @@ export default class Offer extends Component {
             }
         }
 
-        let advanceBookingRequirement;
-        if (this.props.advanceBookingRequirement) {
-            if (this.props.advanceBookingRequirement instanceof Array) {
-                advanceBookingRequirement = (
-                   <div className='advanceBookingRequirement__container'>
-                       <div className='advanceBookingRequirement__header' data-advice='HTML for the *head* of the section'>advanceBookingRequirements</div>
-                       {this.props.advanceBookingRequirement.map((item, index) => {
-                            return (<QuantitativeValue key={index} {...this.props.advanceBookingRequirement} />);
-                       })};
-                       <div className='advanceBookingRequirement__footer' data-advice='HTML for the *footer* of the section'></div>;
+        let addOn;
+        if (this.props.addOn) {
+            if (this.props.addOn instanceof Array) {
+                addOn = (
+                   <div className='addOn__container'>
+                       <div className='addOn__header' data-advice='HTML for the *head* of the section'>addOns</div>
+                       {this.props.addOn.map((item, index) => {
+                            return (<Offer  {...this.props.addOn} />);
+                       })}
+                       <div className='addOn__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                advanceBookingRequirement = (<QuantitativeValue key={index} {...this.props.advanceBookingRequirement} />);
+                addOn = (<Offer  {...this.props.addOn} />);
             }
         }
 
@@ -398,13 +501,13 @@ export default class Offer extends Component {
                    <div className='inventoryLevel__container'>
                        <div className='inventoryLevel__header' data-advice='HTML for the *head* of the section'>inventoryLevels</div>
                        {this.props.inventoryLevel.map((item, index) => {
-                            return (<QuantitativeValue key={index} {...this.props.inventoryLevel} />);
-                       })};
-                       <div className='inventoryLevel__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<QuantitativeValue  {...this.props.inventoryLevel} />);
+                       })}
+                       <div className='inventoryLevel__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                inventoryLevel = (<QuantitativeValue key={index} {...this.props.inventoryLevel} />);
+                inventoryLevel = (<QuantitativeValue  {...this.props.inventoryLevel} />);
             }
         }
 
@@ -415,203 +518,13 @@ export default class Offer extends Component {
                    <div className='availableAtOrFrom__container'>
                        <div className='availableAtOrFrom__header' data-advice='HTML for the *head* of the section'>availableAtOrFroms</div>
                        {this.props.availableAtOrFrom.map((item, index) => {
-                            return (<Place key={index} {...this.props.availableAtOrFrom} />);
-                       })};
-                       <div className='availableAtOrFrom__footer' data-advice='HTML for the *footer* of the section'></div>;
+                            return (<Place  {...this.props.availableAtOrFrom} />);
+                       })}
+                       <div className='availableAtOrFrom__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                availableAtOrFrom = (<Place key={index} {...this.props.availableAtOrFrom} />);
-            }
-        }
-
-        let price;
-        if (this.props.price) {
-            if (this.props.price instanceof Array) {
-                price = (
-                   <div className='price__container'>
-                       <div className='price__header' data-advice='HTML for the *head* of the section'>prices</div>
-                       {this.props.price.map((item, index) => {
-                           if (this.props['@type'] === 'Text') {
-                               return (<div className='price' data-advice='Put your HTML here. price is a Text.'><p className="Offer-price">price: {this.props.price}</p></div>);
-                           }
-                           else if (this.props['@type'] === 'Number') {
-                               return (<div className='price' data-advice='Put your HTML here. price is a Number.'><p className="Offer-price">price: {this.props.price}</p></div>);
-                           }
-                       })};
-                       <div className='price__footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-               if (this.props['@type'] === 'Text') {
-                   price = (<div className='price' data-advice='Put your HTML here. price is a Text.'><p className="Offer-price">price: {this.props.price}</p></div>);
-               }
-               else if (this.props['@type'] === 'Number') {
-                   price = (<div className='price' data-advice='Put your HTML here. price is a Number.'><p className="Offer-price">price: {this.props.price}</p></div>);
-               }
-            }
-        }
-
-        let eligibleCustomerType;
-        if (this.props.eligibleCustomerType) {
-            if (this.props.eligibleCustomerType instanceof Array) {
-                eligibleCustomerType = (
-                   <div className='eligibleCustomerType__container'>
-                       <div className='eligibleCustomerType__header' data-advice='HTML for the *head* of the section'>eligibleCustomerTypes</div>
-                       {this.props.eligibleCustomerType.map((item, index) => {
-                            return (<BusinessEntityType key={index} {...this.props.eligibleCustomerType} />);
-                       })};
-                       <div className='eligibleCustomerType__footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-                eligibleCustomerType = (<BusinessEntityType key={index} {...this.props.eligibleCustomerType} />);
-            }
-        }
-
-        let priceSpecification;
-        if (this.props.priceSpecification) {
-            if (this.props.priceSpecification instanceof Array) {
-                priceSpecification = (
-                   <div className='priceSpecification__container'>
-                       <div className='priceSpecification__header' data-advice='HTML for the *head* of the section'>priceSpecifications</div>
-                       {this.props.priceSpecification.map((item, index) => {
-                            return (<PriceSpecification key={index} {...this.props.priceSpecification} />);
-                       })};
-                       <div className='priceSpecification__footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-                priceSpecification = (<PriceSpecification key={index} {...this.props.priceSpecification} />);
-            }
-        }
-
-        let acceptedPaymentMethod;
-        if (this.props.acceptedPaymentMethod) {
-            if (this.props.acceptedPaymentMethod instanceof Array) {
-                acceptedPaymentMethod = (
-                   <div className='acceptedPaymentMethod__container'>
-                       <div className='acceptedPaymentMethod__header' data-advice='HTML for the *head* of the section'>acceptedPaymentMethods</div>
-                       {this.props.acceptedPaymentMethod.map((item, index) => {
-                            return (<PaymentMethod key={index} {...this.props.acceptedPaymentMethod} />);
-                       })};
-                       <div className='acceptedPaymentMethod__footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-                acceptedPaymentMethod = (<PaymentMethod key={index} {...this.props.acceptedPaymentMethod} />);
-            }
-        }
-
-        let eligibleTransactionVolume;
-        if (this.props.eligibleTransactionVolume) {
-            if (this.props.eligibleTransactionVolume instanceof Array) {
-                eligibleTransactionVolume = (
-                   <div className='eligibleTransactionVolume__container'>
-                       <div className='eligibleTransactionVolume__header' data-advice='HTML for the *head* of the section'>eligibleTransactionVolumes</div>
-                       {this.props.eligibleTransactionVolume.map((item, index) => {
-                            return (<PriceSpecification key={index} {...this.props.eligibleTransactionVolume} />);
-                       })};
-                       <div className='eligibleTransactionVolume__footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-                eligibleTransactionVolume = (<PriceSpecification key={index} {...this.props.eligibleTransactionVolume} />);
-            }
-        }
-
-        let eligibleQuantity;
-        if (this.props.eligibleQuantity) {
-            if (this.props.eligibleQuantity instanceof Array) {
-                eligibleQuantity = (
-                   <div className='eligibleQuantity__container'>
-                       <div className='eligibleQuantity__header' data-advice='HTML for the *head* of the section'>eligibleQuantitys</div>
-                       {this.props.eligibleQuantity.map((item, index) => {
-                            return (<QuantitativeValue key={index} {...this.props.eligibleQuantity} />);
-                       })};
-                       <div className='eligibleQuantity__footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-                eligibleQuantity = (<QuantitativeValue key={index} {...this.props.eligibleQuantity} />);
-            }
-        }
-
-        let itemCondition;
-        if (this.props.itemCondition) {
-            if (this.props.itemCondition instanceof Array) {
-                itemCondition = (
-                   <div className='itemCondition__container'>
-                       <div className='itemCondition__header' data-advice='HTML for the *head* of the section'>itemConditions</div>
-                       {this.props.itemCondition.map((item, index) => {
-                            return (<OfferItemCondition key={index} {...this.props.itemCondition} />);
-                       })};
-                       <div className='itemCondition__footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-                itemCondition = (<OfferItemCondition key={index} {...this.props.itemCondition} />);
-            }
-        }
-
-        let potentialAction;
-        if (this.props.potentialAction) {
-            if (this.props.potentialAction instanceof Array) {
-                potentialAction = (
-                   <div className='potentialAction__container'>
-                       <div className='potentialAction__header' data-advice='HTML for the *head* of the section'>potentialActions</div>
-                       {this.props.potentialAction.map((item, index) => {
-                            return (<Action key={index} {...this.props.potentialAction} />);
-                       })};
-                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-                potentialAction = (<Action key={index} {...this.props.potentialAction} />);
-            }
-        }
-
-        let availableDeliveryMethod;
-        if (this.props.availableDeliveryMethod) {
-            if (this.props.availableDeliveryMethod instanceof Array) {
-                availableDeliveryMethod = (
-                   <div className='availableDeliveryMethod__container'>
-                       <div className='availableDeliveryMethod__header' data-advice='HTML for the *head* of the section'>availableDeliveryMethods</div>
-                       {this.props.availableDeliveryMethod.map((item, index) => {
-                            return (<DeliveryMethod key={index} {...this.props.availableDeliveryMethod} />);
-                       })};
-                       <div className='availableDeliveryMethod__footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-                availableDeliveryMethod = (<DeliveryMethod key={index} {...this.props.availableDeliveryMethod} />);
-            }
-        }
-
-        let itemOffered;
-        if (this.props.itemOffered) {
-            if (this.props.itemOffered instanceof Array) {
-                itemOffered = (
-                   <div className='itemOffered__container'>
-                       <div className='itemOffered__header' data-advice='HTML for the *head* of the section'>itemOffereds</div>
-                       {this.props.itemOffered.map((item, index) => {
-                           if (this.props['@type'] === 'Product') {
-                               return (<Product key={index} {...this.props.itemOffered} />);
-                           }
-                           else if (this.props['@type'] === 'Service') {
-                               return (<Service key={index} {...this.props.itemOffered} />);
-                           }
-                       })};
-                       <div className='itemOffered__footer' data-advice='HTML for the *footer* of the section'></div>;
-                   </div>
-                );
-            } else {
-               if (this.props['@type'] === 'Product') {
-                   itemOffered = (<Product key={index} {...this.props.itemOffered} />);
-               }
-               else if (this.props['@type'] === 'Service') {
-                   itemOffered = (<Service key={index} {...this.props.itemOffered} />);
-               }
+                availableAtOrFrom = (<Place  {...this.props.availableAtOrFrom} />);
             }
         }
 
@@ -634,8 +547,8 @@ export default class Offer extends Component {
                            else if (this.props['@type'] === 'GeoShape') {
                                return (<GeoShape key={index} {...this.props.areaServed} />);
                            }
-                       })};
-                       <div className='areaServed__footer' data-advice='HTML for the *footer* of the section'></div>;
+                       })}
+                       <div className='areaServed__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
@@ -654,20 +567,404 @@ export default class Offer extends Component {
             }
         }
 
-        let addOn;
-        if (this.props.addOn) {
-            if (this.props.addOn instanceof Array) {
-                addOn = (
-                   <div className='addOn__container'>
-                       <div className='addOn__header' data-advice='HTML for the *head* of the section'>addOns</div>
-                       {this.props.addOn.map((item, index) => {
-                            return (<Offer key={index} {...this.props.addOn} />);
-                       })};
-                       <div className='addOn__footer' data-advice='HTML for the *footer* of the section'></div>;
+        let mpn;
+        if (this.props.mpn) {
+            if (this.props.mpn instanceof Array) {
+                mpn = (
+                   <div className='mpn__container'>
+                       <div className='mpn__header' data-advice='HTML for the *head* of the section'>mpns</div>
+                       {this.props.mpn.map((item, index) => {
+                            return (<div className='mpn' data-advice='Put your HTML here. mpn is a Text.'><p className="Offer-mpn">mpn: {this.props.mpn}</p></div>);
+                       })}
+                       <div className='mpn__footer' data-advice='HTML for the *footer* of the section'></div>
                    </div>
                 );
             } else {
-                addOn = (<Offer key={index} {...this.props.addOn} />);
+                mpn = (<div className='mpn' data-advice='Put your HTML here. mpn is a Text.'><p className="Offer-mpn">mpn: {this.props.mpn}</p></div>);
+            }
+        }
+
+        let price;
+        if (this.props.price) {
+            if (this.props.price instanceof Array) {
+                price = (
+                   <div className='price__container'>
+                       <div className='price__header' data-advice='HTML for the *head* of the section'>prices</div>
+                       {this.props.price.map((item, index) => {
+                           if (this.props['@type'] === 'Text') {
+                               return (<div className='price' data-advice='Put your HTML here. price is a Text.'><p className="Offer-price">price: {this.props.price}</p></div>);
+                           }
+                           else if (this.props['@type'] === 'Number') {
+                               return (<div className='price' data-advice='Put your HTML here. price is a Number.'><p className="Offer-price">price: {this.props.price}</p></div>);
+                           }
+                       })}
+                       <div className='price__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+               if (this.props['@type'] === 'Text') {
+                   price = (<div className='price' data-advice='Put your HTML here. price is a Text.'><p className="Offer-price">price: {this.props.price}</p></div>);
+               }
+               else if (this.props['@type'] === 'Number') {
+                   price = (<div className='price' data-advice='Put your HTML here. price is a Number.'><p className="Offer-price">price: {this.props.price}</p></div>);
+               }
+            }
+        }
+
+        let eligibleCustomerType;
+        if (this.props.eligibleCustomerType) {
+            if (this.props.eligibleCustomerType instanceof Array) {
+                eligibleCustomerType = (
+                   <div className='eligibleCustomerType__container'>
+                       <div className='eligibleCustomerType__header' data-advice='HTML for the *head* of the section'>eligibleCustomerTypes</div>
+                       {this.props.eligibleCustomerType.map((item, index) => {
+                            return (<BusinessEntityType  {...this.props.eligibleCustomerType} />);
+                       })}
+                       <div className='eligibleCustomerType__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                eligibleCustomerType = (<BusinessEntityType  {...this.props.eligibleCustomerType} />);
+            }
+        }
+
+        let priceSpecification;
+        if (this.props.priceSpecification) {
+            if (this.props.priceSpecification instanceof Array) {
+                priceSpecification = (
+                   <div className='priceSpecification__container'>
+                       <div className='priceSpecification__header' data-advice='HTML for the *head* of the section'>priceSpecifications</div>
+                       {this.props.priceSpecification.map((item, index) => {
+                            return (<PriceSpecification  {...this.props.priceSpecification} />);
+                       })}
+                       <div className='priceSpecification__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                priceSpecification = (<PriceSpecification  {...this.props.priceSpecification} />);
+            }
+        }
+
+        let acceptedPaymentMethod;
+        if (this.props.acceptedPaymentMethod) {
+            if (this.props.acceptedPaymentMethod instanceof Array) {
+                acceptedPaymentMethod = (
+                   <div className='acceptedPaymentMethod__container'>
+                       <div className='acceptedPaymentMethod__header' data-advice='HTML for the *head* of the section'>acceptedPaymentMethods</div>
+                       {this.props.acceptedPaymentMethod.map((item, index) => {
+                            return (<PaymentMethod  {...this.props.acceptedPaymentMethod} />);
+                       })}
+                       <div className='acceptedPaymentMethod__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                acceptedPaymentMethod = (<PaymentMethod  {...this.props.acceptedPaymentMethod} />);
+            }
+        }
+
+        let eligibleTransactionVolume;
+        if (this.props.eligibleTransactionVolume) {
+            if (this.props.eligibleTransactionVolume instanceof Array) {
+                eligibleTransactionVolume = (
+                   <div className='eligibleTransactionVolume__container'>
+                       <div className='eligibleTransactionVolume__header' data-advice='HTML for the *head* of the section'>eligibleTransactionVolumes</div>
+                       {this.props.eligibleTransactionVolume.map((item, index) => {
+                            return (<PriceSpecification  {...this.props.eligibleTransactionVolume} />);
+                       })}
+                       <div className='eligibleTransactionVolume__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                eligibleTransactionVolume = (<PriceSpecification  {...this.props.eligibleTransactionVolume} />);
+            }
+        }
+
+        let gtin8;
+        if (this.props.gtin8) {
+            if (this.props.gtin8 instanceof Array) {
+                gtin8 = (
+                   <div className='gtin8__container'>
+                       <div className='gtin8__header' data-advice='HTML for the *head* of the section'>gtin8s</div>
+                       {this.props.gtin8.map((item, index) => {
+                            return (<div className='gtin8' data-advice='Put your HTML here. gtin8 is a Text.'><p className="Offer-gtin8">gtin8: {this.props.gtin8}</p></div>);
+                       })}
+                       <div className='gtin8__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                gtin8 = (<div className='gtin8' data-advice='Put your HTML here. gtin8 is a Text.'><p className="Offer-gtin8">gtin8: {this.props.gtin8}</p></div>);
+            }
+        }
+
+        let eligibleQuantity;
+        if (this.props.eligibleQuantity) {
+            if (this.props.eligibleQuantity instanceof Array) {
+                eligibleQuantity = (
+                   <div className='eligibleQuantity__container'>
+                       <div className='eligibleQuantity__header' data-advice='HTML for the *head* of the section'>eligibleQuantitys</div>
+                       {this.props.eligibleQuantity.map((item, index) => {
+                            return (<QuantitativeValue  {...this.props.eligibleQuantity} />);
+                       })}
+                       <div className='eligibleQuantity__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                eligibleQuantity = (<QuantitativeValue  {...this.props.eligibleQuantity} />);
+            }
+        }
+
+        let potentialAction;
+        if (this.props.potentialAction) {
+            if (this.props.potentialAction instanceof Array) {
+                potentialAction = (
+                   <div className='potentialAction__container'>
+                       <div className='potentialAction__header' data-advice='HTML for the *head* of the section'>potentialActions</div>
+                       {this.props.potentialAction.map((item, index) => {
+                            return (<Action  {...this.props.potentialAction} />);
+                       })}
+                       <div className='potentialAction__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                potentialAction = (<Action  {...this.props.potentialAction} />);
+            }
+        }
+
+        let itemCondition;
+        if (this.props.itemCondition) {
+            if (this.props.itemCondition instanceof Array) {
+                itemCondition = (
+                   <div className='itemCondition__container'>
+                       <div className='itemCondition__header' data-advice='HTML for the *head* of the section'>itemConditions</div>
+                       {this.props.itemCondition.map((item, index) => {
+                            return (<OfferItemCondition  {...this.props.itemCondition} />);
+                       })}
+                       <div className='itemCondition__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                itemCondition = (<OfferItemCondition  {...this.props.itemCondition} />);
+            }
+        }
+
+        let alternateName;
+        if (this.props.alternateName) {
+            if (this.props.alternateName instanceof Array) {
+                alternateName = (
+                   <div className='alternateName__container'>
+                       <div className='alternateName__header' data-advice='HTML for the *head* of the section'>alternateNames</div>
+                       {this.props.alternateName.map((item, index) => {
+                            return (<div className='alternateName' data-advice='Put your HTML here. alternateName is a Text.'><p className="Offer-alternateName">alternateName: {this.props.alternateName}</p></div>);
+                       })}
+                       <div className='alternateName__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                alternateName = (<div className='alternateName' data-advice='Put your HTML here. alternateName is a Text.'><p className="Offer-alternateName">alternateName: {this.props.alternateName}</p></div>);
+            }
+        }
+
+        let description;
+        if (this.props.description) {
+            if (this.props.description instanceof Array) {
+                description = (
+                   <div className='description__container'>
+                       <div className='description__header' data-advice='HTML for the *head* of the section'>descriptions</div>
+                       {this.props.description.map((item, index) => {
+                            return (<div className='description' data-advice='Put your HTML here. description is a Text.'><p className="Offer-description">description: {this.props.description}</p></div>);
+                       })}
+                       <div className='description__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                description = (<div className='description' data-advice='Put your HTML here. description is a Text.'><p className="Offer-description">description: {this.props.description}</p></div>);
+            }
+        }
+
+        let availabilityEnds;
+        if (this.props.availabilityEnds) {
+            if (this.props.availabilityEnds instanceof Array) {
+                availabilityEnds = (
+                   <div className='availabilityEnds__container'>
+                       <div className='availabilityEnds__header' data-advice='HTML for the *head* of the section'>availabilityEndss</div>
+                       {this.props.availabilityEnds.map((item, index) => {
+                            return (<div className='availabilityEnds' data-advice='Put your HTML here. availabilityEnds is a DateTime.'><time className="Offer-availabilityEnds">availabilityEnds: {this.props.availabilityEnds}</time></div>);
+                       })}
+                       <div className='availabilityEnds__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                availabilityEnds = (<div className='availabilityEnds' data-advice='Put your HTML here. availabilityEnds is a DateTime.'><time className="Offer-availabilityEnds">availabilityEnds: {this.props.availabilityEnds}</time></div>);
+            }
+        }
+
+        let name;
+        if (this.props.name) {
+            if (this.props.name instanceof Array) {
+                name = (
+                   <div className='name__container'>
+                       <div className='name__header' data-advice='HTML for the *head* of the section'>names</div>
+                       {this.props.name.map((item, index) => {
+                            return (<div className='name' data-advice='Put your HTML here. name is a Text.'><p className="Offer-name">name: {this.props.name}</p></div>);
+                       })}
+                       <div className='name__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                name = (<div className='name' data-advice='Put your HTML here. name is a Text.'><p className="Offer-name">name: {this.props.name}</p></div>);
+            }
+        }
+
+        let priceCurrency;
+        if (this.props.priceCurrency) {
+            if (this.props.priceCurrency instanceof Array) {
+                priceCurrency = (
+                   <div className='priceCurrency__container'>
+                       <div className='priceCurrency__header' data-advice='HTML for the *head* of the section'>priceCurrencys</div>
+                       {this.props.priceCurrency.map((item, index) => {
+                            return (<div className='priceCurrency' data-advice='Put your HTML here. priceCurrency is a Text.'><p className="Offer-priceCurrency">priceCurrency: {this.props.priceCurrency}</p></div>);
+                       })}
+                       <div className='priceCurrency__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                priceCurrency = (<div className='priceCurrency' data-advice='Put your HTML here. priceCurrency is a Text.'><p className="Offer-priceCurrency">priceCurrency: {this.props.priceCurrency}</p></div>);
+            }
+        }
+
+        let url;
+        if (this.props.url) {
+            if (this.props.url instanceof Array) {
+                url = (
+                   <div className='url__container'>
+                       <div className='url__header' data-advice='HTML for the *head* of the section'>urls</div>
+                       {this.props.url.map((item, index) => {
+                            return (<div className='url' data-advice='Put your HTML here. url is a URL.'><a className="Offer-url" href={this.props.url} target="_blank">url</a></div>);
+                       })}
+                       <div className='url__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                url = (<div className='url' data-advice='Put your HTML here. url is a URL.'><a className="Offer-url" href={this.props.url} target="_blank">url</a></div>);
+            }
+        }
+
+        let serialNumber;
+        if (this.props.serialNumber) {
+            if (this.props.serialNumber instanceof Array) {
+                serialNumber = (
+                   <div className='serialNumber__container'>
+                       <div className='serialNumber__header' data-advice='HTML for the *head* of the section'>serialNumbers</div>
+                       {this.props.serialNumber.map((item, index) => {
+                            return (<div className='serialNumber' data-advice='Put your HTML here. serialNumber is a Text.'><p className="Offer-serialNumber">serialNumber: {this.props.serialNumber}</p></div>);
+                       })}
+                       <div className='serialNumber__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                serialNumber = (<div className='serialNumber' data-advice='Put your HTML here. serialNumber is a Text.'><p className="Offer-serialNumber">serialNumber: {this.props.serialNumber}</p></div>);
+            }
+        }
+
+        let availableDeliveryMethod;
+        if (this.props.availableDeliveryMethod) {
+            if (this.props.availableDeliveryMethod instanceof Array) {
+                availableDeliveryMethod = (
+                   <div className='availableDeliveryMethod__container'>
+                       <div className='availableDeliveryMethod__header' data-advice='HTML for the *head* of the section'>availableDeliveryMethods</div>
+                       {this.props.availableDeliveryMethod.map((item, index) => {
+                            return (<DeliveryMethod  {...this.props.availableDeliveryMethod} />);
+                       })}
+                       <div className='availableDeliveryMethod__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                availableDeliveryMethod = (<DeliveryMethod  {...this.props.availableDeliveryMethod} />);
+            }
+        }
+
+        let advanceBookingRequirement;
+        if (this.props.advanceBookingRequirement) {
+            if (this.props.advanceBookingRequirement instanceof Array) {
+                advanceBookingRequirement = (
+                   <div className='advanceBookingRequirement__container'>
+                       <div className='advanceBookingRequirement__header' data-advice='HTML for the *head* of the section'>advanceBookingRequirements</div>
+                       {this.props.advanceBookingRequirement.map((item, index) => {
+                            return (<QuantitativeValue  {...this.props.advanceBookingRequirement} />);
+                       })}
+                       <div className='advanceBookingRequirement__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                advanceBookingRequirement = (<QuantitativeValue  {...this.props.advanceBookingRequirement} />);
+            }
+        }
+
+        let gtin13;
+        if (this.props.gtin13) {
+            if (this.props.gtin13 instanceof Array) {
+                gtin13 = (
+                   <div className='gtin13__container'>
+                       <div className='gtin13__header' data-advice='HTML for the *head* of the section'>gtin13s</div>
+                       {this.props.gtin13.map((item, index) => {
+                            return (<div className='gtin13' data-advice='Put your HTML here. gtin13 is a Text.'><p className="Offer-gtin13">gtin13: {this.props.gtin13}</p></div>);
+                       })}
+                       <div className='gtin13__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                gtin13 = (<div className='gtin13' data-advice='Put your HTML here. gtin13 is a Text.'><p className="Offer-gtin13">gtin13: {this.props.gtin13}</p></div>);
+            }
+        }
+
+        let gtin12;
+        if (this.props.gtin12) {
+            if (this.props.gtin12 instanceof Array) {
+                gtin12 = (
+                   <div className='gtin12__container'>
+                       <div className='gtin12__header' data-advice='HTML for the *head* of the section'>gtin12s</div>
+                       {this.props.gtin12.map((item, index) => {
+                            return (<div className='gtin12' data-advice='Put your HTML here. gtin12 is a Text.'><p className="Offer-gtin12">gtin12: {this.props.gtin12}</p></div>);
+                       })}
+                       <div className='gtin12__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                gtin12 = (<div className='gtin12' data-advice='Put your HTML here. gtin12 is a Text.'><p className="Offer-gtin12">gtin12: {this.props.gtin12}</p></div>);
+            }
+        }
+
+        let validFrom;
+        if (this.props.validFrom) {
+            if (this.props.validFrom instanceof Array) {
+                validFrom = (
+                   <div className='validFrom__container'>
+                       <div className='validFrom__header' data-advice='HTML for the *head* of the section'>validFroms</div>
+                       {this.props.validFrom.map((item, index) => {
+                            return (<div className='validFrom' data-advice='Put your HTML here. validFrom is a DateTime.'><time className="Offer-validFrom">validFrom: {this.props.validFrom}</time></div>);
+                       })}
+                       <div className='validFrom__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                validFrom = (<div className='validFrom' data-advice='Put your HTML here. validFrom is a DateTime.'><time className="Offer-validFrom">validFrom: {this.props.validFrom}</time></div>);
+            }
+        }
+
+        let validThrough;
+        if (this.props.validThrough) {
+            if (this.props.validThrough instanceof Array) {
+                validThrough = (
+                   <div className='validThrough__container'>
+                       <div className='validThrough__header' data-advice='HTML for the *head* of the section'>validThroughs</div>
+                       {this.props.validThrough.map((item, index) => {
+                            return (<div className='validThrough' data-advice='Put your HTML here. validThrough is a DateTime.'><time className="Offer-validThrough">validThrough: {this.props.validThrough}</time></div>);
+                       })}
+                       <div className='validThrough__footer' data-advice='HTML for the *footer* of the section'></div>
+                   </div>
+                );
+            } else {
+                validThrough = (<div className='validThrough' data-advice='Put your HTML here. validThrough is a DateTime.'><time className="Offer-validThrough">validThrough: {this.props.validThrough}</time></div>);
             }
         }
 
@@ -675,34 +972,53 @@ export default class Offer extends Component {
             <div className='Offer'>
                 {warranty}
                 {ineligibleRegion}
+                {priceValidUntil}
+                {sameAs}
                 {eligibleRegion}
                 {businessFunction}
                 {deliveryLeadTime}
                 {aggregateRating}
+                {sku}
+                {additionalType}
                 {availability}
                 {offeredBy}
                 {category}
-                {review}
-                {seller}
                 {includesObject}
+                {gtin14}
+                {review}
+                {itemOffered}
+                {seller}
+                {availabilityStarts}
                 {eligibleDuration}
                 {mainEntityOfPage}
                 {image}
-                {advanceBookingRequirement}
+                {addOn}
                 {inventoryLevel}
                 {availableAtOrFrom}
+                {areaServed}
+                {mpn}
                 {price}
                 {eligibleCustomerType}
                 {priceSpecification}
                 {acceptedPaymentMethod}
                 {eligibleTransactionVolume}
+                {gtin8}
                 {eligibleQuantity}
-                {itemCondition}
                 {potentialAction}
+                {itemCondition}
+                {alternateName}
+                {description}
+                {availabilityEnds}
+                {name}
+                {priceCurrency}
+                {url}
+                {serialNumber}
                 {availableDeliveryMethod}
-                {itemOffered}
-                {areaServed}
-                {addOn}
+                {advanceBookingRequirement}
+                {gtin13}
+                {gtin12}
+                {validFrom}
+                {validThrough}
             </div>
         );
     }
@@ -712,35 +1028,54 @@ Offer.defaultProps = {
 };
 
 Offer.propTypes = {
-   warranty: React.propTypes.object,
-   ineligibleRegion: React.propTypes.object,
-   eligibleRegion: React.propTypes.object,
-   businessFunction: React.propTypes.object,
-   deliveryLeadTime: React.propTypes.object,
-   aggregateRating: React.propTypes.object,
-   availability: React.propTypes.object,
-   offeredBy: React.propTypes.object,
-   category: React.propTypes.object,
-   review: React.propTypes.object,
-   seller: React.propTypes.object,
-   includesObject: React.propTypes.object,
-   eligibleDuration: React.propTypes.object,
-   mainEntityOfPage: React.propTypes.object,
-   image: React.propTypes.object,
-   advanceBookingRequirement: React.propTypes.object,
-   inventoryLevel: React.propTypes.object,
-   availableAtOrFrom: React.propTypes.object,
-   price: React.propTypes.object,
-   eligibleCustomerType: React.propTypes.object,
-   priceSpecification: React.propTypes.object,
-   acceptedPaymentMethod: React.propTypes.object,
-   eligibleTransactionVolume: React.propTypes.object,
-   eligibleQuantity: React.propTypes.object,
-   itemCondition: React.propTypes.object,
-   potentialAction: React.propTypes.object,
-   availableDeliveryMethod: React.propTypes.object,
-   itemOffered: React.propTypes.object,
-   areaServed: React.propTypes.object,
-   addOn: React.propTypes.object,
+   warranty: React.PropTypes.object,
+   ineligibleRegion: React.PropTypes.object,
+   priceValidUntil: React.PropTypes.object,
+   sameAs: React.PropTypes.object,
+   eligibleRegion: React.PropTypes.object,
+   businessFunction: React.PropTypes.object,
+   deliveryLeadTime: React.PropTypes.object,
+   aggregateRating: React.PropTypes.object,
+   sku: React.PropTypes.object,
+   additionalType: React.PropTypes.object,
+   availability: React.PropTypes.object,
+   offeredBy: React.PropTypes.object,
+   category: React.PropTypes.object,
+   includesObject: React.PropTypes.object,
+   gtin14: React.PropTypes.object,
+   review: React.PropTypes.object,
+   itemOffered: React.PropTypes.object,
+   seller: React.PropTypes.object,
+   availabilityStarts: React.PropTypes.object,
+   eligibleDuration: React.PropTypes.object,
+   mainEntityOfPage: React.PropTypes.object,
+   image: React.PropTypes.object,
+   addOn: React.PropTypes.object,
+   inventoryLevel: React.PropTypes.object,
+   availableAtOrFrom: React.PropTypes.object,
+   areaServed: React.PropTypes.object,
+   mpn: React.PropTypes.object,
+   price: React.PropTypes.object,
+   eligibleCustomerType: React.PropTypes.object,
+   priceSpecification: React.PropTypes.object,
+   acceptedPaymentMethod: React.PropTypes.object,
+   eligibleTransactionVolume: React.PropTypes.object,
+   gtin8: React.PropTypes.object,
+   eligibleQuantity: React.PropTypes.object,
+   potentialAction: React.PropTypes.object,
+   itemCondition: React.PropTypes.object,
+   alternateName: React.PropTypes.object,
+   description: React.PropTypes.object,
+   availabilityEnds: React.PropTypes.object,
+   name: React.PropTypes.object,
+   priceCurrency: React.PropTypes.object,
+   url: React.PropTypes.object,
+   serialNumber: React.PropTypes.object,
+   availableDeliveryMethod: React.PropTypes.object,
+   advanceBookingRequirement: React.PropTypes.object,
+   gtin13: React.PropTypes.object,
+   gtin12: React.PropTypes.object,
+   validFrom: React.PropTypes.object,
+   validThrough: React.PropTypes.object,
 };
 
