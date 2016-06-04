@@ -1,0 +1,57 @@
+{
+  "@context": {
+    "schema": "http://schema.org/"
+  },
+  "@graph": [
+    {
+      "@id": "person",
+      "@type": "schema:Person",
+      "schema:givenName": "Name",
+      "schema:familyName": "Family",
+      "schema:gender": "Male",
+      "schema:nationality": "CA",
+      "schema:worksFor": "ReelyActive",
+      "schema:jobTitle": "Mascot",
+      "schema:url": "http://context.reelyactive.com/",
+      "schema:sameAs": [
+        "https://twitter.com/reelyActive",
+        "https://www.facebook.com/reelyActive",
+        "http://reelyactive.github.io/",
+        "http://www.linkedin.com/company/reelyactive"
+      ],
+      "schema:image": "http://reelyactive.com/images/barnowl.jpg"
+    },
+    {
+      "@id": "product",
+      "@type": "schema:Product",
+      "schema:name": "Nexus 5",
+      "schema:manufacturer": {
+        "@type": "schema:Organization",
+        "schema:name": "LG Electronics"
+      },
+      "schema:model": "D82x",
+      "schema:url": "http://www.google.com/nexus/5/",
+      "schema:image": "http://reelyactive.com/images/Nexus5.jpg"
+    },
+    {
+      "@id": "place",
+      "@type": "schema:Place",
+      "schema:name": "Notman",
+      "schema:address": {
+        "@type": "schema:PostalAddress",
+        "schema:streetAddress": "51 rue sherbrooke ouest",
+        "schema:addressLocality": "Montréal",
+        "schema:addressRegion": "Québec",
+        "schema:postalCode": "H2X 1X2",
+        "schema:addressCountry": "CA"
+      },
+      "schema:url": "http://notman.org",
+      "schema:image": "http://reelyactive.com/images/json-silo.jpg",
+      "schema:logo": "http://reelyactive.org/images/notman.png",
+      "schema:sameAs": [
+        "https://twitter.com/notman",
+        "https://www.facebook.com/NotmanHouse/"
+      ]
+    }
+  ]
+}
