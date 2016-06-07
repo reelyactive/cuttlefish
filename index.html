@@ -2,8 +2,23 @@
 <html>
   <head>
     <title> reelyActive: Hyperlocal Context </title>
-    <link rel="stylesheet" type="text/css" href="style/main.css" />
-    <link rel="stylesheet" type="text/css" href="cormorant/main.css" />
+    <link rel="stylesheet" type="text/css" href="dist/cuttlefish.css" />
+    <style>
+      body {  
+        padding: 40px;
+      }
+
+      code {
+        display: block;
+        padding: 40px;
+        margin: 10px;
+        background-color: #ccc;
+      }
+
+      a {
+        margin-right: 10px;
+      }
+    </style>
   </head>
   <body>
     <div class='tab1'>
@@ -84,7 +99,7 @@
         "url": "http://www.theman.com",
         "image": "http://reelyactive.com/images/barnowl.jpg"
       }
-      cuttlefish.visualize(data, 'person');
+      cuttlefish.represent(data, 'person');
       var dataProduct = {
         "@id": "product",
         "@type": "Product",
@@ -97,7 +112,7 @@
         "url": "http://www.google.com/nexus/5/",
         "image": "http://reelyactive.com/images/Nexus5.jpg"
       }
-      cuttlefish.visualize(dataProduct, 'product');
+      cuttlefish.represent(dataProduct, 'product');
       var dataPlace = {
         "@id": "place",
         "@type": "Place",
@@ -113,7 +128,7 @@
         "url": "http://notman.org/",
         "logo": "http://reelyactive.com/images/notman-logo.png"
       }
-      cuttlefish.visualize(dataPlace, 'place');
+      cuttlefish.represent(dataPlace, 'place');
     </script>
   </body>
 </html>

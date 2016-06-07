@@ -1,32 +1,44 @@
-import PostalAddress from 'PostalAddress';
 
 import React, {
   Component
 } from 'react';
 
 export default class Place extends Component {
-  static propTypes = {
-    name: React.PropTypes.string,
-    url: React.PropTypes.string,
-    image: React.PropTypes.string,
-    logo: React.PropTypes.string,
-    sameAs: React.PropTypes.arrayOf(React.PropTypes.url)),
-  };
-
   render() {
-    var name = (<p className='Place_Name'>Name: {this.props.name}</p>);
+    var name;
+    if (this.props.name) {
+      name = (<p className='Place-Name' >Name: {this.props.name}</p>);
+    }
 
-    var address = (<PostalAddress {...this.props.address} />);
+    var address;
+    if (this.props.address) {
+      address = (<PostalAddress {...this.props.address} />);
+    }
 
-    var url = (<a className='Place_Url' href='{this.props.url}' target='_blank'>Url</a>);
+    var url;
+    if (this.props.url) {
+      url = (<a className='Place-Url' href={this.props.url} target='_blank'>Url</a>);
+    }
 
-    var image = (<img className='Place_Image' src='{this.props.image}' alt='Image' />);
+    var image;
+    if (this.props.image) {
+      image = (<img className='Place-Image' src={this.props.image} alt='Image' />);
+    }
 
-    var logo = (<img className='Place_Logo' src='{this.props.logo}' alt='Logo' />);
+    var logo;
+    if (this.props.logo) {
+      logo = (<img className='Place-Logo' src={this.props.logo} alt='Logo' />);
+    }
 
-    var sameAs = (this.props.sameAs.map(function(item) {
-      return (<a className='Place_SameAs' href='{item}' target='_blank'>SameAs</a>);
-    });
+    var sameAs;
+    if (this.props.sameAs) {
+      sameAs = (this.props.sameAs
+      ? this.props.sameAs.map(function(item, index) {
+        return (<a className='Place-SameAs' href={item} key={index} target='_blank'>SameAs</a>);
+      })
+      : null
+    );
+    }
 
     return (
       <div class='Place'>
@@ -39,6 +51,14 @@ export default class Place extends Component {
       </div>
     );
   }
+};
+
+Place.propTypes = {
+    name: React.PropTypes.string,
+    url: React.PropTypes.string,
+    image: React.PropTypes.string,
+    logo: React.PropTypes.string,
+    sameAs: React.PropTypes.arrayOf(React.PropTypes.string),
 };
 
 
