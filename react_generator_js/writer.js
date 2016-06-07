@@ -5,7 +5,7 @@ function isComponent(type) {
   return type[0] === type[0].toUpperCase();
 }
 
-function capitalize(word) {
+function capitalize(word, isSameAsDisplayName) {
   return word[0].toUpperCase() + word.substr(1);
 }
 
@@ -24,12 +24,16 @@ function getTemplateWord(line) {
   }
 }
 
+function getSubTypeOfArray(arrayType) {
+  return arrayType.substr(
+    arrayType.indexOf('arrayOf(') + 8,
+    arrayType.length - 8 - 1 // 8: length of 'arrayOf(', 1: length of the ')' at the end
+  );
+}
+
 function getReactType(type) {
   if (type.indexOf('arrayOf(') === 0) {
-    var subType = type.substr(
-      type.indexOf('arrayOf(') + 8,
-      type.indexOf(')') + 1
-    );
+    var subType = getReactType(getSubTypeOfArray(type));
     type = 'array';
   }
 
@@ -38,7 +42,7 @@ function getReactType(type) {
     case 'image':
       return 'React.PropTypes.string';
     case 'array':
-      return 'React.PropTypes.arrayOf(React.PropTypes.' + subType + ')';
+      return 'React.PropTypes.arrayOf(' + subType + ')';
     case 'boolean':
       return 'React.PropTypes.bool';
     default:
@@ -49,41 +53,50 @@ function getReactType(type) {
 // *value* is a bit weird. It can be either *this.props.something* or *item*
 function getRepresentationOf(component, value, property, type, subType) {
   var representation = '(';
+  var extraAttribute = '';
+  if (value === 'item') {
+    extraAttribute = 'key={index} ';
+  }
 
   switch(type) {
     case 'component':
-      representation += "<" + subType + " {..." + value + "} />";
+      representation += "<" + subType
+        + " {..." + value + "} "
+        + extraAttribute + "/>";
       break;
     case 'url':
       representation += 
         "<a className='"
-        + component.className + "_" + capitalize(property)
-        + "' href='{" + value + "}' "
+        + component.className + "-" + capitalize(property)
+        + "' href={" + value + "} "
+        + extraAttribute
         + "target='_blank'>"
-        + capitalize(property) 
+        + capitalize(property)
         + "</a>";
       break;
     case 'image':
       representation +=
         "<img className='" 
-        + component.className + "_" + capitalize(property) + "' "
-        + "src='{" + value + "}' "
+        + component.className + "-" + capitalize(property) + "' "
+        + "src={" + value + "} "
         + "alt='" + capitalize(property) + "' "
+        + extraAttribute
         + "/>";
       break;
     case 'string':
     case 'number':
       representation += 
         "<p className='" 
-        + component.className + "_" + capitalize(property) + "'"
+        + component.className + "-" + capitalize(property) + "' "
+        + extraAttribute
         + ">"
         + capitalize(property) + ": {" + value + "}" 
         + "</p>";
       break;
     case 'array':
-      representation += value + '.map(function(item) {\n';
-      representation += '      return ' + getRepresentationOf(component, 'item', property, subType) + '\n';
-      representation += '    }';
+      representation += value + '\n      ? ' + value + '.map(function(item, index) {\n';
+      representation += '        return ' + getRepresentationOf(component, 'item', property, subType) + '\n';
+      representation += '      })\n      : null\n    ';
       break;
   }
 
@@ -94,10 +107,7 @@ function getRepresentationOf(component, value, property, type, subType) {
 
 function writeRenderPreparation(file, component, property, type) {
   if (type.indexOf('arrayOf(') === 0) {
-    var subType = type.substr(
-      type.indexOf('arrayOf(') + 8,
-      type.length - 8 - 1 // 8: length of 'arrayOf(', 1: length of the ')' at the end
-    );
+    var subType = getSubTypeOfArray(type);
     type = 'array';
   } else if (isComponent(type)) {
     subType = type;
@@ -105,15 +115,16 @@ function writeRenderPreparation(file, component, property, type) {
   }
 
   var value = 'this.props.' + property;
-  var line = '    var ' + property + ' = ' + getRepresentationOf(
+  write(file, '    var ' + property + ';');
+  write(file, '    if (this.props.' + property + ') {');
+  write(file, '      ' + property + ' = ' + getRepresentationOf(
     component,
     value,
     property,
     type,
     subType
-  );
-
-  write(file, line);
+  ));
+  write(file, '    }');
   write(file, '');
 }
 
@@ -125,10 +136,11 @@ function writeForTemplateLine(file, templateLine, component) {
     case 'imports':
       _.forEach(component.properties, function(type, property) {
         if (isComponent(type)) {
-          write(
+          /* write(
             file,
-            "import " + type + " from '" + type + "';"
-          );
+            "import " + type + " from './" + type + "';"
+          ); */
+          // Do nothing, everything is compiled in one file.
         }
       });
       break;

@@ -15,6 +15,8 @@ Story to come.
 How do I use it?
 ----------
 
+The basic compiled version allows you to visualise `Person`s, `Product`s and `Place`s. (see `index.html` example)
+
 To use it, all you need to do is :
 
 * Install cuttlefish with bower 
@@ -39,7 +41,7 @@ bower install cuttlefish
 * Call it with your JSON-ld and the ID of your node
 
 ```javascript
-cuttlefish.represent(JSONLDData, '#myJSON-LDRepresentationContainer');
+cuttlefish.represent(JSONLDData, 'myJSON-LDRepresentationContainer');
 ```
 
 * Check out your HTML (right-click + inspect in Google Chrome)
@@ -49,7 +51,7 @@ Develop
 
 Ok, that's nice, but now, you want to put your hands in the dough.
 
-There are two ways to do that:
+There are three ways to do that:
 
 * You want to change the style of what you see ...
 
@@ -60,8 +62,14 @@ There are two ways to do that:
 * You want to customize the HTML itself, or extend the React components for them to really do something!
 
   * Fork this repo
-  * In the `src/es6/` folder, you will find all the components extracted from Schema.org: Modify them as you want!
+  * In the `src/es6/` folder, you will find the components: Modify them as you want!
   * To Rebuild the all in one dist file: run `npm install && npm run build-dist`
+
+* You want to adapt cuttlefish to YOUR data structure:
+  * Put an extensive example of your JSON-LD data in the `source.json` file
+  * Run the `npm run generate-source` command
+  * Look in `src/es6` and you should have the corresponding react components in Ecma script 6 syntax. Customize them as you want and
+  * Run `npm run build` to get the new version of Cuttlefish with YOUR React components packaged. If you are happy with them, run `npm run build-dist` to generate the distribution-ready version (minified and stuff)
 
 License
 -------

@@ -4,24 +4,31 @@ import React, {
 } from 'react';
 
 export default class PostalAddress extends Component {
-  static propTypes = {
-    streetAddress: React.PropTypes.string,
-    addressLocality: React.PropTypes.string,
-    addressRegion: React.PropTypes.string,
-    postalCode: React.PropTypes.string,
-    addressCountry: React.PropTypes.string,
-  };
-
   render() {
-    var streetAddress = (<p className='PostalAddress_StreetAddress'>StreetAddress: {this.props.streetAddress}</p>);
+    var streetAddress;
+    if (this.props.streetAddress) {
+      streetAddress = (<p className='PostalAddress-StreetAddress' >StreetAddress: {this.props.streetAddress}</p>);
+    }
 
-    var addressLocality = (<p className='PostalAddress_AddressLocality'>AddressLocality: {this.props.addressLocality}</p>);
+    var addressLocality;
+    if (this.props.addressLocality) {
+      addressLocality = (<p className='PostalAddress-AddressLocality' >AddressLocality: {this.props.addressLocality}</p>);
+    }
 
-    var addressRegion = (<p className='PostalAddress_AddressRegion'>AddressRegion: {this.props.addressRegion}</p>);
+    var addressRegion;
+    if (this.props.addressRegion) {
+      addressRegion = (<p className='PostalAddress-AddressRegion' >AddressRegion: {this.props.addressRegion}</p>);
+    }
 
-    var postalCode = (<p className='PostalAddress_PostalCode'>PostalCode: {this.props.postalCode}</p>);
+    var postalCode;
+    if (this.props.postalCode) {
+      postalCode = (<p className='PostalAddress-PostalCode' >PostalCode: {this.props.postalCode}</p>);
+    }
 
-    var addressCountry = (<p className='PostalAddress_AddressCountry'>AddressCountry: {this.props.addressCountry}</p>);
+    var addressCountry;
+    if (this.props.addressCountry) {
+      addressCountry = (<p className='PostalAddress-AddressCountry' >AddressCountry: {this.props.addressCountry}</p>);
+    }
 
     return (
       <div class='PostalAddress'>
@@ -33,6 +40,14 @@ export default class PostalAddress extends Component {
       </div>
     );
   }
+};
+
+PostalAddress.propTypes = {
+    streetAddress: React.PropTypes.string,
+    addressLocality: React.PropTypes.string,
+    addressRegion: React.PropTypes.string,
+    postalCode: React.PropTypes.string,
+    addressCountry: React.PropTypes.string,
 };
 
 
