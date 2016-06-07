@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "generate-source": "cd react_generator_js/ && node writer.js",
     "build": "gulp build",
-    "build-dist": "gulp build-dist"
+    "build-dist": "gulp build-dist",
+    "all-of-it": "npm run generate-source && npm run build && npm run build-dist"
   },
   "repository": {
     "type": "git",
