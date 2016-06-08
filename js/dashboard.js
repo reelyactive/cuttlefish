@@ -19,6 +19,8 @@ angular.module('dashboard', [])
  */
 .controller('DashCtrl', function($scope) {
 
+  $scope.data = "{ \"@id\": \"person\", \"@type\": \"Person\", \"givenName\": \"Barn\", \"familyName\": \"Owl\", \"gender\": \"Male\", \"nationality\": \"CA\", \"worksFor\": \"reelyActive\", \"jobTitle\": \"Mascot\", \"sameAs\": [ \"http://www.twitter.com/reelyActive\" ], \"url\": \"http://context.reelyactive.com\", \"image\": \"http://reelyactive.com/images/barnowl.jpg\" }";
+
   $scope.update = function(data) {
     cuttlefish.represent(JSON.parse(data), 'rendered');
   }
