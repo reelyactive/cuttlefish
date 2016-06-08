@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title> reelyActive: Hyperlocal Context </title>
+    <link rel="stylesheet" type="text/css" href="dist/cuttlefish.css" />
+    <style>
+      body {  
+        padding: 40px;
+      }
+
+      code {
+        display: block;
+        padding: 40px;
+        margin: 10px;
+        background-color: #ccc;
+      }
+
+      a {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='tab1'>
+      <div>Visualising:</div>
+      <code>
+        {
+          "@id": "person",
+          "@type": "Person",
+          "givenName": "Hello",
+          "familyName": "Owl",
+          "gender": "Male",
+          "nationality": "AL",
+          "worksFor": "MyCompany",
+          "jobTitle": "CEO",
+          "sameAs": [
+            "http://www.twitter.com/adrien0"
+          ],
+          "url": "http://www.theman.com",
+          "image": "http://reelyactive.com/images/barnowl.jpg"
+        }
+      </code>
+      <div id="person"></div>
+    </div>
+    <div class='tab2'>
+      <div>Visualising:</div>
+      <code>
+        {
+          "@id": "product",
+          "@type": "Product",
+          "name": "Nexus 5",
+          "manufacturer": {
+            "@type": "Organization",
+            "name": "LG Electronics"
+          },
+          "model": "D82x",
+          "url": "http://www.google.com/nexus/5/",
+          "image": "http://reelyactive.com/images/Nexus5.jpg"
+        }
+      </code>
+      <div id="product"></div>
+    </div>
+    <div class='tab3'>
+      <div>Visualising:</div>
+      <code>
+         {
+          "@id": "place",
+          "@type": "Place",
+          "name": "Notman house",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "51 rue sherbrook est",
+            "addressLocality": "Montréal",
+            "addressRegion": "Quebec",
+            "postalCode": "H2X 1X2",
+            "addressCountry": "CA"
+          },
+          "url": "http://notman.org/",
+          "logo": "http://reelyactive.com/images/notman-logo.png"
+        }
+      </code>
+      <div id="place"></div>
+    </div>
+    <script src="./dist/cuttlefish.js">
+    </script>
+    <script>
+      var data = {
+        "@id": "person",
+        "@type": "Person",
+        "givenName": "Hello",
+        "familyName": "Owl",
+        "gender": "Male",
+        "nationality": "AL",
+        "worksFor": "MyCompany",
+        "jobTitle": "CEO",
+        "sameAs": [
+          "http://www.twitter.com/adrien0"
+        ],
+        "url": "http://www.theman.com",
+        "image": "http://reelyactive.com/images/barnowl.jpg"
+      }
+      cuttlefish.represent(data, 'person');
+      var dataProduct = {
+        "@id": "product",
+        "@type": "Product",
+        "name": "Nexus 5",
+        "manufacturer": {
+          "@type": "Organization",
+          "name": "LG Electronics"
+        },
+        "model": "D82x",
+        "url": "http://www.google.com/nexus/5/",
+        "image": "http://reelyactive.com/images/Nexus5.jpg"
+      }
+      cuttlefish.represent(dataProduct, 'product');
+      var dataPlace = {
+        "@id": "place",
+        "@type": "Place",
+        "name": "Notman house",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "51 rue sherbrook est",
+          "addressLocality": "Montréal",
+          "addressRegion": "Quebec",
+          "postalCode": "H2X 1X2",
+          "addressCountry": "CA"
+        },
+        "url": "http://notman.org/",
+        "logo": "http://reelyactive.com/images/notman-logo.png"
+      }
+      cuttlefish.represent(dataPlace, 'place');
+    </script>
+  </body>
+</html>
+
