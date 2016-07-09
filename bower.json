@@ -6,7 +6,8 @@
     "IoT"
   ],
   "authors": [
-    { "name": "Adrien Thiery" }
+    { "name": "Adrien Thiery" },
+    { "name": "Jeffrey Dungen" }
   ],
   "repository": {
     "type": "git",

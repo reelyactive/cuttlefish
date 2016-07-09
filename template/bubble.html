@@ -1,0 +1,34 @@
+<div class="bubble" ng-style="{ 'width' : size, 'height' : size }">
+
+  <!-- Toggle -->
+  <div class="bubble__toggle">
+    <p ng-click="toggle = toggle + 1; current = types[toggle % types.length]">
+      {{current}} {{types.length > 1 ? '>' : ''}}
+    </p>
+  </div>
+
+  <!-- Person -->
+  <div class="bubble__element" ng-if="person" ng-show="current === 'Person'"
+       ng-style="{ 'background-image' : 'url(' + person['schema:image'] + ')' }">
+    <div class="bubble__title">
+      <p> {{person["schema:givenName"]}} {{person["schema:familyName"]}} </p>
+    </div>
+  </div>
+
+  <!-- Place -->
+  <div class="bubble__element" ng-if="place" ng-show="current === 'Place'"
+       ng-style="{ 'background-image' : 'url(' + place['schema:image'] + ')' }">
+    <div class="bubble__title">
+      <p> {{place["schema:name"]}} </p>
+    </div>
+  </div>
+
+  <!-- Product -->
+  <div class="bubble__element" ng-if="product" ng-show="current === 'Product'"
+       ng-style="{ 'background-image' : 'url(' + product['schema:image'] + ')' }">
+    <div class="bubble__title">
+      <p> {{product["schema:name"]}} </p>
+    </div>
+  </div>
+
+</div>

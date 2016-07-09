@@ -1,16 +1,67 @@
 cuttlefish
 ==========
 
-Human-friendly HTML rendering of machine-friendly JSON-LD
----------------------------------------------------------
 
-Description to come.
+Human-friendly HTML rendering of machine-friendly JSON-LD.
+
+
+In the scheme of Things (pun intended)
+--------------------------------------
+
+The [beaver.js](https://github.com/reelyactive/beaver), [cormorant.js](https://github.com/reelyactive/cormorant) and __cuttlefish.js__ modules work together as a unit.  See our [dashboard-template-angular](https://github.com/reelyactive/dashboard-template-angular) for a minimal implementation.
 
 
 What's in a name?
 -----------------
 
 Story to come.
+
+
+Hello cuttlefish
+----------------
+
+### index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style/bubble.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+    <script type="text/javascript" src="js/cuttlefish.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </head>
+  <body ng-app="appName">
+    <span ng-init='sourcejson =
+      {
+        "@context": {
+          "schema": "http://schema.org/"
+        },
+        "@graph": [
+          {
+            "@id": "person",
+            "@type": "schema:Person",
+            "schema:givenName": "Barn",
+            "schema:familyName": "Owl",
+            "schema:worksFor": "reelyActive",
+            "schema:jobTitle": "Mascot",
+            "schema:image": "http://reelyactive.com/images/barnowl.jpg"
+          }
+        ]
+      }
+    '></span>
+    <bubble json="sourcejson" size="240px"></bubble>
+  </body>
+</html>
+```
+
+### js/script.js
+
+```javascript
+angular.module('appName', [ 'reelyactive.cuttlefish' ]);
+```
+
+In a folder, create the above files, as well as _bubble.html_ and _style/bubble.css_ (which can be sourced from the template folder).  Also copy cuttlefish.js to _js/cuttlefish.js_.  Upon opening index.html in your browser, cuttlefish will render the JSON that's hard-coded within.
 
 
 License
