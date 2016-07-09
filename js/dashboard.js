@@ -10,7 +10,7 @@
  * angular module.  The only external dependencies are:
  * - cuttlefish (reelyActive)
  */
-angular.module('dashboard', [])
+angular.module('dashboard', [ 'reelyactive.cuttlefish' ])
 
 
 /**
@@ -19,10 +19,28 @@ angular.module('dashboard', [])
  */
 .controller('DashCtrl', function($scope) {
 
-  $scope.data = "{ \"@id\": \"person\", \"@type\": \"Person\", \"givenName\": \"Barn\", \"familyName\": \"Owl\", \"gender\": \"Male\", \"nationality\": \"CA\", \"worksFor\": \"reelyActive\", \"jobTitle\": \"Mascot\", \"sameAs\": [ \"http://www.twitter.com/reelyActive\" ], \"url\": \"http://context.reelyactive.com\", \"image\": \"http://reelyactive.com/images/barnowl.jpg\" }";
+  $scope.json = {
+    "@context": {
+      "schema": "http://schema.org/"
+    },
+    "@graph": [
+      {
+        "@id": "person",
+        "@type": "schema:Person",
+        "schema:givenName": "Barn",
+        "schema:familyName": "Owl",
+        "schema:worksFor": "reelyActive",
+        "schema:jobTitle": "Mascot",
+        "schema:image": "http://reelyactive.com/images/barnowl.jpg"
+      }
+    ]
+  };
+
+  $scope.data = JSON.stringify($scope.json);
 
   $scope.update = function(data) {
-    cuttlefish.represent(JSON.parse(data), 'rendered');
+    $scope.json = JSON.parse(data);
+    console.log($scope.json);
   }
 
 });
