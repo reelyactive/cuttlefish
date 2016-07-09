@@ -40,7 +40,6 @@ angular.module('dashboard', [ 'reelyactive.cuttlefish' ])
 
   $scope.update = function(data) {
     $scope.json = JSON.parse(data);
-    console.log($scope.json);
   }
 
 });
