@@ -32,11 +32,17 @@ angular.module('dashboard', [ 'reelyactive.cuttlefish' ])
         "schema:worksFor": "reelyActive",
         "schema:jobTitle": "Mascot",
         "schema:image": "http://reelyactive.com/images/barnowl.jpg"
+      },
+      {
+        "@id": "product",
+        "@type": "schema:Product",
+        "schema:name": "915MHz Active RFID Tag",
+        "schema:image": "http://reelyactive.com/images/tag400x400.jpg"
       }
     ]
   };
 
-  $scope.data = JSON.stringify($scope.json);
+  $scope.data = JSON.stringify($scope.json, null, '  ');
 
   $scope.update = function(data) {
     $scope.json = JSON.parse(data);
