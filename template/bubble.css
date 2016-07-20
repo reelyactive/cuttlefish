@@ -1,11 +1,24 @@
 .bubble {
+  font-family: 'Open Sans', sans-serif;
+  display: inline-block;
+}
+
+.bubble__photo {
   overflow: hidden;
+  z-index: 10;
+  text-align: center;
+  -moz-background-clip: padding;     /* Firefox 3.6 */
+  -webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+  background-clip: padding-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: solid rgba(255, 255, 255, 0.2);
 }
 
 .bubble__toggle {
   width: 48px;
   height: 12px;
-  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
 }
 
 .bubble__toggle p {
@@ -24,12 +37,7 @@
 .bubble__title {
   position: absolute;
   width: 100%;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.bubble__title p {
+  font-weight: 600;
   text-align: center;
-  color: #fff;
-  font-weight: bold;
+  color: white;
 }
