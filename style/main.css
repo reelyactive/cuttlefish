@@ -105,6 +105,11 @@ body {
 }
 /* End Bootstrap 3 tabs override */
 
+.bubble-background {
+  background-color: #0770a2;
+  min-height: 280px;
+}
+
 .footer {
   position: absolute;
   bottom: 0;

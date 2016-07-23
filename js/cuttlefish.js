@@ -35,12 +35,13 @@ angular.module('reelyactive.cuttlefish', [])
               scope.types.push('Place');
               break;
           }
+          scope.itemID = graph[cItem]["@id"];
         }
         scope.current = scope.types[0];
       }
 
       scope.$watch(attrs.json, function(json) {
-        scope.json = json;
+        //scope.json = json;
         update();
       });
     }
