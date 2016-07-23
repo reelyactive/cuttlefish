@@ -46,6 +46,11 @@
                           rows="12" columns="80" ng-model="data">
                 </textarea>
               </div>
+              <div class="form-group">
+                <label for="size">Bubble Size</label>
+                <input type="text" class="form-control" id="size"
+                       ng-model="size" placeholder="240px">
+              </div>
               <button type="submit" class="btn btn-default"
                       ng-click="update(data)"> Update </button>
             </form>
@@ -55,7 +60,7 @@
               <caption> HOW IT IS RENDERED BY CUTTLEFISH </caption>
             </table>
             <div class="bubble-background">
-              <bubble json="json"></bubble>
+              <bubble json="json" size="{{size}}"></bubble>
             </div>
           </div>
         </div>
