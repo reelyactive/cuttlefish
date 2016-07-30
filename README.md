@@ -20,6 +20,10 @@ Story to come.
 Hello cuttlefish
 ----------------
 
+The easiest way to familiarise yourself with cuttlefish.js is to experiment with the code in the [gh-pages branch](https://github.com/reelyactive/cuttlefish/tree/gh-pages), of which there's a live demo [here](http://reelyactive.github.io/cuttlefish/).
+
+This directory contains the latest versions of cuttlefish.js, bubble.html and bubble.css.  Below is the description of a minimal implementation.
+
 ### index.html
 
 ```html
