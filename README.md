@@ -1,16 +1,7 @@
 cuttlefish
 ==========
 
-Human-friendly HTML rendering of machine-friendly JSON-LD
----------------------------------------------------------
-
-Description to come.
-
-
-What's in a name?
------------------
-
-Story to come.
+Human-friendly HTML rendering of machine-friendly JSON-LD.  For a live demo visit [reelyactive.github.io/cuttlefish/](http://reelyactive.github.io/cuttlefish/).
 
 
 License
