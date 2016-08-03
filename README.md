@@ -19,7 +19,7 @@ What's in a name?
 
 The cuttlefish isn't actually a fish, but rather a cephalopod, which is a class of marine animals remarkable for how quickly and diversely they can communicate visually.  [As per Wikipedia](https://en.wikipedia.org/wiki/Cuttlefish#Communication): "flamboyant cuttlefish use between 42 and 75 chromatic, seven textural, 14 postural, and seven locomotor elements" to communicate.
 
-Given that cuttlefish.js communicates machine-readable data as human-readable visual information, that unprecedented natural vocabulary sets some serious expectations for UI/UX design!
+Given that cuttlefish.js communicates machine-readable data as human-readable visual information, that unprecedented natural vocabulary sets some serious expectations for UI/UX design!  Seriously.  Read [Jaron Lanier's 2006 article in Discover Magazine](http://discovermagazine.com/2006/apr/cephalopod-morphing/).
 
 In its client-side habitat, cuttlefish.js will consume and render the JSON-LD fetched by [cormorant.js](https://github.com/reelyactive/cormorant).  And while you may suspect that cuttlefish and cormorants have nothing more in common than the fact that the pupil of the former resembles the distinct wing shape of the latter, check out [this video](https://youtu.be/OQq__WdJBMw?t=2m40s) we found on the Internets.  Yeah, if that skate were a [beaver](https://github.com/reelyactive/beaver)...
 
