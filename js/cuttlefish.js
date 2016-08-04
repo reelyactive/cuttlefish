@@ -13,6 +13,11 @@ DEFAULT_IMAGE = {};
 DEFAULT_IMAGE[TYPE_PERSON] = 'images/default-person.png';
 DEFAULT_IMAGE[TYPE_PRODUCT] = 'images/default-product.png';
 DEFAULT_IMAGE[TYPE_PLACE] = 'images/default-place.png';
+DEFAULT_IMAGE_UNSUPPORTED = 'images/default-unsupported.png';
+UNSUPPORTED_STORY_JSON = {
+  "schema:name": "Unsupported Story",
+  "schema:image": DEFAULT_IMAGE_UNSUPPORTED
+};
 
 
 angular.module('reelyactive.cuttlefish', [])
@@ -26,23 +31,29 @@ angular.module('reelyactive.cuttlefish', [])
         scope.types = [];
         scope.size = scope.size || DEFAULT_BUBBLE_SIZE;
 
-        var graph = scope.json["@graph"];
-        for(var cItem = 0; cItem < graph.length; cItem++) {
-          switch(graph[cItem]["@type"]) {
-            case 'schema:Person':
-              scope.person = formatItem(graph[cItem], TYPE_PERSON);
-              scope.types.push(TYPE_PERSON);
-              break;
-            case 'schema:Product':
-              scope.product = formatItem(graph[cItem], TYPE_PRODUCT);
-              scope.types.push(TYPE_PRODUCT);
-              break;
-            case 'schema:Place':
-              scope.place = formatItem(graph[cItem], TYPE_PLACE);
-              scope.types.push(TYPE_PLACE);
-              break;
+        if(scope.json && scope.json.hasOwnProperty("@graph")) {
+          var graph = scope.json["@graph"];
+          for(var cItem = 0; cItem < graph.length; cItem++) {
+            switch(graph[cItem]["@type"]) {
+              case 'schema:Person':
+                scope.person = formatItem(graph[cItem], TYPE_PERSON);
+                scope.types.push(TYPE_PERSON);
+                break;
+              case 'schema:Product':
+                scope.product = formatItem(graph[cItem], TYPE_PRODUCT);
+                scope.types.push(TYPE_PRODUCT);
+                break;
+              case 'schema:Place':
+                scope.place = formatItem(graph[cItem], TYPE_PLACE);
+                scope.types.push(TYPE_PLACE);
+                break;
+            }
+            scope.itemID = graph[cItem]["@id"];
           }
-          scope.itemID = graph[cItem]["@id"];
+        }
+        else {
+          scope.product = UNSUPPORTED_STORY_JSON;
+          scope.types.push(TYPE_PRODUCT);
         }
         scope.current = scope.types[0];
       }
