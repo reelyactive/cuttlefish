@@ -5,7 +5,7 @@
 
 
 DEFAULT_BUBBLE_SIZE = '240px';
-BUBBLE_TEMPLATE_URL = '/bubble.html';
+BUBBLE_TEMPLATE_URL = 'bubble.html'; // May or may not need a leading slash!
 TYPE_PERSON = 'Person';
 TYPE_PRODUCT = 'Product';
 TYPE_PLACE = 'Place';
