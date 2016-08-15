@@ -9,6 +9,10 @@ body {
   margin-bottom: 60px;
 }
 
+input, textarea {
+  font-size: 16px !important;
+}
+
 /* Begin Bootstrap 3 navbar override */
 .navbar-default {
     background-color: #0770a2;
@@ -107,6 +111,9 @@ body {
 
 .blue {
   background-color: #0770a2;
+  padding: 60px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .footer {

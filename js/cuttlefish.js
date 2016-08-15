@@ -56,7 +56,9 @@ angular.module('reelyactive.cuttlefish', [])
           scope.types.push(TYPE_PRODUCT);
         }
         scope.current = scope.types[0];
+        var thisBubble = new Bubble(scope);
       }
+      
 
       function formatItem(item, type) {
         if(!item.hasOwnProperty("schema:image")) {

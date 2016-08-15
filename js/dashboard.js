@@ -24,21 +24,22 @@ angular.module('dashboard', [ 'reelyactive.cuttlefish' ])
       "schema": "http://schema.org/"
     },
     "@graph": [
-      {
-        "@id": "person",
-        "@type": "schema:Person",
-        "schema:givenName": "Barn",
-        "schema:familyName": "Owl",
-        "schema:worksFor": "reelyActive",
-        "schema:jobTitle": "Mascot",
-        "schema:image": "http://reelyactive.com/images/barnowl.jpg"
-      },
-      {
-        "@id": "product",
-        "@type": "schema:Product",
-        "schema:name": "915MHz Active RFID Tag",
-        "schema:image": "http://reelyactive.com/images/tag400x400.jpg"
-      }
+    {
+      "@id": "person",
+      "@type": "schema:Person",
+      "schema:givenName": "Jeffrey",
+      "schema:familyName": "Dungen",
+      "schema:gender": "Male",
+      "schema:nationality": "CA",
+      "schema:worksFor": "reelyActive",
+      "schema:jobTitle": "Co-founder and CEO",
+      "schema:url": "http://dungen.ca/jeff/",
+      "schema:sameAs": [
+      "https://www.linkedin.com/in/dungen",
+      "https://plus.google.com/+JeffreyDungen"
+      ],
+      "schema:image": "http://dungen.ca/jeff/portrait-ld.jpg"
+    }
     ]
   };
 

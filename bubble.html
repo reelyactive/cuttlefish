@@ -4,58 +4,34 @@
 <div class="bubble" id="{{itemID}}">
 
   <!-- Toggle -->
-  <div class="bubble__toggle">
+  <div class="bubble--toggle">
     <p ng-click="toggle = toggle + 1; current = types[toggle % types.length]">
       {{current}} {{types.length > 1 ? '>' : ''}}
     </p>
   </div>
 
   <!-- Person -->
-  <div class="bubble__element" ng-if="person" ng-show="current === 'Person'">
-    <div class="bubble__photo" ng-style="{ 
-      'width' : size,
-      'height' : size,
-      'border-radius' : size,
-      'border-width' : 'calc({{size}} / 10)',
+    <div class="bubble--photo" ng-if="person" ng-show="current === 'Person'" ng-style="{
       'background-image' : 'url(' + person['schema:image'] + ')' }">
+			<div class="bubble--title">
+	      {{person["schema:givenName"]}} {{person["schema:familyName"]}}
+	    </div>
     </div>
-    <div class="bubble__title" ng-style="{
-      'font-size' : 'calc({{size}} / 10)',
-      'bottom' : 'calc(- {{size}} / 10)' }">
-      {{person["schema:givenName"]}} {{person["schema:familyName"]}}
-    </div>
-  </div>
 
   <!-- Place -->
-  <div class="bubble__element" ng-if="place" ng-show="current === 'Place'">
-    <div class="bubble__photo" ng-style="{
-      'width' : size,
-      'height' : size,
-      'border-radius' : size,
-      'border-width' : 'calc({{size}} / 10)',
+    <div class="bubble--photo" ng-if="place" ng-show="current === 'Place'" ng-style="{
       'background-image' : 'url(' + place['schema:image'] + ')' }">
+			<div class="bubble--title">
+	      {{place["schema:name"]}}
+	    </div>
     </div>
-    <div class="bubble__title" ng-style="{
-      'font-size' : 'calc({{size}} / 10)',
-      'bottom' : 'calc(- {{size}} / 10)' }">
-      {{place["schema:name"]}}
-    </div>
-  </div>
 
   <!-- Product -->
-  <div class="bubble__element" ng-if="product" ng-show="current === 'Product'">
-    <div class="bubble__photo" ng-style="{
-      'width' : size,
-      'height' : size,
-      'border-radius' : size,
-      'border-width' : 'calc({{size}} / 10)',
+    <div class="bubble--photo" ng-if="product" ng-show="current === 'Product'" ng-style="{
       'background-image' : 'url(' + product['schema:image'] + ')' }">
+			<div class="bubble--title">
+	      {{product["schema:name"]}}
+	    </div>
     </div>
-    <div class="bubble__title" ng-style="{
-      'font-size' : 'calc({{size}} / 10)',
-      'bottom' : 'calc(- {{size}} / 10)' }">
-      {{product["schema:name"]}}
-    </div>
-  </div>
 
 </div>

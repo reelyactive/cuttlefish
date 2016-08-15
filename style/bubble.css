@@ -3,8 +3,7 @@
   display: inline-block;
 }
 
-.bubble__photo {
-  overflow: hidden;
+.bubble--photo {
   z-index: 10;
   text-align: center;
   -moz-background-clip: padding;     /* Firefox 3.6 */
@@ -13,31 +12,60 @@
   background-size: cover;
   background-repeat: no-repeat;
   border: solid rgba(255, 255, 255, 0.2);
+  box-sizing: content-box;
+  position: relative;
 }
 
-.bubble__toggle {
+.bubble--toggle {
   width: 48px;
   height: 12px;
   display: none;
 }
 
-.bubble__toggle p {
+.bubble--toggle p {
   font-size: 8pt;
   color: #fff;
 }
 
-.bubble__element {
+.bubble--title {
   position: relative;
-  width: 100%;
-  height: 100%;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  float: center;
+  font-weight: 600;
+  color: white;
+  z-index: 11;
+  display: inline-block;
+  background-color: black;
+  border-radius: 10px;
+  padding: 0 10px;
+  opacity: 0.9;
 }
 
-.bubble__title {
+.bubble--icon {
+  display: none;
   position: absolute;
-  width: 100%;
-  font-weight: 600;
-  text-align: center;
-  color: white;
+  font-weight: 800;
+  text-decoration: none !important;
+  color: black !important;
+  box-shadow: none;
+  background-size: 100%;
+}
+
+.bubble--icon:hover {
+  cursor: pointer;
+}
+
+.bubble--icon-naked {
+  background-color: white;
+}
+
+.bubble--icon-naked:hover, .bubble--icon-naked:active {
+  background: #676767; /* Old browsers */
+  background: -moz-linear-gradient(top, #676767 0%, #000000 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#676767), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #676767 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #676767 0%,#000000 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #676767 0%,#000000 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #676767 0%,#000000 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#676767', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+  color: white !important;
 }
