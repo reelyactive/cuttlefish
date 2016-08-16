@@ -1,6 +1,3 @@
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300'
-      rel='stylesheet' type='text/css'>
-
 <div class="bubble" id="{{itemID}}">
 
   <!-- Toggle -->
@@ -13,7 +10,7 @@
   <!-- Person -->
     <div class="bubble--photo" ng-if="person" ng-show="current === 'Person'" ng-style="{
       'background-image' : 'url(' + person['schema:image'] + ')' }">
-			<div class="bubble--title">
+			<div class="bubble--label">
 	      {{person["schema:givenName"]}} {{person["schema:familyName"]}}
 	    </div>
     </div>
@@ -21,7 +18,7 @@
   <!-- Place -->
     <div class="bubble--photo" ng-if="place" ng-show="current === 'Place'" ng-style="{
       'background-image' : 'url(' + place['schema:image'] + ')' }">
-			<div class="bubble--title">
+			<div class="bubble--label">
 	      {{place["schema:name"]}}
 	    </div>
     </div>
@@ -29,7 +26,7 @@
   <!-- Product -->
     <div class="bubble--photo" ng-if="product" ng-show="current === 'Product'" ng-style="{
       'background-image' : 'url(' + product['schema:image'] + ')' }">
-			<div class="bubble--title">
+			<div class="bubble--label">
 	      {{product["schema:name"]}}
 	    </div>
     </div>

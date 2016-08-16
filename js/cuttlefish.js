@@ -48,7 +48,7 @@ angular.module('reelyactive.cuttlefish', [])
                 scope.types.push(TYPE_PLACE);
                 break;
             }
-            scope.itemID = graph[cItem]["@id"];
+            scope.itemID = Bubble.generateID(graph[cItem]["@id"]);
           }
         }
         else {

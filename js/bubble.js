@@ -5,6 +5,24 @@ var Bubble = function(scope) {
   });
 }
 
+var BubbleIDs = {
+  duplicates: {},
+  list: []
+}
+
+Bubble.generateID = function(jsonID) {
+  if (BubbleIDs.list.indexOf(jsonID) >= 0) { // duplicate ID
+    if (!BubbleIDs.duplicates.hasOwnProperty(jsonID)) {
+      BubbleIDs.duplicates[jsonID] = {count: 1};
+    }
+    BubbleIDs.duplicates[jsonID].count += 1;
+    return jsonID + BubbleIDs.duplicates[jsonID].count;
+  } else {
+    BubbleIDs.list.push(jsonID);
+    return jsonID;
+  }
+}
+
 Bubble.prototype = {
   
   initialize: function(scope) {
@@ -12,12 +30,12 @@ Bubble.prototype = {
     
     self.containerClass = '.bubble';
     self.bubbleClass = self.containerClass+'--photo';
-    self.labelClass = self.containerClass+'--title';
+    self.labelClass = self.containerClass+'--label';
     self.iconClass = self.containerClass+'--icon';
     
     self.scope = scope;
     self.size = parseInt(scope.size);
-    self.borderSize = self.size/10;
+    self.borderSize = self.size / 10;
     self.labelTop = self.size * 0.9;
     self.container = $('#'+scope.itemID);
     self.bubble = $(self.bubbleClass, self.container);
@@ -205,6 +223,14 @@ var Loader = {
     document.getElementsByTagName('head')[0].appendChild(script);
   },
   
+  getFonts: function() {
+    var font = document.createElement('link');
+    font.href = 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300';
+    font.rel = 'stylesheet';
+    font.type = 'text/css';
+    document.getElementsByTagName('head')[0].appendChild(font);
+  },
+  
   whenAvailable: function(name, callback) {
     var interval = 10; // ms
     window.setTimeout(function() {
@@ -225,3 +251,4 @@ var Loader = {
 }
 
 Loader.getJQuery();
+Loader.getFonts();
