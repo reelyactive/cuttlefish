@@ -24,22 +24,29 @@ angular.module('dashboard', [ 'reelyactive.cuttlefish' ])
       "schema": "http://schema.org/"
     },
     "@graph": [
-    {
-      "@id": "person",
-      "@type": "schema:Person",
-      "schema:givenName": "Jeffrey",
-      "schema:familyName": "Dungen",
-      "schema:gender": "Male",
-      "schema:nationality": "CA",
-      "schema:worksFor": "reelyActive",
-      "schema:jobTitle": "Co-founder and CEO",
-      "schema:url": "http://dungen.ca/jeff/",
-      "schema:sameAs": [
-      "https://www.linkedin.com/in/dungen",
-      "https://plus.google.com/+JeffreyDungen"
-      ],
-      "schema:image": "http://dungen.ca/jeff/portrait-ld.jpg"
-    }
+      {
+        "@id": "person",
+        "@type": "schema:Person",
+        "schema:givenName": "Barn",
+        "schema:familyName": "Owl",
+        "schema:nationality": "CA",
+        "schema:worksFor": "reelyActive",
+        "schema:jobTitle": "Mascot",
+        "schema:url": "https://www.npmjs.com/package/barnowl",
+        "schema:sameAs": [
+          "http://www.facebook.com/reelyActive",
+          "http://www.twitter.com/reelyActive",
+          "http://plus.google.com/+reelyActive",
+          "http://www.linkedin.com/company/reelyactive",
+          "http://www.instagram.com/reelyactive",
+          "http://www.youtube.com/reelyActive",
+          "http://github.com/reelyactive",
+          "http://www.npmjs.com/~reelyactive",
+          "http://angel.co/reelyactive",
+          "http://www.crunchbase.com/organization/reelyactive"
+        ],
+        "schema:image": "http://reelyactive.com/images/barnowl.jpg"
+      }
     ]
   };
 
