@@ -46,6 +46,12 @@ angular.module('dashboard', [ 'reelyactive.cuttlefish' ])
           "http://www.crunchbase.com/organization/reelyactive"
         ],
         "schema:image": "http://reelyactive.com/images/barnowl.jpg"
+      },
+      {
+        "@id": "product",
+        "@type": "schema:Product",
+        "schema:name": "915MHz Active RFID Tag",
+        "schema:image": "http://reelyactive.com/images/tag400x400.jpg"
       }
     ]
   };

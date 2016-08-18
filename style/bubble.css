@@ -16,17 +16,6 @@
   position: relative;
 }
 
-.bubble--toggle {
-  width: 48px;
-  height: 12px;
-  display: none;
-}
-
-.bubble--toggle p {
-  font-size: 8pt;
-  color: #fff;
-}
-
 .bubble--label {
   position: relative;
   float: center;
@@ -68,4 +57,35 @@
   background: linear-gradient(to bottom, #676767 0%,#000000 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#676767', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
   color: white !important;
+}
+
+.tooltip {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.bubble--toggle {
+  width: 100%;
+  text-align: center;
+}
+
+.bubble--toggle--button {
+  display: inline-block;
+  margin: 10px 5px;
+  background-color: black;
+  color: #dadada;
+  border-radius: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.bubble--toggle--button:hover {
+  color: white;
+  opacity: 1.0;
+}
+
+.bubble--toggle--button.selected {
+  color: black;
+  background-color: white;
+  opacity: 1.0;
 }

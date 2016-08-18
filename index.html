@@ -4,13 +4,13 @@
     <title> reelyActive cuttlefish.js demo </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style/main.css">
-    <link rel="stylesheet" href="style/bubble.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
-    <script type="text/javascript" src="js/bubble.js"></script>
+		<link rel="stylesheet" href="style/main.css">
+		<link rel="stylesheet" href="style/bubble.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.2/ui-bootstrap-tpls.min.js"></script>
+		<script type="text/javascript" src="js/bubble.js"></script>
 		<script type="text/javascript" src="js/cuttlefish.js"></script>
-    <script type="text/javascript" src="js/dashboard.js"></script>
+		<script type="text/javascript" src="js/dashboard.js"></script>
   </head>
   <body ng-app="dashboard">
     <div ng-controller="DashCtrl">
@@ -24,7 +24,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="http://context.reelyactive.com">
+          <a class="navbar-brand" href="http://context.reelyactive.com" >
             <strong>reely</strong>Active
           </a>
         </div>
@@ -61,7 +61,7 @@
               <caption> HOW IT IS RENDERED BY CUTTLEFISH </caption>
             </table>
             <div class="well blue" style="min-height: 540px">
-              <bubble json="json" size="{{size}}"></bubble>
+              <bubble json="json" size="{{size}}" toggle="true"></bubble>
             </div>
           </div>
         </div>

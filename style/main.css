@@ -10,7 +10,7 @@ body {
 }
 
 input, textarea {
-  font-size: 16px !important;
+  font-size: 13px !important;
 }
 
 /* Begin Bootstrap 3 navbar override */
@@ -111,7 +111,7 @@ input, textarea {
 
 .blue {
   background-color: #0770a2;
-  padding: 60px;
+  padding: 30px;
   box-sizing: border-box;
   overflow: hidden;
 }
