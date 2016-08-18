@@ -1,8 +1,9 @@
 var Bubble = function(scope) {
   var self = this;
+  self.scope = scope;
   Loader.whenAvailable('jQuery', function() {
     Compiler.initialize();
-    self.initialize(scope);
+    self.initialize();
   });
 }
 
@@ -28,73 +29,37 @@ Bubble.prototype = {
   
   initialize: function(scope) {
     var self = this;
-    
+    self.style();
+    self.addIcons();
+    self.setHoverEvent();
+  },
+  
+  setClasses: function() {
+    var self = this;
     self.containerClass = '.bubble';
     self.bubbleClass = self.containerClass+'--photo';
     self.labelClass = self.containerClass+'--label';
     self.iconClass = self.containerClass+'--icon';
     self.toggleClass = self.containerClass+'--toggle';
-    
-    self.scope = scope;
-    self.size = parseInt(scope.size);
-    self.borderSize = self.size / 10;
-    self.labelTop = self.size * 0.9;
-    self.container = $('#'+scope.itemID);
+  },
+  
+  setDivs: function() {
+    var self = this;
+    self.container = $('#'+self.scope.itemID);
     self.bubble = $(self.bubbleClass, self.container);
     self.label = $(self.labelClass, self.container);
     self.toggle = $(self.toggleClass, self.container);
+  },
+  
+  style: function() {
+    var self = this;
     
-    self.parseServices();
-    self.setCSS();
-    self.addIcons();
-    self.setHoverAnimation();
-    self.setHoverEvent();
-  },
-  
-  selectByType: function(type) {
-    var self = this;
-    var selector = self.bubbleClass+'[data-type="'+type+'"]';
-    var div = $(selector, self.container);
-    return div;
-  },
-  
-  activeBubble: function() {
-    var self = this;
-    return self.selectByType(self.scope.current);
-  },
-  
-  name: function(type) {
-    var self = this;
-    return self.selectByType(type).data('name');
-  },
-  
-  icons: function() {
-    var self = this;
-    return $(self.iconClass, self.activeBubble());
-  },
-  
-  setupToggle: function() {
+    self.setClasses();
+    self.setDivs();
     
-  },
-  
-  parseServices: function() {
-    var self = this;
-    self.sameAs = {};
-    $.each(self.scope.types, function(index, type) {
-      $.each(self.scope.json['@graph'], function(index, node) {
-        if (node['@type'] == 'schema:'+type) {
-          if (node.hasOwnProperty('schema:sameAs')) {
-            self.sameAs[type] = node['schema:sameAs'];
-          } else {
-            self.sameAs[type] = [];
-          }
-        }
-      });
-    });
-  },
-  
-  setCSS: function() {
-    var self = this;
+    self.size = parseInt(self.scope.size);
+    self.borderSize = self.size / 10;
+    self.labelTop = self.size * 0.9;
     
     self.bubble.css({
       width: self.size,
@@ -110,10 +75,25 @@ Bubble.prototype = {
     });
   },
   
+  parseServices: function() {
+    var self = this;
+    self.sameAs = {};
+    $.each(self.scope.types, function(index, type) {
+      var node = self.scope[type.toLowerCase()];
+      if (node.hasOwnProperty('schema:sameAs')) {
+        self.sameAs[type] = node['schema:sameAs'];
+      } else {
+        self.sameAs[type] = [];
+      }
+    });
+  },
+  
   addIcons: function() {
     var self = this;
     
     $(self.iconClass, self.bubble).remove();
+    
+    self.parseServices();
     
     $.each(BubbleServices, function(serviceName, service) {
       $.each(self.sameAs, function(type, urls) {
@@ -170,27 +150,6 @@ Bubble.prototype = {
     });
   },
   
-  setHoverAnimation: function() {
-    var self = this;
-    
-    self.borderIncrease = self.borderSize * 2;
-    self.newBorder = self.borderSize + self.borderIncrease;
-    self.newSize = self.size + self.borderIncrease*2;
-    self.iconSize = self.newBorder * 0.8;
-
-    self.hoverAnimation = {
-      borderWidth: self.newBorder+'px',
-      top: '-='+self.borderIncrease+'px',
-      left: '-='+self.borderIncrease+'px'
-    };
-    
-    self.cssReset = {
-      borderWidth: self.borderSize+'px',
-      top: 0,
-      left: 0
-    }
-  },
-  
   getIconPosition: function (angle) {
     var self = this;
     
@@ -236,10 +195,33 @@ Bubble.prototype = {
     });
   },
   
+  setHoverAnimation: function() {
+    var self = this;
+    
+    self.borderIncrease = self.borderSize * 2;
+    self.newBorder = self.borderSize + self.borderIncrease;
+    self.newSize = self.size + self.borderIncrease*2;
+    self.iconSize = self.newBorder * 0.8;
+
+    self.hoverAnimation = {
+      borderWidth: self.newBorder+'px',
+      top: '-='+self.borderIncrease+'px',
+      left: '-='+self.borderIncrease+'px'
+    };
+    
+    self.cssReset = {
+      borderWidth: self.borderSize+'px',
+      top: 0,
+      left: 0
+    }
+  },
+  
   setHoverEvent: function() {
     var self = this;
     
     self.bubble.unbind('mouseenter mouseleave');
+    
+    self.setHoverAnimation();
     
     self.bubble.hover(function() {
       
@@ -285,6 +267,28 @@ Bubble.prototype = {
     if ($(self.bubbleClass+':hover', self.container).length == 0) {
       self.bubble.trigger('mouseleave');
     }
+  },
+  
+  selectByType: function(type) {
+    var self = this;
+    var selector = self.bubbleClass+'[data-type="'+type+'"]';
+    var div = $(selector, self.container);
+    return div;
+  },
+  
+  activeBubble: function() {
+    var self = this;
+    return self.selectByType(self.scope.current);
+  },
+  
+  name: function(type) {
+    var self = this;
+    return self.selectByType(type).data('name');
+  },
+  
+  icons: function() {
+    var self = this;
+    return $(self.iconClass, self.activeBubble());
   }
   
 }
