@@ -2,7 +2,7 @@
 
   <!-- Toggle -->
 
-  <div class="bubble--toggle" ng-show="toggle === true">
+  <div class="bubble--toggle" ng-show="toggle === true && types.length > 1">
 	
 		<div ng-repeat="type in types" ng-click="$parent.current = type"
 			class="bubble--toggle--button"
