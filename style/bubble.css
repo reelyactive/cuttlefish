@@ -23,10 +23,9 @@
   color: white;
   z-index: 11;
   display: inline-block;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
   border-radius: 10px;
   padding: 0 10px;
-  opacity: 0.9;
 }
 
 .bubble--icon {
@@ -37,10 +36,13 @@
   color: black !important;
   box-shadow: none;
   background-size: 100%;
+  opacity: 0.9;
 }
 
 .bubble--icon:hover {
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1.0;
 }
 
 .bubble--icon-naked {
@@ -63,6 +65,10 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+.tooltip:hover {
+  cursor: default;
+}
+
 .bubble--toggle {
   width: 100%;
   text-align: center;
@@ -71,21 +77,19 @@
 .bubble--toggle--button {
   display: inline-block;
   margin: 10px 5px;
-  background-color: black;
-  color: #dadada;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
   border-radius: 10px;
   padding: 5px 10px;
   cursor: pointer;
-  opacity: 0.9;
 }
 
 .bubble--toggle--button:hover {
   color: white;
-  opacity: 1.0;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .bubble--toggle--button.selected {
   color: black;
   background-color: white;
-  opacity: 1.0;
 }

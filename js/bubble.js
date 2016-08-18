@@ -107,18 +107,10 @@ Bubble.prototype = {
               'href': url,
               'target': '_blank'
             });
-            // set images
+            // set image
             if (service.hasOwnProperty('image')) {
               icon.css('background-image', 'url('+service.image+')');
               Loader.preloadImages(service.image);
-              if (service.hasOwnProperty('hoverImage')) {
-                icon.hover(function() {
-                  icon.css('background-image', 'url('+service.hoverImage+')');
-                }, function() {
-                  icon.css('background-image', 'url('+service.image+')');
-                }); 
-                Loader.preloadImages(service.hoverImage);
-              }
             } else {
               icon.addClass(self.iconClass+'-naked');
               icon.html(serviceName.substr(0,2));
@@ -169,7 +161,7 @@ Bubble.prototype = {
     return {'left':left, 'top':top};
   },
   
-  placeIcon: function(icon, angle) {
+  setIconCSS: function(icon, angle) {
     var self = this;
     var pos = self.getIconPosition(angle);
     icon.css({
@@ -188,7 +180,7 @@ Bubble.prototype = {
     var delta = 30;
     var delay = 0;
     self.icons().each(function() {
-      icon = self.placeIcon($(this), angle);
+      icon = self.setIconCSS($(this), angle);
       icon.delay(delay).fadeIn(300);
       angle += delta;
       delay += 50;
@@ -220,7 +212,7 @@ Bubble.prototype = {
     var self = this;
     
     self.bubble.unbind('mouseenter mouseleave');
-    
+
     self.setHoverAnimation();
     
     self.bubble.hover(function() {
@@ -300,26 +292,22 @@ var BubbleServices = {
   Twitter: {
     keyString: 'twitter.com',
     image: 'images/icons/twitter.png',
-    hoverImage: 'images/icons/twitter-hover.png',
     tooltip: "See {{name}}'s tweets"
   },
   
   LinkedIn: {
     keyString: 'linkedin.com',
-    image: 'images/icons/linkedin.png',
-    hoverImage: 'images/icons/linkedin-hover.png'
+    image: 'images/icons/linkedin.png'
   },
   
   Instagram: {
     keyString: 'instagram.com',
-    image: 'images/icons/instagram.png',
-    hoverImage: 'images/icons/instagram-hover.png'
+    image: 'images/icons/instagram.png'
   },
   
   Facebook: {
     keyString: 'facebook.com',
-    image: 'images/icons/facebook.png',
-    hoverImage: 'images/icons/facebook-hover.png'
+    image: 'images/icons/facebook.png'
   }
   
 }
