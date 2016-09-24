@@ -1,6 +1,65 @@
 .bubble {
   font-family: 'Open Sans', sans-serif;
-  display: inline-block;
+  text-align: center;
+  overflow: hidden;
+  display: none;
+  position: absolute;
+}
+
+bubble[fade=true].ng-enter {
+  transition:0.3s linear all;
+  opacity:0;
+}
+
+bubble[fade=true].ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+bubble[fade=true].ng-leave {
+  transition:0.3s linear all;
+  opacity:1;
+}
+bubble[fade=true].ng-leave.ng-leave-active {
+  opacity:0;
+}
+
+.paused {
+  -webkit-animation-play-state: paused; /* Chrome, Safari, Opera */
+  animation-play-state: paused;
+}
+
+.forward-motion {
+  animation: forward 10s infinite linear;
+}
+
+.backward-motion {
+  animation: backward 10s infinite linear;
+}
+
+@keyframes forward {
+  from {
+    transform: rotate(0deg)
+               translate(-10px)
+               rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg)
+               translate(-10px) 
+               rotate(-360deg);
+  }
+}
+
+@keyframes backward {
+  from {
+    transform: rotate(360deg)
+               translate(-10px)
+               rotate(-360deg);
+  }
+  to {
+    transform: rotate(0deg)
+               translate(-10px) 
+               rotate(0deg);
+  }
 }
 
 .bubble--photo {
@@ -14,6 +73,8 @@
   border: solid rgba(255, 255, 255, 0.2);
   box-sizing: content-box;
   position: relative;
+  margin: 0 auto;
+  display: none;
 }
 
 .bubble--label {
@@ -25,7 +86,8 @@
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.9);
   border-radius: 10px;
-  padding: 0 10px;
+  padding: 3px 10px;
+  margin: 0;
 }
 
 .bubble--icon {
