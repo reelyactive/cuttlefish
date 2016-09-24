@@ -57,7 +57,7 @@ angular.module('dashboard', [ 'reelyactive.cuttlefish' ])
   };
 
   $scope.data = JSON.stringify($scope.json, null, '  ');
-  $scope.size = '240px';
+  $scope.size = '160px';
 
   $scope.update = function(data) {
     $scope.json = JSON.parse(data);
