@@ -526,8 +526,8 @@ var Placement = {
   
   setEmptyBoxes: function() {
     var self = this;
-    var windowHeight = $(window).height();
-    var windowWidth = $(window).width();
+    var windowHeight = $('#bubblebox').height() || $(window).height();
+    var windowWidth = $('#bubblebox').width() || $(window).width();
     self.numRows = Math.floor(windowHeight / self.size);
     self.numCols = Math.floor(windowWidth / self.size);
     for (var row = 0; row < self.numRows; row++) {
