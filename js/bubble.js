@@ -230,23 +230,27 @@ Bubble.prototype = {
               'tooltip-append-to-body': true
             });
             // set overlay or href
-            // TODO: correct for standalone cuttlefish
-            //if (service.hasOwnProperty('overlay')
-            //    && angular.module('reelyactive.bottlenose')) {
-            //  icon.click(function(event) {
-            //    icon.toggleClass('active');
-            //    if (icon.hasClass('active')) {
-            //      self.showOverlay(serviceName, url, event);
-            //    } else {
-            //      self.closeOverlay();
-            //    }
-            //  });
-            //} else {
+            var hasBottlenose = true;
+            try {
+              angular.module('reelyactive.bottlenose');
+            } catch(err) {
+              hasBottlenose = false;
+            }
+            if (service.hasOwnProperty('overlay') && hasBottlenose) {
+              icon.click(function(event) {
+                icon.toggleClass('active');
+                if (icon.hasClass('active')) {
+                  self.showOverlay(serviceName, url, event);
+                } else {
+                  self.closeOverlay();
+                }
+              });
+            } else {
               icon.attr({
                 'href': url,
                 'target': '_blank'
               });
-            //}
+            }
             // bind tooltip unhover handler
             icon.bind('mouseleave.tooltip', function() {
               setTimeout(function() {
@@ -831,13 +835,15 @@ var Compiler = { // need Angular to recompile new elements after DOM manipulatio
 
     AngularCompile = function(root)
     {
-      // TODO: correct for standalone cuttlefish
-      //var injector = angular.element(document).injector();
-      //var $compile = injector.get('$compile');
-      //var $rootScope = injector.get('$rootScope');
-      //var result = $compile(root)($rootScope);
-      //$rootScope.$digest();
-      //return result;
+      var injector = angular.element(document).injector();
+      if (typeof injector == 'undefined') {
+         injector = angular.element($('[ng-app]')[0]).injector();
+      }
+      var $compile = injector.get('$compile');
+      var $rootScope = injector.get('$rootScope');
+      var result = $compile(root)($rootScope);
+      $rootScope.$digest();
+      return result;
     }
     
     self.initialized = true;
