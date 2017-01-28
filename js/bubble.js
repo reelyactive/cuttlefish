@@ -837,7 +837,7 @@ var Compiler = { // need Angular to recompile new elements after DOM manipulatio
     {
       var injector = angular.element(document).injector();
       if (typeof injector == 'undefined') {
-         injector = angular.element($('[ng-app]')[0]).injector();
+        injector = angular.element($('[ng-app]')[0]).injector();
       }
       var $compile = injector.get('$compile');
       var $rootScope = injector.get('$rootScope');
