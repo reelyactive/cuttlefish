@@ -109,11 +109,9 @@ input, textarea {
 }
 /* End Bootstrap 3 tabs override */
 
-.blue {
+#bubbles {
   background-color: #0770a2;
-  padding: 60px;
-  box-sizing: border-box;
-  overflow: hidden;
+  min-height: 540px;
 }
 
 .footer {

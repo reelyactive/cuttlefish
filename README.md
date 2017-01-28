@@ -1,7 +1,7 @@
 cuttlefish
 ==========
 
-Human-friendly HTML rendering of machine-friendly JSON-LD.  For a live demo visit [reelyactive.github.io/cuttlefish/](http://reelyactive.github.io/cuttlefish/).
+Human-friendly HTML rendering of machine-friendly JSON-LD.  For a live demo visit [reelyactive.github.io/cuttlefish/](https://reelyactive.github.io/cuttlefish/).
 
 
 License

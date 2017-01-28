@@ -1,3 +1,17 @@
+/**
+ * Copyright reelyActive 2016-2017
+ * We believe in an open Internet of Things
+ */
+
+
+HAS_CHAMPAGNE = (typeof CHAMPAGNE_ROOT != 'undefined');
+if(HAS_CHAMPAGNE) {
+  ASSET_ROOT = CHAMPAGNE_ROOT + 'social/icons/';
+}
+else {
+  ASSET_ROOT = 'social/icons/';
+}
+
 var Bubble = function(scope) {
   var self = this;
   self.scope = scope;
@@ -42,6 +56,14 @@ Bubble.visibleTypes = function(visible, all) {
   return commonValues;
   
 }
+
+Bubble.overlayActive = function() {
+  if ($('.overlay').length > 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 Bubble.prototype = {
   
@@ -125,11 +147,9 @@ Bubble.prototype = {
     self.borderSize = self.size / 10;
     self.labelTop = self.size * 0.9;
     self.containerSize = self.size + self.borderSize*6;
-    
-    //self.place();
+    self.flyoutOpacity = 0.9;
   
     var emptyBox = Placement.findAvailable(self.containerSize);
-    //console.log(emptyBox);
     self.box = emptyBox.box;
     self.position = emptyBox.pos;
     
@@ -189,10 +209,6 @@ Bubble.prototype = {
             var icon = $('<a class="'+self.iconClass.substring(1)+'" />');
             icon.data('service', serviceName);
             icon.data('url', url);
-            icon.attr({
-              'href': url,
-              'target': '_blank'
-            });
             // set image
             if (service.hasOwnProperty('image')) {
               icon.css('background-image', 'url('+service.image+')');
@@ -213,6 +229,24 @@ Bubble.prototype = {
               'tooltip-placement': 'top',
               'tooltip-append-to-body': true
             });
+            // set overlay or href
+            // TODO: correct for standalone cuttlefish
+            //if (service.hasOwnProperty('overlay')
+            //    && angular.module('reelyactive.bottlenose')) {
+            //  icon.click(function(event) {
+            //    icon.toggleClass('active');
+            //    if (icon.hasClass('active')) {
+            //      self.showOverlay(serviceName, url, event);
+            //    } else {
+            //      self.closeOverlay();
+            //    }
+            //  });
+            //} else {
+              icon.attr({
+                'href': url,
+                'target': '_blank'
+              });
+            //}
             // bind tooltip unhover handler
             icon.bind('mouseleave.tooltip', function() {
               setTimeout(function() {
@@ -226,6 +260,125 @@ Bubble.prototype = {
         });
       });
     });
+  },
+  
+  showOverlay: function(serviceName, url, clickEvent) {
+    var self = this;
+    
+    clickEvent.stopPropagation();
+    
+    self.overlay = $('<div class="overlay"></div>');
+    var overlayLoader = $('<div class="overlay--loader">Loading...</div>');
+    overlayLoader.appendTo(self.overlay);
+    self.overlayArrow = $('<div class="arrow"></div>');
+    
+    $('body').append(self.overlay);
+    $('body').append(self.overlayArrow);
+    
+    var bubblePos = self.bubble.offset();
+    var arrowWidth = 32;
+    var arrowTop =
+      bubblePos.top
+      + self.bubble.outerHeight()/2
+      - 20;
+    
+    if (bubblePos.left < $(window).width()/2) { // overlay right of bubble
+      
+      var overlayLeft =
+        bubblePos.left
+        + self.container.width()
+        - arrowWidth/3;
+        
+      self.overlayArrow.css({
+        left: overlayLeft - arrowWidth,
+        top: arrowTop,
+        borderRight: arrowWidth+'px solid white',
+        borderLeft: 'none'
+      });
+      
+    } else { // overlay left of bubble
+      
+      var overlayLeft =
+        bubblePos.left
+        - self.overlay.width()
+        + arrowWidth/3;
+        
+      self.overlayArrow.css({
+        left: overlayLeft + self.overlay.width(),
+        top: arrowTop,
+        borderLeft: arrowWidth+'px solid white',
+        borderRight: 'none'
+      });
+    }
+    
+    var overlayTop =
+      bubblePos.top
+      + self.bubble.outerHeight()/2
+      - self.overlay.outerHeight()/2;
+    
+    self.overlay.css({
+      left: overlayLeft+'px',
+      top: overlayTop+'px'
+    });
+    
+    self.setOverlayCloseEvent();
+    
+    self.fillOverlay(serviceName, url);
+  },
+  
+  fillOverlay: function(serviceName, url) {
+    var self = this;
+    
+    var overlayContainer = $('<div><'+serviceName+'></'+serviceName+'></div>');
+    self.overlayContent = $(serviceName, overlayContainer);
+    self.overlayContent.attr({url: "'"+url+"'"});
+    self.overlayContent.hide();
+    
+    $('.overlay').append(overlayContainer);
+    
+    self.overlayContent.on('ready', function() {
+      self.openOverlay();
+    });
+  },
+  
+  openOverlay: function() {
+    var self = this;
+    
+    var margin = 20;
+    
+    var css = {
+      top: margin,
+      height: $(window).height() - margin*2
+    }
+    
+    $('.overlay--loader').fadeOut(300, function() {
+      self.overlay.animate(css, 500, function() {
+        self.overlayContent.show();
+        $('.overlay--content').fadeTo(300, 1.0, function() {
+          self.setOverlayCloseEvent();
+        });
+      });
+    });
+  },
+  
+  setOverlayCloseEvent: function() {
+    var self = this;
+    self.overlayCloseClick = $(document).click(function(event) { 
+      if(!$(event.target).closest('.overlay').length) {
+        self.closeOverlay();
+        if (!$(event.target).closest(self.bubble).length) {
+          self.bubble.trigger('mouseout');
+        }
+      }        
+    });
+  },
+  
+  closeOverlay: function() {
+    var self = this;
+    self.overlayCloseClick.off();
+    self.overlay.remove();
+    self.overlayArrow.remove();
+    self.icons().removeClass('active');
   },
   
   getIconPosition: function (angle) {
@@ -301,20 +454,21 @@ Bubble.prototype = {
     
     self.bubble.hover(function() {
       
+      if (Bubble.overlayActive()) return false;
       if (self.bubble.hasClass('hover')) return false;
       
       Bubbles.active = true;
       self.stopFloating();
       self.animateFlyouts();
-      self.allOtherBubbles().fadeTo(150, 0.2);
+      self.allOtherBubbles().css({opacity: 0.2});
       
       self.bubble.addClass('hover');
       self.label.css({backgroundColor: 'transparent'});
       self.label.animate({
         top: self.size + (self.borderSize/3) + 'px'
-      }, 300);
+      }, 200);
       
-      self.bubble.animate(self.hoverAnimation, 300, function() {
+      self.bubble.animate(self.hoverAnimation, 200, function() {
         if (self.bubble.hasClass('hover')) {
           self.revealIcons();
         }
@@ -322,12 +476,15 @@ Bubble.prototype = {
       
     }, function() { // unhover
       
+      if (Bubble.overlayActive()) return false;
       if ($('.tooltip:hover').length > 0) return false;
       
       self.bubble.finish();
       self.label.finish();
       self.icons().finish();
       self.bubble.removeClass('hover');
+      
+      $('.overlay').remove();
       
       self.icons().hide();
       self.bubble.css(self.cssReset);
@@ -336,7 +493,6 @@ Bubble.prototype = {
         top: self.labelTop
       });
       
-      self.allOtherBubbles().finish();
       self.allOtherBubbles().css({opacity: 1.0});
       self.resumeFloating();
       Bubbles.active = false;
@@ -368,17 +524,16 @@ Bubble.prototype = {
       subBubble.show();
       subBubble.css({
         position: 'absolute',
-        zIndex: -1,
+        zIndex: 1,
         top: bubblePos.top+self.borderSize,
         left: bubblePos.left+self.borderSize,
         borderWidth: 0,
-        opacity: 0.2
+        opacity: self.flyoutOpacity
       });
       subBubble.animate({
         top: subTopDirection+subTopShift+'px',
-        left: subLeftEnd,
-        opacity: 0.9
-      }, 300, function(){
+        left: subLeftEnd
+      }, 200, function(){
         $(this).css({zIndex: 100});
       });
       subLeftEnd += subLeftIncrement;
@@ -455,23 +610,24 @@ var BubbleServices = {
   
   Twitter: {
     keyString: 'twitter.com',
-    image: 'images/icons/twitter.png',
-    tooltip: "See {{name}}'s tweets"
+    image: ASSET_ROOT+'twitter.png',
+    tooltip: "See {{name}}'s tweets",
+    overlay: true
   },
   
   LinkedIn: {
     keyString: 'linkedin.com',
-    image: 'images/icons/linkedin.png'
+    image: ASSET_ROOT+'linkedin.png'
   },
   
   Instagram: {
     keyString: 'instagram.com',
-    image: 'images/icons/instagram.png'
+    image: ASSET_ROOT+'instagram.png'
   },
   
   Facebook: {
     keyString: 'facebook.com',
-    image: 'images/icons/facebook.png'
+    image: ASSET_ROOT+'facebook.png'
   }
   
 }
@@ -526,8 +682,14 @@ var Placement = {
   
   setEmptyBoxes: function() {
     var self = this;
-    var windowHeight = $('#bubblebox').height() || $(window).height();
-    var windowWidth = $('#bubblebox').width() || $(window).width();
+    var container = $('#bubbles');
+    if (container.length == 0) {
+      container = $(window);
+    } else {
+      container.css({position: 'relative'});
+    }
+    var windowHeight = container.height();
+    var windowWidth = container.width();
     self.numRows = Math.floor(windowHeight / self.size);
     self.numCols = Math.floor(windowWidth / self.size);
     for (var row = 0; row < self.numRows; row++) {
@@ -587,21 +749,6 @@ var Placement = {
 var Loader = {
   
   loaded: {},
-  
-  getJQuery: function() {
-    var script = document.createElement('script');
-    script.src = '//code.jquery.com/jquery-3.1.0.min.js';
-    script.type = 'text/javascript';
-    document.getElementsByTagName('head')[0].appendChild(script);
-  },
-  
-  getFonts: function() {
-    var font = document.createElement('link');
-    font.href = 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300';
-    font.rel = 'stylesheet';
-    font.type = 'text/css';
-    document.getElementsByTagName('head')[0].appendChild(font);
-  },
   
   whenAvailable: function(name, callback) {
     var self = this;
@@ -684,19 +831,16 @@ var Compiler = { // need Angular to recompile new elements after DOM manipulatio
 
     AngularCompile = function(root)
     {
-      var injector = angular.element($('[ng-app]')[0]).injector();
-      var $compile = injector.get('$compile');
-      var $rootScope = injector.get('$rootScope');
-      var result = $compile(root)($rootScope);
-      $rootScope.$digest();
-      return result;
+      // TODO: correct for standalone cuttlefish
+      //var injector = angular.element(document).injector();
+      //var $compile = injector.get('$compile');
+      //var $rootScope = injector.get('$rootScope');
+      //var result = $compile(root)($rootScope);
+      //$rootScope.$digest();
+      //return result;
     }
     
     self.initialized = true;
   }
   
 }
-
-
-Loader.getJQuery();
-Loader.getFonts();

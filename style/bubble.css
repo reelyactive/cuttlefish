@@ -4,6 +4,7 @@
   overflow: hidden;
   display: none;
   position: absolute;
+  z-index: 10;
 }
 
 bubble[fade=true].ng-enter {
@@ -101,7 +102,7 @@ bubble[fade=true].ng-leave.ng-leave-active {
   opacity: 0.9;
 }
 
-.bubble--icon:hover {
+.bubble--icon:hover, .bubble--icon.active {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 1.0;
@@ -111,16 +112,10 @@ bubble[fade=true].ng-leave.ng-leave-active {
   background-color: white;
 }
 
-.bubble--icon-naked:hover, .bubble--icon-naked:active {
-  background: #676767; /* Old browsers */
-  background: -moz-linear-gradient(top, #676767 0%, #000000 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#676767), color-stop(100%,#000000)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #676767 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #676767 0%,#000000 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #676767 0%,#000000 100%); /* IE10+ */
-  background: linear-gradient(to bottom, #676767 0%,#000000 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#676767', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
-  color: white !important;
+.bubble--icon-naked:hover, .bubble--icon-naked:active, .bubble--icon-naked.active {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1.0;
 }
 
 .tooltip {
@@ -154,4 +149,220 @@ bubble[fade=true].ng-leave.ng-leave-active {
 .bubble--toggle--button.selected {
   color: black;
   background-color: white;
+}
+
+.overlay {
+  background-color: white;
+  border-radius: 10px;
+  opacity: 0.9;
+  position: absolute;
+  width: 350px;
+  display: inline-block;
+  z-index: 1000;
+  overflow-y: scroll;
+  min-height: 70px;
+}
+
+.overlay--loader {
+  font-size: 24px;
+  line-height: 30px;
+  font-style: italic;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.overlay--content {
+  opacity: 0;
+}
+
+.overlay--header {
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  padding: 10px;
+  padding-bottom: 0;
+  line-height: 18px;
+}
+
+.overlay--header--name {
+  font-weight: 600;
+  font-style: normal;
+  display: inline;
+}
+
+.tweets a {
+  text-decoration: none;
+}
+
+.twitter--bio {
+  padding: 10px;
+  font-size: 14px;
+  line-height: 17px;
+  padding-bottom: 5px;
+}
+
+.twitter--bio a {
+  font-weight: 600;
+  color: black;
+}
+
+.tweet {
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  margin: 10px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 5px;
+  padding-bottom: 0;
+}
+
+.tweet a {
+  font-style: italic;
+  color: black;
+  font-weight: 700;
+}
+
+.tweet a.timestamp {
+  text-align: right;
+  font-size: 12px;
+  line-height: 18px;
+  margin-top: 3px;
+  font-weight: 400;
+  font-style: italic;
+  display: block;
+  color: black;
+  color: #4d4d4d;
+}
+
+.tweet a.timestamp:hover {
+  color: black;
+}
+
+.arrow {
+  width: 0; 
+	height: 0;
+	position: fixed;
+	top: 300px;
+	left: 500px;
+	z-index: 1000;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	opacity: 0.8;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 12px;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  white-space: normal;
+  filter: alpha(opacity=0);
+  opacity: 0;
+
+  line-break: auto;
+}
+.tooltip.in {
+  filter: alpha(opacity=90);
+  opacity: .9;
+}
+.tooltip.top {
+  padding: 5px 0;
+  margin-top: -3px;
+}
+.tooltip.right {
+  padding: 0 5px;
+  margin-left: 3px;
+}
+.tooltip.bottom {
+  padding: 5px 0;
+  margin-top: 3px;
+}
+.tooltip.left {
+  padding: 0 5px;
+  margin-left: -3px;
+}
+.tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  border-radius: 4px;
+}
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.tooltip.top-left .tooltip-arrow {
+  right: 5px;
+  bottom: 0;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.tooltip.top-right .tooltip-arrow {
+  bottom: 0;
+  left: 5px;
+  margin-bottom: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #000;
+}
+.tooltip.right .tooltip-arrow {
+  top: 50%;
+  left: 0;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #000;
+}
+.tooltip.left .tooltip-arrow {
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #000;
+}
+.tooltip.bottom .tooltip-arrow {
+  top: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+.tooltip.bottom-left .tooltip-arrow {
+  top: 0;
+  right: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
+}
+.tooltip.bottom-right .tooltip-arrow {
+  top: 0;
+  left: 5px;
+  margin-top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #000;
 }

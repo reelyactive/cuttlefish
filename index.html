@@ -9,6 +9,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-animate.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.2/ui-bootstrap-tpls.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 		<script type="text/javascript" src="js/bubble.js"></script>
 		<script type="text/javascript" src="js/cuttlefish.js"></script>
 		<script type="text/javascript" src="js/dashboard.js"></script>
@@ -61,9 +62,10 @@
             <table class="table table-hover">
               <caption> HOW IT IS RENDERED BY CUTTLEFISH </caption>
             </table>
-            <div id="bubblebox" class="well blue" style="min-height: 540px">
+            <div id="bubbles">
               <bubble json="json" size="{{size}}"
-                      mode="desktop" motion="true" fade="true">
+                      mode="desktop" motion="true" fade="true"
+                      visible="Person,Product,Place,Organization">
               </bubble>
             </div>
           </div>
