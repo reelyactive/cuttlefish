@@ -11,7 +11,7 @@ In the scheme of Things (pun intended)
 The [beaver.js](https://github.com/reelyactive/beaver), [cormorant.js](https://github.com/reelyactive/cormorant) and __cuttlefish.js__ modules work together as a unit.  See our [dashboard-template-angular](https://github.com/reelyactive/dashboard-template-angular) for a minimal implementation.
 
 
-![cuttlefish logo](http://reelyactive.github.io/cuttlefish/images/cuttlefish-bubble.png)
+![cuttlefish logo](https://reelyactive.github.io/cuttlefish/images/cuttlefish-bubble.png)
 
 
 What's in a name?
@@ -29,7 +29,7 @@ Speaking of videos, we'd be remiss not to share with you Ze Frank's [True Facts 
 Hello cuttlefish
 ----------------
 
-The easiest way to familiarise yourself with cuttlefish.js is to experiment with the code in the [gh-pages branch](https://github.com/reelyactive/cuttlefish/tree/gh-pages), of which there's a live demo [here](http://reelyactive.github.io/cuttlefish/).
+The easiest way to familiarise yourself with cuttlefish.js is to experiment with the code in the [gh-pages branch](https://github.com/reelyactive/cuttlefish/tree/gh-pages), of which there's a live demo [here](https://reelyactive.github.io/cuttlefish/).
 
 This directory contains the latest versions of cuttlefish.js, bubble.html and bubble.css.  Below is the description of a minimal implementation.
 
