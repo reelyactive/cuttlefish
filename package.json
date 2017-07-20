@@ -2,7 +2,7 @@
   "name": "angular-cuttlefish",
   "version": "0.1.0",
   "homepage": "https://reelyactive.github.io/cuttlefish/",
-  "description": "Fetch JSON from a URL, regardless if the GET returns JSON or HTML.  We believe in an open Internet of Things.",
+  "description": "Human-friendly HTML rendering of machine-friendly JSON-LD.  We believe in an open Internet of Things.",
   "keywords": [
     "reelyActive",
     "JSON-LD",
