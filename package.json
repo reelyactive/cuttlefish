@@ -1,0 +1,30 @@
+{
+  "name": "angular-cuttlefish",
+  "version": "0.1.0",
+  "homepage": "https://reelyactive.github.io/cuttlefish/",
+  "description": "Fetch JSON from a URL, regardless if the GET returns JSON or HTML.  We believe in an open Internet of Things.",
+  "keywords": [
+    "reelyActive",
+    "JSON-LD",
+    "Schema.org",
+    "semantic web",
+    "angular",
+    "client-side"
+  ],
+  "main": "cuttlefish.js",
+  "files": [
+    "cuttlefish.js",
+    "template/*.css",
+    "template/*.html"
+  ],
+  "repository": {
+    "url": "https://github.com/reelyactive/cuttlefish",
+    "type": "git"
+  },
+  "author": "reelyActive <webdev@reelyactive.com>",
+  "contributors": [
+    { "name": "Jeffrey Dungen" },
+    { "name": "Imran Zaidi" }
+  ],
+  "license": "MIT"
+}
