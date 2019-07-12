@@ -1,27 +1,27 @@
 {
-  "name": "angular-cuttlefish",
-  "version": "0.1.0",
+  "name": "cuttlefish",
   "homepage": "https://reelyactive.github.io/cuttlefish/",
+  "author": {
+    "name": "reelyActive",
+    "email": "info@reelyactive.com"
+  },
   "description": "Human-friendly HTML rendering of machine-friendly JSON-LD.  We believe in an open Internet of Things.",
   "keywords": [
     "reelyActive",
     "JSON-LD",
     "Schema.org",
     "semantic web",
-    "angular",
     "client-side"
   ],
-  "main": "cuttlefish.js",
+  "version": "1.0.0",
+  "main": "./js/cuttlefish.js",
   "files": [
-    "cuttlefish.js",
-    "template/*.css",
-    "template/*.html"
+    "./js/cuttlefish.js"
   ],
   "repository": {
     "url": "https://github.com/reelyactive/cuttlefish",
     "type": "git"
   },
-  "author": "reelyActive <webdev@reelyactive.com>",
   "contributors": [
     { "name": "Jeffrey Dungen" },
     { "name": "Imran Zaidi" }
