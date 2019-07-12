@@ -1,0 +1,30 @@
+{
+  "name": "cuttlefish",
+  "homepage": "https://reelyactive.github.io/cuttlefish/",
+  "author": {
+    "name": "reelyActive",
+    "email": "info@reelyactive.com"
+  },
+  "description": "Human-friendly HTML rendering of machine-friendly JSON-LD.  We believe in an open Internet of Things.",
+  "keywords": [
+    "reelyActive",
+    "JSON-LD",
+    "Schema.org",
+    "semantic web",
+    "client-side"
+  ],
+  "version": "1.0.0",
+  "main": "./js/cuttlefish.js",
+  "files": [
+    "./js/cuttlefish.js"
+  ],
+  "repository": {
+    "url": "https://github.com/reelyactive/cuttlefish",
+    "type": "git"
+  },
+  "contributors": [
+    { "name": "Jeffrey Dungen" },
+    { "name": "Imran Zaidi" }
+  ],
+  "license": "MIT"
+}
