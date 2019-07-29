@@ -9,7 +9,7 @@ let cuttlefish = (function() {
   // Internal constants
   const IMG_CLASS = 'card-img-top';
   const BODY_CLASS = 'card-body';
-  const TITLE_CLASS = 'card-title';
+  const TITLE_CLASS = 'card-title text-truncate';
 
   // Render the given story in the given node
   function render(story, node) {
