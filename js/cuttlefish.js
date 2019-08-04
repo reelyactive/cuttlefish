@@ -17,8 +17,16 @@ let cuttlefish = (function() {
     let graph = story["@graph"];
     let element = graph[0];
 
+    removeAllChildren(node);
     renderImage(element, node);
     renderTitle(element, node);
+  }
+
+  // Remove all children of the given node
+  function removeAllChildren(node) {
+    while(node.firstChild) {
+      node.removeChild(node.firstChild);
+    }
   }
 
   // Render the image
@@ -43,6 +51,11 @@ let cuttlefish = (function() {
 
     if(element.hasOwnProperty("schema:name")) {
       title.textContent = element["schema:name"];
+    }
+    else if(element.hasOwnProperty("schema:givenName") ||
+            element.hasOwnProperty("schema:familyName")) {
+      title.textContent = (element["schema:givenName"] || '') + ' ' +
+                          (element["schema:familyName"] || '');
     }
     else {
       title.textContent = 'Unknown';
