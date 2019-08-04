@@ -13,7 +13,7 @@
     "semantic web",
     "client-side"
   ],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./js/cuttlefish.js",
   "files": [
     "./js/cuttlefish.js"
