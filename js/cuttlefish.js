@@ -11,8 +11,10 @@ let cuttlefish = (function() {
   const BODY_CLASS = 'card-body';
   const FOOTER_CLASS = 'card-footer';
   const TITLE_CLASS = 'card-title text-truncate';
+  const SUBTITLE_CLASS = 'card-subtitle text-muted text-truncate';
   const SAME_AS_CLASS = 'btn-group dropup';
   const DEFAULT_TITLE = 'Unknown';
+  const DEFAULT_SUBTITLE = '&hearts; structured data';
 
   // Render the given story in the given node
   function render(story, node) {
@@ -50,6 +52,7 @@ let cuttlefish = (function() {
     node.appendChild(body);
 
     renderTitle(element, body);
+    renderSubtitle(element, body);
   }
 
   // Render the card footer
@@ -78,6 +81,34 @@ let cuttlefish = (function() {
       title.textContent = DEFAULT_TITLE;
     }
     node.appendChild(title);
+  }
+
+  // Render the subtitle
+  function renderSubtitle(element, node) {
+    let subtitle = document.createElement('h6'); 
+    subtitle.setAttribute('class', SUBTITLE_CLASS);
+
+    if(element.hasOwnProperty("schema:jobTitle")) {
+      subtitle.textContent = element["schema:jobTitle"];
+    }
+    else if(element.hasOwnProperty("schema:worksFor")) {
+      subtitle.textContent = element["schema:worksFor"];
+    }
+    else if(element.hasOwnProperty("schema:brand")) {
+      subtitle.textContent = element["schema:brand"];
+    }
+    else if(element.hasOwnProperty("schema:manufacturer")) {
+      subtitle.textContent = element["schema:manufacturer"];
+    }
+    else if(element.hasOwnProperty("schema:maximumAttendeeCapacity")) {
+      subtitle.textContent = 'Capacity: ' +
+                             element["schema:maximumAttendeeCapacity"];
+    }
+    else {
+      subtitle.textContent = DEFAULT_SUBTITLE;
+    }
+
+    node.appendChild(subtitle);
   }
 
   // Render the sameAs (links)

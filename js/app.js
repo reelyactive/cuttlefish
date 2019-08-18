@@ -12,6 +12,7 @@ const EXAMPLE_PERSON = {
         "@id": "person",
         "@type": "schema:Person",
         "schema:name": "Cuttlefish",
+        "schema:jobTitle": "Software Mascot",
         "schema:image": "https://www.reelyactive.com/stories/mascots/cuttlefish/320x320.png",
         "schema:sameAs": [
           "https://github.com/reelyactive/cuttlefish/"
@@ -26,6 +27,7 @@ const EXAMPLE_PRODUCT = {
         "@id": "product",
         "@type": "schema:Product",
         "schema:name": "RA-R436",
+        "schema:manufacturer": "reelyActive",
         "schema:image": "https://sniffypedia.org/Product/reelyActive_RA-R436/240x240.jpg",
         "schema:sameAs": [
           "https://shop.reelyactive.com/products/ra-r436"
@@ -40,6 +42,7 @@ const EXAMPLE_PLACE = {
         "@id": "place",
         "@type": "schema:Place",
         "schema:name": "Atrium",
+        "schema:maximumAttendeeCapacity": 250,
         "schema:image": "https://www.reelyactive.com/stories/atrium/320x320.jpg"
       }
     ]
