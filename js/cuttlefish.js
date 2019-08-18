@@ -12,6 +12,7 @@ let cuttlefish = (function() {
   const FOOTER_CLASS = 'card-footer';
   const TITLE_CLASS = 'card-title text-truncate';
   const SAME_AS_CLASS = 'btn-group dropup';
+  const DEFAULT_TITLE = 'Unknown';
 
   // Render the given story in the given node
   function render(story, node) {
@@ -44,7 +45,11 @@ let cuttlefish = (function() {
 
   // Render the card body
   function renderBody(element, node) {
-    renderTitle(element, node);
+    let body = document.createElement('div');
+    body.setAttribute('class', BODY_CLASS);
+    node.appendChild(body);
+
+    renderTitle(element, body);
   }
 
   // Render the card footer
@@ -58,10 +63,6 @@ let cuttlefish = (function() {
 
   // Render the title (name)
   function renderTitle(element, node) {
-    let body = document.createElement('div');
-    body.setAttribute('class', BODY_CLASS);
-    node.appendChild(body);
-
     let title = document.createElement('h5'); 
     title.setAttribute('class', TITLE_CLASS);
 
@@ -74,9 +75,9 @@ let cuttlefish = (function() {
                           (element["schema:familyName"] || '');
     }
     else {
-      title.textContent = 'Unknown';
+      title.textContent = DEFAULT_TITLE;
     }
-    body.appendChild(title);
+    node.appendChild(title);
   }
 
   // Render the sameAs (links)
