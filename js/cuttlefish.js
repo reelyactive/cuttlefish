@@ -88,7 +88,12 @@ let cuttlefish = (function() {
     let subtitle = document.createElement('h6'); 
     subtitle.setAttribute('class', SUBTITLE_CLASS);
 
-    if(element.hasOwnProperty("schema:jobTitle")) {
+    if(element.hasOwnProperty("schema:jobTitle") &&
+       element.hasOwnProperty("schema:worksFor")) {
+      subtitle.textContent = toString(element["schema:jobTitle"]) + ' @ ' +
+                             toString(element["schema:worksFor"]);
+    }
+    else if(element.hasOwnProperty("schema:jobTitle")) {
       subtitle.textContent = toString(element["schema:jobTitle"]);
     }
     else if(element.hasOwnProperty("schema:worksFor")) {
