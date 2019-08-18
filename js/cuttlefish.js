@@ -14,7 +14,7 @@ let cuttlefish = (function() {
   const SUBTITLE_CLASS = 'card-subtitle text-muted text-truncate';
   const SAME_AS_CLASS = 'btn-group dropup';
   const DEFAULT_TITLE = 'Unknown';
-  const DEFAULT_SUBTITLE = '&hearts; structured data';
+  const DEFAULT_SUBTITLE = '\u2665 structured data';
 
   // Render the given story in the given node
   function render(story, node) {
