@@ -9,6 +9,7 @@ let cuttlefish = (function() {
   // Internal constants
   const IMG_CLASS = 'card-img-top';
   const BODY_CLASS = 'card-body';
+  const FOOTER_CLASS = 'card-footer';
   const TITLE_CLASS = 'card-title text-truncate';
   const SAME_AS_CLASS = 'btn-group dropup';
 
@@ -19,7 +20,8 @@ let cuttlefish = (function() {
 
     removeAllChildren(node);
     renderImage(element, node);
-    renderTitle(element, node);
+    renderBody(element, node);
+    renderFooter(element, node);
   }
 
   // Remove all children of the given node
@@ -29,7 +31,7 @@ let cuttlefish = (function() {
     }
   }
 
-  // Render the image
+  // Render the card image
   function renderImage(element, node) {
     if(element.hasOwnProperty("schema:image")) {
       let img = document.createElement('img');
@@ -38,6 +40,20 @@ let cuttlefish = (function() {
       node.appendChild(img);
     }
     else { /* TODO */ }
+  }
+
+  // Render the card body
+  function renderBody(element, node) {
+    renderTitle(element, node);
+  }
+
+  // Render the card footer
+  function renderFooter(element, node) {
+    let footer = document.createElement('div');
+    footer.setAttribute('class', FOOTER_CLASS);
+    node.appendChild(footer);
+
+    renderSameAs(element, footer);
   }
 
   // Render the title (name)
@@ -61,7 +77,6 @@ let cuttlefish = (function() {
       title.textContent = 'Unknown';
     }
     body.appendChild(title);
-    renderSameAs(element, body);
   }
 
   // Render the sameAs (links)
