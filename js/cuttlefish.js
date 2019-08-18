@@ -89,16 +89,16 @@ let cuttlefish = (function() {
     subtitle.setAttribute('class', SUBTITLE_CLASS);
 
     if(element.hasOwnProperty("schema:jobTitle")) {
-      subtitle.textContent = element["schema:jobTitle"];
+      subtitle.textContent = toString(element["schema:jobTitle"]);
     }
     else if(element.hasOwnProperty("schema:worksFor")) {
-      subtitle.textContent = element["schema:worksFor"];
+      subtitle.textContent = toString(element["schema:worksFor"]);
     }
     else if(element.hasOwnProperty("schema:brand")) {
-      subtitle.textContent = element["schema:brand"];
+      subtitle.textContent = toString(element["schema:brand"]);
     }
     else if(element.hasOwnProperty("schema:manufacturer")) {
-      subtitle.textContent = element["schema:manufacturer"];
+      subtitle.textContent = toString(element["schema:manufacturer"]);
     }
     else if(element.hasOwnProperty("schema:maximumAttendeeCapacity")) {
       subtitle.textContent = 'Capacity: ' +
@@ -201,6 +201,20 @@ let cuttlefish = (function() {
     let i = document.createElement('i');
     i.setAttribute('class', iClass);
     node.appendChild(i);
+  }
+
+  // Return the given schema.org property as a string, if not already so
+  function toString(property) {
+    if(typeof property === 'string') {
+      return property;
+    }
+    if(property.hasOwnProperty("name")) {
+      return property["name"];
+    }
+    else if(property.hasOwnProperty("schema:name")) {
+      return property["schema:name"];
+    }
+    return '';
   }
 
   // Expose the following functions and variables

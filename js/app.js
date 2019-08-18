@@ -13,6 +13,11 @@ const EXAMPLE_PERSON = {
         "@type": "schema:Person",
         "schema:name": "Cuttlefish",
         "schema:jobTitle": "Software Mascot",
+        "schema:worksFor": {
+          "@type": "schema:Organization",
+          "schema:name": "reelyActive",
+          "schema:url": "https://www.reelyactive.com"
+        },
         "schema:image": "https://www.reelyactive.com/stories/mascots/cuttlefish/320x320.png",
         "schema:sameAs": [
           "https://github.com/reelyactive/cuttlefish/"
@@ -27,7 +32,11 @@ const EXAMPLE_PRODUCT = {
         "@id": "product",
         "@type": "schema:Product",
         "schema:name": "RA-R436",
-        "schema:manufacturer": "reelyActive",
+        "schema:manufacturer": {
+          "@type": "schema:Organization",
+          "schema:name": "reelyActive",
+          "schema:url": "https://www.reelyactive.com"
+        },
         "schema:image": "https://sniffypedia.org/Product/reelyActive_RA-R436/240x240.jpg",
         "schema:sameAs": [
           "https://shop.reelyactive.com/products/ra-r436"
