@@ -56,6 +56,20 @@ const EXAMPLE_PLACE = {
       }
     ]
 };
+const EXAMPLE_ORGANIZATION = {
+    "@context": { "schema": "https://schema.org/" },
+    "@graph": [
+      {
+        "@id": "organization",
+        "@type": "schema:Organization",
+        "schema:name": "reelyActive",
+        "schema:logo": "https://www.reelyactive.com/images/reelyActive-logo-square.png",
+        "schema:sameAs": [
+          "https://www.reelyactive.com"
+        ]
+      }
+    ]
+};
 
 
 // DOM elements
@@ -73,6 +87,9 @@ function updatePreset() {
       break;
     case 'place':
       storyInput.value = JSON.stringify(EXAMPLE_PLACE, null, 2);
+      break;
+    case 'organization':
+      storyInput.value = JSON.stringify(EXAMPLE_ORGANIZATION, null, 2);
       break;
     default:
       storyInput.value = '{ }';

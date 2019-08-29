@@ -35,12 +35,36 @@ Include in your _js/app.js_ the following code to render the given story in the 
 ```javascript
 let story = { /* Likely retrieved by cormorant.js */ };
 let target = document.querySelector('#toRender');
+let options = { /* See options below */ };
 
-cuttlefish.render(story, target);
+cuttlefish.render(story, target, options);
 ```
 
 
 ![cuttlefish logo](https://reelyactive.github.io/cuttlefish/images/cuttlefish-bubble.png)
+
+
+Options
+-------
+
+Cuttlefish supports the following options:
+
+### listGroupItems
+
+An array of list-group-items to append to the bottom of the card.  Each item can be preceded by an icon if the optional _iconClass_ property is included, and the appearance can be customised if the optional _itemClass_ property is included.  For example:
+
+```javascript
+let options = {
+    listGroupItems: [
+      {
+        text: "An info message to append",
+        itemClass: "text-white bg-dark",
+        iconClass: "fas fa-info-circle"
+    ]
+}
+
+cuttlefish.render(story, target, options);
+```
 
 
 What's in a name?
