@@ -35,6 +35,7 @@ Include in your _js/app.js_ the following code to render the given story in the 
 ```javascript
 let story = { /* Likely retrieved by cormorant.js */ };
 let target = document.querySelector('#toRender');
+let options = { /* See options below */ };
 
 cuttlefish.render(story, target, options);
 ```
