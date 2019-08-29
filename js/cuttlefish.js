@@ -36,13 +36,22 @@ let cuttlefish = (function() {
 
   // Render the card image
   function renderImage(element, node) {
+    let imageUrl;
+
     if(element.hasOwnProperty("schema:image")) {
-      let img = document.createElement('img');
-      img.src = element["schema:image"];
-      img.setAttribute('class', IMG_CLASS);
-      node.appendChild(img);
+      imageUrl = element["schema:image"];
     }
-    else { /* TODO */ }
+    else if(element.hasOwnProperty("schema:logo")) {
+      imageUrl = element["schema:logo"];
+    }
+    else {
+      return; // TODO: default image based on type?
+    }
+
+    let img = document.createElement('img');
+    img.src = imageUrl;
+    img.setAttribute('class', IMG_CLASS);
+    node.appendChild(img);
   }
 
   // Render the card body
