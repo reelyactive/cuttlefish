@@ -40,6 +40,13 @@ let options = { /* See options below */ };
 cuttlefish.render(story, target, options);
 ```
 
+The following functions are also exposed by cuttlefish:
+
+```javascript
+cuttlefish.determineImageUrl(story);
+cuttlefish.determineTitle(story);
+```
+
 
 ![cuttlefish logo](https://reelyactive.github.io/cuttlefish/images/cuttlefish-bubble.png)
 

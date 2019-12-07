@@ -43,20 +43,8 @@ let cuttlefish = (function() {
 
   // Render the card image
   function renderImage(element, node) {
-    let imageUrl;
-
-    if(element.hasOwnProperty("schema:image")) {
-      imageUrl = element["schema:image"];
-    }
-    else if(element.hasOwnProperty("schema:logo")) {
-      imageUrl = element["schema:logo"];
-    }
-    else {
-      return; // TODO: default image based on type?
-    }
-
     let img = document.createElement('img');
-    img.src = imageUrl;
+    img.src = determineElementImageUrl(element);
     img.setAttribute('class', IMG_CLASS);
     node.appendChild(img);
   }
@@ -84,18 +72,7 @@ let cuttlefish = (function() {
   function renderTitle(element, node) {
     let title = document.createElement('h5'); 
     title.setAttribute('class', TITLE_CLASS);
-
-    if(element.hasOwnProperty("schema:name")) {
-      title.textContent = element["schema:name"];
-    }
-    else if(element.hasOwnProperty("schema:givenName") ||
-            element.hasOwnProperty("schema:familyName")) {
-      title.textContent = (element["schema:givenName"] || '') + ' ' +
-                          (element["schema:familyName"] || '');
-    }
-    else {
-      title.textContent = DEFAULT_TITLE;
-    }
+    title.textContent = determineElementTitle(element);
     node.appendChild(title);
   }
 
@@ -252,6 +229,49 @@ let cuttlefish = (function() {
     node.appendChild(listGroup);
   }
 
+  // Determine the title of the story
+  function determineStoryTitle(story) {
+    let graph = story["@graph"];
+    let element = graph[0];
+
+    return determineElementTitle(element);
+  }
+
+  // Determine the title of the element
+  function determineElementTitle(element) {
+    if(element.hasOwnProperty("schema:name")) {
+      return element["schema:name"];
+    }
+    else if(element.hasOwnProperty("schema:givenName") ||
+            element.hasOwnProperty("schema:familyName")) {
+      return (element["schema:givenName"] || '') + ' ' +
+             (element["schema:familyName"] || '');
+    }
+    else {
+      return DEFAULT_TITLE;
+    }
+  }
+
+  // Determine the image URL of the story
+  function determineStoryImageUrl(story) {
+    let graph = story["@graph"];
+    let element = graph[0];
+
+    return determineElementImageUrl(element);
+  }
+
+  // Determine the image URL of the element
+  function determineElementImageUrl(element) {
+    if(element.hasOwnProperty("schema:image")) {
+      return element["schema:image"];
+    }
+    else if(element.hasOwnProperty("schema:logo")) {
+      return element["schema:logo"];
+    }
+
+    return null;
+  }
+
   // Return the given schema.org property as a string, if not already so
   function toString(property) {
     if(typeof property === 'string') {
@@ -268,7 +288,9 @@ let cuttlefish = (function() {
 
   // Expose the following functions and variables
   return {
-    render: render
+    render: render,
+    determineImageUrl: determineStoryImageUrl,
+    determineTitle: determineStoryTitle
   }
 
 }());
