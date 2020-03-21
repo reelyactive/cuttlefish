@@ -8,15 +8,21 @@ let cuttlefish = (function() {
 
   // Internal constants
   const IMG_CLASS = 'card-img-top';
+  const HEADER_CLASS = 'card-header';
   const BODY_CLASS = 'card-body';
-  const FOOTER_CLASS = 'card-footer';
+  const FOOTER_CLASS = 'card-footer lead text-truncate';
   const TITLE_CLASS = 'card-title text-truncate';
   const SUBTITLE_CLASS = 'card-subtitle text-muted text-truncate';
+  const STORIES_PANE_SUFFIX = '-stories';
+  const DATA_PANE_SUFFIX = '-data';
+  const RADDECS_PANE_SUFFIX = '-raddecs';
+  const ASSOCIATIONS_PANE_SUFFIX = '-associations';
   const SAME_AS_CLASS = 'btn-group dropup';
   const DEFAULT_TITLE = 'Unknown';
   const DEFAULT_SUBTITLE = '\u2665 structured data';
   const LIST_GROUP_CLASS = 'list-group list-group-flush';
   const LIST_GROUP_ITEM_CLASS = 'list-group-item text-truncate';
+  const SIGNATURE_SEPARATOR = '/';
 
   // Render the given story in the given node
   function render(story, node, options) {
@@ -32,6 +38,41 @@ let cuttlefish = (function() {
        Array.isArray(options.listGroupItems)) {
       renderListGroup(options.listGroupItems, node);
     }
+  }
+
+  // Render all the given data as tabs in a card
+  function renderAsTabs(node, stories, data, associations, raddecs, options) {
+    let id = node.getAttribute('id');
+
+    let footerTitle = DEFAULT_TITLE;
+    let footerClass = ' ';
+    if(Array.isArray(stories) && stories.length) {
+      footerTitle = determineStoryTitle(stories[0]);
+    }
+    else if(Array.isArray(raddecs) && raddecs.length) {
+      footerTitle = raddecs[0].transmitterId + SIGNATURE_SEPARATOR +
+                    raddecs[0].transmitterIdType;
+      footerClass += 'monospace';
+    }
+
+    let header = createElement('div', HEADER_CLASS);
+    let navs = createElement('ul', 'nav nav-tabs card-header-tabs');
+    let body = createElement('div', BODY_CLASS);
+    let panes = createElement('div', 'tab-content overflow-auto');
+    let footer = createElement('div', FOOTER_CLASS + footerClass, footerTitle);
+
+    let hasActiveTab = false;
+    hasActiveTab |= renderStoryTab(navs, panes, stories, hasActiveTab, id);
+    hasActiveTab |= renderDataTab(navs, panes, data, hasActiveTab, id);
+    hasActiveTab |= renderAssociationsTab(navs, panes, associations,
+                                          hasActiveTab, id);
+    hasActiveTab |= renderRaddecTab(navs, panes, raddecs, hasActiveTab, id);
+
+    node.appendChild(header);
+    header.appendChild(navs);
+    node.appendChild(body);
+    body.appendChild(panes);
+    node.appendChild(footer);
   }
 
   // Remove all children of the given node
@@ -214,6 +255,187 @@ let cuttlefish = (function() {
     node.appendChild(listGroup);
   }
 
+  // Render the story nav tab and tab pane
+  function renderStoryTab(navs, panes, stories, hasActiveTab, id) {
+    let isEmpty = !(Array.isArray(stories) && stories.length);
+    let isActive = !hasActiveTab && !isEmpty;
+
+    let i = createElement('i', 'fas fa-book-open');
+    let paneId = id + STORIES_PANE_SUFFIX;
+    let nav = createNavTab(i, '#' + paneId, isActive, isEmpty);
+    let pane = createNavPane(paneId, isActive);
+
+    if(!isEmpty) {
+      let imageUrl = determineStoryImageUrl(stories[0]);
+      let img = createElement('img', 'img-fluid');
+      img.setAttribute('src', imageUrl);
+      pane.appendChild(img);
+      // TODO: additional stories
+    }
+
+    navs.appendChild(nav);
+    panes.appendChild(pane);
+
+    return isActive;
+  }
+
+  // Render the data nav tab and tab pane
+  function renderDataTab(navs, panes, data, hasActiveTab, id) {
+    let isEmpty = !(Array.isArray(data) && data.length);
+    let isActive = !hasActiveTab && !isEmpty;
+
+    let i = createElement('i', 'fas fa-info-circle');
+    let paneId = id + DATA_PANE_SUFFIX;
+    let nav = createNavTab(i, '#' + paneId, isActive, isEmpty);
+    let pane = createNavPane(paneId, isActive);
+
+    if(!isEmpty) {
+      // TODO: render data
+    }
+
+    navs.appendChild(nav);
+    panes.appendChild(pane);
+
+    return isActive;
+  }
+
+  // Render the associations nav tab and tab pane
+  function renderAssociationsTab(navs, panes, associations, hasActiveTab, id) {
+    let isEmpty = !(associations && Object.keys(associations).length);
+    let isActive = !hasActiveTab && !isEmpty;
+
+    let i = createElement('i', 'fas fa-info');
+    let paneId = id + ASSOCIATIONS_PANE_SUFFIX;
+    let nav = createNavTab(i, '#' + paneId, isActive, isEmpty);
+    let pane = createNavPane(paneId, isActive);
+
+    if(!isEmpty) {
+      let table = createAssociationsTable(associations);
+      pane.appendChild(table);
+    }
+
+    navs.appendChild(nav);
+    panes.appendChild(pane);
+
+    return isActive;
+  }
+
+  // Render the raddec nav tab and tab pane
+  function renderRaddecTab(navs, panes, raddecs, hasActiveTab, id) {
+    let isEmpty = !(Array.isArray(raddecs) && raddecs.length);
+    let isActive = !hasActiveTab && !isEmpty;
+
+    let i = createElement('i', 'fas fa-wifi');
+    let paneId = id + RADDECS_PANE_SUFFIX;
+    let nav = createNavTab(i, '#' + paneId, isActive, isEmpty);
+    let pane = createNavPane(paneId, isActive);
+
+    if(!isEmpty) {
+      let table = createRaddecTable(raddecs[0]); // TODO: additional raddecs
+      pane.appendChild(table);
+    }
+
+    navs.appendChild(nav);
+    panes.appendChild(pane);
+
+    return isActive;
+  }
+
+  // Create an associations table
+  function createAssociationsTable(associations) {
+    let table = createElement('table', 'table table-hover');
+    let tbody = createElement('tbody');
+    let url = createElement('a', null, associations.url);
+    url.setAttribute('href', associations.url);
+    url.setAttribute('_target', 'blank');
+
+    table.appendChild(tbody);
+    tbody.appendChild(createTableRow('fas fa-link', null, url));
+    tbody.appendChild(createTableRow('fas fa-tags', null, associations.tags));
+    tbody.appendChild(createTableRow('fas fa-sitemap', null,
+                                     associations.directory));
+    tbody.appendChild(createTableRow('fas fa-map-marked-alt', null, 
+                                     associations.position));
+
+    return table;
+  }
+
+  // Create a raddec table
+  function createRaddecTable(raddec) {
+    let strongest = raddec.rssiSignature[0] || {};
+    let rec = raddec.rssiSignature.length;
+    let dec = strongest.numberOfDecodings;
+    let pac = raddec.packets.length || '-';
+    let timestamp = new Date(raddec.timestamp).toLocaleTimeString();
+    let table = createElement('table', 'table table-hover');
+    let tbody = createElement('tbody');
+
+    table.appendChild(tbody);
+    tbody.appendChild(createTableRow('fas fa-barcode', null,
+                                     raddec.transmitterId));
+    tbody.appendChild(createTableRow('fas fa-signal', null,
+                                     strongest.rssi + ' dBm'));
+    tbody.appendChild(createTableRow('fas fa-barcode', null,
+                                     strongest.receiverId));
+    tbody.appendChild(createTableRow('fas fa-info-circle', null,
+                                     rec + ' / ' + dec + ' / ' + pac));
+    tbody.appendChild(createTableRow('fas fa-clock', null, timestamp));
+
+    return table;
+  }
+
+  // Create a table row
+  function createTableRow(headerIconClass, headerText, data) {
+    let tr = createElement('tr');
+    let th = createElement('th');
+    let td = createElement('td', 'monospace', data);
+
+    if(headerIconClass) {
+      th.appendChild(createElement('i', headerIconClass));
+    }
+    if(headerText) {
+      th.appendChild(document.createTextNode(headerText));
+    }
+
+    tr.appendChild(th);
+    tr.appendChild(td);
+
+    return tr;
+  }
+
+  // Create a nav tab
+  function createNavTab(content, href, isActive, isDisabled) {
+    let linkClass = 'nav-link';
+    if(isActive) {
+      linkClass = 'nav-link active';
+    }
+    else if(isDisabled) {
+      linkClass = 'nav-link disabled';
+    }
+
+    let nav = createElement('li', 'nav-item');
+    let a = createElement('a', linkClass, content);
+    a.setAttribute('data-toggle', 'tab');
+    a.setAttribute('href', href);
+
+    nav.appendChild(a);
+
+    return nav;
+  }
+
+  // Create a nav pane
+  function createNavPane(id, isActive) {
+    let paneClass = 'tab-pane fade';
+    if(isActive) {
+      paneClass = 'tab-pane fade show active';
+    }
+
+    let pane = createElement('div', paneClass);
+    pane.setAttribute('id', id);
+
+    return pane;
+  }
+
   // Determine the title of the story
   function determineStoryTitle(story) {
     let graph = story["@graph"];
@@ -271,15 +493,20 @@ let cuttlefish = (function() {
     return '';
   }
 
-  // Create an HTML element with optional class and text content
-  function createElement(tagName, className, textContent) {
+  // Create an HTML element with optional class and content (text or element)
+  function createElement(tagName, className, content) {
     let element = document.createElement(tagName);
 
     if(className) {
       element.setAttribute('class', className);
     }
-    if(textContent) {
-      element.textContent = textContent;
+    if(content) {
+      if(content instanceof Element || content instanceof Node) {
+        element.appendChild(content);
+      }
+      else {
+        element.textContent = content;
+      }
     }
 
     return element;
@@ -288,6 +515,7 @@ let cuttlefish = (function() {
   // Expose the following functions and variables
   return {
     render: render,
+    renderAsTabs: renderAsTabs,
     determineImageUrl: determineStoryImageUrl,
     determineTitle: determineStoryTitle
   }
