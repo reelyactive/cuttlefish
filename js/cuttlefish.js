@@ -284,13 +284,14 @@ let cuttlefish = (function() {
     let isEmpty = !(Array.isArray(data) && data.length);
     let isActive = !hasActiveTab && !isEmpty;
 
-    let i = createElement('i', 'fas fa-info-circle');
+    let i = createElement('i', 'fas fa-info');
     let paneId = id + DATA_PANE_SUFFIX;
     let nav = createNavTab(i, '#' + paneId, isActive, isEmpty);
     let pane = createNavPane(paneId, isActive);
 
     if(!isEmpty) {
-      // TODO: render data
+      let table = createDataTable(data[0]); // TODO: additional data
+      pane.appendChild(table);
     }
 
     navs.appendChild(nav);
@@ -304,7 +305,7 @@ let cuttlefish = (function() {
     let isEmpty = !(associations && Object.keys(associations).length);
     let isActive = !hasActiveTab && !isEmpty;
 
-    let i = createElement('i', 'fas fa-info');
+    let i = createElement('i', 'fas fa-list-alt');
     let paneId = id + ASSOCIATIONS_PANE_SUFFIX;
     let nav = createNavTab(i, '#' + paneId, isActive, isEmpty);
     let pane = createNavPane(paneId, isActive);
@@ -339,6 +340,21 @@ let cuttlefish = (function() {
     panes.appendChild(pane);
 
     return isActive;
+  }
+
+  // Create a data table
+  function createDataTable(data) {
+    let table = createElement('table', 'table table-hover');
+    let tbody = createElement('tbody');
+
+    for(property in data) {
+      let value = data[property];
+      tbody.appendChild(createTableRow(null, property, value));
+    }
+
+    table.appendChild(tbody);
+
+    return table;
   }
 
   // Create an associations table
