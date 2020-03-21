@@ -43,16 +43,14 @@ let cuttlefish = (function() {
 
   // Render the card image
   function renderImage(element, node) {
-    let img = document.createElement('img');
+    let img = createElement('img', IMG_CLASS);
     img.src = determineElementImageUrl(element);
-    img.setAttribute('class', IMG_CLASS);
     node.appendChild(img);
   }
 
   // Render the card body
   function renderBody(element, node) {
-    let body = document.createElement('div');
-    body.setAttribute('class', BODY_CLASS);
+    let body = createElement('div', BODY_CLASS);
     node.appendChild(body);
 
     renderTitle(element, body);
@@ -61,8 +59,7 @@ let cuttlefish = (function() {
 
   // Render the card footer
   function renderFooter(element, node) {
-    let footer = document.createElement('div');
-    footer.setAttribute('class', FOOTER_CLASS);
+    let footer = createElement('div', FOOTER_CLASS);
     node.appendChild(footer);
 
     renderSameAs(element, footer);
@@ -70,68 +67,60 @@ let cuttlefish = (function() {
 
   // Render the title (name)
   function renderTitle(element, node) {
-    let title = document.createElement('h5'); 
-    title.setAttribute('class', TITLE_CLASS);
-    title.textContent = determineElementTitle(element);
+    let title = createElement('h5', TITLE_CLASS,
+                              determineElementTitle(element));
     node.appendChild(title);
   }
 
   // Render the subtitle
   function renderSubtitle(element, node) {
-    let subtitle = document.createElement('h6'); 
-    subtitle.setAttribute('class', SUBTITLE_CLASS);
+    let text = DEFAULT_SUBTITLE;
 
     if(element.hasOwnProperty("schema:jobTitle") &&
        element.hasOwnProperty("schema:worksFor")) {
-      subtitle.textContent = toString(element["schema:jobTitle"]) + ' @ ' +
-                             toString(element["schema:worksFor"]);
+      text = toString(element["schema:jobTitle"]) + ' @ ' +
+                      toString(element["schema:worksFor"]);
     }
     else if(element.hasOwnProperty("schema:jobTitle")) {
-      subtitle.textContent = toString(element["schema:jobTitle"]);
+      text = toString(element["schema:jobTitle"]);
     }
     else if(element.hasOwnProperty("schema:worksFor")) {
-      subtitle.textContent = toString(element["schema:worksFor"]);
+      text = toString(element["schema:worksFor"]);
     }
     else if(element.hasOwnProperty("schema:brand")) {
-      subtitle.textContent = toString(element["schema:brand"]);
+      text = toString(element["schema:brand"]);
     }
     else if(element.hasOwnProperty("schema:manufacturer")) {
-      subtitle.textContent = toString(element["schema:manufacturer"]);
+      text = toString(element["schema:manufacturer"]);
     }
     else if(element.hasOwnProperty("schema:maximumAttendeeCapacity")) {
-      subtitle.textContent = 'Capacity: ' +
-                             element["schema:maximumAttendeeCapacity"];
-    }
-    else {
-      subtitle.textContent = DEFAULT_SUBTITLE;
+      text = 'Capacity: ' + element["schema:maximumAttendeeCapacity"];
     }
 
+    let subtitle = createElement('h6', SUBTITLE_CLASS, text);
     node.appendChild(subtitle);
   }
 
   // Render the sameAs (links)
   function renderSameAs(element, node) {
-    let dropup = document.createElement('div');
-    dropup.setAttribute('class', SAME_AS_CLASS);
+    let dropup = createElement('div', SAME_AS_CLASS);
     node.appendChild(dropup);
 
-    let button = document.createElement('button');
+    let button = createElement('button',
+                               'btn btn-secondary btn-sm dropdown-toggle');
     button.setAttribute('type', 'button');
-    button.setAttribute('class', 'btn btn-secondary btn-sm dropdown-toggle');
     button.setAttribute('data-toggle', 'dropdown');
     button.setAttribute('aria-haspopup', 'true');
     button.setAttribute('aria-expanded', 'false');
     dropup.appendChild(button);
 
-    let i = document.createElement('i');
-    i.setAttribute('class', 'fas fa-ellipsis-h');
+    let i = createElement('i', 'fas fa-ellipsis-h');
     button.appendChild(i);
 
     let sameAsCount = 0;
 
     if(element.hasOwnProperty("schema:sameAs")) {
-      let menu = document.createElement('div');
-      menu.setAttribute('class', 'dropdown-menu');
+      let menu = createElement('div', 'dropdown-menu');
       dropup.appendChild(menu);
 
       let sameAs = element["schema:sameAs"];
@@ -147,7 +136,8 @@ let cuttlefish = (function() {
 
     }
     else {
-      button.setAttribute('class', 'btn btn-dark btn-sm dropdown-toggle disabled');
+      button.setAttribute('class',
+                          'btn btn-dark btn-sm dropdown-toggle disabled');
     }
 
     let count = document.createTextNode('\u00a0\u00a0' + sameAsCount);
@@ -156,8 +146,7 @@ let cuttlefish = (function() {
 
   // Render the sameAs menu item (link)
   function renderSameAsMenuItem(url, node) {
-    let a = document.createElement('a');
-    a.setAttribute('class', 'dropdown-item');
+    let a = createElement('a', 'dropdown-item');
     a.setAttribute('href', url);
     a.setAttribute('target', '_blank');
 
@@ -166,11 +155,11 @@ let cuttlefish = (function() {
     let space = document.createTextNode('\u00a0\u00a0');
     a.appendChild(space);
 
-    let i = document.createElement('i');
-    i.setAttribute('class', 'fas fa-external-link-alt');
+    let i = createElement('i', 'fas fa-external-link-alt');
     a.appendChild(i);
 
-    let urlSnippet = document.createTextNode('\u00a0' + url.split('/')[2] + '/\u2026');
+    let urlSnippet = document.createTextNode('\u00a0' + url.split('/')[2] +
+                                             '/\u2026');
     a.appendChild(urlSnippet);
     
     node.appendChild(a);
@@ -196,28 +185,24 @@ let cuttlefish = (function() {
       iClass = 'fab fa-instagram';
     }
 
-    let i = document.createElement('i');
-    i.setAttribute('class', iClass);
+    let i = createElement('i', iClass);
     node.appendChild(i);
   }
 
   // Render the list group items
   function renderListGroup(listGroupItems, node) {
-    let listGroup = document.createElement('ul');
-    listGroup.setAttribute('class', LIST_GROUP_CLASS);
+    let listGroup = createElement('ul', LIST_GROUP_CLASS);
 
     listGroupItems.forEach(function(item) {
-      let listGroupItem = document.createElement('li');
       let itemClass = LIST_GROUP_ITEM_CLASS;
       if(item.hasOwnProperty('itemClass')) {
         itemClass += ' ' + item.itemClass;
       }
-      listGroupItem.setAttribute('class', itemClass);
+      let listGroupItem = createElement('li', itemClass);
 
       if(item.hasOwnProperty('iconClass')) {
         let space = document.createTextNode('\u00a0\u00a0');
-        let i = document.createElement('i');
-        i.setAttribute('class', item.iconClass);
+        let i = createElement('i', item.iconClass);
         listGroupItem.appendChild(i);
         listGroupItem.appendChild(space);
       }
@@ -284,6 +269,20 @@ let cuttlefish = (function() {
       return property["schema:name"];
     }
     return '';
+  }
+
+  // Create an HTML element with optional class and text content
+  function createElement(tagName, className, textContent) {
+    let element = document.createElement(tagName);
+
+    if(className) {
+      element.setAttribute('class', className);
+    }
+    if(textContent) {
+      element.textContent = textContent;
+    }
+
+    return element;
   }
 
   // Expose the following functions and variables
