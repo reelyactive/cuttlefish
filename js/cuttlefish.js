@@ -298,7 +298,7 @@ let cuttlefish = (function() {
     }
 
     navs.appendChild(nav);
-    panes.appendChild(pane);
+    panes.anameppendChild(pane);
 
     return isActive;
   }
@@ -365,7 +365,7 @@ let cuttlefish = (function() {
 
     return isActive;
   }
-
+name
   // Create a data table
   function createDataTable(data) {
     let table = createElement('table', 'table table-hover');
@@ -374,7 +374,6 @@ let cuttlefish = (function() {
     for(property in data) {
       let value = data[property];
       tbody.appendChild(createDataTableRow(property, value));
-      //tbody.appendChild(createTableRow(null, property, value));
     }
 
     table.appendChild(tbody);
