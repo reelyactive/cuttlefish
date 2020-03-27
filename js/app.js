@@ -1,5 +1,5 @@
 /**
- * Copyright reelyActive 2016-2019
+ * Copyright reelyActive 2016-2020
  * We believe in an open Internet of Things
  */
 
@@ -116,3 +116,81 @@ preset.addEventListener('click', updatePreset);
 
 // The code that runs on startup
 storyInput.value = JSON.stringify(EXAMPLE_PERSON, null, 2);
+
+// For demonstration of renderAsTabs()
+let story1 = {
+  "@context": {
+    "schema": "https://schema.org/"
+  },
+  "@graph": [
+    {
+      "@id": "person",
+      "@type": "schema:Person",
+      "schema:name": "Barnowl",
+      "schema:jobTitle": "Software Mascot",
+      "schema:image": "https://www.reelyactive.com/stories/mascots/barnowl/320x320.png"
+    }
+  ]
+};
+let story2 = {
+  "@context": {
+    "schema": "https://schema.org/"
+  },
+  "@graph": [
+    {
+      "@id": "product",
+      "@type": "schema:Product",
+      "schema:name": "Minew E8",
+      "schema:image": "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/240x240.png"
+    }
+  ]
+};
+let stories = [ story1, story2 ];
+let data = {
+  batteryVoltage: 3.0,
+  temperature: 21.0,
+  uptime: 123000,
+  timestamp: 123456789
+};
+let associations = {
+  url: "https://github.com/reelyactive/barnowl/",
+  tags: [ 'mascot' ],
+  directory: null,
+  position: null
+};
+let raddec = {
+  transmitterId: "aabbccddeeff",
+  transmitterIdType: 2,
+  rssiSignature: [{
+      receiverId: "001bc50940810000",
+      receiverIdType: 1,
+      rssi: -69,
+      numberOfDecodings: 3
+  }],
+  packets: [],
+  timestamp: 1343392496789
+};
+
+
+function update() {
+  let timestamp = Date.now();
+
+  if(Math.random() > 0.5) {
+    data.batteryVoltage += 0.01;
+    data.temperature += 0.02;
+    raddec.rssiSignature[0].rssi += 1;
+  }
+  else {
+    data.batteryVoltage -= 0.01;
+    data.temperature -= 0.02;
+    raddec.rssiSignature[0].rssi -= 1;
+  }
+  data.uptime += 1000;
+  data.timestamp = timestamp;
+  raddec.timestamp = timestamp;
+
+  cuttlefish.renderAsTabs(targetAsTabs, stories, [ data ], associations,
+                          [ raddec ], {});
+}
+
+setInterval(update, 1000);
