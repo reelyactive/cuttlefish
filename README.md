@@ -30,6 +30,8 @@ Include in your _index.html_ divs of the class _card_ in which cuttlefish should
 <div class="card" id="toRender"></div>
 ```
 
+### render()
+
 Include in your _js/app.js_ the following code to render the given story in the _toRender_ div:
 
 ```javascript
@@ -39,6 +41,24 @@ let options = { /* See options below */ };
 
 cuttlefish.render(story, target, options);
 ```
+
+### renderAsTabs()
+
+Include in your _js/app.js_ the following code to render the given story in the _toRender_ div:
+
+```javascript
+let target = document.querySelector('#toRender');
+let stories = [ /* Likely retrieved by cormorant.js */ ];
+let data = [ /* Likely parsed from packets */ ];
+let associations = { /* Likely retrieved by cormorant.js */ };
+let raddecs = [ /* Likely provided by beaver.js */ ];
+let options = { /* None yet supported */ };
+
+cuttlefish.renderAsTabs(target, stories, data, associations, raddecs, options);
+```
+
+
+### Additional functions
 
 The following functions are also exposed by cuttlefish:
 
