@@ -341,7 +341,7 @@ let cuttlefish = (function() {
 
     if(!isEmpty) {
       let imageUrl = determineStoryImageUrl(stories[0]);
-      let img = createElement('img', 'img-fluid');
+      let img = createElement('img', 'img-fluid mx-auto d-block');
       img.setAttribute('src', imageUrl);
       pane.appendChild(img);
       // TODO: additional stories
