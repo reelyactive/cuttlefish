@@ -128,7 +128,11 @@ let story1 = {
       "@type": "schema:Person",
       "schema:name": "Barnowl",
       "schema:jobTitle": "Software Mascot",
-      "schema:image": "https://www.reelyactive.com/stories/mascots/barnowl/320x320.png"
+      "schema:image": "https://www.reelyactive.com/stories/mascots/barnowl/320x320.png",
+      "schema:sameAs": [
+        "https://github.com/reelyactive/barnowl",
+        "https://instagram.com/reelyactive"
+      ]
     }
   ]
 };
@@ -145,7 +149,7 @@ let story2 = {
     }
   ]
 };
-let stories = [ story1, story2 ];
+let stories = [ story1, story2, story1, story2 ];
 let data = {
   batteryVoltage: 3.0,
   temperature: 21.0,
