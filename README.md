@@ -14,20 +14,21 @@ __cuttlefish.js__ is written in vanilla JavaScript and the file can simply be in
 <html>
   <head></head>
   <body>
-    <script src="js/cuttlefish.js"></script>
+    <script src="js/cuttlefish-story.js"></script>
+    <script src="js/cuttlefish-dynamb.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
 ```
 
 
-Hello cuttlefish
-----------------
+Hello cuttlefish!
+-----------------
 
-Include in your _index.html_ divs of the class _card_ in which cuttlefish should render stories.
+Include in your _index.html_ a div in which cuttlefish should render a story or dynamb.
 
 ```html
-<div class="card" id="toRender"></div>
+<div id="toRender"></div>
 ```
 
 ### render()
@@ -41,22 +42,6 @@ let options = { /* See options below */ };
 
 cuttlefish.render(story, target, options);
 ```
-
-### renderAsTabs()
-
-Include in your _js/app.js_ the following code to render the given story in the _toRender_ div:
-
-```javascript
-let target = document.querySelector('#toRender');
-let stories = [ /* Likely retrieved by cormorant.js */ ];
-let data = [ /* Likely parsed from packets */ ];
-let associations = { /* Likely retrieved by cormorant.js */ };
-let raddecs = [ /* Likely provided by beaver.js */ ];
-let options = { /* None yet supported */ };
-
-cuttlefish.renderAsTabs(target, stories, data, associations, raddecs, options);
-```
-
 
 ### Additional functions
 
@@ -74,24 +59,7 @@ cuttlefish.determineTitle(story);
 Options
 -------
 
-Cuttlefish supports the following options:
-
-### listGroupItems
-
-An array of list-group-items to append to the bottom of the card.  Each item can be preceded by an icon if the optional _iconClass_ property is included, and the appearance can be customised if the optional _itemClass_ property is included.  For example:
-
-```javascript
-let options = {
-    listGroupItems: [
-      {
-        text: "An info message to append",
-        itemClass: "text-white bg-dark",
-        iconClass: "fas fa-info-circle"
-    ]
-}
-
-cuttlefish.render(story, target, options);
-```
+__cuttlefish.js__ does not currently support any options.
 
 
 What's in a name?
@@ -117,7 +85,7 @@ License
 
 MIT License
 
-Copyright (c) 2016-2020 [reelyActive](https://www.reelyactive.com)
+Copyright (c) 2016-2021 [reelyActive](https://www.reelyactive.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
