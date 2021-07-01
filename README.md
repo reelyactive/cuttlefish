@@ -16,6 +16,7 @@ __cuttlefish.js__ is written in vanilla JavaScript and the file can simply be in
   <body>
     <script src="js/cuttlefish-story.js"></script>
     <script src="js/cuttlefish-dynamb.js"></script>
+    <script src="js/cuttlefish-statid.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
