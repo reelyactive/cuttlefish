@@ -14,6 +14,11 @@ let cuttlefishDynamb = (function() {
       'RND-48'
   ];
   const AXIS_NAMES = [ 'x', 'y', 'z' ];
+  const MS_IN_YEAR = 31536000000;
+  const MS_IN_DAY = 86400000;
+  const MS_IN_HOUR = 3600000;
+  const MS_IN_MINUTE = 60000;
+  const MS_IN_SECOND = 1000;
 
   // Standard data properties (property: {icon, suffix}) in alphabetical order
   const STANDARD_DATA_PROPERTIES = {
@@ -54,7 +59,7 @@ let cuttlefishDynamb = (function() {
                  suffix: " Tx" },
       unicodeCodePoints: { icon: "fas fa-language", suffix: "",
                           transform: "unicodeCodePoints" },
-      uptime: { icon: "fas fa-stopwatch", suffix: " ms" }
+      uptime: { icon: "fas fa-stopwatch", transform: "elapsedTime" }
   };
 
   // Render a dynamb
@@ -140,6 +145,8 @@ let cuttlefishDynamb = (function() {
     switch(transform) {
       case 'booleanArray':
         return renderBooleanArray(data);
+      case 'elapsedTime':
+        return renderElapsedTime(data);
       case 'unicodeCodePoints':
         return renderUnicodeCodePoints(data);
       case 'position':
@@ -176,6 +183,37 @@ let cuttlefishDynamb = (function() {
     let buttonGroup = createElement('div', 'btn-group btn-group-sm', buttons);
 
     return createElement('div', 'btn-toolbar', buttonGroup);
+  }
+
+  // Render an elapsed time in the appropriate units
+  function renderElapsedTime(elapsedTime) {
+    let representation = '';
+    let remainingTime = elapsedTime;
+
+    if(remainingTime > MS_IN_YEAR) {
+      let years = Math.floor(remainingTime / MS_IN_YEAR);
+      representation += years + (years === 1 ? ' year, ' : ' years, ');
+      remainingTime -= (years * MS_IN_YEAR);
+    }
+    if((remainingTime !== elapsedTime) || (remainingTime > MS_IN_DAY)) {
+      let days = Math.floor(remainingTime / MS_IN_DAY);
+      representation += days + (days === 1 ? ' day, ' : ' days, ');
+      remainingTime -= (days * MS_IN_DAY);
+    }
+    if((remainingTime !== elapsedTime) || (remainingTime > MS_IN_HOUR)) {
+      let hours = Math.floor(remainingTime / MS_IN_HOUR);
+      representation += hours + 'h';
+      remainingTime -= (hours * MS_IN_HOUR);
+    }
+    if((remainingTime !== elapsedTime) || (remainingTime > MS_IN_MINUTE)) {
+      let minutes = Math.floor(remainingTime / MS_IN_MINUTE);
+      representation += (minutes + 'm').padStart(3, '0');
+      remainingTime -= (minutes * MS_IN_MINUTE);
+    }
+    let seconds = Math.round(remainingTime / MS_IN_SECOND);
+    representation += (seconds + 's').padStart(3, '0');
+
+    return representation;
   }
 
   // Render an array of Unicode code points
