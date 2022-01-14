@@ -94,6 +94,24 @@ let cuttlefishDynamb = (function() {
     return table;
   }
 
+  // Render a single dynamb property
+  function renderProperty(property, data, target, options) {
+    let isKnownProperty = STANDARD_DATA_PROPERTIES.hasOwnProperty(property);
+    let content = createElement('span', null, data);
+
+    if(isKnownProperty) {
+      let dataRender = STANDARD_DATA_PROPERTIES[property];
+      content = renderAsTransform(dataRender.transform, data,
+                                  dataRender.suffix);
+    }
+
+    if(target) {
+      target.replaceChildren(content);
+    }
+
+    return content; 
+  }
+
   // Render a table row
   function renderAsRow(property, data) {
     let isKnownProperty = STANDARD_DATA_PROPERTIES.hasOwnProperty(property);
@@ -287,7 +305,8 @@ let cuttlefishDynamb = (function() {
 
   // Expose the following functions and variables
   return {
-    render: render
+    render: render,
+    renderProperty: renderProperty
   }
 
 }());
