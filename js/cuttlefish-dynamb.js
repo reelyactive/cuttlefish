@@ -50,6 +50,8 @@ let cuttlefishDynamb = (function() {
       temperature: { icon: "fas fa-thermometer-half", suffix: " \u2103",
                      transform: "toFixed(2)" },
       timestamp: { icon: "fas fa-clock", suffix: "", transform: "timeOfDay" },
+      txCount: { icon: "fas fa-satellite-dish", transform: "localeString",
+                 suffix: " Tx" },
       unicodeCodePoints: { icon: "fas fa-language", suffix: "",
                           transform: "unicodeCodePoints" },
       uptime: { icon: "fas fa-stopwatch", suffix: " ms" }
@@ -148,6 +150,8 @@ let cuttlefishDynamb = (function() {
         return renderProgressXYZ(data, suffix);
       case 'toFixed(2)':
         return data.toFixed(2) + suffix;
+      case 'localeString':
+        return data.toLocaleString() + suffix;
       case 'tableNearest':
         return renderTableDevices(data, 'rssi', suffix);
       case 'tableDigest':
