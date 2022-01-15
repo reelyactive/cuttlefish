@@ -101,8 +101,8 @@ let cuttlefishDynamb = (function() {
     return table;
   }
 
-  // Render a single dynamb property
-  function renderProperty(property, data, target, options) {
+  // Render a single dynamb value
+  function renderValue(property, data, target, options) {
     let isKnownProperty = STANDARD_DATA_PROPERTIES.hasOwnProperty(property);
     let content = createElement('span', null, data);
 
@@ -110,6 +110,22 @@ let cuttlefishDynamb = (function() {
       let dataRender = STANDARD_DATA_PROPERTIES[property];
       content = renderAsTransform(dataRender.transform, data,
                                   dataRender.suffix);
+    }
+
+    if(target) {
+      target.replaceChildren(content);
+    }
+
+    return content; 
+  }
+
+  // Render a single dynamb icon
+  function renderIcon(property, target, options) {
+    let isKnownProperty = STANDARD_DATA_PROPERTIES.hasOwnProperty(property);
+    let content = createElement('i', 'fas fa-question-circle');
+
+    if(isKnownProperty) {
+      content = createElement('i', STANDARD_DATA_PROPERTIES[property].icon);
     }
 
     if(target) {
@@ -348,7 +364,8 @@ let cuttlefishDynamb = (function() {
   // Expose the following functions and variables
   return {
     render: render,
-    renderProperty: renderProperty
+    renderIcon: renderIcon,
+    renderValue: renderValue
   }
 
 }());
