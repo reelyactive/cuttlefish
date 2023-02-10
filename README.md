@@ -12,7 +12,7 @@ __cuttlefish__ is lightweight client-side JavaScript that runs in the browser.
 Hello cuttlefish!
 -----------------
 
-Include in an _index.html_ file the required __cuttlefish-x__ scripts and divs in which each can render the data:
+Include in an _index.html_ file the required __cuttlefish-x__ scripts, the Font Awesome 5 icon set, and divs in which each can render the data:
 
 ```html
 <html>
@@ -22,6 +22,7 @@ Include in an _index.html_ file the required __cuttlefish-x__ scripts and divs i
     <div id="dynambToRender"></div>
     <div id="statidToRender"></div>
 
+    <script defer src="js/fontawesome-reelyactive.min.js"></script>
     <script src="js/cuttlefish-story.js"></script>
     <script src="js/cuttlefish-dynamb.js"></script>
     <script src="js/cuttlefish-statid.js"></script>
@@ -35,19 +36,19 @@ Include in a _js/app.js_ the code to render the given story, dynamb and/or stati
 ```javascript
 let story = { /* Likely retrieved by cormorant.js */ };
 let storyTarget = document.querySelector('#storyToRender');
-let storyOptions = { /* See options below */ };
+let storyOptions = {};
 
 cuttlefishStory.render(story, storyTarget, storyOptions);
 
 let dynamb = { /* Likely consumed from Pareto Anywhere */ };
 let dynambTarget = document.querySelector('#dynambToRender');
-let dynambOptions = { /* See options below */ };
+let dynambOptions = {};
 
 cuttlefishDynamb.render(dynamb, dynambTarget, dynambOptions);
 
 let statid = { /* Likely consumed from Pareto Anywhere */ };
 let statidTarget = document.querySelector('#statidToRender');
-let statidOptions = { /* See options below */ };
+let statidOptions = {};
 
 cuttlefishStatid.render(statid, statidTarget, statidOptions);
 ```
