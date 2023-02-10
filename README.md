@@ -1,97 +1,86 @@
 cuttlefish
 ==========
 
+__cuttlefish__ facilitates human-friendly HTML rendering of machine-friendly:
+- JSON-LD & Schema.org ("story" data)
+- dynamb (dynamic ambient data)
+- statid (static identifier data)
 
-Human-friendly HTML rendering of machine-friendly JSON-LD.
+__cuttlefish__ is lightweight client-side JavaScript that runs in the browser.  See a live demo using the code in this repository at: [reelyactive.github.io/cuttlefish](https://reelyactive.github.io/cuttlefish)
 
 
-Installation
-------------
+Hello cuttlefish!
+-----------------
 
-__cuttlefish.js__ is written in vanilla JavaScript and the file can simply be included among the scripts in an HTML file.  For example:
+Include in an _index.html_ file the required __cuttlefish-x__ scripts, the Font Awesome 5 icon set, and divs in which each can render the data:
 
 ```html
 <html>
   <head></head>
   <body>
-    <script src="js/cuttlefish.js"></script>
+    <div id="storyToRender"></div>
+    <div id="dynambToRender"></div>
+    <div id="statidToRender"></div>
+
+    <script defer src="js/fontawesome-reelyactive.min.js"></script>
+    <script src="js/cuttlefish-story.js"></script>
+    <script src="js/cuttlefish-dynamb.js"></script>
+    <script src="js/cuttlefish-statid.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
 ```
 
-
-Hello cuttlefish
-----------------
-
-Include in your _index.html_ divs of the class _card_ in which cuttlefish should render stories.
-
-```html
-<div class="card" id="toRender"></div>
-```
-
-### render()
-
-Include in your _js/app.js_ the following code to render the given story in the _toRender_ div:
+Include in a _js/app.js_ the code to render the given story, dynamb and/or statid data in the _xToRender_ divs:
 
 ```javascript
 let story = { /* Likely retrieved by cormorant.js */ };
-let target = document.querySelector('#toRender');
-let options = { /* See options below */ };
+let storyTarget = document.querySelector('#storyToRender');
+let storyOptions = {};
 
-cuttlefish.render(story, target, options);
+cuttlefishStory.render(story, storyTarget, storyOptions);
+
+let dynamb = { /* Likely consumed from Pareto Anywhere */ };
+let dynambTarget = document.querySelector('#dynambToRender');
+let dynambOptions = {};
+
+cuttlefishDynamb.render(dynamb, dynambTarget, dynambOptions);
+
+let statid = { /* Likely consumed from Pareto Anywhere */ };
+let statidTarget = document.querySelector('#statidToRender');
+let statidOptions = {};
+
+cuttlefishStatid.render(statid, statidTarget, statidOptions);
 ```
 
-### renderAsTabs()
-
-Include in your _js/app.js_ the following code to render the given story in the _toRender_ div:
-
-```javascript
-let target = document.querySelector('#toRender');
-let stories = [ /* Likely retrieved by cormorant.js */ ];
-let data = [ /* Likely parsed from packets */ ];
-let associations = { /* Likely retrieved by cormorant.js */ };
-let raddecs = [ /* Likely provided by beaver.js */ ];
-let options = { /* None yet supported */ };
-
-cuttlefish.renderAsTabs(target, stories, data, associations, raddecs, options);
-```
+Open the _index.html_ file in a web browser to see the story, dynamb and/or statid data rendered in a human-readable way.
 
 
-### Additional functions
+Supported functions
+-------------------
 
-The following functions are also exposed by cuttlefish:
+### cuttlefish-story.js
 
-```javascript
-cuttlefish.determineImageUrl(story);
-cuttlefish.determineTitle(story);
-```
+`cuttlefishStory.render(story, target, options);`
+
+`cuttlefishStory.determineImageUrl(story);`
+
+`cuttlefishStory.determineTitle(story);`
+
+### cuttlefish-dynamb.js
+
+`cuttlefishDynamb.render(dynamb, target, options);`
+
+`cuttlefishDynamb.renderIcon(property, target, options);`
+
+`cuttlefishDynamb.renderValue(property, data, target, options);`
+
+### cuttlefish-statid.js
+
+`cuttlefishStatid.render(statid, target, options);`
 
 
 ![cuttlefish logo](https://reelyactive.github.io/cuttlefish/images/cuttlefish-bubble.png)
-
-
-Options
--------
-
-Cuttlefish supports the following options:
-
-### listGroupItems
-
-An array of list-group-items to append to the bottom of the card.  Each item can be preceded by an icon if the optional _iconClass_ property is included, and the appearance can be customised if the optional _itemClass_ property is included.  For example:
-
-```javascript
-let options = {
-    listGroupItems: [
-      {
-        text: "An info message to append",
-        itemClass: "text-white bg-dark",
-        iconClass: "fas fa-info-circle"
-    ]
-}
-
-cuttlefish.render(story, target, options);
-```
 
 
 What's in a name?
@@ -106,10 +95,26 @@ In its client-side habitat, cuttlefish.js will consume and render the JSON-LD fe
 Speaking of videos, we'd be remiss not to share with you Ze Frank's [True Facts about the Cuttlefish](https://youtu.be/GDwOi7HpHtQ).  May we also suggest an images search for "cute baby cuttlefish".  You're welcome.
 
 
-What's next?
-------------
+Project History
+---------------
+
+__cuttlefish__ v2.0.0 was released in February 2023.
 
 __cuttlefish.js__ v1.0.0 was released in July 2019, superseding all earlier versions, the latest of which remains available in the [release-0.1 branch](https://github.com/reelyactive/cuttlefish/tree/release-0.1).
+
+
+Contributing
+------------
+
+Discover [how to contribute](CONTRIBUTING.md) to this open source project which upholds a standard [code of conduct](CODE_OF_CONDUCT.md).
+
+
+Security
+--------
+
+Consult our [security policy](SECURITY.md) for best practices using this open source software and to report vulnerabilities.
+
+[![Known Vulnerabilities](https://snyk.io/test/github/reelyactive/cuttlefish/badge.svg)](https://snyk.io/test/github/reelyactive/cuttlefish)
 
 
 License
@@ -117,7 +122,7 @@ License
 
 MIT License
 
-Copyright (c) 2016-2020 [reelyActive](https://www.reelyactive.com)
+Copyright (c) 2016-2023 [reelyActive](https://www.reelyactive.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
