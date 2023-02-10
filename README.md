@@ -1,19 +1,27 @@
 cuttlefish
 ==========
 
+__cuttlefish__ facilitates human-friendly HTML rendering of machine-friendly:
+- JSON-LD & Schema.org ("story" data)
+- dynamb (dynamic ambient data)
+- statid (static identifier data)
 
-Human-friendly HTML rendering of machine-friendly JSON-LD.
+__cuttlefish__ is lightweight client-side JavaScript that runs in the browser.
 
 
-Installation
-------------
+Hello cuttlefish!
+-----------------
 
-__cuttlefish.js__ is written in vanilla JavaScript and the file can simply be included among the scripts in an HTML file.  For example:
+Include in an _index.html_ file the required __cuttlefish-x__ scripts and divs in which each can render the data:
 
 ```html
 <html>
   <head></head>
   <body>
+    <div id="storyToRender"></div>
+    <div id="dynambToRender"></div>
+    <div id="statidToRender"></div>
+
     <script src="js/cuttlefish-story.js"></script>
     <script src="js/cuttlefish-dynamb.js"></script>
     <script src="js/cuttlefish-statid.js"></script>
@@ -22,45 +30,56 @@ __cuttlefish.js__ is written in vanilla JavaScript and the file can simply be in
 </html>
 ```
 
-
-Hello cuttlefish!
------------------
-
-Include in your _index.html_ a div in which cuttlefish should render a story or dynamb.
-
-```html
-<div id="toRender"></div>
-```
-
-### render()
-
-Include in your _js/app.js_ the following code to render the given story in the _toRender_ div:
+Include in a _js/app.js_ the code to render the given story, dynamb and/or statid data in the _xToRender_ divs:
 
 ```javascript
 let story = { /* Likely retrieved by cormorant.js */ };
-let target = document.querySelector('#toRender');
-let options = { /* See options below */ };
+let storyTarget = document.querySelector('#storyToRender');
+let storyOptions = { /* See options below */ };
 
-cuttlefish.render(story, target, options);
+cuttlefishStory.render(story, storyTarget, storyOptions);
+
+let dynamb = { /* Likely consumed from Pareto Anywhere */ };
+let dynambTarget = document.querySelector('#dynambToRender');
+let dynambOptions = { /* See options below */ };
+
+cuttlefishDynamb.render(dynamb, dynambTarget, dynambOptions);
+
+let statid = { /* Likely consumed from Pareto Anywhere */ };
+let statidTarget = document.querySelector('#statidToRender');
+let statidOptions = { /* See options below */ };
+
+cuttlefishStatid.render(statid, statidTarget, statidOptions);
 ```
 
-### Additional functions
+Open the _index.html_ file in a web browser to see the story, dynamb and/or statid data rendered in a human-readable way.
 
-The following functions are also exposed by cuttlefish:
 
-```javascript
-cuttlefish.determineImageUrl(story);
-cuttlefish.determineTitle(story);
-```
+Supported functions
+-------------------
+
+### cuttlefish-story.js
+
+`cuttlefishStory.render(story, target, options);`
+
+`cuttlefishStory.determineImageUrl(story);`
+
+`cuttlefishStory.determineTitle(story);`
+
+### cuttlefish-dynamb.js
+
+`cuttlefishDynamb.render(dynamb, target, options);`
+
+`cuttlefishDynamb.renderIcon(property, target, options);`
+
+`cuttlefishDynamb.renderValue(property, data, target, options);`
+
+### cuttlefish-statid.js
+
+`cuttlefishStatid.render(statid, target, options);`
 
 
 ![cuttlefish logo](https://reelyactive.github.io/cuttlefish/images/cuttlefish-bubble.png)
-
-
-Options
--------
-
-__cuttlefish.js__ does not currently support any options.
 
 
 What's in a name?
@@ -75,8 +94,10 @@ In its client-side habitat, cuttlefish.js will consume and render the JSON-LD fe
 Speaking of videos, we'd be remiss not to share with you Ze Frank's [True Facts about the Cuttlefish](https://youtu.be/GDwOi7HpHtQ).  May we also suggest an images search for "cute baby cuttlefish".  You're welcome.
 
 
-What's next?
-------------
+Project History
+---------------
+
+__cuttlefish__ v2.0.0 was released in February 2023.
 
 __cuttlefish.js__ v1.0.0 was released in July 2019, superseding all earlier versions, the latest of which remains available in the [release-0.1 branch](https://github.com/reelyactive/cuttlefish/tree/release-0.1).
 
@@ -86,7 +107,7 @@ License
 
 MIT License
 
-Copyright (c) 2016-2021 [reelyActive](https://www.reelyactive.com)
+Copyright (c) 2016-2023 [reelyActive](https://www.reelyactive.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
