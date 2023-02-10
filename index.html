@@ -84,6 +84,16 @@
                 <li class="dropdown-divider"></li>
                 <li>
                   <a class="dropdown-item" target="_blank"
+                     href="https://github.com/reelyactive/cuttlefish" >
+                    <i class="fab fa-js"></i>
+                    cuttlefish.js &nbsp;
+                    <span class="badge bg-light text-dark">
+                      <i class="fab fa-osi"></i> MIT
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item" target="_blank"
                      href="https://getbootstrap.com" >
                     <i class="fab fa-bootstrap"></i>
                     Bootstrap 5 &nbsp;
@@ -133,14 +143,44 @@
       <div class="row justify-content-center">
         <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6">
           <h1 class="mt-4"> cuttlefish.js demo </h1>
-          <p class="lead"> Client-side utility for human-friendly HTML rendering of machine-friendly JSON-LD. </p>
+          <p class="lead"> Client-side utility for human-friendly HTML rendering of machine-friendly ambient data. </p>
+          <!-- cuttlefish-story.js -->
+          <div class="row my-5">
+            <div class="col-md-6">
+              <div id="storyToRender"></div>
+            </div>
+            <div class="col-md-6">
+              <h5 class="font-monospace">cuttlefishStory.render(&hellip;);</h5>
+              <pre id="storyData"></pre>
+            </div>
+          </div>
+          <!-- cuttlefish-dynamb.js -->
+          <div class="row my-5">
+            <div class="col-md-6">
+              <div id="dynambToRender"></div>
+            </div>
+            <div class="col-md-6">
+              <h5 class="font-monospace">cuttlefishDynamb.render(&hellip;);</h5>
+              <pre id="dynambData"></pre>
+            </div>
+          </div>
+          <!-- cuttlefish-statid.js -->
+          <div class="row my-5">
+            <div class="col-md-6">
+              <div id="statidToRender"></div>
+            </div>
+            <div class="col-md-6">
+              <h5 class="font-monospace">cuttlefishStatid.render(&hellip;);</h5>
+              <pre id="statidData"></pre>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <footer class="footer bg-dark bg-gradient">
       <a href="https://github.com/reelyactive/cuttlefish"> cuttlefish </a>
       &nbsp; | &nbsp;
-      <a href="https://www.reelyactive.com"> &copy; reelyActive 2016-2021 </a>
+      <a href="https://www.reelyactive.com"> &copy; reelyActive 2016-2023 </a>
     </footer>
 
     <!-- Optional JavaScript -->
@@ -148,6 +188,7 @@
     <script src="js/bootstrappyactive.bundle.min.js"></script>
     <script src="js/cuttlefish-story.js"></script>
     <script src="js/cuttlefish-dynamb.js"></script>
+    <script src="js/cuttlefish-statid.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
