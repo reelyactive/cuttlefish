@@ -5,18 +5,20 @@
     "name": "reelyActive",
     "email": "info@reelyactive.com"
   },
-  "description": "Human-friendly HTML rendering of machine-friendly JSON-LD.  We believe in an open Internet of Things.",
+  "description": "Client-side utility for human-friendly HTML rendering of machine-friendly ambient data.  We believe in an open Internet of Things.",
   "keywords": [
     "reelyActive",
     "JSON-LD",
     "Schema.org",
-    "semantic web",
+    "dynamb",
+    "statid",
     "client-side"
   ],
-  "version": "1.1.1",
-  "main": "./js/cuttlefish.js",
+  "version": "2.0.0",
   "files": [
-    "./js/cuttlefish.js"
+    "./js/cuttlefish-story.js",
+    "./js/cuttlefish-dynamb.js",
+    "./js/cuttlefish-statid.js"
   ],
   "repository": {
     "url": "https://github.com/reelyactive/cuttlefish",
