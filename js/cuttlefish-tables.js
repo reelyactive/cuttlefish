@@ -40,7 +40,6 @@ const DISCRETE_TIMESTAMP_OPTIONS = { hour: "2-digit", minute: "2-digit",
                                      second: "2-digit", hour12: false };
 const DISCRETE_DATA_STALE_MILLISECONDS = 60000;
 const DISCRETE_DATA_ANIMATE_MILLISECONDS = 15000;
-const SIGNATURE_SEPARATOR = '/';
 
 
 /**
@@ -249,7 +248,8 @@ class DiscreteDataTable {
 
     if(self.isClockDisplayed) {
       let time = new Date().toLocaleTimeString([], CLOCK_OPTIONS);
-      let td = createElement('td', 'table-dark display-1', time);
+      let td = createElement('td', 'bg-dark bg-gradient text-white display-1',
+                             time);
       let tr = createElement('tr', null, td);
       let thead = createElement('thead', null, tr);
       td.setAttribute('colspan', '4');
@@ -315,8 +315,7 @@ class DiscreteDataTable {
   handleDynamb(dynamb) {
     let self = this;
     let tbody = document.querySelector('#discreteDataRows');
-    let deviceSignature = dynamb.deviceId + SIGNATURE_SEPARATOR +
-                          dynamb.deviceIdType;
+    let deviceSignature = dynamb.deviceId + '/' + dynamb.deviceIdType;
 
     this.propertiesToDisplay.forEach((property) => {
       if(dynamb.hasOwnProperty(property)) {
