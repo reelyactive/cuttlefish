@@ -40,6 +40,7 @@ const DISCRETE_TIMESTAMP_OPTIONS = { hour: "2-digit", minute: "2-digit",
                                      second: "2-digit", hour12: false };
 const DISCRETE_DATA_STALE_MILLISECONDS = 60000;
 const DISCRETE_DATA_ANIMATE_MILLISECONDS = 15000;
+const SIGNATURE_SEPARATOR = '/';
 
 
 /**
