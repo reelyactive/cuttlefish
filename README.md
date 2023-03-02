@@ -79,6 +79,47 @@ Supported functions
 
 `cuttlefishStatid.render(statid, target, options);`
 
+### cuttlefish-tables.js
+
+Provides a __ContinuousDataTable__ class which updates automatically once instantiated:
+
+```html
+<table id="continuousData"></table>
+```
+
+```javascript
+let elementId = document.querySelector('#continuousData');
+let devices = beaver.devices; // See beaver.js
+let options = { updateMilliseconds: 15000,
+                numberOfSamples: 4,
+                propertiesToDisplay: [ 'temperature', 'relativeHumidity',
+                                       'illuminance', 'batteryPercentage' ]
+};
+
+let continuousDataTable = new ContinuousDataTable(elementId, devices, options);
+```
+
+Provides a __DiscreteDataTable__ class which takes dynamb events via its _handleDynamb()_ function, and updates automatically once instantiated:
+
+```html
+<table id="discreteData"></table>
+```
+
+```javascript
+let elementId = document.querySelector('#discreteData');
+let options = { updateMilliseconds: 5000,
+                maxRows: 8,
+                isClockDisplayed: false,
+                propertiesToDisplay: [ 'isButtonPressed', 'isContactDetected',
+                                       'isMotionDetected', 'unicodeCodePoints' ]
+};
+
+let discreteDataTable = new DiscreteDataTable(elementId, options);
+
+// See beaver.js
+beaver.on('dynamb', (dynamb) => { discreteDataTable.handleDynamb(dynamb); });
+```
+
 
 ![cuttlefish logo](https://reelyactive.github.io/cuttlefish/images/cuttlefish-bubble.png)
 
