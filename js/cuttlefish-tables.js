@@ -351,7 +351,7 @@ class DiscreteDataTable {
 function determineDiscreteDataEvent(property, current, previous) {
   let isEvent = false;
 
-  if(previous === undefined) {
+  if((previous === undefined) || (property === 'unicodeCodePoints')) {
     isEvent = true;
   }
   else if(Array.isArray(current) && Array.isArray(previous)) {
