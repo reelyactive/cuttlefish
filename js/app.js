@@ -28,9 +28,11 @@ const EXAMPLE_DYNAMB = {
     deviceId: "bada55beaco4",
     deviceIdType: 3,
     acceleration: [ -0.2, 0.9, 0.3 ],
+    amperages: [ 4.8, null, 0.4 ],
     angleOfRotation: 180,
     batteryPercentage: 50,
     batteryVoltage: 3.3,
+    distance: 0.5,
     elevation: 152,
     heading: 270,
     heartRate: 60,
@@ -46,7 +48,8 @@ const EXAMPLE_DYNAMB = {
     temperature: 20.23,
     txCount: 123456789,
     unicodeCodePoints: [ 0x1f989 ],
-    uptime: 60000
+    uptime: 60000,
+    voltages: [ 5.1, 4.9, null ]
 };
 const EXAMPLE_STATID = {
     name: "cuttlefish.js",
