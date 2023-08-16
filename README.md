@@ -6,6 +6,8 @@ __cuttlefish__ facilitates human-friendly HTML rendering of machine-friendly:
 - dynamb (dynamic ambient data)
 - statid (static identifier data)
 
+![Overview of cuttlefish.js](https://reelyactive.github.io/cuttlefish/images/overview.png)
+
 __cuttlefish__ is lightweight client-side JavaScript that runs in the browser.  See a live demo using the code in this repository at: [reelyactive.github.io/cuttlefish](https://reelyactive.github.io/cuttlefish)
 
 
