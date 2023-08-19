@@ -227,6 +227,7 @@ class DiscreteDataTable {
     this.updateMilliseconds = options.updateMilliseconds || 5000;
     this.maxRows = options.maxRows || 8;
     this.isClockDisplayed = options.isClockDisplayed || false;
+    this.digitalTwins = options.digitalTwins || new Map();
     this.propertiesToDisplay = options.propertiesToDisplay ||
                                [ 'isButtonPressed', 'isContactDetected',
                                  'isMotionDetected', 'unicodeCodePoints' ];
@@ -316,6 +317,8 @@ class DiscreteDataTable {
     let self = this;
     let tbody = document.querySelector('#discreteDataRows');
     let deviceSignature = dynamb.deviceId + '/' + dynamb.deviceIdType;
+    let digitalTwin = self.digitalTwins.get(deviceSignature) || {};
+    let deviceName = determineDeviceName(deviceSignature, digitalTwin);
 
     this.propertiesToDisplay.forEach((property) => {
       if(dynamb.hasOwnProperty(property)) {
@@ -329,11 +332,11 @@ class DiscreteDataTable {
           let row = tbody.querySelector('#' + id);
 
           if(row) {
-            updateDiscreteDataRow(row, event, dynamb.timestamp);
+            updateDiscreteDataRow(row, event, deviceName, dynamb.timestamp);
           }
           else {
             row = createDiscreteDataRow(id, property, event, deviceSignature,
-                                        dynamb.timestamp);
+                                        deviceName, dynamb.timestamp);
             if(tbody.hasChildNodes() &&
                (tbody.childNodes.length >= self.maxRows)) {
               tbody.removeChild(tbody.lastChild);
@@ -343,6 +346,14 @@ class DiscreteDataTable {
         }
       }
     });
+  }
+
+  // Update the digital twin of the identified entries(s)
+  updateDigitalTwin(deviceSignature, digitalTwin) {
+    let deviceName = determineDeviceName(deviceSignature, digitalTwin || {});
+    let namedNodes = document.getElementsByName(deviceSignature + '-name');
+
+    namedNodes.forEach((node) => { node.textContent = deviceName; });
   }
 }
 
@@ -385,12 +396,13 @@ function determineDiscreteDataEvent(property, current, previous) {
 
 
 // Create a discrete data row
-function createDiscreteDataRow(id, property, description, device, timestamp) {
+function createDiscreteDataRow(id, property, description, deviceSignature,
+                               deviceName, timestamp) {
   let iconClass = DYNAMB_PROPERTY_ICON_CLASSES[property] ||
                   DEFAULT_DYNAMB_PROPERTY_ICON_CLASS;
   let icon = createElement('i', iconClass + ' display-6');
   let iconCol = createElement('th', 'table-primary animate-breathing', icon);
-  let deviceCol = createElement('td', 'font-monospace', device);
+  let deviceCol = createElement('td', 'font-monospace', deviceName);
   let descriptionClass = (property === 'unicodeCodePoints') ? 'display-6' :
                                                               'fw-bold';
   let descriptionCol = createElement('td', descriptionClass, description);
@@ -399,6 +411,7 @@ function createDiscreteDataRow(id, property, description, device, timestamp) {
   let timestampCol = createElement('td', null, time);
   let tr = createElement('tr', 'align-middle',
                          [ iconCol, descriptionCol, deviceCol, timestampCol ]);
+  deviceCol.setAttribute('name', deviceSignature + '-name');
   tr.id = id;
   tr.timestamp = timestamp;
 
@@ -407,15 +420,30 @@ function createDiscreteDataRow(id, property, description, device, timestamp) {
 
 
 // Update a discrete data row
-function updateDiscreteDataRow(row, description, timestamp) {
+function updateDiscreteDataRow(row, description, deviceName, timestamp) {
   let iconCol = row.children[0];
   let descriptionCol = row.children[1];
+  let deviceCol = row.children[2];
   let timestampCol = row.children[3];
   iconCol.setAttribute('class', 'table-primary animate-breathing');
   descriptionCol.textContent = description;
+  deviceCol.textContent = deviceName;
   timestampCol.textContent = new Date(timestamp).toLocaleTimeString([],
                                                    DISCRETE_TIMESTAMP_OPTIONS);
   row.timestamp = timestamp;
+}
+
+
+// Determine the device name based on its identifier and digital twin
+function determineDeviceName(deviceSignature, digitalTwin) {
+  let hasStoryCovers = Array.isArray(digitalTwin.storyCovers) &&
+                       (digitalTwin.storyCovers.length > 0);
+
+  if(hasStoryCovers) {
+    return digitalTwin.storyCovers[0].title;
+  }
+
+  return deviceSignature;
 }
 
 
