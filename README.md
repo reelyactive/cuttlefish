@@ -112,6 +112,7 @@ let elementId = document.querySelector('#discreteData');
 let options = { updateMilliseconds: 5000,
                 maxRows: 8,
                 isClockDisplayed: false,
+                digitalTwins: cormorant.digitalTwins, // See cormorant.js
                 propertiesToDisplay: [ 'isButtonPressed', 'isContactDetected',
                                        'isMotionDetected', 'unicodeCodePoints' ]
 };
@@ -120,6 +121,9 @@ let discreteDataTable = new DiscreteDataTable(elementId, options);
 
 // See beaver.js
 beaver.on('dynamb', (dynamb) => { discreteDataTable.handleDynamb(dynamb); });
+
+// To update the device name after fetching a digital twin with cormorant.js:
+discreteDataTable.updateDigitalTwin(deviceSignature, digitalTwin);
 ```
 
 
@@ -156,8 +160,6 @@ Security
 --------
 
 Consult our [security policy](SECURITY.md) for best practices using this open source software and to report vulnerabilities.
-
-[![Known Vulnerabilities](https://snyk.io/test/github/reelyactive/cuttlefish/badge.svg)](https://snyk.io/test/github/reelyactive/cuttlefish)
 
 
 License
