@@ -3,7 +3,8 @@ cuttlefish
 
 __cuttlefish__ facilitates human-friendly HTML rendering of machine-friendly:
 - JSON-LD & Schema.org ("story" data)
-- dynamb (dynamic ambient data)
+- [dynamb](https://reelyactive.github.io/diy/cheatsheet/#dynamb) (dynamic ambient data)
+- [spatem](https://reelyactive.github.io/diy/cheatsheet/#spatem) (spatial-temporal data)
 - statid (static identifier data)
 
 ![Overview of cuttlefish.js](https://reelyactive.github.io/cuttlefish/images/overview.png)
@@ -76,6 +77,10 @@ Supported functions
 `cuttlefishDynamb.renderIcon(property, target, options);`
 
 `cuttlefishDynamb.renderValue(property, data, target, options);`
+
+### cuttlefish-spatem.js
+
+`cuttlefishSpatem.render(statid, target, options);`
 
 ### cuttlefish-statid.js
 
