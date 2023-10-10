@@ -11,7 +11,11 @@ let cuttlefishDynamb = (function() {
       'Unknown',
       'EUI-64',
       'EUI-48',
-      'RND-48'
+      'RND-48',
+      'TID-96',
+      'EPC-96',
+      'UUID-128',
+      'EURID-32'
   ];
   const AXIS_NAMES = [ 'x', 'y', 'z' ];
   const MS_IN_YEAR = 31536000000;
