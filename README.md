@@ -23,18 +23,20 @@ Include in an _index.html_ file the required __cuttlefish-x__ scripts, the Font 
   <body>
     <div id="storyToRender"></div>
     <div id="dynambToRender"></div>
+    <div id="spatemToRender"></div>
     <div id="statidToRender"></div>
 
     <script defer src="js/fontawesome-reelyactive.min.js"></script>
     <script src="js/cuttlefish-story.js"></script>
     <script src="js/cuttlefish-dynamb.js"></script>
+    <script src="js/cuttlefish-spatem.js"></script>
     <script src="js/cuttlefish-statid.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
 ```
 
-Include in a _js/app.js_ the code to render the given story, dynamb and/or statid data in the _xToRender_ divs:
+Include in a _js/app.js_ the code to render the given story, dynamb, spatem and/or statid data in the _xToRender_ divs:
 
 ```javascript
 let story = { /* Likely retrieved by cormorant.js */ };
@@ -49,6 +51,12 @@ let dynambOptions = {};
 
 cuttlefishDynamb.render(dynamb, dynambTarget, dynambOptions);
 
+let spatem = { /* Likely consumed from Pareto Anywhere */ };
+let spatemTarget = document.querySelector('#spatemToRender');
+let spatemOptions = {};
+
+cuttlefishSpatem.render(spatem, spatemTarget, spatemOptions);
+
 let statid = { /* Likely consumed from Pareto Anywhere */ };
 let statidTarget = document.querySelector('#statidToRender');
 let statidOptions = {};
@@ -56,7 +64,7 @@ let statidOptions = {};
 cuttlefishStatid.render(statid, statidTarget, statidOptions);
 ```
 
-Open the _index.html_ file in a web browser to see the story, dynamb and/or statid data rendered in a human-readable way.
+Open the _index.html_ file in a web browser to see the story, dynamb, spatem and/or statid data rendered in a human-readable way.
 
 
 Supported functions
