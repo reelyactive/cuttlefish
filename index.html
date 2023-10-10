@@ -14,7 +14,7 @@
       "@context": "https://schema.org", 
       "@type": "SoftwareApplication",
       "name": "cuttlefish.js",
-      "description": "Client-side utility for human-friendly HTML rendering of machine-friendly JSON-LD.",
+      "description": "Client-side utility for human-friendly HTML rendering of machine-friendly ambient data.",
       "license": "https://opensource.org/licenses/MIT",
       "isAccessibleForFree": true,
       "applicationCategory": "Client-side",
@@ -148,7 +148,7 @@
           <!-- cuttlefish-story.js -->
           <div class="row my-5">
             <div class="col-md-6">
-              <div id="storyToRender"></div>
+              <div id="storyToRender" class="overflow-auto"></div>
             </div>
             <div class="col-md-6">
               <h5 class="font-monospace">cuttlefishStory.render(&hellip;);</h5>
@@ -158,17 +158,27 @@
           <!-- cuttlefish-dynamb.js -->
           <div class="row my-5">
             <div class="col-md-6">
-              <div id="dynambToRender"></div>
+              <div id="dynambToRender" class="overflow-auto"></div>
             </div>
             <div class="col-md-6">
               <h5 class="font-monospace">cuttlefishDynamb.render(&hellip;);</h5>
               <pre id="dynambData"></pre>
             </div>
           </div>
+          <!-- cuttlefish-spatem.js -->
+          <div class="row my-5">
+            <div class="col-md-6">
+              <div id="spatemToRender" class="overflow-auto"></div>
+            </div>
+            <div class="col-md-6">
+              <h5 class="font-monospace">cuttlefishSpatem.render(&hellip;);</h5>
+              <pre id="spatemData"></pre>
+            </div>
+          </div>
           <!-- cuttlefish-statid.js -->
           <div class="row my-5">
             <div class="col-md-6">
-              <div id="statidToRender"></div>
+              <div id="statidToRender" class="overflow-auto"></div>
             </div>
             <div class="col-md-6">
               <h5 class="font-monospace">cuttlefishStatid.render(&hellip;);</h5>
@@ -189,6 +199,7 @@
     <script src="js/bootstrappyactive.bundle.min.js"></script>
     <script src="js/cuttlefish-story.js"></script>
     <script src="js/cuttlefish-dynamb.js"></script>
+    <script src="js/cuttlefish-spatem.js"></script>
     <script src="js/cuttlefish-statid.js"></script>
     <script src="js/app.js"></script>
   </body>

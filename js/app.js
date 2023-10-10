@@ -25,7 +25,7 @@ const EXAMPLE_STORY = {
     ]
 };
 const EXAMPLE_DYNAMB = {
-    deviceId: "bada55beaco4",
+    deviceId: "bada55beac04",
     deviceIdType: 3,
     acceleration: [ -0.2, 0.9, 0.3 ],
     amperages: [ 4.8, null, 0.4 ],
@@ -49,7 +49,36 @@ const EXAMPLE_DYNAMB = {
     txCount: 123456789,
     unicodeCodePoints: [ 0x1f989 ],
     uptime: 60000,
-    voltages: [ 5.1, 4.9, null ]
+    voltages: [ 5.1, 4.9, null ],
+    timestamp: Date.now()
+};
+const EXAMPLE_SPATEM = {
+    deviceId: "bada55beac04",
+    deviceIdType: 3,
+    type: "location",
+    data: {
+      type: "FeatureCollection",
+      features: [{
+        type: "Feature",
+        properties: { isDevicePosition: true,
+                      positioningEngine: "External" },
+        geometry: {
+          type: "Point",
+          coordinates: [ -73.57123, 45.50883 ]
+        }
+      },{
+        type: "Feature",
+        id: "df52b802f4054bdb815102be1d76f8ab",
+        properties: { name: "reelyActive Parc" },
+        geometry: {
+          type: "Polygon",
+          coordinates: [[[ -73.57120, 45.50879 ], [ -73.57113, 45.50894 ],
+                         [ -73.57120, 45.50897 ], [ -73.57129, 45.50883 ],
+                         [ -73.57120, 45.50879 ]]]
+        }
+      }
+    ]},
+    timestamp: Date.now()
 };
 const EXAMPLE_STATID = {
     name: "cuttlefish.js",
@@ -60,18 +89,22 @@ const EXAMPLE_STATID = {
 
 const storyTarget = document.querySelector('#storyToRender');
 const dynambTarget = document.querySelector('#dynambToRender');
+const spatemTarget = document.querySelector('#spatemToRender');
 const statidTarget = document.querySelector('#statidToRender');
 
 
 cuttlefishStory.render(EXAMPLE_STORY, storyTarget);
 cuttlefishDynamb.render(EXAMPLE_DYNAMB, dynambTarget);
+cuttlefishSpatem.render(EXAMPLE_SPATEM, spatemTarget);
 cuttlefishStatid.render(EXAMPLE_STATID, statidTarget);
 
 
 const storyData = document.querySelector('#storyData');
 const dynambData = document.querySelector('#dynambData');
+const spatemData = document.querySelector('#spatemData');
 const statidData = document.querySelector('#statidData');
 
 storyData.textContent = JSON.stringify(EXAMPLE_STORY, null, 2);
 dynambData.textContent = JSON.stringify(EXAMPLE_DYNAMB, null, 2);
+spatemData.textContent = JSON.stringify(EXAMPLE_SPATEM, null, 2);
 statidData.textContent = JSON.stringify(EXAMPLE_STATID, null, 2);
