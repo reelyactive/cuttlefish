@@ -39,6 +39,7 @@ const EXAMPLE_DYNAMB = {
     illuminance: 333,
     isButtonPressed: [ false ],
     isContactDetected: [ true ],
+    isLiquidDetected: [ false ],
     isMotionDetected: [ false ],
     magneticField: [ -0.7, 0.3, 0.1 ],
     position: [ -73.5, 45.5, 88 ],

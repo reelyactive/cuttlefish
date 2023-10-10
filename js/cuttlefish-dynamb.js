@@ -53,6 +53,8 @@ let cuttlefishDynamb = (function() {
                          transform: "booleanArray" },
       isContactDetected: { icon: "fas fa-compress-alt", suffix: "",
                            transform: "booleanArray" },
+      isLiquidDetected: { icon: "fas fa-tint", suffix: "",
+                          transform: "booleanArray" },
       isMotionDetected: { icon: "fas fa-walking", suffix: "",
                           transform: "booleanArray" },
       magneticField: { icon: "fas fa-magnet", suffix: " G",
