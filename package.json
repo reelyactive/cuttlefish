@@ -11,13 +11,15 @@
     "JSON-LD",
     "Schema.org",
     "dynamb",
+    "spatem",
     "statid",
     "client-side"
   ],
-  "version": "2.0.2",
+  "version": "2.1.0",
   "files": [
     "./js/cuttlefish-story.js",
     "./js/cuttlefish-dynamb.js",
+    "./js/cuttlefish-spatem.js",
     "./js/cuttlefish-statid.js",
     "./js/cuttlefish-tables.js"
   ],
