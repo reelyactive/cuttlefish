@@ -21,6 +21,7 @@ let cuttlefishSpatem = (function() {
 
   // Render a spatem
   function render(spatem, target, options) {
+    options = options || {};
     let tbody = createElement('tbody');
     let table = createElement('table', 'table', tbody);
 
@@ -33,7 +34,7 @@ let cuttlefishSpatem = (function() {
       table.appendChild(caption);
     }
     if(spatem.hasOwnProperty('deviceId') &&
-       spatem.hasOwnProperty('deviceIdType')) {
+       spatem.hasOwnProperty('deviceIdType') && !options.hideDeviceId) {
       let deviceId = spatem.deviceId + ' / ' +
                      IDENTIFIER_TYPES[spatem.deviceIdType];
       let icon = createElement('i', 'fas fa-wifi');

@@ -87,6 +87,7 @@ let cuttlefishDynamb = (function() {
 
   // Render a dynamb
   function render(dynamb, target, options) {
+    options = options || {};
     let tbody = createElement('tbody');
     let table = createElement('table', 'table', tbody);
 
@@ -99,7 +100,7 @@ let cuttlefishDynamb = (function() {
       table.appendChild(caption);
     }
     if(dynamb.hasOwnProperty('deviceId') &&
-       dynamb.hasOwnProperty('deviceIdType')) {
+       dynamb.hasOwnProperty('deviceIdType') && !options.hideDeviceId) {
       let deviceId = dynamb.deviceId + ' / ' +
                      IDENTIFIER_TYPES[dynamb.deviceIdType];
       let tr = renderAsRow('deviceId', deviceId);
