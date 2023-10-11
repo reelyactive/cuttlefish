@@ -39,8 +39,8 @@ let cuttlefishSpatem = (function() {
                      IDENTIFIER_TYPES[spatem.deviceIdType];
       let icon = createElement('i', 'fas fa-wifi');
       let th = createElement('th', 'text-center', icon);
-      let td = createElement('td', 'align-middle', ' \u00a0' + deviceId);
-      let tr = createElement('tr', null, [ th, td ]);
+      let td = createElement('td', 'align-middle font-monospace', deviceId);
+      let tr = createElement('tr', 'table-light', [ th, td ]);
       tbody.appendChild(tr);
     }
     if(spatem.hasOwnProperty('data') && Array.isArray(spatem.data.features)) {
