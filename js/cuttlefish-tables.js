@@ -40,6 +40,7 @@ const DISCRETE_TIMESTAMP_OPTIONS = { hour: "2-digit", minute: "2-digit",
                                      second: "2-digit", hour12: false };
 const DISCRETE_DATA_STALE_MILLISECONDS = 60000;
 const DISCRETE_DATA_ANIMATE_MILLISECONDS = 15000;
+const DEFAULT_DEVICE_FILTER = function(device) { return true; };
 
 
 /**
@@ -348,12 +349,189 @@ class DiscreteDataTable {
     });
   }
 
-  // Update the digital twin of the identified entries(s)
+  /**
+   * Update the digital twin of the identified entries(s)
+   */
   updateDigitalTwin(deviceSignature, digitalTwin) {
     let deviceName = determineDeviceName(deviceSignature, digitalTwin || {});
     let namedNodes = document.getElementsByName(deviceSignature + '-name');
 
     namedNodes.forEach((node) => { node.textContent = deviceName; });
+  }
+}
+
+
+/**
+ * DevicesTable Class
+ * Manages the processing and rendering of devices in an HTML table.
+ */
+class DevicesTable {
+
+  /**
+   * DevicesTable constructor
+   * @param {String} elementId The id of the table in the HTML.
+   * @param {Object} options The options as a JSON object.
+   * @constructor
+   */
+  constructor(elementId, options) {
+    let self = this;
+    options = options || {};
+
+    this.table = document.querySelector(elementId);
+    this.beaver = options.beaver;
+    this.displayedDevices = new Map();
+    this.maxRows = options.maxRows || 12;
+    this.isClockDisplayed = options.isClockDisplayed || false;
+    this.digitalTwins = options.digitalTwins || new Map();
+    this.isFilteredDevice = options.isFilteredDevice || DEFAULT_DEVICE_FILTER;
+    this.selectedDeviceSignature;
+    this.eventCallbacks = { selection: [] };
+    
+    this.render();
+
+    if(self.beaver) {
+      self.beaver.on('appearance', (deviceSignature, device) => {
+        if(self.isFilteredDevice(device)) {
+          self.insertDevice(deviceSignature, device);
+        }
+      });
+      self.beaver.on('disappearance', (deviceSignature) => {
+        self.removeDevice(deviceSignature);
+      });
+    }
+
+    if(self.isClockDisplayed) { updateClock(); }
+
+    function updateClock() {
+      let time = new Date().toLocaleTimeString([], CLOCK_OPTIONS);
+      let millisecondsToNextMinute = 60000 - (Date.now() % 60000);
+      document.querySelector('#timeDisplay').textContent = time;
+      setTimeout(updateClock, millisecondsToNextMinute);
+    }
+  }
+
+  /**
+   * Render the HTML table from scratch.
+   */
+  render() {
+    let self = this;
+
+    if(self.isClockDisplayed) {
+      let time = new Date().toLocaleTimeString([], CLOCK_OPTIONS);
+      let td = createElement('td', 'bg-dark bg-gradient text-white display-1',
+                             time);
+      let tr = createElement('tr', null, td);
+      let thead = createElement('thead', null, tr);
+      td.setAttribute('colspan', '4');
+      td.setAttribute('id', 'timeDisplay');
+      self.table.appendChild(thead);
+    }
+
+    let tbody = createElement('tbody');
+    tbody.setAttribute('id', 'devicesRows');
+
+    self.table.setAttribute('class', 'table table-hover text-center');
+    self.table.appendChild(tbody);
+  }
+
+  /**
+   * Insert the given device.
+   */
+  insertDevice(deviceSignature, device) {
+    let self = this;
+
+    if(!self.displayedDevices.has(deviceSignature) &&
+       self.isFilteredDevice(device)) {
+      let tbody = document.querySelector('#devicesRows');
+      let digitalTwin = self.digitalTwins.get(deviceSignature) || {};
+      let deviceName = determineDeviceName(deviceSignature, digitalTwin);
+      let id = deviceSignature.replace('/', '-') + '-device';
+      let row = createDeviceRow(id, deviceSignature, deviceName, self);
+
+      if(tbody.hasChildNodes() &&
+         (tbody.childNodes.length >= self.maxRows)) {
+        let removedDeviceSignature = tbody.lastChild.id.replace('-device', '')
+                                                       .replace('-', '/');
+        self.removeDevice(removedDeviceSignature);
+      }
+      tbody.insertBefore(row, tbody.firstChild);
+      self.displayedDevices.set(deviceSignature, device); // TODO value
+    }
+  }
+
+  /**
+   * Select the given device.
+   */
+  selectDevice(deviceSignature) {
+    let self = this;
+    let id, button;
+    let isUnselect = (self.selectedDeviceSignature === deviceSignature);
+    let isReplace = (self.selectedDeviceSignature && !isUnselect);
+
+    if(isUnselect || isReplace) {
+      id = self.selectedDeviceSignature.replace('/', '-') + '-button';
+      button = document.getElementById(id);
+
+      if(button) {
+        button.setAttribute('class', 'btn btn-sm btn-outline-primary');
+      }
+    }
+
+    if(deviceSignature && !isUnselect) {
+      id = deviceSignature.replace('/', '-') + '-button';
+      button = document.getElementById(id);
+
+      if(button) {
+        button.setAttribute('class', 'btn btn-sm btn-primary');
+      }
+    }
+
+    self.selectedDeviceSignature = isUnselect ? null : deviceSignature;
+    self.eventCallbacks.selection.forEach((callback) => {
+      callback(self.selectedDeviceSignature);
+    });
+  }
+
+  /**
+   * Remove the given device.
+   */
+  removeDevice(deviceSignature) {
+    let self = this;
+
+    if(self.displayedDevices.has(deviceSignature)) {
+      let id = deviceSignature.replace('/', '-') + '-device';
+      let tbody = document.querySelector('#devicesRows');
+      let row = document.getElementById(id);
+
+      tbody.removeChild(row);
+      self.displayedDevices.delete(deviceSignature);
+    }
+
+    if(self.selectedDeviceSignature === deviceSignature) {
+      self.selectDevice(null);
+    }
+  }
+
+  /**
+   * Update the digital twin of the identified entries(s)
+   */
+  updateDigitalTwin(deviceSignature, digitalTwin) {
+    let deviceName = determineDeviceName(deviceSignature, digitalTwin || {});
+    let namedNodes = document.getElementsByName(deviceSignature + '-name');
+
+    namedNodes.forEach((node) => { node.textContent = deviceName; });
+  }
+
+  /**
+   * Event callbacks.
+   */
+  on(event, callback) {
+    let isValidEvent = event && this.eventCallbacks.hasOwnProperty(event);
+    let isValidCallback = callback && (typeof callback === 'function');
+
+    if(isValidEvent && isValidCallback) {
+      this.eventCallbacks[event].push(callback);
+    }
   }
 }
 
@@ -431,6 +609,28 @@ function updateDiscreteDataRow(row, description, deviceName, timestamp) {
   timestampCol.textContent = new Date(timestamp).toLocaleTimeString([],
                                                    DISCRETE_TIMESTAMP_OPTIONS);
   row.timestamp = timestamp;
+}
+
+
+// Create a device row
+function createDeviceRow(id, deviceSignature, deviceName, instance) {
+  let deviceCol = createElement('td', 'font-monospace', deviceName);
+  let displayIcon = createElement('i', 'fas fa-eye');
+  let displayButton = createElement('button', 'btn btn-sm btn-outline-primary',
+                                    displayIcon);
+  let displayCol = createElement('td', null, displayButton);
+  let tr = createElement('tr', 'align-middle', [ deviceCol, displayCol ]);
+  deviceCol.setAttribute('name', deviceSignature + '-name');
+  displayButton.id = deviceSignature.replace('/', '-') + '-button';
+  tr.id = id;
+
+  displayButton.addEventListener('click', (event) => {
+    let selectedDeviceSignature = event.currentTarget.id.replace('-button', '')
+                                                        .replace('-', '/');
+    instance.selectDevice(selectedDeviceSignature);
+  });
+
+  return tr;
 }
 
 
