@@ -139,6 +139,30 @@ beaver.on('dynamb', (dynamb) => { discreteDataTable.handleDynamb(dynamb); });
 discreteDataTable.updateDigitalTwin(deviceSignature, digitalTwin);
 ```
 
+Provides a __DevicesTable__ class which displays devices filtered from an optional beaver instance, and/or inserted/removed via its _insertDevice()_ and _removeDevice()_ functions, and updates automatically once instantiated:
+
+```html
+<table id="devicesTable"></table>
+```
+
+```javascript
+let elementId = document.querySelector('#devicesTable');
+let options = { beaver: beaver, // See beaver.js
+                maxRows: 12,
+                isClockDisplayed: false,
+                digitalTwins: cormorant.digitalTwins, // See cormorant.js
+                isFilteredDevice: function(device) { return true; }
+};
+
+let devicesTable = new DevicesTable(elementId, options);
+
+// To update the device name after fetching a digital twin with cormorant.js:
+devicesTable.updateDigitalTwin(deviceSignature, digitalTwin);
+
+// To receive notification of a user selection of a device in the table:
+devicesTable.on('selection', (deviceSignature) => { /* Selection handler */ });
+```
+
 
 ![cuttlefish logo](https://reelyactive.github.io/cuttlefish/images/cuttlefish-bubble.png)
 
