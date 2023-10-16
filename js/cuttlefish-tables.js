@@ -439,8 +439,9 @@ class DevicesTable {
    */
   insertDevice(deviceSignature, device) {
     let self = this;
+    let isFullTable = (self.displayedDevices.size >= self.maxRows);
 
-    if(!self.displayedDevices.has(deviceSignature) &&
+    if(!isFullTable && !self.displayedDevices.has(deviceSignature) &&
        self.isFilteredDevice(device)) {
       let tbody = document.querySelector('#devicesRows');
       let digitalTwin = self.digitalTwins.get(deviceSignature) || {};
