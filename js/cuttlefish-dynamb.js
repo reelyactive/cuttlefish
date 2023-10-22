@@ -305,19 +305,20 @@ let cuttlefishDynamb = (function() {
   function renderPassages(passages, suffix) {
     let lis = [];
 
-    if(Number.isInteger(passages.entries)) {
-      let icon = createElement('i', 'fas fa-sign-in-alt');
-      let value = '\u00a0' + passages.entries;
-      lis.push(createElement('li', 'list-inline-item', [ icon, value ]));
+    if(Array.isArray(passages)) {
+      if(passages.length === 2) {
+        let entries = [ createElement('i', 'fas fa-sign-in-alt text-muted'),
+                        '\u00a0' + passages[0] ];
+        let exits = [ createElement('i', 'fas fa-sign-out-alt text-muted'),
+                      '\u00a0' + passages[1] ];
+        lis.push(createElement('li', 'list-inline-item', entries));
+        lis.push(createElement('li', 'list-inline-item', exits));
+      }
+      else if(passages.length === 1) {
+        lis.push(createElement('li', 'list-inline-item', passages[0]));
+      }
     }
-    if(Number.isInteger(passages.exits)) {
-      let icon = createElement('i', 'fas fa-sign-out-alt');
-      let value = '\u00a0' + passages.exits;
-      lis.push(createElement('li', 'list-inline-item', [ icon, value ]));
-    }
-    if((lis.length === 0) && Number.isInteger(passages.total)) {
-      lis.push(createElement('li', 'list-inline-item', passages.total));
-    }
+
     if(lis.length > 0) {
       lis.push(createElement('li', 'list-inline-item', suffix));
     }
