@@ -77,7 +77,7 @@ let cuttlefishDynamb = (function() {
       temperature: { icon: "fas fa-thermometer-half", suffix: " \u2103",
                      transform: "toFixed(2)" },
       temperatures: { icon: "fas fa-thermometer-half", suffix: " \u2103",
-                      transform: "numberArray(2)" },
+                      transform: "toFixedArray(2)" },
       timestamp: { icon: "fas fa-clock", suffix: "", transform: "timeOfDay" },
       txCount: { icon: "fas fa-satellite-dish", transform: "localeString",
                  suffix: " Tx" },
