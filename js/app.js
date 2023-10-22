@@ -42,6 +42,7 @@ const EXAMPLE_DYNAMB = {
     isLiquidDetected: [ false ],
     isMotionDetected: [ false ],
     magneticField: [ -0.7, 0.3, 0.1 ],
+    numberOfOccupants: 7,
     position: [ -73.5, 45.5, 88 ],
     pressure: 101325,
     relativeHumidity: 69,

@@ -61,6 +61,8 @@ let cuttlefishDynamb = (function() {
                        transform: "progressXYZ" },
       nearest: { icon: "fas fa-people-arrows", suffix: "dBm",
                  transform: "tableNearest" },
+      numberOfOccupants: { icon: "fas fa-user-friends", suffix: " occupants",
+                           transform: "toFixed(0)" },
       position: { icon: "fas fa-map-pin", suffix: "", transform: "position" },
       pressure: { icon: "fas fa-cloud", suffix: " Pa",
                   transform: "toFixed(0)" },
