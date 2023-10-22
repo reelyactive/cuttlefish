@@ -63,6 +63,8 @@ let cuttlefishDynamb = (function() {
                  transform: "tableNearest" },
       numberOfOccupants: { icon: "fas fa-user-friends", suffix: " occupants",
                            transform: "toFixed(0)" },
+      passageCounts: { icon: "fas fa-exchange-alt", suffix: " passages",
+                       transform: "passages" },
       position: { icon: "fas fa-map-pin", suffix: "", transform: "position" },
       pressure: { icon: "fas fa-cloud", suffix: " Pa",
                   transform: "toFixed(0)" },
@@ -196,6 +198,8 @@ let cuttlefishDynamb = (function() {
         return renderElapsedTime(data);
       case 'unicodeCodePoints':
         return renderUnicodeCodePoints(data);
+      case 'passages':
+        return renderPassages(data, suffix);
       case 'position':
         return renderPosition(data);
       case 'progressPercentage':
@@ -295,6 +299,30 @@ let cuttlefishDynamb = (function() {
     }
 
     return createElement('span', 'display-1', characters);
+  }
+
+  // Render a passageXs object
+  function renderPassages(passages, suffix) {
+    let lis = [];
+
+    if(Number.isInteger(passages.entries)) {
+      let icon = createElement('i', 'fas fa-sign-in-alt');
+      let value = '\u00a0' + passages.entries;
+      lis.push(createElement('li', 'list-inline-item', [ icon, value ]));
+    }
+    if(Number.isInteger(passages.exits)) {
+      let icon = createElement('i', 'fas fa-sign-out-alt');
+      let value = '\u00a0' + passages.exits;
+      lis.push(createElement('li', 'list-inline-item', [ icon, value ]));
+    }
+    if((lis.length === 0) && Number.isInteger(passages.total)) {
+      lis.push(createElement('li', 'list-inline-item', passages.total));
+    }
+    if(lis.length > 0) {
+      lis.push(createElement('li', 'list-inline-item', suffix));
+    }
+
+    return createElement('ul', 'list-inline mb-0', lis);
   }
 
   // Render a 2D or 3D position
