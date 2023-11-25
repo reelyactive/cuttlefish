@@ -86,6 +86,7 @@ const EXAMPLE_SPATEM = {
     timestamp: Date.now()
 };
 const EXAMPLE_STATID = {
+    languages: [ 'fr', 'en' ],
     name: "cuttlefish.js",
     uri: "https://github.com/reelyactive/cuttlefish",
     version: "2.0.0"
