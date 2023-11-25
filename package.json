@@ -15,7 +15,7 @@
     "statid",
     "client-side"
   ],
-  "version": "2.2.2",
+  "version": "2.2.3",
   "files": [
     "./js/cuttlefish-story.js",
     "./js/cuttlefish-dynamb.js",

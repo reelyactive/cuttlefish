@@ -41,9 +41,11 @@ const EXAMPLE_DYNAMB = {
     isContactDetected: [ true ],
     isLiquidDetected: [ false ],
     isMotionDetected: [ false ],
+    levelPercentage: 55,
     magneticField: [ -0.7, 0.3, 0.1 ],
     numberOfOccupants: 7,
     passageCounts: [ 3, 9 ],
+    pH: 7.654321,
     position: [ -73.5, 45.5, 88 ],
     pressure: 101325,
     relativeHumidity: 69,
@@ -84,6 +86,7 @@ const EXAMPLE_SPATEM = {
     timestamp: Date.now()
 };
 const EXAMPLE_STATID = {
+    languages: [ 'fr', 'en' ],
     name: "cuttlefish.js",
     uri: "https://github.com/reelyactive/cuttlefish",
     version: "2.0.0"
