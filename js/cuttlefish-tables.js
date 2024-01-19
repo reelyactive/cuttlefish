@@ -1,5 +1,5 @@
 /**
- * Copyright reelyActive 2023
+ * Copyright reelyActive 2023-2024
  * We believe in an open Internet of Things
  */
 
@@ -100,12 +100,12 @@ class ContinuousDataTable {
       let i = createElement('i', iconClass + ' text-white display-4');
       let th = createElement('th', 'bg-dark align-middle', i);
       let spanContent = '\u2014' + (DYNAMB_PROPERTY_UNITS[property] || '');
-      let spanAvg = createElement('span', 'text-muted', spanContent);
+      let spanAvg = createElement('span', 'text-body-secondary', spanContent);
       let tdAvg = createElement('td', 'align-middle display-4', spanAvg);
-      let spanMax = createElement('span', 'text-muted', '\u2014');
-      let spanMin = createElement('span', 'text-muted', '\u2014');
-      let supMax = createElement('sup', 'text-muted', '\u00a0 max');
-      let subMin = createElement('sub', 'text-muted', '\u00a0 min');
+      let spanMax = createElement('span', 'text-body-secondary', '\u2014');
+      let spanMin = createElement('span', 'text-body-secondary', '\u2014');
+      let supMax = createElement('sup', 'text-body-secondary', '\u00a0 max');
+      let subMin = createElement('sub', 'text-body-secondary', '\u00a0 min');
       let liMax = createElement('li', 'list-group-item', [ spanMax, supMax ]);
       let liMin = createElement('li', 'list-group-item', [ spanMin, subMin ]);
       let ul = createElement('ul', 'list-group list-group-flush',
@@ -163,13 +163,13 @@ class ContinuousDataTable {
         avgDisplay.textContent = average.toFixed(precision);
         let isAvgInBounds = (average <= self.propertyBounds[property].max) &&
                             (average >= self.propertyBounds[property].min);
-        let avgClass = isAvgInBounds ? 'text-dark' : 'text-secondary';
+        let avgClass = isAvgInBounds ? 'text-body' : 'text-secondary';
         avgDisplay.setAttribute('class', avgClass);
         isOutOfBounds ||= !isAvgInBounds;
       }
       else {
         avgDisplay.textContent = '\u2014';
-        avgDisplay.setAttribute('class', 'text-muted');
+        avgDisplay.setAttribute('class', 'text-body-tertiary');
       }
       avgDisplay.textContent += (DYNAMB_PROPERTY_UNITS[property] || '');
 
@@ -178,8 +178,8 @@ class ContinuousDataTable {
                             (maximum >= self.propertyBounds[property].min);
         let isMinInBounds = (minimum <= self.propertyBounds[property].max) &&
                             (minimum >= self.propertyBounds[property].min);
-        let maxClass = isMinInBounds ? 'text-dark' : 'text-secondary';
-        let minClass = isMinInBounds ? 'text-dark' : 'text-secondary';
+        let maxClass = isMinInBounds ? 'text-body-secondary' : 'text-secondary';
+        let minClass = isMinInBounds ? 'text-body-secondary' : 'text-secondary';
         maxDisplay.textContent = maximum.toFixed(precision) +
                                  (DYNAMB_PROPERTY_UNITS[property] || '');
         minDisplay.textContent = minimum.toFixed(precision) +
@@ -191,8 +191,8 @@ class ContinuousDataTable {
       else {
         maxDisplay.textContent = '\u2014';
         minDisplay.textContent = '\u2014';
-        maxDisplay.setAttribute('class', 'text-muted');
-        minDisplay.setAttribute('class', 'text-muted');
+        maxDisplay.setAttribute('class', 'text-body-tertiary');
+        minDisplay.setAttribute('class', 'text-body-tertiary');
       }
       
       let iconCellClass = isOutOfBounds ? 'bg-secondary align-middle' :
@@ -292,7 +292,7 @@ class DiscreteDataTable {
           let animateTimestamp = row.timestamp +
                                  DISCRETE_DATA_ANIMATE_MILLISECONDS;
           if(staleTimestamp < Date.now()) {
-            row.setAttribute('class', 'align-middle text-muted');
+            row.setAttribute('class', 'align-middle text-body-tertiary');
           }
           else {
             nextUpdateTime = Math.min(staleTimestamp, nextUpdateTime);
@@ -581,13 +581,14 @@ function createDiscreteDataRow(id, property, description, deviceSignature,
                   DEFAULT_DYNAMB_PROPERTY_ICON_CLASS;
   let icon = createElement('i', iconClass + ' display-6');
   let iconCol = createElement('th', 'table-primary animate-breathing', icon);
-  let deviceCol = createElement('td', 'font-monospace', deviceName);
+  let deviceCol = createElement('td', 'font-monospace text-body-secondary',
+                                deviceName);
   let descriptionClass = (property === 'unicodeCodePoints') ? 'display-6' :
-                                                              'fw-bold';
+                                                  'fw-bold text-body-secondary';
   let descriptionCol = createElement('td', descriptionClass, description);
   let time = new Date(timestamp).toLocaleTimeString([],
                                                     DISCRETE_TIMESTAMP_OPTIONS);
-  let timestampCol = createElement('td', null, time);
+  let timestampCol = createElement('td', 'text-body-secondary', time);
   let tr = createElement('tr', 'align-middle',
                          [ iconCol, descriptionCol, deviceCol, timestampCol ]);
   deviceCol.setAttribute('name', deviceSignature + '-name');
