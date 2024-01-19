@@ -7,6 +7,7 @@
     <meta name="description"
           content="reelyActive cuttlefish.js demo.">
     <link rel="stylesheet" href="style/bootstrappyactive.min.css">
+    <script type="module" src="js/color-modes.js"></script>
     <title> reelyActive cuttlefish.js demo </title>
     <!----- Structured, linked metadata (JSON-LD & Schema.org) ----->
     <script type="application/ld+json">
@@ -44,8 +45,7 @@
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white
-                shadow">
+    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary shadow">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
           <img src="images/reelyactive-developers-logo-nav.png" width="135"
@@ -62,6 +62,36 @@
           </ul>
           <!-- Right-aligned navigation items -->
           <ul class="navbar-nav">
+            <!-- Colour theme chooser -->
+            <li class="nav-item dropdown">
+              <button class="btn btn-link nav-link dropdown-toggle"
+                      id="bd-theme" type="button" aria-expanded="false"
+                      data-bs-toggle="dropdown" data-bs-display="static"
+                      aria-label="Toggle theme (auto)">
+                <i class="fas fa-adjust"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow"
+                  aria-labelledby="bd-theme-text">
+                <li>
+                  <button type="button" class="dropdown-item"
+                          data-bs-theme-value="light" aria-pressed="false">
+                    <i class="fas fa-sun"></i> Light
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="dropdown-item"
+                          data-bs-theme-value="dark" aria-pressed="false">
+                    <i class="fas fa-moon"></i> Dark
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="dropdown-item active"
+                          data-bs-theme-value="auto" aria-pressed="true">
+                    <i class="fas fa-adjust"></i> Auto
+                  </button>
+                </li>
+              </ul>
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarInfoDropdown"
                  role="button" data-bs-toggle="dropdown" aria-haspopup="true"
@@ -84,7 +114,7 @@
                 <li class="dropdown-divider"></li>
                 <li>
                   <a class="dropdown-item" target="_blank"
-                     href="https://getbootstrap.com" >
+                     href="https://getbootstrap.com">
                     <i class="fab fa-bootstrap"></i>
                     Bootstrap 5 &nbsp;
                     <span class="badge bg-light text-dark">
@@ -94,7 +124,7 @@
                 </li>
                 <li>
                   <a class="dropdown-item" target="_blank"
-                     href="https://fontawesome.com" >
+                     href="https://fontawesome.com">
                     <i class="fab fa-font-awesome"></i>
                     Font Awesome (Free) &nbsp;
                     <span class="badge bg-light text-dark">
@@ -105,7 +135,7 @@
                 </li>
                 <li>
                   <a class="dropdown-item" target="_blank"
-                     href="https://github.com/reelyactive/web-style-guide/" >
+                     href="https://github.com/reelyactive/web-style-guide/">
                     <i class="fas fa-code"></i>
                     Web Style Guide &nbsp;
                     <span class="badge bg-light text-dark">
@@ -116,7 +146,7 @@
                 <li class="dropdown-divider"></li>
                 <li>
                   <a class="dropdown-item" target="_blank"
-                     href="https://github.com/reelyactive/cuttlefish" >
+                     href="https://github.com/reelyactive/cuttlefish">
                     <i class="fab fa-js"></i>
                     cuttlefish.js &nbsp;
                     <span class="badge bg-light text-dark">
@@ -127,7 +157,7 @@
                 <li class="dropdown-divider"></li>
                 <li>
                   <a class="dropdown-item" target="_blank"
-                     href="https://www.reelyactive.com/made-in-montreal/" >
+                     href="https://www.reelyactive.com/made-in-montreal/">
                     <i class="fab fa-canadian-maple-leaf"></i>
                     Made in Montr&eacute;al &nbsp;
                     <i class="fas fa-city"></i>
@@ -191,7 +221,7 @@
     <footer class="footer bg-dark bg-gradient">
       <a href="https://github.com/reelyactive/cuttlefish"> cuttlefish </a>
       &nbsp; | &nbsp;
-      <a href="https://www.reelyactive.com"> &copy; reelyActive 2016-2023 </a>
+      <a href="https://www.reelyactive.com"> &copy; reelyActive 2016-2024 </a>
     </footer>
 
     <!-- Optional JavaScript -->
