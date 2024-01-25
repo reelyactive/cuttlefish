@@ -231,7 +231,8 @@ class DiscreteDataTable {
     this.digitalTwins = options.digitalTwins || new Map();
     this.propertiesToDisplay = options.propertiesToDisplay ||
                                [ 'isButtonPressed', 'isContactDetected',
-                                 'isMotionDetected', 'unicodeCodePoints' ];
+                                 'isLiquidDetected', 'isMotionDetected',
+                                 'unicodeCodePoints' ];
     
     this.render();
     periodicUpdate();
@@ -561,6 +562,9 @@ function determineDiscreteDataEvent(property, current, previous) {
     case 'isContactDetected':
       return (current.includes(true) ? 'Contact detected' :
                                        'No contact detected');
+    case 'isLiquidDetected':
+      return (current.includes(true) ? 'Liquid detected' :
+                                       'No liquid detected');
     case 'isMotionDetected':
       return (current.includes(true) ? 'Motion detected' :
                                        'No motion detected');
