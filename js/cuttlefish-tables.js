@@ -298,7 +298,7 @@ class DiscreteDataTable {
             nextUpdateTime = Math.min(staleTimestamp, nextUpdateTime);
           }
           if(animateTimestamp < Date.now()) {
-            row.firstChild.setAttribute('class', '');
+            row.firstChild.setAttribute('class', 'text-body-secondary');
           }
           else {
             nextUpdateTime = Math.min(animateTimestamp, nextUpdateTime);
