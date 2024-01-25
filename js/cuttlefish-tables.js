@@ -231,7 +231,8 @@ class DiscreteDataTable {
     this.digitalTwins = options.digitalTwins || new Map();
     this.propertiesToDisplay = options.propertiesToDisplay ||
                                [ 'isButtonPressed', 'isContactDetected',
-                                 'isMotionDetected', 'unicodeCodePoints' ];
+                                 'isLiquidDetected', 'isMotionDetected',
+                                 'unicodeCodePoints' ];
     
     this.render();
     periodicUpdate();
@@ -298,7 +299,7 @@ class DiscreteDataTable {
             nextUpdateTime = Math.min(staleTimestamp, nextUpdateTime);
           }
           if(animateTimestamp < Date.now()) {
-            row.firstChild.setAttribute('class', '');
+            row.firstChild.setAttribute('class', 'text-body-secondary');
           }
           else {
             nextUpdateTime = Math.min(animateTimestamp, nextUpdateTime);
@@ -330,7 +331,7 @@ class DiscreteDataTable {
 
         if(event) {
           self.discreteData.set(id, current);
-          let row = tbody.querySelector('#' + id);
+          let row = document.getElementById(id);
 
           if(row) {
             updateDiscreteDataRow(row, event, deviceName, dynamb.timestamp);
@@ -561,6 +562,9 @@ function determineDiscreteDataEvent(property, current, previous) {
     case 'isContactDetected':
       return (current.includes(true) ? 'Contact detected' :
                                        'No contact detected');
+    case 'isLiquidDetected':
+      return (current.includes(true) ? 'Liquid detected' :
+                                       'No liquid detected');
     case 'isMotionDetected':
       return (current.includes(true) ? 'Motion detected' :
                                        'No motion detected');
