@@ -331,7 +331,7 @@ class DiscreteDataTable {
 
         if(event) {
           self.discreteData.set(id, current);
-          let row = document.getElementById('#' + id);
+          let row = document.getElementById(id);
 
           if(row) {
             updateDiscreteDataRow(row, event, deviceName, dynamb.timestamp);
