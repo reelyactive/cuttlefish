@@ -1,5 +1,5 @@
 /**
- * Copyright reelyActive 2016-2023
+ * Copyright reelyActive 2016-2024
  * We believe in an open Internet of Things
  */
 
@@ -39,6 +39,7 @@ const EXAMPLE_DYNAMB = {
     illuminance: 333,
     isButtonPressed: [ false ],
     isContactDetected: [ true ],
+    isHealthy: true,
     isLiquidDetected: [ false ],
     isMotionDetected: [ false ],
     levelPercentage: 55,
