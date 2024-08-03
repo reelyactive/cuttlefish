@@ -187,6 +187,17 @@ __cuttlefish__ v2.0.0 was released in February 2023.
 __cuttlefish.js__ v1.0.0 was released in July 2019, superseding all earlier versions, the latest of which remains available in the [release-0.1 branch](https://github.com/reelyactive/cuttlefish/tree/release-0.1).
 
 
+Modular Architecture
+--------------------
+
+__cuttlefish.js__ is easily combined with the following complementary client-side modules:
+- [beaver.js](https://github.com/reelyactive/beaver)
+- [cormorant.js](https://github.com/reelyactive/cormorant)
+- [charlotte.js](https://github.com/reelyactive/charlotte)
+
+Learn more about the [reelyActive Open Source Software packages](https://reelyactive.github.io/diy/oss-packages/), all of which are bundled together as [Pareto Anywhere](https://github.com/reelyactive/pareto-anywhere) open source IoT middleware.
+
+
 Contributing
 ------------
 
