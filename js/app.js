@@ -50,6 +50,7 @@ const EXAMPLE_DYNAMB = {
     position: [ -73.5, 45.5, 88 ],
     pressure: 101325,
     relativeHumidity: 69,
+    soundPressure: 42,
     speed: 1.1,
     temperature: 20.23,
     txCount: 123456789,
