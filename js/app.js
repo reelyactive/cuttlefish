@@ -1,5 +1,5 @@
 /**
- * Copyright reelyActive 2016-2024
+ * Copyright reelyActive 2016-2025
  * We believe in an open Internet of Things
  */
 
@@ -32,6 +32,8 @@ const EXAMPLE_DYNAMB = {
     angleOfRotation: 180,
     batteryPercentage: 50,
     batteryVoltage: 3.3,
+    carbonDioxideConcentration: 765,
+    carbonMonoxideConcentration: 666,
     distance: 0.5,
     elevation: 152,
     heading: 270,
@@ -44,6 +46,8 @@ const EXAMPLE_DYNAMB = {
     isMotionDetected: [ false ],
     levelPercentage: 55,
     magneticField: [ -0.7, 0.3, 0.1 ],
+    methaneConcentration: 1.908,
+    nitrogenDioxideConcentration: 174,
     numberOfOccupants: 7,
     passageCounts: [ 3, 9 ],
     pH: 7.654321,
@@ -56,6 +60,7 @@ const EXAMPLE_DYNAMB = {
     txCount: 123456789,
     unicodeCodePoints: [ 0x1f989 ],
     uptime: 60000,
+    volatileOrganicCompoundsConcentration: 0.123,
     voltages: [ 5.1, 4.9, null ],
     timestamp: Date.now()
 };
