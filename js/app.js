@@ -60,6 +60,7 @@ const EXAMPLE_DYNAMB = {
     txCount: 123456789,
     unicodeCodePoints: [ 0x1f989 ],
     uptime: 60000,
+    velocityOverall: [ 0.0035, 0.0014, 0.0111 ],
     volatileOrganicCompoundsConcentration: 0.123,
     voltages: [ 5.1, 4.9, null ],
     timestamp: Date.now()

@@ -101,6 +101,8 @@ let cuttlefishDynamb = (function() {
       unicodeCodePoints: { icon: "fas fa-language", suffix: "",
                           transform: "unicodeCodePoints" },
       uptime: { icon: "fas fa-stopwatch", transform: "elapsedTime" },
+      velocityOverall: { icon: "fas fa-tachometer-alt", suffix: " m/s",
+                         transform: "progressXYZ" },
       volatileOrganicCompoundsConcentration: { icon: "fas fa-cloud",
                                                suffix: " VOC",
                                                transform: "ppm" },
@@ -381,7 +383,9 @@ let cuttlefishDynamb = (function() {
     suffix = suffix || '';
 
     let isPositive = (value >= 0);
-    let valueString = value.toFixed(decimalDigits) + suffix;
+    let valueString = (decimalDigits >= 0) ? value.toFixed(decimalDigits) :
+                                             value.toPrecision(-decimalDigits);
+    valueString += suffix;
     let widthPercentage = (100 * Math.abs(value) / maxValue).toFixed(0) + '%';
     let progressBar = createElement('div', 'progress-bar', valueString);
     let progressClass = isPositive ? 'progress' : 'progress flex-row-reverse';
@@ -397,22 +401,28 @@ let cuttlefishDynamb = (function() {
     suffix = suffix || '';
 
     let maxValue = Math.max(Math.max(...data), Math.abs(Math.min(...data)));
+    let isNegativeValues = data.some((value) => value < 0);
+    let isPositiveValues = data.some((value) => value >= 0);
     let magnitude = 0;
     let tbody = createElement('tbody', 'align-middle');
     let table = createElement('table', 'table table-borderless', tbody);
 
     data.forEach(function(value, index) {
-      let progressNeg = renderProgress(Math.min(value, 0), maxValue, 2, suffix);
-      let progressPos = renderProgress(Math.max(value, 0), maxValue, 2, suffix);
+      let progressNeg = renderProgress(Math.min(value,0), maxValue, -2, suffix);
+      let progressPos = renderProgress(Math.max(value,0), maxValue, -2, suffix);
       let tdNeg = createElement('td', null, progressNeg);
       let th = createElement('th', 'text-center small', AXIS_NAMES[index]);
       let tdPos = createElement('td', null, progressPos);
-      let tr = createElement('tr', null, [ tdNeg, th, tdPos ]);
+      let elements = [];
+      if(isNegativeValues) { elements.push(tdNeg); }
+      elements.push(th);
+      if(isPositiveValues) { elements.push(tdPos); }
+      let tr = createElement('tr', null, elements);
       tbody.appendChild(tr);
       magnitude += (value * value);
     });
 
-    magnitude = Math.sqrt(magnitude).toFixed(2);
+    magnitude = Math.sqrt(magnitude).toPrecision(2);
     let caption = createElement('caption', null, magnitude + suffix);
     table.appendChild(caption);
 
