@@ -51,6 +51,9 @@ const EXAMPLE_DYNAMB = {
     numberOfOccupants: 7,
     passageCounts: [ 3, 9 ],
     pH: 7.654321,
+    "pm1.0": 1.5,
+    "pm2.5": 15,
+    "pm10": 50,
     position: [ -73.5, 45.5, 88 ],
     pressure: 101325,
     relativeHumidity: 69,
@@ -60,6 +63,7 @@ const EXAMPLE_DYNAMB = {
     txCount: 123456789,
     unicodeCodePoints: [ 0x1f989 ],
     uptime: 60000,
+    velocityOverall: [ 0.0035, 0.0014, 0.0111 ],
     volatileOrganicCompoundsConcentration: 0.123,
     voltages: [ 5.1, 4.9, null ],
     timestamp: Date.now()
