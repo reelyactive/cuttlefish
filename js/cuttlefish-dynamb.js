@@ -80,6 +80,9 @@ let cuttlefishDynamb = (function() {
       passageCounts: { icon: "fas fa-exchange-alt", suffix: " passages",
                        transform: "passages" },
       pH: { icon: "fas fa-water", suffix: " pH", transform: "toFixed(2)" },
+      "pm1.0": { icon: "fas fa-virus", suffix: "1.0", transform: "pm" },
+      "pm2.5": { icon: "fas fa-virus", suffix: "2.5", transform: "pm" },
+      "pm10": { icon: "fas fa-virus", suffix: "10", transform: "pm" },
       position: { icon: "fas fa-map-pin", suffix: "", transform: "position" },
       pressure: { icon: "fas fa-cloud", suffix: " Pa",
                   transform: "toFixed(0)" },
@@ -226,6 +229,8 @@ let cuttlefishDynamb = (function() {
         return renderPassages(data, suffix);
       case 'position':
         return renderPosition(data);
+      case 'pm':
+        return renderParticulateMatter(data, suffix);
       case 'ppm':
         return renderPpm(data, suffix);
       case 'progressPercentage':
@@ -370,6 +375,14 @@ let cuttlefishDynamb = (function() {
     }
 
     return list;
+  }
+
+  // Render a PM concentration
+  function renderParticulateMatter(data, suffix) {
+    let text = data + ' \u03bcg/m\u00b3 PM';
+    let sub = createElement('sub', null, suffix);
+
+    return createElement('span', null, [ text, sub ]);
   }
 
   // Render a ppm concentration
