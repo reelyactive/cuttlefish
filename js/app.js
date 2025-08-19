@@ -51,6 +51,8 @@ const EXAMPLE_DYNAMB = {
     methaneConcentration: 1.908,
     nitrogenDioxideConcentration: 174,
     numberOfOccupants: 7,
+    numberOfReceivedDevices: 42,
+    numberOfStrongestReceivedDevices: 21,
     passageCounts: [ 3, 9 ],
     pH: 7.654321,
     "pm1.0": 1.5,
