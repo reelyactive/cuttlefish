@@ -128,6 +128,15 @@ const EXAMPLE_SPATEM = {
     ]},
     timestamp: Date.now()
 };
+const EXAMPLE_ENCRYPTED = {
+    deviceId: "bada55beac04",
+    deviceIdType: 3,
+    data: "00112233445566778899aabb",
+    salt: 1234,
+    checksum: 5678,
+    method: "eddystone-etlm",
+    timestamp: Date.now()
+};
 const EXAMPLE_STATID = {
     deviceType: "Badge",
     firmwareVersion: "1.2.3",
@@ -142,21 +151,25 @@ const EXAMPLE_STATID = {
 const storyTarget = document.querySelector('#storyToRender');
 const dynambTarget = document.querySelector('#dynambToRender');
 const spatemTarget = document.querySelector('#spatemToRender');
+const encryptedTarget = document.querySelector('#encryptedToRender');
 const statidTarget = document.querySelector('#statidToRender');
 
 
 cuttlefishStory.render(EXAMPLE_STORY, storyTarget);
 cuttlefishDynamb.render(EXAMPLE_DYNAMB, dynambTarget);
 cuttlefishSpatem.render(EXAMPLE_SPATEM, spatemTarget);
+cuttlefishEncrypted.render(EXAMPLE_ENCRYPTED, encryptedTarget);
 cuttlefishStatid.render(EXAMPLE_STATID, statidTarget);
 
 
 const storyData = document.querySelector('#storyData');
 const dynambData = document.querySelector('#dynambData');
 const spatemData = document.querySelector('#spatemData');
+const encryptedData = document.querySelector('#encryptedData');
 const statidData = document.querySelector('#statidData');
 
 storyData.textContent = JSON.stringify(EXAMPLE_STORY, null, 2);
 dynambData.textContent = JSON.stringify(EXAMPLE_DYNAMB, null, 2);
 spatemData.textContent = JSON.stringify(EXAMPLE_SPATEM, null, 2);
+encryptedData.textContent = JSON.stringify(EXAMPLE_ENCRYPTED, null, 2);
 statidData.textContent = JSON.stringify(EXAMPLE_STATID, null, 2);

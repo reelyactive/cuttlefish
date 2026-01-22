@@ -15,11 +15,12 @@
     "statid",
     "client-side"
   ],
-  "version": "2.3.8",
+  "version": "2.4.0",
   "files": [
     "./js/cuttlefish-story.js",
     "./js/cuttlefish-dynamb.js",
     "./js/cuttlefish-spatem.js",
+    "./js/cuttlefish-encrypted.js",
     "./js/cuttlefish-statid.js",
     "./js/cuttlefish-tables.js"
   ],
