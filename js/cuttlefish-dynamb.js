@@ -379,7 +379,7 @@ let cuttlefishDynamb = (function() {
       let displayValue = Number.isFinite(value) ? renderElapsedTime(value) :
                                                   '\u2014';
       let itemClass = Number.isFinite(value) ? 'list-inline-item' :
-                                               'list-inline-item text-muted';
+                                        'list-inline-item text-body-secondary';
       lis.push(createElement('li', itemClass, displayValue));
     }
 
@@ -402,7 +402,7 @@ let cuttlefishDynamb = (function() {
       let displayValue = Number.isFinite(value) ? value.toLocaleString() :
                                                   '\u2014';
       let itemClass = Number.isFinite(value) ? 'list-inline-item' :
-                                               'list-inline-item text-muted';
+                                        'list-inline-item text-body-secondary';
       lis.push(createElement('li', itemClass, displayValue + suffix));
     }
 
@@ -417,7 +417,7 @@ let cuttlefishDynamb = (function() {
       let displayValue = Number.isFinite(value) ? value.toFixed(precision) :
                                                   '\u2014';
       let itemClass = Number.isFinite(value) ? 'list-inline-item' :
-                                               'list-inline-item text-muted';
+                                        'list-inline-item text-body-secondary';
       lis.push(createElement('li', itemClass, displayValue + suffix));
     }
 
@@ -441,9 +441,11 @@ let cuttlefishDynamb = (function() {
 
     if(Array.isArray(passages)) {
       if(passages.length === 2) {
-        let entries = [ createElement('i', 'fas fa-sign-in-alt text-muted'),
+        let entries = [ createElement('i',
+                                      'fas fa-sign-in-alt text-body-secondary'),
                         '\u00a0' + passages[0] ];
-        let exits = [ createElement('i', 'fas fa-sign-out-alt text-muted'),
+        let exits = [ createElement('i',
+                                    'fas fa-sign-out-alt text-body-secondary'),
                       '\u00a0' + passages[1] ];
         lis.push(createElement('li', 'list-inline-item', entries));
         lis.push(createElement('li', 'list-inline-item', exits));
