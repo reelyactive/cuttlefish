@@ -129,6 +129,9 @@ const EXAMPLE_SPATEM = {
     timestamp: Date.now()
 };
 const EXAMPLE_STATID = {
+    deviceType: "Badge",
+    firmwareVersion: "1.2.3",
+    hardwareVersion: "4",
     languages: [ 'fr', 'en' ],
     name: "cuttlefish.js",
     uri: "https://github.com/reelyactive/cuttlefish",
