@@ -1,5 +1,5 @@
 /**
- * Copyright reelyActive 2023-2024
+ * Copyright reelyActive 2023-2026
  * We believe in an open Internet of Things
  */
 
@@ -8,10 +8,18 @@ const DYNAMB_PROPERTY_ICON_CLASSES = {
     batteryPercentage: "fas fa-battery-half",
     illuminance: "fas fa-sun",
     isButtonPressed: "fas fa-hand-pointer",
+    isCarbonMonoxideDetected: "fas fa-skull-crossbones",
     isContactDetected: "fas fa-compress-alt",
+    isGasDetected: "fas fa-smog",
+    isInputDetected: "fas fa-check",
+    isLightDetected: "fas fa-lightbulb",
+    isLiquidDetected: "fas fa-tint",
     isMotionDetected: "fas fa-walking",
+    isOccupancyDetected: "fas fa-user-check",
+    isSmokeDetected: "fas fa-fire",
     relativeHumidity: "fas fa-water",
     temperature: "fas fa-thermometer-half",
+    text: "fas fa-comment",
     unicodeCodePoints: "fas fa-language"
 };
 const DYNAMB_PROPERTY_UNITS = {
@@ -230,9 +238,12 @@ class DiscreteDataTable {
     this.isClockDisplayed = options.isClockDisplayed || false;
     this.digitalTwins = options.digitalTwins || new Map();
     this.propertiesToDisplay = options.propertiesToDisplay ||
-                               [ 'isButtonPressed', 'isContactDetected',
+                               [ 'isButtonPressed', 'isCarbonMonoxideDetected',
+                                 'isContactDetected', 'isGasDetected',
+                                 'isInputDetected', 'isLightDetected',
                                  'isLiquidDetected', 'isMotionDetected',
-                                 'unicodeCodePoints' ];
+                                 'isOccupancyDetected', 'isSmokeDetected',
+                                 'text', 'unicodeCodePoints' ];
     
     this.render();
     periodicUpdate();
@@ -558,7 +569,8 @@ class DevicesTable {
 function determineDiscreteDataEvent(property, current, previous) {
   let isEvent = false;
 
-  if((previous === undefined) || (property === 'unicodeCodePoints')) {
+  if((previous === undefined) || (property === 'text') ||
+     (property === 'unicodeCodePoints')) {
     isEvent = true;
   }
   else if(Array.isArray(current) && Array.isArray(previous)) {
@@ -575,15 +587,33 @@ function determineDiscreteDataEvent(property, current, previous) {
     case 'isButtonPressed':
       return (current.includes(true) ? 'Button pressed' :
                                        'No button pressed');
+    case 'isCarbonMonoxideDetected':
+      return (current.includes(true) ? 'CO detected' :
+                                       'No CO detected');
     case 'isContactDetected':
       return (current.includes(true) ? 'Contact detected' :
                                        'No contact detected');
+    case 'isGasDetected':
+      return (current.includes(true) ? 'Gas detected' :
+                                       'No gas detected');
+    case 'isInputDetected':
+      return (current.includes(true) ? 'Input detected' :
+                                       'No input detected');
+    case 'isLightDetected':
+      return (current.includes(true) ? 'Light detected' :
+                                       'No light detected');
     case 'isLiquidDetected':
       return (current.includes(true) ? 'Liquid detected' :
                                        'No liquid detected');
     case 'isMotionDetected':
       return (current.includes(true) ? 'Motion detected' :
                                        'No motion detected');
+    case 'isOccupancyDetected':
+      return (current.includes(true) ? 'Occupancy detected' :
+                                       'No occupancy detected');
+    case 'isSmokeDetected':
+      return (current.includes(true) ? 'Smoke detected' :
+                                       'No smoke detected');
     case 'unicodeCodePoints':
       let chars = '';
       current.forEach(codePoint => chars += String.fromCodePoint(codePoint));
