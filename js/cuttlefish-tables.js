@@ -525,6 +525,22 @@ class DevicesTable {
   }
 
   /**
+   * Change the maximum number of rows to display
+   */
+  changeMaxRows(maxRows) {
+    let self = this;
+
+    self.maxRows = maxRows;
+
+    while(self.displayedDevices.size > maxRows) {
+      let lastDeviceSignature = [...self.displayedDevices.keys()].at(-1); 
+      if(self.selectedDeviceSignature !== lastDeviceSignature) {
+        self.removeDevice(lastDeviceSignature);
+      }  
+    }
+  }
+
+  /**
    * Event callbacks.
    */
   on(event, callback) {
