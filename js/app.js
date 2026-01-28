@@ -66,6 +66,8 @@ const EXAMPLE_DYNAMB = {
     isOccupancyDetectedCycle: 117,
     isSmokeDetected: [ true ],
     isSmokeDetectedCycle: 130,
+    isTamperDetected: [ false ],
+    isTamperDetectedCycle: 143,
     levelPercentage: 55,
     luminousFlux: 750,
     magneticField: [ -0.7, 0.3, 0.1 ],
