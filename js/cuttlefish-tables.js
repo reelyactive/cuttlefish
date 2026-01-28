@@ -17,6 +17,7 @@ const DYNAMB_PROPERTY_ICON_CLASSES = {
     isMotionDetected: "fas fa-walking",
     isOccupancyDetected: "fas fa-user-check",
     isSmokeDetected: "fas fa-fire",
+    isTamperDetected: "fas fa-exclamation-triangle",
     relativeHumidity: "fas fa-water",
     temperature: "fas fa-thermometer-half",
     text: "fas fa-comment",
@@ -243,7 +244,8 @@ class DiscreteDataTable {
                                  'isInputDetected', 'isLightDetected',
                                  'isLiquidDetected', 'isMotionDetected',
                                  'isOccupancyDetected', 'isSmokeDetected',
-                                 'text', 'unicodeCodePoints' ];
+                                 'isTamperDetected', 'text',
+                                 'unicodeCodePoints' ];
     
     this.render();
     periodicUpdate();
@@ -614,6 +616,9 @@ function determineDiscreteDataEvent(property, current, previous) {
     case 'isSmokeDetected':
       return (current.includes(true) ? 'Smoke detected' :
                                        'No smoke detected');
+    case 'isTamperDetected':
+      return (current.includes(true) ? 'Tamper detected' :
+                                       'No tamper detected');
     case 'unicodeCodePoints':
       let chars = '';
       current.forEach(codePoint => chars += String.fromCodePoint(codePoint));
